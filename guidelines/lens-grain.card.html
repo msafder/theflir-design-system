@@ -1,0 +1,68 @@
+<!-- @dsCard group="Guidelines" viewport="900x820" name="Lens & Grain" subtitle="GDL-07 — high-contrast grain and wide-angle framing" -->
+<!doctype html>
+<html lang="en" data-flir-theme="ink">
+<head><meta charset="utf-8"><title>THE FLIR — Lens &amp; Grain</title>
+<link rel="stylesheet" href="../styles.css">
+<style>
+html,body{margin:0;background:var(--flir-bg);color:var(--flir-fg);font-family:var(--flir-font-body);-webkit-font-smoothing:antialiased}
+a{color:var(--flir-accent-text);text-decoration:none;border-bottom:1px solid var(--flir-accent-text)}a:hover{color:var(--flir-fg);border-bottom-color:var(--flir-fg)}
+.card{padding:var(--flir-space-6);display:flex;flex-direction:column;gap:var(--flir-space-5)}
+.card-head{display:flex;align-items:baseline;justify-content:space-between;gap:var(--flir-space-4);border-bottom:var(--flir-rule);padding-bottom:var(--flir-space-3)}
+.card-title{font-family:var(--flir-font-headline);font-variation-settings:'wdth' var(--flir-wdth-wide),'wght' var(--flir-fw-bold);font-size:var(--flir-text-h3);line-height:var(--flir-lh-tight);text-transform:uppercase;margin:0}
+.card-id{font-family:var(--flir-font-data);font-size:var(--flir-text-nano);letter-spacing:var(--flir-ls-wider);color:var(--flir-fg-faint);text-transform:uppercase}
+.lbl{font-family:var(--flir-font-data);font-weight:var(--flir-fw-medium);font-size:var(--flir-text-micro);letter-spacing:var(--flir-ls-wider);text-transform:uppercase;color:var(--flir-fg-muted)}
+.note{font-size:var(--flir-text-small);line-height:var(--flir-lh-body);color:var(--flir-fg-muted);max-width:66ch;text-wrap:pretty;margin:0}
+.note strong{color:var(--flir-fg);font-weight:var(--flir-fw-bold)}
+.spec{display:flex;gap:var(--flir-space-4)}
+.spec .lbl{width:150px;flex:none}
+.frame{position:relative;overflow:hidden;border:var(--flir-rule);aspect-ratio:4/3}
+.frame img{width:100%;height:100%;object-fit:cover;display:block}
+.frame .g{position:absolute;inset:0;background-image:var(--flir-grain-hard);pointer-events:none}
+.dev{border-left:var(--flir-border-mark) solid var(--flir-accent);padding-left:var(--flir-space-4);font-family:var(--flir-font-data);font-size:var(--flir-text-small);line-height:var(--flir-lh-body);color:var(--flir-fg-muted)}
+.dev b{color:var(--flir-accent-text);font-weight:var(--flir-fw-medium);letter-spacing:var(--flir-ls-wide);text-transform:uppercase;display:block;font-size:var(--flir-text-nano);margin-bottom:var(--flir-space-1)}
+</style></head>
+<body><div class="card">
+<div class="card-head"><h1 class="card-title">Lens &amp; Grain</h1><span class="card-id">GDL-07</span></div>
+
+<p class="note">The band named <strong>Anton Corbijn</strong> as the reference, and specifically two things: the <strong>high-contrast grain</strong> and the <strong>wide-angle distortion</strong>. Those are two different decisions made at two different moments. Distortion happens at the camera and cannot be added afterwards. Grain happens in the render and is a token.</p>
+
+<div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:var(--flir-space-4)">
+  <div style="display:flex;flex-direction:column;gap:var(--flir-space-2)">
+    <div class="frame"><img src="../assets/source/dbnelson-03.jpg" alt="" style="filter:var(--flir-photo-filter)"></div>
+    <span class="lbl" style="color:var(--flir-fg-faint)">default</span>
+    <span class="note" style="font-size:var(--flir-text-nano)">grayscale · 1.18 · 0.86</span>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:var(--flir-space-2)">
+    <div class="frame"><img src="../assets/source/dbnelson-03.jpg" alt="" style="filter:var(--flir-photo-filter-corbijn)"><span class="g"></span></div>
+    <span class="lbl" style="color:var(--flir-accent-text)">corbijn + hard grain</span>
+    <span class="note" style="font-size:var(--flir-text-nano)">grayscale · 1.42 · 0.90</span>
+  </div>
+  <div style="display:flex;flex-direction:column;gap:var(--flir-space-2)">
+    <div class="frame"><img src="../assets/source/dbnelson-03.jpg" alt="" style="filter:var(--flir-photo-filter-figure)"></div>
+    <span class="lbl" style="color:var(--flir-fg-faint)">figure</span>
+    <span class="note" style="font-size:var(--flir-text-nano)">grayscale · 1.28 · 0.82</span>
+  </div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:var(--flir-space-4);border-top:var(--flir-rule);padding-top:var(--flir-space-5)">
+  <span class="lbl" style="color:var(--flir-accent-text)">At the camera — wide angle</span>
+  <div class="spec"><span class="lbl">Focal length</span><p class="note">24–35mm full-frame. Below 24mm the distortion stops reading as a point of view and starts reading as a mistake.</p></div>
+  <div class="spec"><span class="lbl">Distance</span><p class="note">Close. The wide lens only distorts if the subject is inside a metre or so — a 28mm shot from across the room is just a wide shot.</p></div>
+  <div class="spec"><span class="lbl">Verticals</span><p class="note">Let them converge. Tilt the camera and keep the keystoning. Do not correct it in post.</p></div>
+  <div class="spec"><span class="lbl">Horizon</span><p class="note">High or absent. The subject sits low in a large field of sky, wall or black.</p></div>
+  <div class="spec"><span class="lbl">Edges</span><p class="note">Stretched limbs and hands at the frame edge are the point, not a flaw. Frame so something is being pulled.</p></div>
+  <div class="spec"><span class="lbl">Framing</span><p class="note">Off-centre and loose. Leave the dead space; it is where the type goes.</p></div>
+</div>
+
+<div style="display:flex;flex-direction:column;gap:var(--flir-space-4);border-top:var(--flir-rule);padding-top:var(--flir-space-5)">
+  <span class="lbl" style="color:var(--flir-accent-text)">In the render — grain</span>
+  <div class="spec"><span class="lbl">Filter</span><p class="note"><code>--flir-photo-filter-corbijn</code> — grayscale, contrast 1.42, brightness 0.90. Blacks crush, midtones pull apart, highlights hold just short of blowing.</p></div>
+  <div class="spec"><span class="lbl">Grain</span><p class="note"><code>--flir-grain-hard</code> — 2px, roughly three times the density of the default. At this weight grain is a visible material, not a texture hint.</p></div>
+  <div class="spec"><span class="lbl">Order</span><p class="note">Filter on the image, grain in a sibling layer above it, type above that. <strong>Grain never sits over type and never touches the mark.</strong></p></div>
+  <div class="spec"><span class="lbl">Where</span><p class="note">Hero fields on theflir.com, the gig poster, the CD jacket front. Not on Instagram feed posts — the platform's own compression fights it and the result reads as artefacting.</p></div>
+</div>
+
+<div class="dev"><b>Limit of the medium</b>Wide-angle distortion is a shooting decision. There is no token for it and no CSS that produces it honestly — a transform applied to an undistorted photograph looks like a transform. When commissioning or selecting photography, the specification above is the deliverable; the system only carries the grain half.</div>
+
+<p class="note" style="border-top:var(--flir-rule);padding-top:var(--flir-space-4)">See also GDL-06 Figure Photography, which governs pose, light and concealment. GDL-07 governs the lens and the render.</p>
+</div></body></html>

@@ -1,0 +1,69 @@
+/* THE FLIR — theflir.com layout.
+   Only layout lives here: page padding, grid tracks, hero heights and the
+   type sizes that have to change between desktop and phone. Colour, rule
+   weight and family all still come from the tokens.
+   Breakpoint: 720px. There is one. */
+
+.pg { padding: var(--flir-space-8) var(--flir-space-7) var(--flir-space-9); }
+.pg-tight { padding: var(--flir-space-8) var(--flir-space-7); }
+
+.site-head { padding: var(--flir-space-4) var(--flir-space-7); }
+.site-nav { display: flex; gap: var(--flir-space-6); }
+.site-foot { padding: var(--flir-space-7); }
+.head-cta { display: inline; }
+
+.hero { height: 620px; }
+.hero-pad { padding: var(--flir-space-8) var(--flir-space-7); }
+.wm-hero { font-size: 132px; }
+.hero-rule { width: 320px; }
+.hero-lede { max-width: 46ch; font-size: var(--flir-text-lead); }
+
+.split { display: grid; grid-template-columns: 1.1fr 1fr; gap: var(--flir-space-8); }
+.cols-2 { display: grid; grid-template-columns: repeat(2, 1fr); gap: var(--flir-space-5); }
+.cols-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--flir-space-5); }
+.cols-4 { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--flir-space-5) var(--flir-space-4); }
+.photo-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--flir-space-2); }
+.credits { display: grid; grid-template-columns: 1fr 1fr; gap: var(--flir-space-2) var(--flir-space-7); }
+
+.release-brief { display: grid; grid-template-columns: 200px 1fr; gap: var(--flir-space-6); align-items: start; }
+.release-detail { display: grid; grid-template-columns: 340px 1fr; gap: var(--flir-space-8); align-items: start; }
+.release-head { font-size: var(--flir-text-display); }
+
+.show-row { display: grid; grid-template-columns: 120px 1fr 1fr 120px; gap: var(--flir-space-5); align-items: center; }
+.bandcamp-block { display: flex; gap: var(--flir-space-5); align-items: center; }
+.empty-state { padding: var(--flir-space-8); }
+.empty-head { font-size: var(--flir-text-h1); }
+
+/* Mobile layout. Applied by the .narrow class, which index.html adds on its
+   own below 720px and mobile.html carries unconditionally — so the phone view
+   renders correctly inside a preview frame of any width. */
+
+  .narrow .pg { padding: var(--flir-space-6) var(--flir-space-4) var(--flir-space-8); }
+  .narrow .pg-tight { padding: var(--flir-space-6) var(--flir-space-4); }
+
+  .narrow .site-head { padding: var(--flir-space-3) var(--flir-space-4); }
+  .narrow .site-nav { gap: var(--flir-space-4); }
+  .narrow .site-foot { padding: var(--flir-space-6) var(--flir-space-4); }
+  /* The Bandcamp link leaves the header on phone — it is already the
+     primary action in the footer and on every release. */
+  .narrow .head-cta { display: none; }
+
+  .narrow .hero { height: 560px; }
+  .narrow .hero-pad { padding: var(--flir-space-6) var(--flir-space-4); }
+  .narrow .wm-hero { font-size: 68px; }
+  .narrow .hero-rule { width: 160px; }
+  .narrow .hero-lede { max-width: none; font-size: var(--flir-text-body); }
+
+  .narrow .split, .narrow .cols-2, .narrow .cols-3, .narrow .credits,
+  .narrow .release-brief, .narrow .release-detail { grid-template-columns: 1fr; gap: var(--flir-space-6); }
+  .narrow .cols-4, .narrow .photo-grid { grid-template-columns: repeat(2, 1fr); }
+  .narrow .release-head { font-size: var(--flir-text-h1); }
+
+  /* Date and city on one line, venue under it. */
+  .narrow .show-row { grid-template-columns: 1fr auto; gap: var(--flir-space-2) var(--flir-space-4); }
+  .narrow .show-row > :nth-child(2) { grid-column: 1 / -1; order: 3; }
+
+  .narrow .bandcamp-block { flex-direction: column; align-items: flex-start; }
+  .narrow .empty-state { padding: var(--flir-space-6); }
+  .narrow .empty-head { font-size: var(--flir-text-h2); }
+

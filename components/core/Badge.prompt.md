@@ -13,7 +13,7 @@ format or date**. They are never interactive and never carry prose.
 | `hot` | Live/urgent status — `OUT NOW`, `ON SALE`, `SOLD OUT` |
 | `outline` | Secondary red status — `PRE-SAVE`, `LIMITED` |
 | `solid` | Inverted, for use over photography |
-| `quiet` | Neutral facts — `CD`, `LP`, `TF-001`, `41:22` |
+| `quiet` | Neutral facts — `CD`, `LP`, `suture8-01`, `41:22` |
 
 ## Rules
 - Maximum **two words**, always uppercase, always mono at `--flir-text-nano`.

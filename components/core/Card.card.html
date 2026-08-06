@@ -1,99 +1,25 @@
-<!doctype html>
-<html lang="en" data-flir-theme="ink">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>THE FLIR — Card</title>
-<link rel="stylesheet" href="../../tokens/color.css">
-<link rel="stylesheet" href="../../tokens/type.css">
-<link rel="stylesheet" href="../../tokens/layout.css">
-<style>
-  html,body{margin:0;background:var(--flir-bg);color:var(--flir-fg);
-    font-family:var(--flir-font-body);-webkit-font-smoothing:antialiased;}
-  a{color:var(--flir-accent-text);text-decoration:none;}
-  .card{padding:var(--flir-space-6);display:flex;flex-direction:column;gap:var(--flir-space-5);}
-  .card-head{display:flex;align-items:baseline;justify-content:space-between;gap:var(--flir-space-4);
-    border-bottom:var(--flir-rule);padding-bottom:var(--flir-space-3);}
-  .card-title{font-family:var(--flir-font-headline);
-    font-variation-settings:'wdth' var(--flir-wdth-wide),'wght' var(--flir-fw-bold);
-    font-size:var(--flir-text-h3);line-height:var(--flir-lh-tight);text-transform:uppercase;margin:0;}
-  .card-id{font-family:var(--flir-font-data);font-size:var(--flir-text-nano);
-    letter-spacing:var(--flir-ls-wider);color:var(--flir-fg-faint);text-transform:uppercase;}
-  .lbl{font-family:var(--flir-font-data);font-weight:var(--flir-fw-medium);font-size:var(--flir-text-micro);
-    letter-spacing:var(--flir-ls-wider);text-transform:uppercase;color:var(--flir-fg-muted);}
-  .note{font-size:var(--flir-text-small);line-height:var(--flir-lh-body);color:var(--flir-fg-muted);
-    max-width:64ch;text-wrap:pretty;margin:0;}
-  .note strong{color:var(--flir-fg);font-weight:var(--flir-fw-bold);}
-  .dev{border-left:var(--flir-border-mark) solid var(--flir-accent);padding-left:var(--flir-space-4);
-    font-family:var(--flir-font-data);font-size:var(--flir-text-small);line-height:var(--flir-lh-body);
-    color:var(--flir-fg-muted);}
-  .dev b{color:var(--flir-accent-text);font-weight:var(--flir-fw-medium);letter-spacing:var(--flir-ls-wide);
-    text-transform:uppercase;display:block;font-size:var(--flir-text-nano);margin-bottom:var(--flir-space-1);}
-  .row{display:flex;gap:var(--flir-space-4);flex-wrap:wrap;align-items:center;}
-  .bench{border:var(--flir-rule);padding:var(--flir-space-5);background:var(--flir-surface);
-    display:flex;flex-direction:column;gap:var(--flir-space-4);}
-
-    .c{background:var(--flir-surface);border:var(--flir-rule);border-radius:var(--flir-radius-none);
-      box-shadow:var(--flir-shadow-none);display:flex;flex-direction:column;}
-    .c-accent{border-top:var(--flir-border-heavy) solid var(--flir-accent);}
-    .c-head{display:flex;justify-content:space-between;gap:var(--flir-space-4);
-      padding:var(--flir-space-4) var(--flir-space-5);border-bottom:var(--flir-rule);
-      font-family:var(--flir-font-data);font-size:var(--flir-text-nano);
-      letter-spacing:var(--flir-ls-wider);text-transform:uppercase;color:var(--flir-fg-faint);}
-    .c-status{color:var(--flir-accent-text);}
-    .c-body{padding:var(--flir-space-5);display:flex;flex-direction:column;gap:var(--flir-space-3);}
-    .c-title{margin:0;font-family:var(--flir-font-headline);
-      font-variation-settings:'wdth' var(--flir-wdth-wide),'wght' var(--flir-fw-bold);
-      font-size:var(--flir-text-h3);line-height:var(--flir-lh-tight);text-transform:uppercase;color:var(--flir-fg);}
-    .c-foot{border-top:var(--flir-rule);padding:var(--flir-space-4) var(--flir-space-5);
-      display:grid;gap:var(--flir-space-2);font-family:var(--flir-font-data);
-      font-size:var(--flir-text-small);line-height:var(--flir-lh-data);font-variant-numeric:tabular-nums;}
-    .c-row{display:flex;justify-content:space-between;gap:var(--flir-space-4);}
-    .c-row span:first-child{color:var(--flir-fg-faint);text-transform:uppercase;letter-spacing:var(--flir-ls-wide);}
-    .c-row span:last-child{color:var(--flir-fg-muted);}
-    .c-media{height:150px;background:
-      linear-gradient(0deg,rgba(0,0,0,.55),rgba(0,0,0,.2)),
-      url('../../assets/source/dbnelson-03.jpg') center/cover;
-      filter:var(--flir-photo-filter);position:relative;display:flex;align-items:flex-end;padding:var(--flir-space-3);}
-    .c-media span{font-family:var(--flir-font-data);font-size:var(--flir-text-nano);
-      letter-spacing:var(--flir-ls-wider);color:var(--flir-fg-muted);text-transform:uppercase;}
-</style>
-</head>
-<body>
-<div class="card">
-  <div class="card-head"><h1 class="card-title">Card</h1><span class="card-id">CMP-02 · components/core/Card.jsx</span></div>
-  <p class="note">Three fixed zones separated by rules: mono <strong>index header</strong>, Archivo-wide <strong>title</strong>, optional <strong>data footer</strong>. The red top rule marks the one card in focus.</p>
-
-  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--flir-space-5);">
-    <article class="c c-accent">
-      <div class="c-head"><span>LP 01</span><span class="c-status">Out now</span></div>
-      <div class="c-body"><h3 class="c-title">Dead air between two signals</h3></div>
-      <div class="c-foot">
-        <div class="c-row"><span>Released</span><span>14.03.26</span></div>
-        <div class="c-row"><span>Tracks</span><span>09</span></div>
-        <div class="c-row"><span>Runtime</span><span>41:22</span></div>
-      </div>
-    </article>
-
-    <article class="c">
-      <div class="c-media"><span>Live · DB Nelson</span></div>
-      <div class="c-head"><span>Live · 04</span></div>
-      <div class="c-body"><h3 class="c-title">Moth Club, London</h3></div>
-      <div class="c-foot">
-        <div class="c-row"><span>Date</span><span>22.05.26</span></div>
-        <div class="c-row"><span>Doors</span><span>20:00</span></div>
-      </div>
-    </article>
-
-    <article class="c">
-      <div class="c-head"><span>Merch · 02</span><span class="c-status">Low stock</span></div>
-      <div class="c-body">
-        <h3 class="c-title">Thermal tee</h3>
-        <p class="note">Screen print, single red pass on black. Eyeliner Media fulfilment.</p>
-      </div>
-      <div class="c-foot"><div class="c-row"><span>Price</span><span>28.00</span></div></div>
-    </article>
+<!-- @dsCard group="Components" viewport="700x540" name="Card" subtitle="Framed listing block — index, title, data footer" -->
+<!DOCTYPE html><html lang="en" data-flir-theme="ink"><head><meta charset="utf-8"><title>Card</title>
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>html,body{margin:0}body{background:var(--flir-bg);color:var(--flir-fg);font-family:var(--flir-font-body);padding:var(--flir-space-5);height:540px;box-sizing:border-box;overflow:hidden}.lbl{font-family:var(--flir-font-data);font-size:var(--flir-text-nano);letter-spacing:var(--flir-ls-wider);text-transform:uppercase;color:var(--flir-fg-faint);margin-bottom:var(--flir-space-3)}.row{display:flex;align-items:center;gap:var(--flir-space-4);flex-wrap:wrap}.grid{display:grid;gap:var(--flir-space-5)}a{color:var(--flir-accent-text)}a:hover{color:var(--flir-red-hot)}</style>
+</head><body><div id="root"></div>
+<script type="text/babel">
+const { Card, Badge, Button } = window.THEFLIRDesignSystem_21318e;
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <div className="grid" style={{gridTemplateColumns:'1fr 1fr',alignItems:'start'}}>
+    <Card accent index="suture8-01" status="Out now" title="Human Butterfly"
+      media={<img src="../../assets/source/moCover02.png" alt="Cover" style={{width:'100%',display:'block',aspectRatio:'16/9',objectFit:'cover'}} />}
+      meta={[['Format','CD · Digital'],['Runtime','38:04'],['Released','2026.09.12']]}>
+      <Button variant="primary" size="sm">Listen</Button>
+    </Card>
+    <Card index="Live 04" title="Silverlake Lounge"
+      meta={[['Date','2026.10.27'],['Doors','20:00'],['Age','21+']]}>
+      <div className="row"><Badge tone="outline">Los Angeles</Badge><Badge tone="quiet">Support</Badge></div>
+    </Card>
   </div>
-
-  <div class="dev"><b>Note</b>Photography passes through <code>--flir-photo-filter</code> without exception — grayscale, contrast 1.18, brightness 0.86. The archive was shot under green, magenta and sodium stage light; desaturating is what makes the set read as one body of work.</div>
-</div></body></html>
+);
+</script></body></html>

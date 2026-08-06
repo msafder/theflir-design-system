@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<!-- @template name="Gig Poster" description="18×24in poster master — figure field, wordmark, one red rule, mono data block." -->
+<helmet>
+<script src="./ds-base.js"></script>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>html,body{margin:0;background:#0A0A0A}</style>
+</helmet>
+<div style="width:1080px;height:1440px;position:relative;background:#0A0A0A;overflow:hidden;color:#F2F2F2;font-family:var(--flir-font-body)">
+<img src="../../assets/source/dbnelson-09.jpg" alt="" style="position:absolute;inset:0;width:100%;height:100%;object-fit:cover;filter:var(--flir-photo-filter-figure)">
+<div style="position:absolute;inset:0;background:var(--flir-crush)"></div>
+<div style="position:absolute;inset:0;background-image:var(--flir-grain);opacity:0.8"></div>
+<div style="position:absolute;inset:0;background:var(--flir-vignette)"></div>
+<div style="position:absolute;inset:56px;display:flex;flex-direction:column;justify-content:space-between">
+<div style="display:flex;justify-content:space-between;align-items:baseline;font-family:var(--flir-font-data);font-size:20px;letter-spacing:0.16em;text-transform:uppercase;color:#8A8A8A">
+<span>{{ presenter }}</span><span style="color:#E11414">{{ status }}</span>
+</div>
+<div style="display:flex;flex-direction:column;gap:40px">
+<div style="display:inline-flex;align-items:baseline;line-height:1;text-transform:uppercase;color:#F2F2F2;white-space:nowrap">
+<span style="font-family:var(--flir-font-wordmark-the);font-size:130px">The</span><span style="font-family:var(--flir-font-wordmark-flir);font-size:260px">Flir</span>
+</div>
+<div style="height:8px;background:#C00000;width:100%"></div>
+<div style="display:flex;flex-direction:column;gap:14px;font-family:var(--flir-font-display);text-transform:uppercase;line-height:1">
+<div style="font-size:104px">{{ venue }}</div>
+<div style="font-size:104px;color:#8A8A8A">{{ city }}</div>
+</div>
+<div style="display:grid;grid-template-columns:repeat(3,1fr);gap:24px;font-family:var(--flir-font-data);font-size:26px;line-height:1.8;color:#C8C8C8;border-top:1px solid #3F3F3F;padding-top:28px">
+<div><div style="font-size:18px;letter-spacing:0.16em;color:#585858;text-transform:uppercase">Date</div>{{ date }}</div>
+<div><div style="font-size:18px;letter-spacing:0.16em;color:#585858;text-transform:uppercase">Doors</div>{{ doors }}</div>
+<div><div style="font-size:18px;letter-spacing:0.16em;color:#585858;text-transform:uppercase">Tickets</div>{{ price }}</div>
+</div>
+<div style="font-family:var(--flir-font-data);font-size:24px;letter-spacing:0.08em;text-transform:uppercase;color:#8A8A8A">{{ support }}</div>
+</div>
+<div style="font-family:var(--flir-font-data);font-size:18px;letter-spacing:0.16em;text-transform:uppercase;color:#585858">THE FLIR · EYELINER MEDIA · MMXXVI</div>
+</div>
+</div>
+</x-dc>
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1080,&quot;height&quot;:1440},&quot;presenter&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;EYELINER MEDIA PRESENTS&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;status&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;TICKETS ON SALE&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Header&quot;},&quot;venue&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Silverlake Lounge&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Show&quot;},&quot;city&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Los Angeles&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Show&quot;},&quot;date&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;27.10.26&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Show&quot;},&quot;doors&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;20:00&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Show&quot;},&quot;price&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;$15 · 21+&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Show&quot;},&quot;support&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;With support · TBA&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Show&quot;}}">
+class Component extends DCLogic {
+  renderVals() {
+    const p = this.props;
+    return {
+      presenter: p.presenter ?? 'EYELINER MEDIA PRESENTS',
+      status: p.status ?? 'TICKETS ON SALE',
+      venue: p.venue ?? 'Silverlake Lounge',
+      city: p.city ?? 'Los Angeles',
+      date: p.date ?? '27.10.26',
+      doors: p.doors ?? '20:00',
+      price: p.price ?? '$15 · 21+',
+      support: p.support ?? 'With support · TBA',
+    };
+  }
+}
+</script>
+</body>
+</html>

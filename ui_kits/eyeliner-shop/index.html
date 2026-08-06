@@ -1,0 +1,43 @@
+<!-- @dsCard group="Merch" viewport="1440x900" name="Shop — THE FLIR collection" subtitle="eyeliner.media · collection, product, cart" -->
+<!DOCTYPE html><html lang="en" data-flir-theme="ink"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>THE FLIR — Eyeliner Media</title>
+<link rel="stylesheet" href="../../styles.css">
+<link rel="stylesheet" href="shop.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>html,body{margin:0}body{background:var(--flir-bg);color:var(--flir-fg);font-family:var(--flir-font-body);-webkit-font-smoothing:antialiased}
+a{color:var(--flir-accent-text)}a:hover{color:var(--flir-fg)}
+::selection{background:var(--flir-accent);color:var(--flir-accent-fg)}
+button:focus-visible,a:focus-visible{outline:var(--flir-border-mark) solid var(--flir-focus);outline-offset:2px}</style>
+</head><body><div id="root"></div>
+<script>
+const setNarrow = () => document.body.classList.toggle('narrow', window.innerWidth <= 720);
+window.addEventListener('resize', setNarrow); setNarrow();
+</script>
+<script src="data.js"></script>
+<script type="text/babel" src="../theflir-com/Chrome.jsx"></script>
+<script type="text/babel" src="ShopScreens.jsx"></script>
+<script type="text/babel">
+function Shop() {
+  const [route, setRoute] = React.useState('collection');
+  const [cart, setCart] = React.useState([]);
+  const [cartOpen, setCartOpen] = React.useState(false);
+  const go = (r) => { setRoute(r); window.scrollTo(0, 0); };
+  const addToCart = (item) => { setCart(c => [...c, item]); setCartOpen(true); };
+  const remove = (n) => setCart(c => c.filter((_, i) => i !== n));
+  return (
+    <div style={{ minHeight: '100vh', display: 'flex', flexDirection: 'column' }}>
+      <ShopHeader route={route} go={go} cartCount={cart.length} openCart={() => setCartOpen(true)} />
+      <div style={{ flex: 1 }}>
+        {route === 'collection'
+          ? <CollectionScreen go={go} />
+          : <ProductScreen id={route} go={go} addToCart={addToCart} superseded={cartOpen} />}
+      </div>
+      <SiteFooter />
+      {cartOpen && <CartDrawer items={cart} close={() => setCartOpen(false)} remove={remove} />}
+    </div>
+  );
+}
+ReactDOM.createRoot(document.getElementById('root')).render(<Shop />);
+</script></body></html>

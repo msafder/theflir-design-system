@@ -1,0 +1,18 @@
+/* THE FLIR collection on eyeliner.media — layout only.
+   Same rule as the site kit: colour, rule weight and family come from tokens.
+   One breakpoint, at 720px, driven by the .narrow class. */
+
+.shop-head { padding: var(--flir-space-4) var(--flir-space-7); }
+.pg { padding: var(--flir-space-8) var(--flir-space-7) var(--flir-space-9); }
+.grid-products { display: grid; grid-template-columns: repeat(3, 1fr); gap: var(--flir-space-5); align-items: start; }
+.product-detail { display: grid; grid-template-columns: 1.15fr 1fr; gap: var(--flir-space-8); align-items: start; }
+.thumbs { display: grid; grid-template-columns: repeat(4, 1fr); gap: var(--flir-space-2); }
+.spec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: var(--flir-space-2) var(--flir-space-6); }
+.cart { width: 420px; }
+
+.narrow .shop-head { padding: var(--flir-space-3) var(--flir-space-4); }
+.narrow .pg { padding: var(--flir-space-6) var(--flir-space-4) var(--flir-space-8); }
+.narrow .grid-products,
+.narrow .product-detail,
+.narrow .spec-grid { grid-template-columns: 1fr; gap: var(--flir-space-6); }
+.narrow .cart { width: 100%; }

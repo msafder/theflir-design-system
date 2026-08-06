@@ -13,10 +13,12 @@
  *   meta     array of [label, value] pairs rendered as a data footer
  *   accent   boolean — draws the 4px red rule at the top
  *   media    optional node (photo). Receives --flir-photo-filter.
+ *   mediaFilter  override the media filter. Use 'none' for artwork that IS
+ *                the palette — release covers, the heat-map merch prints.
  */
 import React from 'react';
 
-export function Card({ index, status, title, meta = [], accent = false, media, children }) {
+export function Card({ index, status, title, meta = [], accent = false, media, mediaFilter = 'var(--flir-photo-filter)', children }) {
   return (
     <article
       style={{
@@ -32,7 +34,7 @@ export function Card({ index, status, title, meta = [], accent = false, media, c
       }}
     >
       {media && (
-        <div style={{ position: 'relative', overflow: 'hidden', filter: 'var(--flir-photo-filter)' }}>
+        <div style={{ position: 'relative', overflow: 'hidden', filter: mediaFilter }}>
           {media}
         </div>
       )}
@@ -55,7 +57,7 @@ export function Card({ index, status, title, meta = [], accent = false, media, c
         {status && <span style={{ color: 'var(--flir-accent-text)' }}>{status}</span>}
       </header>
 
-      <div style={{ padding: 'var(--flir-space-5)', display: 'flex', flexDirection: 'column', gap: 'var(--flir-space-3)' }}>
+      <div style={{ padding: 'var(--flir-space-5)', display: 'flex', flexDirection: 'column', alignItems: 'flex-start', gap: 'var(--flir-space-3)' }}>
         <h3
           style={{
             margin: 0,

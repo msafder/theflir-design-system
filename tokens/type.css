@@ -47,22 +47,22 @@
   --flir-font-data:    'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
 
   /* Wordmark ratio — FLIR is exactly 2× THE. Locked. */
-  --flir-wordmark-ratio: 0.5;
+  --flir-wordmark-ratio: 0.5; /* @kind other */
 
   /* ---- Width axis (Archivo is variable) --------------------
      Wide is the house voice for headlines — it reads as a
      nameplate, not a poster shout. Condensed is reserved for
      the gig-poster master where vertical space is the
      constraint. */
-  --flir-wdth-wide:  118;
-  --flir-wdth-norm:  100;
-  --flir-wdth-cond:  78;
+  --flir-wdth-wide:  118; /* @kind other */
+  --flir-wdth-norm:  100; /* @kind other */
+  --flir-wdth-cond:  78; /* @kind other */
 
   /* ---- Weight --------------------------------------------- */
-  --flir-fw-regular: 400;
-  --flir-fw-medium:  500;
-  --flir-fw-bold:    700;
-  --flir-fw-black:   900;
+  --flir-fw-regular: 400; /* @kind other */
+  --flir-fw-medium:  500; /* @kind other */
+  --flir-fw-bold:    700; /* @kind other */
+  --flir-fw-black:   900; /* @kind other */
 
   /* ---- Size scale — 1.4 ratio, rounded to whole px --------- */
   --flir-text-nano:    10px;  /* plate numbers, bleed marks */
@@ -77,26 +77,26 @@
   --flir-text-mega:   120px;  /* poster + CD jacket only */
 
   /* ---- Line height ---------------------------------------- */
-  --flir-lh-solid: 1;
-  --flir-lh-tight: 1.05;
-  --flir-lh-snug:  1.25;
-  --flir-lh-body:  1.6;
-  --flir-lh-data:  1.8;   /* mono rows need air to scan */
+  --flir-lh-solid: 1; /* @kind other */
+  --flir-lh-tight: 1.05; /* @kind other */
+  --flir-lh-snug:  1.25; /* @kind other */
+  --flir-lh-body:  1.6; /* @kind other */
+  --flir-lh-data:  1.8; /* @kind other */   /* mono rows need air to scan */
 
   /* ---- Tracking -------------------------------------------
      Everything uppercase gets tracked. Nothing lowercase does. */
-  --flir-ls-tight:  -0.02em;
-  --flir-ls-none:    0;
-  --flir-ls-wide:    0.08em;
-  --flir-ls-wider:   0.16em;
-  --flir-ls-widest:  0.32em;  /* the wordmark lockup only */
+  --flir-ls-tight:  -0.02em; /* @kind other */
+  --flir-ls-none:    0; /* @kind other */
+  --flir-ls-wide:    0.08em; /* @kind other */
+  --flir-ls-wider:   0.16em; /* @kind other */
+  --flir-ls-widest:  0.32em; /* @kind other */  /* the wordmark lockup only */
 
   /* ---- Roles ----------------------------------------------
      Composite shorthands so components never assemble type
      by hand. Applied via the .flir-type-* classes below. */
-  --flir-case-label: uppercase;
-  --flir-case-title: uppercase;
-  --flir-case-body:  none;
+  --flir-case-label: uppercase; /* @kind other */
+  --flir-case-title: uppercase; /* @kind other */
+  --flir-case-body:  none; /* @kind other */
 }
 
 /* Headline: Archivo Wide 700, uppercase, tight leading.

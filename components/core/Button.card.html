@@ -1,98 +1,30 @@
-<!doctype html>
-<html lang="en" data-flir-theme="ink">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>THE FLIR — Button</title>
-<link rel="stylesheet" href="../../tokens/color.css">
-<link rel="stylesheet" href="../../tokens/type.css">
-<link rel="stylesheet" href="../../tokens/layout.css">
-<style>
-  html,body{margin:0;background:var(--flir-bg);color:var(--flir-fg);
-    font-family:var(--flir-font-body);-webkit-font-smoothing:antialiased;}
-  a{color:var(--flir-accent-text);text-decoration:none;}
-  .card{padding:var(--flir-space-6);display:flex;flex-direction:column;gap:var(--flir-space-5);}
-  .card-head{display:flex;align-items:baseline;justify-content:space-between;gap:var(--flir-space-4);
-    border-bottom:var(--flir-rule);padding-bottom:var(--flir-space-3);}
-  .card-title{font-family:var(--flir-font-headline);
-    font-variation-settings:'wdth' var(--flir-wdth-wide),'wght' var(--flir-fw-bold);
-    font-size:var(--flir-text-h3);line-height:var(--flir-lh-tight);text-transform:uppercase;margin:0;}
-  .card-id{font-family:var(--flir-font-data);font-size:var(--flir-text-nano);
-    letter-spacing:var(--flir-ls-wider);color:var(--flir-fg-faint);text-transform:uppercase;}
-  .lbl{font-family:var(--flir-font-data);font-weight:var(--flir-fw-medium);font-size:var(--flir-text-micro);
-    letter-spacing:var(--flir-ls-wider);text-transform:uppercase;color:var(--flir-fg-muted);}
-  .note{font-size:var(--flir-text-small);line-height:var(--flir-lh-body);color:var(--flir-fg-muted);
-    max-width:64ch;text-wrap:pretty;margin:0;}
-  .note strong{color:var(--flir-fg);font-weight:var(--flir-fw-bold);}
-  .dev{border-left:var(--flir-border-mark) solid var(--flir-accent);padding-left:var(--flir-space-4);
-    font-family:var(--flir-font-data);font-size:var(--flir-text-small);line-height:var(--flir-lh-body);
-    color:var(--flir-fg-muted);}
-  .dev b{color:var(--flir-accent-text);font-weight:var(--flir-fw-medium);letter-spacing:var(--flir-ls-wide);
-    text-transform:uppercase;display:block;font-size:var(--flir-text-nano);margin-bottom:var(--flir-space-1);}
-  .row{display:flex;gap:var(--flir-space-4);flex-wrap:wrap;align-items:center;}
-  .bench{border:var(--flir-rule);padding:var(--flir-space-5);background:var(--flir-surface);
-    display:flex;flex-direction:column;gap:var(--flir-space-4);}
-
-    .b{display:inline-flex;align-items:center;gap:var(--flir-space-3);
-      font-family:var(--flir-font-data);font-weight:var(--flir-fw-medium);
-      letter-spacing:var(--flir-ls-wider);text-transform:uppercase;
-      line-height:var(--flir-lh-snug);border-radius:var(--flir-radius-none);
-      box-shadow:var(--flir-shadow-none);cursor:pointer;
-      transition:background var(--flir-transition),color var(--flir-transition),border-color var(--flir-transition);}
-    .b-sm{padding:var(--flir-space-2) var(--flir-space-3);font-size:var(--flir-text-nano);}
-    .b-md{padding:var(--flir-space-3) var(--flir-space-5);font-size:var(--flir-text-micro);}
-    .b-lg{padding:var(--flir-space-4) var(--flir-space-6);font-size:var(--flir-text-small);}
-    .b-primary{background:var(--flir-accent);color:var(--flir-accent-fg);border:var(--flir-border-mark) solid var(--flir-accent);}
-    .b-primary:hover{background:var(--flir-accent-hover);border-color:var(--flir-accent-hover);}
-    .b-primary:active{background:var(--flir-red-dim);border-color:var(--flir-red-dim);}
-    .b-ghost{background:transparent;color:var(--flir-fg);border:var(--flir-border-mark) solid var(--flir-line-strong);}
-    .b-ghost:hover{border-color:var(--flir-fg);}
-    .b-quiet{background:transparent;color:var(--flir-fg-muted);border:var(--flir-border-mark) solid transparent;}
-    .b-quiet:hover{border-color:var(--flir-line);color:var(--flir-fg);}
-    .b:focus-visible{outline:var(--flir-border-mark) solid var(--flir-focus);outline-offset:2px;}
-    .b[disabled]{color:var(--flir-fg-faint);background:transparent;border-color:var(--flir-line);cursor:not-allowed;}
-    .b .meta{opacity:.7;letter-spacing:var(--flir-ls-wide);}
-</style>
-</head>
-<body>
-<div class="card">
-  <div class="card-head"><h1 class="card-title">Button</h1><span class="card-id">CMP-01 · components/core/Button.jsx</span></div>
-  <p class="note">Square, rule-bound, mono label. <strong>One primary per view</strong> — it is the red element on that surface.</p>
-
-  <div class="bench">
-    <span class="lbl">Variants · md</span>
-    <div class="row">
-      <button class="b b-md b-primary">Listen</button>
-      <button class="b b-md b-ghost">Tickets</button>
-      <button class="b b-md b-quiet">Merch</button>
-      <button class="b b-md b-ghost" disabled>Sold out</button>
-    </div>
+<!-- @dsCard group="Components" viewport="700x310" name="Button" subtitle="Three variants, three sizes, mono label, square" -->
+<!DOCTYPE html><html lang="en" data-flir-theme="ink"><head><meta charset="utf-8"><title>Button</title>
+<link rel="stylesheet" href="../../styles.css">
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+<script src="../../_ds_bundle.js"></script>
+<style>html,body{margin:0}body{background:var(--flir-bg);color:var(--flir-fg);font-family:var(--flir-font-body);padding:var(--flir-space-5);height:310px;box-sizing:border-box;overflow:hidden}.lbl{font-family:var(--flir-font-data);font-size:var(--flir-text-nano);letter-spacing:var(--flir-ls-wider);text-transform:uppercase;color:var(--flir-fg-faint);margin-bottom:var(--flir-space-3)}.row{display:flex;align-items:center;gap:var(--flir-space-4);flex-wrap:wrap}.grid{display:grid;gap:var(--flir-space-5)}a{color:var(--flir-accent-text)}a:hover{color:var(--flir-red-hot)}</style>
+</head><body><div id="root"></div>
+<script type="text/babel">
+const { Button } = window.THEFLIRDesignSystem_21318e;
+ReactDOM.createRoot(document.getElementById('root')).render(
+  <div className="grid" style={{gridTemplateColumns:'1fr'}}>
+    <div><div className="lbl">Variant</div><div className="row">
+      <Button variant="primary">Listen</Button>
+      <Button variant="ghost">Tour dates</Button>
+      <Button variant="quiet">Archive</Button>
+    </div></div>
+    <div><div className="lbl">Size · sm / md / lg</div><div className="row">
+      <Button size="sm" variant="ghost">Buy</Button>
+      <Button size="md" variant="ghost">Buy</Button>
+      <Button size="lg" variant="ghost">Buy</Button>
+    </div></div>
+    <div><div className="lbl">Meta · disabled</div><div className="row">
+      <Button variant="ghost" meta="04:12">Play</Button>
+      <Button variant="quiet" disabled style={{opacity:0.4,cursor:'not-allowed'}}>Sold out</Button>
+    </div></div>
   </div>
-
-  <div class="bench">
-    <span class="lbl">Sizes</span>
-    <div class="row">
-      <button class="b b-sm b-primary">Pre-save</button>
-      <button class="b b-md b-primary">Pre-save</button>
-      <button class="b b-lg b-primary">Pre-save</button>
-    </div>
-  </div>
-
-  <div class="bench">
-    <span class="lbl">Meta slot</span>
-    <div class="row">
-      <button class="b b-md b-primary">Listen <span class="meta">41:22</span></button>
-      <button class="b b-md b-ghost">CD <span class="meta">12.00</span></button>
-      <button class="b b-md b-ghost">London <span class="meta">22.05.26</span></button>
-    </div>
-  </div>
-
-  <div class="bench" data-flir-theme="chalk" style="background:var(--flir-bg);color:var(--flir-fg);">
-    <span class="lbl">Theme · chalk</span>
-    <div class="row">
-      <button class="b b-md b-primary">Listen</button>
-      <button class="b b-md b-ghost">Tickets</button>
-      <button class="b b-md b-quiet">Merch</button>
-    </div>
-  </div>
-</div></body></html>
+);
+</script></body></html>

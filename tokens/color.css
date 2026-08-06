@@ -32,6 +32,18 @@
   --flir-red-dim:  #7A0000;  /* large flat fills behind white text */
   --flir-red-wash: rgba(192, 0, 0, 0.12);
 
+  /* ---- Archival -------------------------------------------
+     Sampled from the suture8-01 cover (2002). These are a RECORD
+     of what the band already printed, not additions to the
+     palette. Use them only when reproducing or extending that
+     artwork — a reissue, a suture8-01 merch run, an anniversary
+     post. Never as a general accent: the brand red is #C00000
+     and this oxide is a different, warmer, duller colour that
+     will fight it if the two appear together. */
+  --flir-red-oxide: #9E373C;  /* cover ground */
+  --flir-red-oxide-deep: #703130;  /* torn edge frame */
+  --flir-bone: #C9977A;  /* torn paper strip behind the title */
+
   --flir-white: #FFFFFF;
   --flir-black: #000000;
 
@@ -42,29 +54,35 @@
     0deg,
     rgba(255, 255, 255, 0.028) 0 1px,
     transparent 1px 4px
-  );
+  ); /* @kind other */
   --flir-vignette: radial-gradient(
     120% 100% at 50% 45%,
     transparent 40%,
     rgba(0, 0, 0, 0.55) 100%
-  );
+  ); /* @kind other */
   /* Photo treatment. The band's live photography was shot under
      whatever colour the venue's lighting rig happened to be —
      green, magenta, red, sodium. Desaturating to the grey ramp is
      what makes a folder of unrelated shots read as one body of
      work, and it leaves #C00000 as the only colour in the frame. */
-  --flir-photo-filter: grayscale(1) contrast(1.18) brightness(0.86);
+  --flir-photo-filter: grayscale(1) contrast(1.18) brightness(0.86); /* @kind other */
   /* Exception: shots already lit red (the cover figure, the live
      red-wash frames) keep their colour — they ARE the palette. */
-  --flir-photo-filter-native: contrast(1.12) saturate(0.92) brightness(0.88);
+  --flir-photo-filter-native: contrast(1.12) saturate(0.92) brightness(0.88); /* @kind other */
   /* Figure studies (GDL-06) push harder: the shadows must crush to
      true black so the form emerges with no visible edge. */
-  --flir-photo-filter-figure: grayscale(1) contrast(1.28) brightness(0.82);
+  --flir-photo-filter-figure: grayscale(1) contrast(1.28) brightness(0.82); /* @kind other */
   /* White-hot: the heat map read literally, as on Human Butterfly.
      Produced as a Photoshop gradient map — black → #C00000 → white.
      The CSS value is the screen approximation of that pass. */
-  --flir-photo-filter-hot: grayscale(1) contrast(1.75) brightness(1.22);
-  --flir-heatmap-stops: #000000 0%, #7A0000 28%, #C00000 52%, #F2B3B3 78%, #FFFFFF 100%;
+  --flir-photo-filter-hot: grayscale(1) contrast(1.75) brightness(1.22); /* @kind other */
+  --flir-heatmap-stops: #000000 0%, #7A0000 28%, #C00000 52%, #F2B3B3 78%, #FFFFFF 100%; /* @kind other */
+  /* Corbijn pass. The band named Anton Corbijn's high-contrast grain and
+     wide-angle framing as the reference. Distortion is a SHOOTING decision
+     (see GDL-07) and cannot be faked in CSS; this token carries the render
+     half only — blacks crushed, midtones pulled apart, highlights held just
+     short of blowing. Heavier than --flir-photo-filter, softer than -figure. */
+  --flir-photo-filter-corbijn: grayscale(1) contrast(1.42) brightness(0.9); /* @kind other */
 
   /* ---- Grime ----------------------------------------------
      Reference: the Official Recoil site ("Shunt") — dark,
@@ -75,16 +93,23 @@
   --flir-grain: repeating-conic-gradient(
     rgba(255,255,255,0.035) 0% 25%,
     transparent 0% 50%
-  ) 0 0 / 3px 3px;
+  ) 0 0 / 3px 3px; /* @kind other */
+  /* Hard grain — 2px, roughly 3x the density. Pairs with
+     --flir-photo-filter-corbijn on hero fields and print. At this weight the
+     grain is a visible material, not a texture hint. Never over type. */
+  --flir-grain-hard: repeating-conic-gradient(
+    rgba(255,255,255,0.10) 0% 25%,
+    rgba(0,0,0,0.10) 0% 50%
+  ) 0 0 / 2px 2px; /* @kind other */
   --flir-grime: radial-gradient(
       140% 110% at 22% 12%, rgba(255,255,255,0.06), transparent 46%
     ),
     radial-gradient(
       120% 130% at 82% 88%, rgba(192,0,0,0.14), transparent 52%
-    );
+    ); /* @kind other */
   --flir-crush: linear-gradient(
     0deg, rgba(0,0,0,0.72), rgba(0,0,0,0.30) 55%, rgba(0,0,0,0.78)
-  );
+  ); /* @kind other */
 }
 
 /* ============================================================

@@ -7,7 +7,9 @@ mark, in copy, in file names, in alt text, or in a logo lockup.
 
 - Correct: `THE FLIR`, `THE FLIR · EYELINER MEDIA · MMXXVI`
 - Wrong: `FLIR`, `the flir` (except in URLs: theflir.com, @theflir)
-- Catalogue prefix is `TF-` (e.g. `TF-001`), not `FLIR-`.
+- Catalogue prefix is `suture8-` (e.g. `suture8-01`), not `FLIR-`. This is
+  the number the 2002 CD actually shipped with; the earlier `TF-` scheme was a
+  system invention and is retired. Merch runs `suture8-M01`.
 
 ## References
 - Visual reference: the Official Recoil website (recoil.co.uk / "Shunt") —

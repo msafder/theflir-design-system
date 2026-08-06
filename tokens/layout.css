@@ -31,22 +31,22 @@
 
   /* ---- Borders ---------------------------------------------
      Borders do the work shadows normally would. */
-  --flir-border-hair:  1px;
-  --flir-border-mark:  2px;   /* the boxed FLIR mark */
-  --flir-border-heavy: 4px;   /* poster frames, red rules */
+  --flir-border-hair:  1px; /* @kind other */
+  --flir-border-mark:  2px; /* @kind other */   /* the boxed FLIR mark */
+  --flir-border-heavy: 4px; /* @kind other */   /* poster frames, red rules */
 
-  --flir-rule:        var(--flir-border-hair) solid var(--flir-line);
-  --flir-rule-strong: var(--flir-border-hair) solid var(--flir-line-strong);
-  --flir-rule-accent: var(--flir-border-mark) solid var(--flir-accent);
+  --flir-rule:        var(--flir-border-hair) solid var(--flir-line); /* @kind other */
+  --flir-rule-strong: var(--flir-border-hair) solid var(--flir-line-strong); /* @kind other */
+  --flir-rule-accent: var(--flir-border-mark) solid var(--flir-accent); /* @kind other */
 
   /* ---- Elevation -------------------------------------------
      There is none. Depth is expressed by surface value and
      rule weight, never by a drop shadow. --flir-shadow-none
      is a token so components can state the intent. */
-  --flir-shadow-none: none;
+  --flir-shadow-none: none; /* @kind other */
 
   /* ---- Grid ------------------------------------------------ */
-  --flir-grid-cols:  12;
+  --flir-grid-cols:  12; /* @kind other */
   --flir-gutter:     var(--flir-space-5);
   --flir-page-max:   1200px;
   --flir-page-pad:   var(--flir-space-5);
@@ -55,35 +55,35 @@
   /* ---- Motion ----------------------------------------------
      Linear or ease-out. No bounce, no spring — the instrument
      does not overshoot. */
-  --flir-motion-fast: 120ms;
-  --flir-motion-base: 200ms;
-  --flir-motion-slow: 400ms;
-  --flir-ease:        cubic-bezier(0.2, 0, 0, 1);
-  --flir-ease-linear: linear;
-  --flir-transition:  var(--flir-motion-base) var(--flir-ease);
+  --flir-motion-fast: 120ms; /* @kind other */
+  --flir-motion-base: 200ms; /* @kind other */
+  --flir-motion-slow: 400ms; /* @kind other */
+  --flir-ease:        cubic-bezier(0.2, 0, 0, 1); /* @kind other */
+  --flir-ease-linear: linear; /* @kind other */
+  --flir-transition:  var(--flir-motion-base) var(--flir-ease); /* @kind other */
 
   /* ---- Fixed output sizes ----------------------------------
      Social masters are authored at 1:1 px and scaled for
      preview. Print masters are authored in inches. */
-  --flir-ig-post-w:   1080px;
-  --flir-ig-post-h:   1080px;
-  --flir-ig-story-w:  1080px;
-  --flir-ig-story-h:  1920px;
-  --flir-ig-safe-top:   250px;  /* clear of story UI chrome */
-  --flir-ig-safe-bot:   320px;
-  --flir-reel-crop-h:  1440px;  /* grid crop inside the 1920 cover */
+  --flir-ig-post-w:   1080px; /* @kind other */
+  --flir-ig-post-h:   1080px; /* @kind other */
+  --flir-ig-story-w:  1080px; /* @kind other */
+  --flir-ig-story-h:  1920px; /* @kind other */
+  --flir-ig-safe-top:   250px; /* @kind other */  /* clear of story UI chrome */
+  --flir-ig-safe-bot:   320px; /* @kind other */
+  --flir-reel-crop-h:  1440px; /* @kind other */  /* grid crop inside the 1920 cover */
 
   /* Kunaki CD jacket — verify against their current template
      PDF before upload; these are the working values. */
-  --flir-cd-trim:   4.75in;
-  --flir-cd-bleed:  0.125in;
-  --flir-cd-safe:   0.25in;
-  --flir-cd-dpi:    300;
+  --flir-cd-trim:   4.75in; /* @kind other */
+  --flir-cd-bleed:  0.125in; /* @kind other */
+  --flir-cd-safe:   0.25in; /* @kind other */
+  --flir-cd-dpi:    300; /* @kind other */
 
   /* Gig poster — 18 x 24in at 150dpi */
-  --flir-poster-w:  18in;
-  --flir-poster-h:  24in;
-  --flir-poster-margin: 0.75in;
+  --flir-poster-w:  18in; /* @kind other */
+  --flir-poster-h:  24in; /* @kind other */
+  --flir-poster-margin: 0.75in; /* @kind other */
 }
 
 /* Utility: the instrument scanline overlay. */
