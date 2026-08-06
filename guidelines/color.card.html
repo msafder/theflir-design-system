@@ -1,0 +1,194 @@
+<!doctype html>
+<html lang="en" data-flir-theme="ink">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>THE FLIR — Color</title>
+<link rel="stylesheet" href="../tokens/color.css">
+<link rel="stylesheet" href="../tokens/type.css">
+<link rel="stylesheet" href="../tokens/layout.css">
+<style>
+  html,body{margin:0;background:var(--flir-bg);color:var(--flir-fg);
+    font-family:var(--flir-font-body);-webkit-font-smoothing:antialiased;}
+  a{color:var(--flir-accent-text);text-decoration:none;border-bottom:var(--flir-border-hair) solid var(--flir-accent-text);}
+  a:hover{color:var(--flir-fg);border-bottom-color:var(--flir-fg);}
+  .card{padding:var(--flir-space-6);display:flex;flex-direction:column;gap:var(--flir-space-5);}
+  .card-head{display:flex;align-items:baseline;justify-content:space-between;gap:var(--flir-space-4);
+    border-bottom:var(--flir-rule);padding-bottom:var(--flir-space-3);}
+  .card-title{font-family:var(--flir-font-headline);
+    font-variation-settings:'wdth' var(--flir-wdth-wide),'wght' var(--flir-fw-bold);
+    font-size:var(--flir-text-h3);line-height:var(--flir-lh-tight);text-transform:uppercase;margin:0;}
+  .card-id{font-family:var(--flir-font-data);font-size:var(--flir-text-nano);
+    letter-spacing:var(--flir-ls-wider);color:var(--flir-fg-faint);text-transform:uppercase;}
+  .lbl{font-family:var(--flir-font-data);font-weight:var(--flir-fw-medium);font-size:var(--flir-text-micro);
+    letter-spacing:var(--flir-ls-wider);text-transform:uppercase;color:var(--flir-fg-muted);}
+  .note{font-size:var(--flir-text-small);line-height:var(--flir-lh-body);color:var(--flir-fg-muted);
+    max-width:64ch;text-wrap:pretty;}
+  .note strong{color:var(--flir-fg);font-weight:var(--flir-fw-bold);}
+  .dev{border-left:var(--flir-border-mark) solid var(--flir-accent);padding-left:var(--flir-space-4);
+    font-family:var(--flir-font-data);font-size:var(--flir-text-small);line-height:var(--flir-lh-body);
+    color:var(--flir-fg-muted);}
+  .dev b{color:var(--flir-accent-text);font-weight:var(--flir-fw-medium);letter-spacing:var(--flir-ls-wide);
+    text-transform:uppercase;display:block;font-size:var(--flir-text-nano);margin-bottom:var(--flir-space-1);}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="card-head">
+    <h1 class="card-title">Color</h1>
+    <span class="card-id">GDL-01 · tokens/color.css</span>
+  </div>
+
+  <p class="note">The palette is a temperature scale. Thirteen greys are the instrument; <strong>#C00000</strong> is heat. Red marks the single hottest element on a surface — a play control, a release date, a rule under a headline. If two things are red, one of them is wrong.</p>
+
+  <div>
+    <div class="lbl" style="margin-bottom:var(--flir-space-3);">Grey ramp · cold → hot</div>
+    <div style="display:grid;grid-template-columns:repeat(7,1fr);gap:var(--flir-space-2);">
+      <div style="display:flex;flex-direction:column;">
+      <div style="height:64px;background:var(--flir-grey-00);border:var(--flir-rule);"></div>
+      <div style="padding-top:var(--flir-space-2);display:flex;flex-direction:column;gap:2px;">
+        <span class="lbl" style="color:var(--flir-fg);font-size:var(--flir-text-nano);">grey-00</span>
+        <span style="font-family:var(--flir-font-data);font-size:var(--flir-text-nano);color:var(--flir-fg-faint);">--flir-grey-00</span>
+      </div>
+    </div>
+      <div style="display:flex;flex-direction:column;">
+      <div style="height:64px;background:var(--flir-grey-10);border:var(--flir-rule);"></div>
+      <div style="padding-top:var(--flir-space-2);display:flex;flex-direction:column;gap:2px;">
+        <span class="lbl" style="color:var(--flir-fg);font-size:var(--flir-text-nano);">grey-10</span>
+        <span style="font-family:var(--flir-font-data);font-size:var(--flir-text-nano);color:var(--flir-fg-faint);">--flir-grey-10</span>
+      </div>
+    </div>
+      <div style="display:flex;flex-direction:column;">
+      <div style="height:64px;background:var(--flir-grey-20);border:var(--flir-rule);"></div>
+      <div style="padding-top:var(--flir-space-2);display:flex;flex-direction:column;gap:2px;">
+        <span class="lbl" style="color:var(--flir-fg);font-size:var(--flir-text-nano);">grey-20</span>
+        <span style="font-family:var(--flir-font-data);font-size:var(--flir-text-nano);color:var(--flir-fg-faint);">--flir-grey-20</span>
+      </div>
+    </div>
+      <div style="display:flex;flex-direction:column;">
+      <div style="height:64px;background:var(--flir-grey-30);border:var(--flir-rule);"></div>
+      <div style="padding-top:var(--flir-space-2);display:flex;flex-direction:column;gap:2px;">
+        <span class="lbl" style="color:var(--flir-fg);font-size:var(--flir-text-nano);">grey-30</span>
+        <span style="font-family:var(--flir-font-data);font-size:var(--flir-text-nano);color:var(--flir-fg-faint);">--flir-grey-30</span>
+      </div>
+    </div>
+      <div style="display:flex;flex-direction:column;">
+      <div style="height:64px;background:var(--flir-grey-40);border:var(--flir-rule);"></div>
+      <div style="padding-top:var(--flir-space-2);display:flex;flex-direction:column;gap:2px;">
+        <span class="lbl" style="color:var(--flir-fg);font-size:var(--flir-text-nano);">grey-40</span>
+        <span style="font-family:var(--flir-font-data);font-size:var(--flir-text-nano);color:var(--flir-fg-faint);">--flir-grey-40</span>
+      </div>
+    </div>
+      <div style="display:flex;flex-direction:column;">
+      <div style="height:64px;background:var(--flir-grey-50);border:var(--flir-rule);"></div>
+      <div style="padding-top:var(--flir-space-2);display:flex;flex-direction:column;gap:2px;">
+        <span class="lbl" style="color:var(--flir-fg);font-size:var(--flir-text-nano);">grey-50</span>
+        <span style="font-family:var(--flir-font-data);font-size:var(--flir-text-nano);color:var(--flir-fg-faint);">--flir-grey-50</span>
+      </div>
+    </div>
+      <div style="display:flex;flex-direction:column;">
+      <div style="height:64px;background:var(--flir-grey-60);border:var(--flir-rule);"></div>
+      <div style="padding-top:var(--flir-space-2);display:flex;flex-direction:column;gap:2px;">
+        <span class="lbl" style="color:var(--flir-fg);font-size:var(--flir-text-nano);">grey-60</span>
+        <span style="font-family:var(--flir-font-data);font-size:var(--flir-text-nano);color:var(--flir-fg-faint);">--flir-grey-60</span>
+      </div>
+    </div>
+      <div style="display:flex;flex-direction:column;">
+      <div style="height:64px;background:var(--flir-grey-70);border:var(--flir-rule);"></div>
+      <div style="padding-top:var(--flir-space-2);display:flex;flex-direction:column;gap:2px;">
+        <span class="lbl" style="color:var(--flir-fg);font-size:var(--flir-text-nano);">grey-70</span>
+        <span style="font-family:var(--flir-font-data);font-size:var(--flir-text-nano);color:var(--flir-fg-faint);">--flir-grey-70</span>
+      </div>
+    </div>
+      <div style="display:flex;flex-direction:column;">
+      <div style="height:64px;background:var(--flir-grey-80);border:var(--flir-rule);"></div>
+      <div style="padding-top:var(--flir-space-2);display:flex;flex-direction:column;gap:2px;">
+        <span class="lbl" style="color:var(--flir-fg);font-size:var(--flir-text-nano);">grey-80</span>
+        <span style="font-family:var(--flir-font-data);font-size:var(--flir-text-nano);color:var(--flir-fg-faint);">--flir-grey-80</span>
+      </div>
+    </div>
+      <div style="display:flex;flex-direction:column;">
+      <div style="height:64px;background:var(--flir-grey-90);border:var(--flir-rule);"></div>
+      <div style="padding-top:var(--flir-space-2);display:flex;flex-direction:column;gap:2px;">
+        <span class="lbl" style="color:var(--flir-fg);font-size:var(--flir-text-nano);">grey-90</span>
+        <span style="font-family:var(--flir-font-data);font-size:var(--flir-text-nano);color:var(--flir-fg-faint);">--flir-grey-90</span>
+      </div>
+    </div>
+      <div style="display:flex;flex-direction:column;">
+      <div style="height:64px;background:var(--flir-grey-95);border:var(--flir-rule);"></div>
+      <div style="padding-top:var(--flir-space-2);display:flex;flex-direction:column;gap:2px;">
+        <span class="lbl" style="color:var(--flir-fg);font-size:var(--flir-text-nano);">grey-95</span>
+        <span style="font-family:var(--flir-font-data);font-size:var(--flir-text-nano);color:var(--flir-fg-faint);">--flir-grey-95</span>
+      </div>
+    </div>
+      <div style="display:flex;flex-direction:column;">
+      <div style="height:64px;background:var(--flir-grey-99);border:var(--flir-rule);"></div>
+      <div style="padding-top:var(--flir-space-2);display:flex;flex-direction:column;gap:2px;">
+        <span class="lbl" style="color:var(--flir-fg);font-size:var(--flir-text-nano);">grey-99</span>
+        <span style="font-family:var(--flir-font-data);font-size:var(--flir-text-nano);color:var(--flir-fg-faint);">--flir-grey-99</span>
+      </div>
+    </div>
+      <div style="display:flex;flex-direction:column;">
+      <div style="height:64px;background:var(--flir-red);border:var(--flir-rule);"></div>
+      <div style="padding-top:var(--flir-space-2);display:flex;flex-direction:column;gap:2px;">
+        <span class="lbl" style="color:var(--flir-fg);font-size:var(--flir-text-nano);">red</span>
+        <span style="font-family:var(--flir-font-data);font-size:var(--flir-text-nano);color:var(--flir-fg-faint);">--flir-red</span>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="lbl" style="margin-bottom:var(--flir-space-3);">Heat</div>
+    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:var(--flir-space-2);max-width:520px;">
+      <div style="display:flex;flex-direction:column;">
+      <div style="height:64px;background:var(--flir-red);border:var(--flir-rule);"></div>
+      <div style="padding-top:var(--flir-space-2);display:flex;flex-direction:column;gap:2px;">
+        <span class="lbl" style="color:var(--flir-fg);font-size:var(--flir-text-nano);">red</span>
+        <span style="font-family:var(--flir-font-data);font-size:var(--flir-text-nano);color:var(--flir-fg-faint);">--flir-red</span>
+      </div>
+    </div><div style="display:flex;flex-direction:column;">
+      <div style="height:64px;background:var(--flir-red-hot);border:var(--flir-rule);"></div>
+      <div style="padding-top:var(--flir-space-2);display:flex;flex-direction:column;gap:2px;">
+        <span class="lbl" style="color:var(--flir-fg);font-size:var(--flir-text-nano);">red-hot</span>
+        <span style="font-family:var(--flir-font-data);font-size:var(--flir-text-nano);color:var(--flir-fg-faint);">--flir-red-hot</span>
+      </div>
+    </div><div style="display:flex;flex-direction:column;">
+      <div style="height:64px;background:var(--flir-red-dim);border:var(--flir-rule);"></div>
+      <div style="padding-top:var(--flir-space-2);display:flex;flex-direction:column;gap:2px;">
+        <span class="lbl" style="color:var(--flir-fg);font-size:var(--flir-text-nano);">red-dim</span>
+        <span style="font-family:var(--flir-font-data);font-size:var(--flir-text-nano);color:var(--flir-fg-faint);">--flir-red-dim</span>
+      </div>
+    </div><div style="display:flex;flex-direction:column;">
+      <div style="height:64px;background:var(--flir-red-wash);border:var(--flir-rule);"></div>
+      <div style="padding-top:var(--flir-space-2);display:flex;flex-direction:column;gap:2px;">
+        <span class="lbl" style="color:var(--flir-fg);font-size:var(--flir-text-nano);">red-wash</span>
+        <span style="font-family:var(--flir-font-data);font-size:var(--flir-text-nano);color:var(--flir-fg-faint);">--flir-red-wash</span>
+      </div>
+    </div>
+    </div>
+  </div>
+
+  <div style="display:grid;grid-template-columns:1fr 1fr;gap:var(--flir-space-5);">
+    <div data-flir-theme="ink" style="background:var(--flir-bg);border:var(--flir-rule);padding:var(--flir-space-5);display:flex;flex-direction:column;gap:var(--flir-space-3);">
+      <span class="lbl">Theme · ink · default</span>
+      <div style="display:flex;flex-direction:column;gap:var(--flir-space-1);">
+        <span style="color:var(--flir-fg);font-size:var(--flir-text-lead);">Primary foreground</span>
+        <span style="color:var(--flir-fg-muted);font-size:var(--flir-text-small);">Muted foreground</span>
+        <span style="color:var(--flir-accent-text);font-family:var(--flir-font-data);font-size:var(--flir-text-micro);letter-spacing:var(--flir-ls-wider);">ACCENT TEXT · RED-HOT</span>
+      </div>
+      <div style="height:var(--flir-border-heavy);background:var(--flir-accent);"></div>
+    </div>
+    <div data-flir-theme="chalk" style="background:var(--flir-bg);border:var(--flir-rule);padding:var(--flir-space-5);display:flex;flex-direction:column;gap:var(--flir-space-3);">
+      <span class="lbl">Theme · chalk · exception</span>
+      <div style="display:flex;flex-direction:column;gap:var(--flir-space-1);">
+        <span style="color:var(--flir-fg);font-size:var(--flir-text-lead);">Primary foreground</span>
+        <span style="color:var(--flir-fg-muted);font-size:var(--flir-text-small);">Muted foreground</span>
+        <span style="color:var(--flir-accent-text);font-family:var(--flir-font-data);font-size:var(--flir-text-micro);letter-spacing:var(--flir-ls-wider);">ACCENT TEXT · RED</span>
+      </div>
+      <div style="height:var(--flir-border-heavy);background:var(--flir-accent);"></div>
+    </div>
+  </div>
+
+  <div class="dev"><b>Documented deviation</b>On ink, red text below 16px switches to <code>--flir-red-hot</code> (#E11414). #C00000 on #0A0A0A measures ~2.4:1 and disappears at label sizes. Flat red fills and rules keep the locked #C00000.</div>
+</div></body></html>

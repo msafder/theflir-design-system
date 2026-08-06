@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en" data-flir-theme="ink">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>THE FLIR — Instagram story 1080×1920</title>
+<link rel="stylesheet" href="../tokens/color.css">
+<link rel="stylesheet" href="../tokens/type.css">
+<link rel="stylesheet" href="../tokens/layout.css">
+<style>
+  html,body{margin:0;background:var(--flir-bg);color:var(--flir-fg);font-family:var(--flir-font-body);
+    -webkit-font-smoothing:antialiased;}
+  .wrap{padding:var(--flir-space-6);display:flex;flex-direction:column;gap:var(--flir-space-6);}
+  .head{display:flex;align-items:baseline;justify-content:space-between;gap:var(--flir-space-4);
+    border-bottom:var(--flir-rule);padding-bottom:var(--flir-space-3);}
+  .h{margin:0;font-family:var(--flir-font-headline);
+    font-variation-settings:'wdth' var(--flir-wdth-wide),'wght' var(--flir-fw-bold);
+    font-size:var(--flir-text-h3);text-transform:uppercase;line-height:var(--flir-lh-tight);}
+  .id{font-family:var(--flir-font-data);font-size:var(--flir-text-nano);letter-spacing:var(--flir-ls-wider);
+    color:var(--flir-fg-faint);text-transform:uppercase;}
+  .lbl{font-family:var(--flir-font-data);font-weight:var(--flir-fw-medium);font-size:var(--flir-text-micro);
+    letter-spacing:var(--flir-ls-wider);text-transform:uppercase;color:var(--flir-fg-muted);}
+  .note{font-size:var(--flir-text-small);line-height:var(--flir-lh-body);color:var(--flir-fg-muted);max-width:64ch;margin:0;}
+  .note strong{color:var(--flir-fg);}
+  .dev{border-left:var(--flir-border-mark) solid var(--flir-accent);padding-left:var(--flir-space-4);
+    font-family:var(--flir-font-data);font-size:var(--flir-text-small);line-height:var(--flir-lh-body);color:var(--flir-fg-muted);}
+  .dev b{color:var(--flir-accent-text);display:block;font-size:var(--flir-text-nano);
+    letter-spacing:var(--flir-ls-wide);text-transform:uppercase;margin-bottom:var(--flir-space-1);}
+  /* master stage: authored at true output px, scaled down for preview */
+  .stage{position:relative;overflow:hidden;background:var(--flir-bg-sunken);}
+  .stage .grime{position:absolute;inset:0;background:var(--flir-grime);}
+  .stage .photo{position:absolute;inset:0;background-size:cover;background-position:center;
+    filter:var(--flir-photo-filter);}
+  .stage .tex{position:absolute;inset:0;
+    background:repeating-linear-gradient(112deg,rgba(255,255,255,.05) 0 2px,transparent 2px 9px),
+      repeating-linear-gradient(18deg,rgba(0,0,0,.5) 0 3px,transparent 3px 14px);
+    filter:var(--flir-photo-filter);mix-blend-mode:screen;}
+  .stage .crush{position:absolute;inset:0;background:var(--flir-crush);}
+  .stage .grain{position:absolute;inset:0;background:var(--flir-grain);}
+  .stage .scan{position:absolute;inset:0;background:var(--flir-scanline);}
+  .stage .layer{position:absolute;inset:0;}
+  .mark{display:inline-flex;border:var(--flir-border-mark) solid var(--flir-accent);}
+  .mark span{font-family:var(--flir-font-data);font-weight:var(--flir-fw-bold);
+    letter-spacing:var(--flir-ls-widest);text-transform:uppercase;color:var(--flir-fg);}
+  .safe{position:absolute;outline:1px dashed rgba(192,0,0,.55);pointer-events:none;}
+  .safe b{position:absolute;top:6px;left:8px;font-family:var(--flir-font-data);font-size:22px;
+    letter-spacing:.16em;color:rgba(255,255,255,.5);font-weight:400;text-transform:uppercase;}
+  .shrink{transform-origin:top left;}
+  .frame{position:relative;border:var(--flir-rule);}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="head"><h1 class="h">Instagram · Story</h1><span class="id">SOC-02 · 1080 × 1920 · @theflir</span></div>
+  <p class="note">Everything lives inside the safe band: <strong>250px</strong> clear at the top for the profile chrome, <strong>320px</strong> at the bottom for the reply bar and sticker row.</p>
+
+  <div style="display:flex;gap:var(--flir-space-6);align-items:flex-start;flex-wrap:wrap;">
+    <div>
+      <div class="lbl" style="margin-bottom:var(--flir-space-3);">Master</div>
+      <div class="frame" style="width:324px;height:576px;">
+        <div class="shrink" style="transform:scale(0.3);">
+          <div class="stage" style="width:1080px;height:1920px;">
+            <div class="photo" style="background-image:url('../assets/source/dbnelson-03.jpg');"></div><div class="grime"></div><div class="crush"></div><div class="grain"></div><div class="scan"></div>
+            <div class="layer" style="padding:250px 80px 320px;display:flex;flex-direction:column;justify-content:space-between;">
+              <span class="flir-wordmark" style="font-size:46px;align-self:flex-start;"><span class="the">The</span><span class="flir">Flir</span></span>
+              <div style="display:flex;flex-direction:column;gap:32px;">
+                <span style="font-family:var(--flir-font-data);font-size:26px;letter-spacing:.16em;color:var(--flir-accent-hover);text-transform:uppercase;">Out now</span>
+                <div style="font-family:var(--flir-font-display);
+                  font-size:112px;line-height:.98;text-transform:uppercase;color:var(--flir-grey-99);">Dead air between two signals</div>
+                <div style="height:8px;background:var(--flir-accent);width:240px;"></div>
+              </div>
+              <div style="display:flex;flex-direction:column;gap:14px;font-family:var(--flir-font-data);font-size:26px;
+                letter-spacing:.16em;color:var(--flir-grey-70);text-transform:uppercase;line-height:1.6;">
+                <span>LP 01 · 09 tracks · 41:22</span>
+                <span style="color:var(--flir-grey-99);">Link in bio ↑</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="lbl" style="margin-bottom:var(--flir-space-3);">Safe zones</div>
+      <div class="frame" style="width:324px;height:576px;">
+        <div class="shrink" style="transform:scale(0.3);">
+          <div class="stage" style="width:1080px;height:1920px;background:var(--flir-grey-10);">
+            <div class="safe" style="inset:0 0 auto 0;height:250px;background:rgba(192,0,0,.14);"><b>Top chrome · 250px</b></div>
+            <div class="safe" style="inset:250px 80px 320px 80px;"><b>Content · 920 × 1350</b></div>
+            <div class="safe" style="inset:auto 0 0 0;height:320px;background:rgba(192,0,0,.14);"><b>Reply bar · 320px</b></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dev"><b>Spec</b>1080 × 1920 · side margin 80px · title 112px (min 84px) · mono body 26px minimum — anything smaller is unreadable at story scale. No text in the outer 250 / 320px bands.</div>
+</div>
+</body></html>

@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en" data-flir-theme="ink">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>THE FLIR — Badge</title>
+<link rel="stylesheet" href="../../tokens/color.css">
+<link rel="stylesheet" href="../../tokens/type.css">
+<link rel="stylesheet" href="../../tokens/layout.css">
+<style>
+  html,body{margin:0;background:var(--flir-bg);color:var(--flir-fg);
+    font-family:var(--flir-font-body);-webkit-font-smoothing:antialiased;}
+  a{color:var(--flir-accent-text);text-decoration:none;}
+  .card{padding:var(--flir-space-6);display:flex;flex-direction:column;gap:var(--flir-space-5);}
+  .card-head{display:flex;align-items:baseline;justify-content:space-between;gap:var(--flir-space-4);
+    border-bottom:var(--flir-rule);padding-bottom:var(--flir-space-3);}
+  .card-title{font-family:var(--flir-font-headline);
+    font-variation-settings:'wdth' var(--flir-wdth-wide),'wght' var(--flir-fw-bold);
+    font-size:var(--flir-text-h3);line-height:var(--flir-lh-tight);text-transform:uppercase;margin:0;}
+  .card-id{font-family:var(--flir-font-data);font-size:var(--flir-text-nano);
+    letter-spacing:var(--flir-ls-wider);color:var(--flir-fg-faint);text-transform:uppercase;}
+  .lbl{font-family:var(--flir-font-data);font-weight:var(--flir-fw-medium);font-size:var(--flir-text-micro);
+    letter-spacing:var(--flir-ls-wider);text-transform:uppercase;color:var(--flir-fg-muted);}
+  .note{font-size:var(--flir-text-small);line-height:var(--flir-lh-body);color:var(--flir-fg-muted);
+    max-width:64ch;text-wrap:pretty;margin:0;}
+  .note strong{color:var(--flir-fg);font-weight:var(--flir-fw-bold);}
+  .dev{border-left:var(--flir-border-mark) solid var(--flir-accent);padding-left:var(--flir-space-4);
+    font-family:var(--flir-font-data);font-size:var(--flir-text-small);line-height:var(--flir-lh-body);
+    color:var(--flir-fg-muted);}
+  .dev b{color:var(--flir-accent-text);font-weight:var(--flir-fw-medium);letter-spacing:var(--flir-ls-wide);
+    text-transform:uppercase;display:block;font-size:var(--flir-text-nano);margin-bottom:var(--flir-space-1);}
+  .row{display:flex;gap:var(--flir-space-4);flex-wrap:wrap;align-items:center;}
+  .bench{border:var(--flir-rule);padding:var(--flir-space-5);background:var(--flir-surface);
+    display:flex;flex-direction:column;gap:var(--flir-space-4);}
+
+    .bg{display:inline-flex;align-items:center;gap:var(--flir-space-2);
+      padding:var(--flir-space-1) var(--flir-space-2);font-family:var(--flir-font-data);
+      font-weight:var(--flir-fw-medium);font-size:var(--flir-text-nano);
+      letter-spacing:var(--flir-ls-wider);text-transform:uppercase;line-height:var(--flir-lh-snug);
+      border-radius:var(--flir-radius-none);box-shadow:var(--flir-shadow-none);white-space:nowrap;}
+    .bg .dot{width:6px;height:6px;background:currentColor;flex:none;}
+    .bg-hot{background:var(--flir-accent);color:var(--flir-accent-fg);border:var(--flir-border-hair) solid var(--flir-accent);}
+    .bg-outline{background:transparent;color:var(--flir-accent-text);border:var(--flir-border-hair) solid var(--flir-accent);}
+    .bg-solid{background:var(--flir-fg);color:var(--flir-fg-inverse);border:var(--flir-border-hair) solid var(--flir-fg);}
+    .bg-quiet{background:transparent;color:var(--flir-fg-muted);border:var(--flir-border-hair) solid var(--flir-line-strong);}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="card-head"><h1 class="card-title">Badge</h1><span class="card-id">CMP-03 · components/core/Badge.jsx</span></div>
+  <p class="note">A square mono chip carrying one fact. Never a link, never prose, never more than two words.</p>
+
+  <div class="bench">
+    <span class="lbl">Tones</span>
+    <div class="row">
+      <span class="bg bg-hot"><span class="dot"></span>Out now</span>
+      <span class="bg bg-outline">Pre-save</span>
+      <span class="bg bg-solid">Limited</span>
+      <span class="bg bg-quiet">TF-001</span>
+    </div>
+  </div>
+
+  <div class="bench">
+    <span class="lbl">In use · release row</span>
+    <div class="row">
+      <span class="bg bg-quiet">LP</span>
+      <span class="bg bg-quiet">CD</span>
+      <span class="bg bg-quiet">09 tracks</span>
+      <span class="bg bg-quiet">41:22</span>
+      <span class="bg bg-hot"><span class="dot"></span>Out now</span>
+    </div>
+  </div>
+
+  <div class="bench" style="background:linear-gradient(0deg,rgba(0,0,0,.5),rgba(0,0,0,.5)),url('../../assets/source/dbnelson-12.jpg') center/cover;">
+    <span class="lbl" style="color:var(--flir-grey-80);">Over photography · use solid</span>
+    <div class="row">
+      <span class="bg bg-solid">22.05.26</span>
+      <span class="bg bg-hot">On sale</span>
+    </div>
+  </div>
+
+  <div class="bench" data-flir-theme="chalk" style="background:var(--flir-bg);">
+    <span class="lbl">Theme · chalk</span>
+    <div class="row">
+      <span class="bg bg-hot"><span class="dot"></span>Out now</span>
+      <span class="bg bg-outline">Pre-save</span>
+      <span class="bg bg-solid">Limited</span>
+      <span class="bg bg-quiet">TF-001</span>
+    </div>
+  </div>
+
+  <div class="dev"><b>Documented deviation</b>The 6px dot marker has no token of its own — it is <code>--flir-space-1</code> × 1.5. It is the single raw value in the component and is deliberately square.</div>
+</div></body></html>

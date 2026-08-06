@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en" data-flir-theme="ink">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>THE FLIR — Reel cover 1080×1920</title>
+<link rel="stylesheet" href="../tokens/color.css">
+<link rel="stylesheet" href="../tokens/type.css">
+<link rel="stylesheet" href="../tokens/layout.css">
+<style>
+  html,body{margin:0;background:var(--flir-bg);color:var(--flir-fg);font-family:var(--flir-font-body);
+    -webkit-font-smoothing:antialiased;}
+  .wrap{padding:var(--flir-space-6);display:flex;flex-direction:column;gap:var(--flir-space-6);}
+  .head{display:flex;align-items:baseline;justify-content:space-between;gap:var(--flir-space-4);
+    border-bottom:var(--flir-rule);padding-bottom:var(--flir-space-3);}
+  .h{margin:0;font-family:var(--flir-font-headline);
+    font-variation-settings:'wdth' var(--flir-wdth-wide),'wght' var(--flir-fw-bold);
+    font-size:var(--flir-text-h3);text-transform:uppercase;line-height:var(--flir-lh-tight);}
+  .id{font-family:var(--flir-font-data);font-size:var(--flir-text-nano);letter-spacing:var(--flir-ls-wider);
+    color:var(--flir-fg-faint);text-transform:uppercase;}
+  .lbl{font-family:var(--flir-font-data);font-weight:var(--flir-fw-medium);font-size:var(--flir-text-micro);
+    letter-spacing:var(--flir-ls-wider);text-transform:uppercase;color:var(--flir-fg-muted);}
+  .note{font-size:var(--flir-text-small);line-height:var(--flir-lh-body);color:var(--flir-fg-muted);max-width:64ch;margin:0;}
+  .note strong{color:var(--flir-fg);}
+  .dev{border-left:var(--flir-border-mark) solid var(--flir-accent);padding-left:var(--flir-space-4);
+    font-family:var(--flir-font-data);font-size:var(--flir-text-small);line-height:var(--flir-lh-body);color:var(--flir-fg-muted);}
+  .dev b{color:var(--flir-accent-text);display:block;font-size:var(--flir-text-nano);
+    letter-spacing:var(--flir-ls-wide);text-transform:uppercase;margin-bottom:var(--flir-space-1);}
+  /* master stage: authored at true output px, scaled down for preview */
+  .stage{position:relative;overflow:hidden;background:var(--flir-bg-sunken);}
+  .stage .grime{position:absolute;inset:0;background:var(--flir-grime);}
+  .stage .photo{position:absolute;inset:0;background-size:cover;background-position:center;
+    filter:var(--flir-photo-filter);}
+  .stage .tex{position:absolute;inset:0;
+    background:repeating-linear-gradient(112deg,rgba(255,255,255,.05) 0 2px,transparent 2px 9px),
+      repeating-linear-gradient(18deg,rgba(0,0,0,.5) 0 3px,transparent 3px 14px);
+    filter:var(--flir-photo-filter);mix-blend-mode:screen;}
+  .stage .crush{position:absolute;inset:0;background:var(--flir-crush);}
+  .stage .grain{position:absolute;inset:0;background:var(--flir-grain);}
+  .stage .scan{position:absolute;inset:0;background:var(--flir-scanline);}
+  .stage .layer{position:absolute;inset:0;}
+  .mark{display:inline-flex;border:var(--flir-border-mark) solid var(--flir-accent);}
+  .mark span{font-family:var(--flir-font-data);font-weight:var(--flir-fw-bold);
+    letter-spacing:var(--flir-ls-widest);text-transform:uppercase;color:var(--flir-fg);}
+  .safe{position:absolute;outline:1px dashed rgba(192,0,0,.55);pointer-events:none;}
+  .safe b{position:absolute;top:6px;left:8px;font-family:var(--flir-font-data);font-size:22px;
+    letter-spacing:.16em;color:rgba(255,255,255,.5);font-weight:400;text-transform:uppercase;}
+  .shrink{transform-origin:top left;}
+  .frame{position:relative;border:var(--flir-rule);}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="head"><h1 class="h">Instagram · Reel cover</h1><span class="id">SOC-03 · 1080 × 1920 · grid crop 1080 × 1440</span></div>
+  <p class="note">A reel cover is read twice: full-bleed in the reels tab, and cropped to <strong>1080 × 1440</strong> in the profile grid. The mark and the title must both survive the crop, so both sit inside the centred crop band.</p>
+
+  <div style="display:flex;gap:var(--flir-space-6);align-items:flex-start;flex-wrap:wrap;">
+    <div>
+      <div class="lbl" style="margin-bottom:var(--flir-space-3);">Full 1080 × 1920</div>
+      <div class="frame" style="width:324px;height:576px;">
+        <div class="shrink" style="transform:scale(0.3);">
+          <div class="stage" style="width:1080px;height:1920px;">
+            <div class="photo" style="background-image:url('../assets/source/dbnelson-12.jpg');"></div><div class="grime"></div><div class="crush"></div><div class="grain"></div><div class="scan"></div>
+            <div class="safe" style="inset:240px 0 240px 0;"><b>Grid crop · 1080 × 1440</b></div>
+            <div class="layer" style="padding:240px 80px;display:flex;flex-direction:column;justify-content:center;gap:44px;">
+              <span class="flir-wordmark" style="font-size:41px;align-self:flex-start;"><span class="the">The</span><span class="flir">Flir</span></span>
+              <div style="font-family:var(--flir-font-display);
+                font-size:170px;line-height:.88;text-transform:uppercase;color:var(--flir-grey-99);">Live at<br>Moth<br>Club</div>
+              <div style="display:flex;align-items:center;gap:20px;">
+                <div style="width:0;height:0;border-left:34px solid var(--flir-accent);border-top:22px solid transparent;border-bottom:22px solid transparent;"></div>
+                <span style="font-family:var(--flir-font-data);font-size:28px;letter-spacing:.16em;color:var(--flir-grey-80);text-transform:uppercase;">22.05.26 · Full set</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div>
+      <div class="lbl" style="margin-bottom:var(--flir-space-3);">As it appears in the grid</div>
+      <div class="frame" style="width:243px;height:324px;overflow:hidden;">
+        <div class="shrink" style="transform:scale(0.225) translateY(-240px);">
+          <div class="stage" style="width:1080px;height:1920px;">
+            <div class="photo" style="background-image:url('../assets/source/dbnelson-12.jpg');"></div><div class="grime"></div><div class="crush"></div><div class="grain"></div>
+            <div class="layer" style="padding:240px 80px;display:flex;flex-direction:column;justify-content:center;gap:44px;">
+              <span class="flir-wordmark" style="font-size:41px;align-self:flex-start;"><span class="the">The</span><span class="flir">Flir</span></span>
+              <div style="font-family:var(--flir-font-display);
+                font-size:170px;line-height:.88;text-transform:uppercase;color:var(--flir-grey-99);">Live at<br>Moth<br>Club</div>
+              <div style="display:flex;align-items:center;gap:20px;">
+                <div style="width:0;height:0;border-left:34px solid var(--flir-accent);border-top:22px solid transparent;border-bottom:22px solid transparent;"></div>
+                <span style="font-family:var(--flir-font-data);font-size:28px;letter-spacing:.16em;color:var(--flir-grey-80);text-transform:uppercase;">22.05.26 · Full set</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="dev"><b>Documented deviation</b>Reel covers are the only surface using the <strong>condensed</strong> width axis (wdth 78 / wght 900) instead of wide 118. The crop band is 1080 × 1440 and condensed is the only way to get three stacked lines to fill it without dropping below 140px.</div>
+</div>
+</body></html>

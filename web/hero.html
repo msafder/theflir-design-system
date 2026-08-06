@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en" data-flir-theme="ink">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>THE FLIR — Web hero</title>
+<link rel="stylesheet" href="../tokens/color.css">
+<link rel="stylesheet" href="../tokens/type.css">
+<link rel="stylesheet" href="../tokens/layout.css">
+<style>
+  html,body{margin:0;background:var(--flir-bg);color:var(--flir-fg);font-family:var(--flir-font-body);
+    -webkit-font-smoothing:antialiased;}
+  .wrap{padding:var(--flir-space-6);display:flex;flex-direction:column;gap:var(--flir-space-6);}
+  .head{display:flex;align-items:baseline;justify-content:space-between;gap:var(--flir-space-4);
+    border-bottom:var(--flir-rule);padding-bottom:var(--flir-space-3);}
+  .h{margin:0;font-family:var(--flir-font-headline);
+    font-variation-settings:'wdth' var(--flir-wdth-wide),'wght' var(--flir-fw-bold);
+    font-size:var(--flir-text-h3);text-transform:uppercase;line-height:var(--flir-lh-tight);}
+  .id{font-family:var(--flir-font-data);font-size:var(--flir-text-nano);letter-spacing:var(--flir-ls-wider);
+    color:var(--flir-fg-faint);text-transform:uppercase;}
+  .lbl{font-family:var(--flir-font-data);font-weight:var(--flir-fw-medium);font-size:var(--flir-text-micro);
+    letter-spacing:var(--flir-ls-wider);text-transform:uppercase;color:var(--flir-fg-muted);}
+  .note{font-size:var(--flir-text-small);line-height:var(--flir-lh-body);color:var(--flir-fg-muted);max-width:64ch;margin:0;}
+  .note strong{color:var(--flir-fg);}
+  .dev{border-left:var(--flir-border-mark) solid var(--flir-accent);padding-left:var(--flir-space-4);
+    font-family:var(--flir-font-data);font-size:var(--flir-text-small);line-height:var(--flir-lh-body);color:var(--flir-fg-muted);}
+  .dev b{color:var(--flir-accent-text);display:block;font-size:var(--flir-text-nano);
+    letter-spacing:var(--flir-ls-wide);text-transform:uppercase;margin-bottom:var(--flir-space-1);}
+  /* master stage: authored at true output px, scaled down for preview */
+  .stage{position:relative;overflow:hidden;background:var(--flir-bg-sunken);}
+  .stage .grime{position:absolute;inset:0;background:var(--flir-grime);}
+  .stage .photo{position:absolute;inset:0;background-size:cover;background-position:center;
+    filter:var(--flir-photo-filter);}
+  .stage .tex{position:absolute;inset:0;
+    background:repeating-linear-gradient(112deg,rgba(255,255,255,.05) 0 2px,transparent 2px 9px),
+      repeating-linear-gradient(18deg,rgba(0,0,0,.5) 0 3px,transparent 3px 14px);
+    filter:var(--flir-photo-filter);mix-blend-mode:screen;}
+  .stage .crush{position:absolute;inset:0;background:var(--flir-crush);}
+  .stage .grain{position:absolute;inset:0;background:var(--flir-grain);}
+  .stage .scan{position:absolute;inset:0;background:var(--flir-scanline);}
+  .stage .layer{position:absolute;inset:0;}
+  .mark{display:inline-flex;border:var(--flir-border-mark) solid var(--flir-accent);}
+  .mark span{font-family:var(--flir-font-data);font-weight:var(--flir-fw-bold);
+    letter-spacing:var(--flir-ls-widest);text-transform:uppercase;color:var(--flir-fg);}
+  .safe{position:absolute;outline:1px dashed rgba(192,0,0,.55);pointer-events:none;}
+  .safe b{position:absolute;top:6px;left:8px;font-family:var(--flir-font-data);font-size:22px;
+    letter-spacing:.16em;color:rgba(255,255,255,.5);font-weight:400;text-transform:uppercase;}
+  .shrink{transform-origin:top left;}
+  .frame{position:relative;border:var(--flir-rule);}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="head"><h1 class="h">Web · Hero</h1><span class="id">WEB-01 · theflir.com</span></div>
+  <p class="note">Full-viewport dark field with the typographic layer sitting clean on top. Nav is mono, tracked, and rule-separated. One primary button.</p>
+</div>
+
+<div class="stage" style="height:640px;border-block:var(--flir-rule);">
+  <div class="photo" style="background-image:url('../assets/source/dbnelson-09.jpg');"></div><div class="grime"></div><div class="crush"></div><div class="grain"></div><div class="scan"></div>
+  <div class="layer" style="display:flex;flex-direction:column;">
+    <nav style="display:flex;align-items:center;justify-content:space-between;gap:var(--flir-space-5);
+      padding:var(--flir-space-5) var(--flir-space-8);border-bottom:var(--flir-border-hair) solid rgba(255,255,255,.14);">
+      <span class="flir-wordmark" style="font-size:calc(var(--flir-text-lead) * 1.45);"><span class="the">The</span><span class="flir">Flir</span></span>
+      <div style="display:flex;gap:var(--flir-space-6);">
+        <a href="#" style="font-family:var(--flir-font-data);font-weight:var(--flir-fw-medium);font-size:var(--flir-text-micro);letter-spacing:var(--flir-ls-wider);text-transform:uppercase;color:var(--flir-fg);text-decoration:none;">Listen</a><a href="#" style="font-family:var(--flir-font-data);font-weight:var(--flir-fw-medium);font-size:var(--flir-text-micro);letter-spacing:var(--flir-ls-wider);text-transform:uppercase;color:var(--flir-fg-muted);text-decoration:none;">Live</a><a href="#" style="font-family:var(--flir-font-data);font-weight:var(--flir-fw-medium);font-size:var(--flir-text-micro);letter-spacing:var(--flir-ls-wider);text-transform:uppercase;color:var(--flir-fg-muted);text-decoration:none;">Merch</a><a href="#" style="font-family:var(--flir-font-data);font-weight:var(--flir-fw-medium);font-size:var(--flir-text-micro);letter-spacing:var(--flir-ls-wider);text-transform:uppercase;color:var(--flir-fg-muted);text-decoration:none;">Contact</a>
+      </div>
+      <div style="display:inline-flex;align-items:center;gap:var(--flir-space-2);border:var(--flir-border-hair) solid var(--flir-accent);
+        background:var(--flir-red-wash);border-radius:var(--flir-radius-pill);padding:var(--flir-space-1) var(--flir-space-3);">
+        <span style="width:6px;height:6px;background:var(--flir-accent-hover);border-radius:var(--flir-radius-pill);"></span>
+        <span style="font-family:var(--flir-font-data);font-size:var(--flir-text-nano);letter-spacing:var(--flir-ls-wider);
+          text-transform:uppercase;color:var(--flir-accent-text);">Now playing</span>
+      </div>
+    </nav>
+
+    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:var(--flir-space-5);padding:0 var(--flir-space-8);">
+      <span style="font-family:var(--flir-font-data);font-size:var(--flir-text-micro);letter-spacing:var(--flir-ls-wider);
+        text-transform:uppercase;color:var(--flir-accent-text);">LP 01 · out 14 March</span>
+      <h2 style="margin:0;font-family:var(--flir-font-display);
+        font-size:var(--flir-text-display);line-height:var(--flir-lh-tight);text-transform:uppercase;
+        color:var(--flir-grey-99);max-width:16ch;">Dead air between two signals</h2>
+      <div style="height:var(--flir-border-heavy);background:var(--flir-accent);width:180px;"></div>
+      <p class="note" style="max-width:48ch;">Trip hop, shoegaze and ethereal noise recorded between January and October 2025. Nine tracks, forty-one minutes.</p>
+      <div style="display:flex;gap:var(--flir-space-3);flex-wrap:wrap;padding-top:var(--flir-space-2);">
+        <button style="display:inline-flex;align-items:center;gap:var(--flir-space-3);padding:var(--flir-space-4) var(--flir-space-6);
+          background:var(--flir-accent);color:var(--flir-accent-fg);border:var(--flir-border-mark) solid var(--flir-accent);
+          border-radius:var(--flir-radius-none);font-family:var(--flir-font-data);font-weight:var(--flir-fw-medium);
+          font-size:var(--flir-text-small);letter-spacing:var(--flir-ls-wider);text-transform:uppercase;cursor:pointer;">
+          Listen <span style="opacity:.7;">41:22</span></button>
+        <button style="display:inline-flex;align-items:center;padding:var(--flir-space-4) var(--flir-space-6);
+          background:transparent;color:var(--flir-fg);border:var(--flir-border-mark) solid var(--flir-line-strong);
+          border-radius:var(--flir-radius-none);font-family:var(--flir-font-data);font-weight:var(--flir-fw-medium);
+          font-size:var(--flir-text-small);letter-spacing:var(--flir-ls-wider);text-transform:uppercase;cursor:pointer;">Buy CD</button>
+      </div>
+    </div>
+
+    <div style="display:flex;justify-content:space-between;gap:var(--flir-space-5);padding:var(--flir-space-4) var(--flir-space-8);
+      border-top:var(--flir-border-hair) solid rgba(255,255,255,.14);font-family:var(--flir-font-data);
+      font-size:var(--flir-text-nano);letter-spacing:var(--flir-ls-wider);text-transform:uppercase;color:var(--flir-grey-60);">
+      <span>THE FLIR · Eyeliner Media · MMXXVI</span><span>TF-001</span>
+    </div>
+  </div>
+</div>
+
+<div class="wrap">
+  <div class="dev"><b>Documented deviation</b>The NOW PLAYING chip is the system's single sanctioned use of <code>--flir-radius-pill</code>. Everything else on the page is square.</div>
+</div>
+</body></html>

@@ -1,0 +1,176 @@
+/* ============================================================
+   THE FLIR — tokens/type.css
+   Two faces, no more.
+   Archivo (variable width + weight) carries every headline and
+   all body copy. IBM Plex Mono carries anything that reads as
+   instrument output: track lists, timestamps, catalogue
+   numbers, credits, micro-labels.
+   ============================================================ */
+
+@import url('https://fonts.googleapis.com/css2?family=Archivo:ital,wdth,wght@0,62..125,100..900;1,62..125,100..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap');
+
+/* The band's own faces, taken from the existing artwork folder.
+   The wordmark is typed as ONE word — THEFLIR — in two faces:
+   THE in Placard Condensed, FLIR in Frankfurter Heavy at exactly
+   twice the point size. Same baseline, no word space, no kerning
+   adjustment. e.g. THE 75pt / FLIR 150pt. */
+@font-face {
+  font-family: 'Placard Condensed';
+  src: url('../assets/fonts/Placcond.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Frankfurter';
+  src: url('../assets/fonts/Frnkfh.ttf') format('truetype');
+  font-weight: 700;
+  font-style: normal;
+  font-display: swap;
+}
+
+:root {
+  /* ---- Families -------------------------------------------
+     display   Placard Condensed — the band's own face. Wordmark,
+               poster and cover-scale headlines only (48px and up).
+     headline  Archivo wide 700 — UI-scale titles, where Placard
+               is too condensed to stay legible.
+     body      Archivo normal 400.
+     data      IBM Plex Mono — instrument output.
+     Frankfurter is in the folder and is NOT part of the system.
+     It is loaded for reference only. */
+  --flir-font-wordmark-the: 'Placard Condensed', 'Haettenschweiler', 'Arial Narrow', sans-serif;
+  --flir-font-wordmark-flir:'Frankfurter', 'Haettenschweiler', 'Impact', sans-serif;
+  --flir-font-display: 'Placard Condensed', 'Haettenschweiler', 'Arial Narrow', sans-serif;
+  --flir-font-headline:'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  --flir-font-body:    'Archivo', 'Helvetica Neue', Arial, sans-serif;
+  --flir-font-data:    'IBM Plex Mono', ui-monospace, 'SF Mono', Menlo, monospace;
+
+  /* Wordmark ratio — FLIR is exactly 2× THE. Locked. */
+  --flir-wordmark-ratio: 0.5;
+
+  /* ---- Width axis (Archivo is variable) --------------------
+     Wide is the house voice for headlines — it reads as a
+     nameplate, not a poster shout. Condensed is reserved for
+     the gig-poster master where vertical space is the
+     constraint. */
+  --flir-wdth-wide:  118;
+  --flir-wdth-norm:  100;
+  --flir-wdth-cond:  78;
+
+  /* ---- Weight --------------------------------------------- */
+  --flir-fw-regular: 400;
+  --flir-fw-medium:  500;
+  --flir-fw-bold:    700;
+  --flir-fw-black:   900;
+
+  /* ---- Size scale — 1.4 ratio, rounded to whole px --------- */
+  --flir-text-nano:    10px;  /* plate numbers, bleed marks */
+  --flir-text-micro:   11px;  /* all-caps labels */
+  --flir-text-small:   13px;  /* data rows, captions */
+  --flir-text-body:    15px;
+  --flir-text-lead:    18px;
+  --flir-text-h3:      22px;
+  --flir-text-h2:      32px;
+  --flir-text-h1:      48px;
+  --flir-text-display: 72px;
+  --flir-text-mega:   120px;  /* poster + CD jacket only */
+
+  /* ---- Line height ---------------------------------------- */
+  --flir-lh-solid: 1;
+  --flir-lh-tight: 1.05;
+  --flir-lh-snug:  1.25;
+  --flir-lh-body:  1.6;
+  --flir-lh-data:  1.8;   /* mono rows need air to scan */
+
+  /* ---- Tracking -------------------------------------------
+     Everything uppercase gets tracked. Nothing lowercase does. */
+  --flir-ls-tight:  -0.02em;
+  --flir-ls-none:    0;
+  --flir-ls-wide:    0.08em;
+  --flir-ls-wider:   0.16em;
+  --flir-ls-widest:  0.32em;  /* the wordmark lockup only */
+
+  /* ---- Roles ----------------------------------------------
+     Composite shorthands so components never assemble type
+     by hand. Applied via the .flir-type-* classes below. */
+  --flir-case-label: uppercase;
+  --flir-case-title: uppercase;
+  --flir-case-body:  none;
+}
+
+/* Headline: Archivo Wide 700, uppercase, tight leading.
+   Used for UI-scale titles, H3 to H2. */
+.flir-type-title {
+  font-family: var(--flir-font-headline);
+  font-variation-settings: 'wdth' var(--flir-wdth-wide), 'wght' var(--flir-fw-bold);
+  line-height: var(--flir-lh-tight);
+  letter-spacing: var(--flir-ls-none);
+  text-transform: var(--flir-case-title);
+}
+
+/* Body: Archivo Normal 400, sentence case, generous leading. */
+.flir-type-body {
+  font-family: var(--flir-font-body);
+  font-variation-settings: 'wdth' var(--flir-wdth-norm), 'wght' var(--flir-fw-regular);
+  font-size: var(--flir-text-body);
+  line-height: var(--flir-lh-body);
+  text-wrap: pretty;
+}
+
+/* Label: IBM Plex Mono 500, uppercase, widely tracked. */
+.flir-type-label {
+  font-family: var(--flir-font-data);
+  font-weight: var(--flir-fw-medium);
+  font-size: var(--flir-text-micro);
+  line-height: var(--flir-lh-snug);
+  letter-spacing: var(--flir-ls-wider);
+  text-transform: var(--flir-case-label);
+}
+
+/* Data: IBM Plex Mono 400, tabular, for anything logged. */
+.flir-type-data {
+  font-family: var(--flir-font-data);
+  font-weight: var(--flir-fw-regular);
+  font-size: var(--flir-text-small);
+  line-height: var(--flir-lh-data);
+  font-variant-numeric: tabular-nums;
+}
+
+/* Display: Placard Condensed, the band's face. 48px and up only.
+   Below that it closes up and stops reading. */
+.flir-type-display {
+  font-family: var(--flir-font-display);
+  font-weight: var(--flir-fw-bold);
+  line-height: var(--flir-lh-solid);
+  letter-spacing: var(--flir-ls-none);
+  text-transform: uppercase;
+}
+
+/* WORDMARK — the existing lockup, reproduced exactly.
+   One word, two faces, one baseline:
+     THE   Placard Condensed  at 0.5×
+     FLIR  Frankfurter Heavy  at 1×
+   Set font-size on the parent — that size IS the FLIR size, and
+   THE follows from --flir-wordmark-ratio. No word space, no
+   letter-spacing, no kerning tweak. Never re-type it by hand,
+   never separate the words, never change the ratio. */
+.flir-wordmark {
+  display: inline-flex;
+  align-items: baseline;
+  font-weight: var(--flir-fw-bold);
+  line-height: var(--flir-lh-solid);
+  letter-spacing: var(--flir-ls-none);
+  text-transform: uppercase;
+  white-space: nowrap;
+  color: var(--flir-fg);
+}
+.flir-wordmark .the {
+  font-family: var(--flir-font-wordmark-the);
+  font-size: var(--flir-wordmark-ratio);
+  font-size: calc(1em * var(--flir-wordmark-ratio));
+}
+.flir-wordmark .flir {
+  font-family: var(--flir-font-wordmark-flir);
+  font-size: 1em;
+}

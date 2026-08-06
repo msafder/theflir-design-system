@@ -1,0 +1,20 @@
+# macOS
+.DS_Store
+._*
+
+# Editors
+.vscode/
+.idea/
+
+# Scratch
+scraps/
+
+# Master artwork archive — lives on the drive, not in git
+/archive/
+*.psd
+*.ai
+*.zip
+
+# Derived exports
+/export/
+*.pdf

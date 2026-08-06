@@ -1,0 +1,145 @@
+<!doctype html>
+<html lang="en" data-flir-theme="ink">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>THE FLIR — Logo Usage</title>
+<link rel="stylesheet" href="../tokens/color.css">
+<link rel="stylesheet" href="../tokens/type.css">
+<link rel="stylesheet" href="../tokens/layout.css">
+<style>
+  html,body{margin:0;background:var(--flir-bg);color:var(--flir-fg);font-family:var(--flir-font-body);
+    -webkit-font-smoothing:antialiased;}
+  a{color:var(--flir-accent-text);text-decoration:none;}
+  .card{padding:var(--flir-space-6);display:flex;flex-direction:column;gap:var(--flir-space-5);}
+  .card-head{display:flex;align-items:baseline;justify-content:space-between;gap:var(--flir-space-4);
+    border-bottom:var(--flir-rule);padding-bottom:var(--flir-space-3);}
+  .card-title{font-family:var(--flir-font-headline);
+    font-variation-settings:'wdth' var(--flir-wdth-wide),'wght' var(--flir-fw-bold);
+    font-size:var(--flir-text-h3);line-height:var(--flir-lh-tight);text-transform:uppercase;margin:0;}
+  .card-id{font-family:var(--flir-font-data);font-size:var(--flir-text-nano);
+    letter-spacing:var(--flir-ls-wider);color:var(--flir-fg-faint);text-transform:uppercase;}
+  .lbl{font-family:var(--flir-font-data);font-weight:var(--flir-fw-medium);font-size:var(--flir-text-micro);
+    letter-spacing:var(--flir-ls-wider);text-transform:uppercase;color:var(--flir-fg-muted);}
+  .note{font-size:var(--flir-text-small);line-height:var(--flir-lh-body);color:var(--flir-fg-muted);
+    max-width:64ch;text-wrap:pretty;margin:0;}
+  .note strong{color:var(--flir-fg);font-weight:var(--flir-fw-bold);}
+  .dev{border-left:var(--flir-border-mark) solid var(--flir-accent);padding-left:var(--flir-space-4);
+    font-family:var(--flir-font-data);font-size:var(--flir-text-small);line-height:var(--flir-lh-body);
+    color:var(--flir-fg-muted);}
+  .dev b{color:var(--flir-accent-text);font-weight:var(--flir-fw-medium);letter-spacing:var(--flir-ls-wide);
+    text-transform:uppercase;display:block;font-size:var(--flir-text-nano);margin-bottom:var(--flir-space-1);}
+  .spec{font-family:var(--flir-font-data);font-size:var(--flir-text-small);line-height:var(--flir-lh-data);
+    display:grid;gap:0;max-width:520px;}
+  .spec div{display:flex;justify-content:space-between;gap:var(--flir-space-5);
+    border-bottom:var(--flir-border-hair) solid var(--flir-line);padding:var(--flir-space-1) 0;}
+  .spec div span:first-child{color:var(--flir-fg-faint);text-transform:uppercase;letter-spacing:var(--flir-ls-wide);}
+  .spec div span:last-child{color:var(--flir-fg);}
+  .bench{border:var(--flir-rule);padding:var(--flir-space-6);display:flex;align-items:center;
+    justify-content:center;background:var(--flir-bg-sunken);}
+  .bad{border:var(--flir-rule);padding:var(--flir-space-4);display:flex;flex-direction:column;
+    gap:var(--flir-space-3);align-items:center;justify-content:space-between;}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="card-head"><h1 class="card-title">Logo Usage</h1><span class="card-id">GDL-05 · Placard Condensed + Frankfurter Heavy</span></div>
+
+  <p class="note">The wordmark already exists and is not being redrawn. It is typed as <strong>one word</strong> — THEFLIR — in two faces at a fixed 1:2 ratio:</p>
+  <div class="spec">
+    <div><span>THE</span><span>Placard Condensed · 1×</span></div>
+    <div><span>FLIR</span><span>Frankfurter Heavy · 2×</span></div>
+    <div><span>Baseline</span><span>Shared · no shift</span></div>
+    <div><span>Word space</span><span>None · typed as one word</span></div>
+    <div><span>Tracking</span><span>Font default · no adjustment</span></div>
+    <div><span>Worked example</span><span>THE 75pt / FLIR 150pt</span></div>
+  </div>
+  <p class="note"><strong>The article is part of the name.</strong> The band is never referred to as "FLIR" alone — that is an unrelated business. Both words always appear together, on one line, at this ratio.</p>
+  <p class="note">In CSS the parent's <code>font-size</code> is the <strong>FLIR</strong> size; THE follows from <code>--flir-wordmark-ratio</code>. Set one number and the lockup scales correctly.</p>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:var(--flir-space-5);">
+    <div style="display:flex;flex-direction:column;gap:var(--flir-space-3);">
+      <span class="lbl">Primary · ink</span>
+      <div class="bench"><span class="flir-wordmark" style="font-size:76px;"><span class="the">The</span><span class="flir">Flir</span></span></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:var(--flir-space-3);">
+      <span class="lbl">Chalk</span>
+      <div class="bench" data-flir-theme="chalk" style="background:var(--flir-bg);"><span class="flir-wordmark" style="font-size:76px;"><span class="the">The</span><span class="flir">Flir</span></span></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:var(--flir-space-3);">
+      <span class="lbl">Red · one-colour</span>
+      <div class="bench"><span class="flir-wordmark" style="font-size:76px;color:var(--flir-accent);"><span class="the">The</span><span class="flir">Flir</span></span></div>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:var(--flir-space-3);">
+      <span class="lbl">Over photography · knock-out white</span>
+      <div class="bench" style="background:linear-gradient(0deg,rgba(0,0,0,.55),rgba(0,0,0,.35)),url('../assets/source/dbnelson-12.jpg') center/cover;">
+        <span class="flir-wordmark" style="font-size:76px;color:var(--flir-white);"><span class="the">The</span><span class="flir">Flir</span></span>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="lbl" style="margin-bottom:var(--flir-space-3);">Construction &amp; clear space</div>
+    <div style="border:var(--flir-rule);background:var(--flir-surface);padding:var(--flir-space-7);display:inline-flex;">
+      <div style="position:relative;padding:44px;outline:var(--flir-border-hair) dashed var(--flir-line-strong);">
+        <span class="flir-wordmark" style="font-size:72px;"><span class="the">The</span><span class="flir">Flir</span></span>
+        <span style="position:absolute;top:8px;left:10px;font-family:var(--flir-font-data);font-size:var(--flir-text-nano);
+          letter-spacing:var(--flir-ls-wide);color:var(--flir-fg-faint);text-transform:uppercase;">Clear space = THE cap height</span>
+      </div>
+    </div>
+  </div>
+
+  <div>
+    <div class="lbl" style="margin-bottom:var(--flir-space-3);">Minimum sizes</div>
+    <div style="display:flex;gap:var(--flir-space-6);align-items:flex-end;flex-wrap:wrap;border:var(--flir-rule);
+      background:var(--flir-bg-sunken);padding:var(--flir-space-5);">
+      <div style="display:flex;flex-direction:column;gap:var(--flir-space-2);align-items:flex-start;"><span class="flir-wordmark" style="font-size:20px;"><span class="the">The</span><span class="flir">Flir</span></span><span class="lbl" style="font-size:var(--flir-text-nano);">Screen min · 20px</span></div>
+      <div style="display:flex;flex-direction:column;gap:var(--flir-space-2);align-items:flex-start;"><span class="flir-wordmark" style="font-size:34px;"><span class="the">The</span><span class="flir">Flir</span></span><span class="lbl" style="font-size:var(--flir-text-nano);">UI · 34px</span></div>
+      <div style="display:flex;flex-direction:column;gap:var(--flir-space-2);align-items:flex-start;"><span class="flir-wordmark" style="font-size:64px;"><span class="the">The</span><span class="flir">Flir</span></span><span class="lbl" style="font-size:var(--flir-text-nano);">Print min · 0.5in</span></div>
+    </div>
+  </div>
+
+  <div>
+    <div class="lbl" style="margin-bottom:var(--flir-space-3);">Master artwork · supplied reference</div>
+    <div style="border:var(--flir-rule);background:var(--flir-grey-95);padding:var(--flir-space-5);">
+      <img src="../uploads/THEFLIR_LOGO_BLACK.png" alt="THE FLIR wordmark, supplied master"
+        style="display:block;width:100%;max-width:620px;height:auto;">
+    </div>
+  </div>
+
+  <div>
+    <div class="lbl" style="margin-bottom:var(--flir-space-3);">Misuse</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(170px,1fr));gap:var(--flir-space-3);">
+      <div class="bad">
+        <span class="flir-wordmark" style="font-size:30px;"><span class="flir">Flir</span></span>
+        <span class="lbl" style="color:var(--flir-accent-text);font-size:var(--flir-text-nano);text-align:center;">Never drop "THE"</span>
+      </div>
+      <div class="bad">
+        <span class="flir-wordmark" style="font-size:30px;"><span class="the" style="font-size:.75em;">The</span><span class="flir">Flir</span></span>
+        <span class="lbl" style="color:var(--flir-accent-text);font-size:var(--flir-text-nano);text-align:center;">Never off the 1:2 ratio</span>
+      </div>
+      <div class="bad">
+        <span class="flir-wordmark" style="font-size:30px;"><span class="the" style="margin-right:.5em;">The</span><span class="flir">Flir</span></span>
+        <span class="lbl" style="color:var(--flir-accent-text);font-size:var(--flir-text-nano);text-align:center;">Never add a word space</span>
+      </div>
+      <div class="bad">
+        <span class="flir-wordmark" style="font-size:30px;"><span class="the" style="font-family:var(--flir-font-wordmark-flir);">The</span><span class="flir">Flir</span></span>
+        <span class="lbl" style="color:var(--flir-accent-text);font-size:var(--flir-text-nano);text-align:center;">Never one face for both</span>
+      </div>
+      <div class="bad">
+        <span class="flir-wordmark" style="font-size:30px;transform:rotate(-8deg);"><span class="the">The</span><span class="flir">Flir</span></span>
+        <span class="lbl" style="color:var(--flir-accent-text);font-size:var(--flir-text-nano);text-align:center;">Never rotate</span>
+      </div>
+      <div class="bad">
+        <span class="flir-wordmark" style="font-size:30px;color:#27AE60;"><span class="the">The</span><span class="flir">Flir</span></span>
+        <span class="lbl" style="color:var(--flir-accent-text);font-size:var(--flir-text-nano);text-align:center;">Never another colour</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="dev"><b>Colour</b>The wordmark is <code>--flir-fg</code> on dark, <code>--flir-fg</code> on chalk, or solid <code>--flir-accent</code> for one-colour applications. Over photography it is knock-out white with no rule, box or shadow behind it.</div>
+  <div class="dev"><b>Naming</b>Catalogue prefix is <code>TF-</code> (TF-001), never <code>FLIR-</code>. Handles and URLs are the only lowercase forms: <code>@theflir</code>, <code>theflir.com</code>.</div>
+  <div class="dev"><b>Reference</b>Master artwork: <code>uploads/THEFLIR_LOGO_BLACK.png</code>. The CSS lockup is measured against it. An outlined SVG is still worth producing for print and merch, where the fonts cannot travel with the file.</div>
+  <div class="dev"><b>Superseded</b>The boxed mono mark proposed in direction 1c is withdrawn. The band has a working wordmark and it stays.</div>
+</div>
+</body></html>

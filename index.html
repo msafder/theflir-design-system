@@ -1,0 +1,437 @@
+<!doctype html>
+<html lang="en" data-flir-theme="ink">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>THE FLIR — Design System 2026</title>
+<link rel="stylesheet" href="tokens/color.css">
+<link rel="stylesheet" href="tokens/type.css">
+<link rel="stylesheet" href="tokens/layout.css">
+<style>
+  html{scroll-behavior:smooth;}
+  body{margin:0;background:var(--flir-bg);color:var(--flir-fg);font-family:var(--flir-font-body);
+    -webkit-font-smoothing:antialiased;}
+  a{color:var(--flir-accent-text);text-decoration:none;}
+  a:hover{color:var(--flir-fg);}
+  .lbl{font-family:var(--flir-font-data);font-weight:var(--flir-fw-medium);font-size:var(--flir-text-micro);
+    letter-spacing:var(--flir-ls-wider);text-transform:uppercase;color:var(--flir-fg-muted);}
+  .note{font-size:var(--flir-text-small);line-height:var(--flir-lh-body);color:var(--flir-fg-muted);
+    max-width:64ch;margin:0;text-wrap:pretty;}
+  .note strong{color:var(--flir-fg);font-weight:var(--flir-fw-bold);}
+  .spec{font-family:var(--flir-font-data);font-size:var(--flir-text-small);line-height:var(--flir-lh-data);display:grid;gap:0;}
+  .spec div{display:flex;justify-content:space-between;gap:var(--flir-space-5);
+    border-bottom:var(--flir-border-hair) solid var(--flir-line);padding:var(--flir-space-2) 0;}
+  .spec div span:last-child{color:var(--flir-fg-muted);text-align:right;}
+  nav a{font-family:var(--flir-font-data);font-weight:var(--flir-fw-medium);font-size:var(--flir-text-micro);
+    letter-spacing:var(--flir-ls-wider);text-transform:uppercase;color:var(--flir-fg-muted);}
+  nav a:hover{color:var(--flir-fg);}
+  .mark{display:inline-flex;border:var(--flir-border-mark) solid var(--flir-accent);
+    padding:var(--flir-space-2) var(--flir-space-4);}
+  .mark span{font-family:var(--flir-font-data);font-weight:var(--flir-fw-bold);
+    letter-spacing:var(--flir-ls-widest);text-transform:uppercase;color:var(--flir-fg);font-size:var(--flir-text-h3);}
+</style>
+</head>
+<body>
+
+<header style="position:sticky;top:0;z-index:2;background:var(--flir-bg);
+  border-bottom:var(--flir-rule);display:flex;align-items:center;justify-content:space-between;
+  gap:var(--flir-space-5);padding:var(--flir-space-3) var(--flir-space-6);flex-wrap:wrap;">
+  <span class="lbl" style="color:var(--flir-fg);">THE FLIR · Design System 2026</span>
+  <nav style="display:flex;gap:var(--flir-space-5);flex-wrap:wrap;"><a href="#tokens">Tokens</a><a href="#assets">Assets</a><a href="#guidelines">Guidelines</a><a href="#components">Components · core</a><a href="#social">Social</a><a href="#web">Web</a><a href="#print">Print</a></nav>
+  <span class="lbl" style="color:var(--flir-fg-faint);">v0.5.0</span>
+</header>
+
+<main style="max-width:var(--flir-page-max);margin-inline:auto;padding:var(--flir-space-8) var(--flir-space-6) var(--flir-space-10);
+  display:flex;flex-direction:column;gap:var(--flir-space-9);">
+
+  <section style="display:flex;flex-direction:column;gap:var(--flir-space-5);">
+    <span class="flir-wordmark" style="font-size:72px;align-self:flex-start;"><span class="the">The</span><span class="flir">Flir</span></span>
+    <h1 style="margin:0;font-family:var(--flir-font-headline);
+      font-variation-settings:'wdth' var(--flir-wdth-wide),'wght' var(--flir-fw-bold);
+      font-size:var(--flir-text-h1);line-height:var(--flir-lh-tight);text-transform:uppercase;max-width:18ch;">Design System 2026</h1>
+    <div style="height:var(--flir-border-heavy);background:var(--flir-accent);width:180px;"></div>
+    <p class="note">Direction <strong>Thermal Register</strong>. The palette is a temperature scale: thirteen greys are the instrument, <strong>#C00000</strong> is heat, and red marks the single hottest element on any surface. Type is clean and rule-bound; the photography underneath it is dark, grainy and desaturated. Nothing is rounded.</p>
+    <p class="note">The wordmark is the band's own and is not redrawn: one word, two faces at a locked 1:2 ratio — <strong>THE</strong> in Placard Condensed, <strong>FLIR</strong> in Frankfurter Heavy, shared baseline, no word space. Placard Condensed also carries every headline at 48px and up. The system is built around these, not over them.</p>
+    <div class="spec" style="max-width:560px;">
+      <div><span>Direction</span><span>Thermal Register · 1c</span></div>
+      <div><span>Themes</span><span>ink (default) · chalk (exception)</span></div>
+      <div><span>Type</span><span>Placard Condensed · Frankfurter Heavy · Archivo · IBM Plex Mono</span></div>
+      <div><span>Accent</span><span>#C00000</span></div>
+      <div><span>References</span><span>Recoil · Kraftwerk · early Interpol</span></div>
+      <div><span>Owner</span><span>Eyeliner Media</span></div>
+      <div><span>Changelog</span><span><a href="CHANGELOG.md">CHANGELOG.md</a></span></div>
+    </div>
+    <p class="note" style="border-left:var(--flir-border-mark) solid var(--flir-accent);padding-left:var(--flir-space-4);">
+      <strong>Naming.</strong> The band is always <strong>THE FLIR</strong>. Never "FLIR" alone — that is an unrelated business. Both words stay together in the mark, in copy and in catalogue numbers (<code>TF-001</code>).</p>
+  </section>
+
+
+  <section id="tokens" style="display:flex;flex-direction:column;gap:var(--flir-space-5);scroll-margin-top:var(--flir-space-8);">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;gap:var(--flir-space-4);
+      border-top:var(--flir-border-heavy) solid var(--flir-accent);padding-top:var(--flir-space-4);">
+      <h2 style="margin:0;font-family:var(--flir-font-headline);
+        font-variation-settings:'wdth' var(--flir-wdth-wide),'wght' var(--flir-fw-bold);
+        font-size:var(--flir-text-h2);line-height:var(--flir-lh-tight);text-transform:uppercase;">Tokens</h2>
+      <span class="lbl">tokens/</span>
+    </div>
+    <p class="note">Real CSS custom properties, commented. Every component in this system resolves to these three files.</p>
+    <div class="spec"><div><a href="tokens/color.css">tokens/color.css</a><span>Colour — grey ramp, heat, themes ink + chalk, grime layers</span></div><div><a href="tokens/type.css">tokens/type.css</a><span>Type — Archivo variable + IBM Plex Mono, scale, tracking, roles</span></div><div><a href="tokens/layout.css">tokens/layout.css</a><span>Layout — space, rules, radii, motion, fixed output sizes</span></div></div>
+    
+  </section>
+  <section id="assets" style="display:flex;flex-direction:column;gap:var(--flir-space-5);scroll-margin-top:var(--flir-space-8);">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;gap:var(--flir-space-4);
+      border-top:var(--flir-border-heavy) solid var(--flir-accent);padding-top:var(--flir-space-4);">
+      <h2 style="margin:0;font-family:var(--flir-font-headline);
+        font-variation-settings:'wdth' var(--flir-wdth-wide),'wght' var(--flir-fw-bold);
+        font-size:var(--flir-text-h2);line-height:var(--flir-lh-tight);text-transform:uppercase;">Assets</h2>
+      <span class="lbl">assets/</span>
+    </div>
+    <p class="note">A working set pulled from <code>THE_FLIR/Art Work</code> and <code>THE_FLIR/Business Card</code>. Photography passes through <code>--flir-photo-filter</code> everywhere it is used — the archive was shot under green, magenta and sodium stage light, and desaturating is what makes it read as one body of work.</p>
+    <div style="display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:var(--flir-space-4);">
+      
+      <figure style="margin:0;display:flex;flex-direction:column;gap:var(--flir-space-2);">
+        <img src="assets/source/theFLIRCover.png" alt="Cover · MARK II" loading="lazy"
+          style="width:100%;aspect-ratio:1;object-fit:cover;border:var(--flir-rule);
+            filter:var(--flir-photo-filter);display:block;background:var(--flir-bg-sunken);">
+        <figcaption style="display:flex;flex-direction:column;gap:2px;">
+          <span class="lbl" style="color:var(--flir-fg);font-size:var(--flir-text-nano);">Cover · MARK II</span>
+          <span class="lbl" style="color:var(--flir-fg-faint);font-size:var(--flir-text-nano);">Existing wordmark in situ</span>
+        </figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:var(--flir-space-2);">
+        <img src="assets/source/band-photo.png" alt="Band photo grid" loading="lazy"
+          style="width:100%;aspect-ratio:1;object-fit:cover;border:var(--flir-rule);
+            filter:var(--flir-photo-filter);display:block;background:var(--flir-bg-sunken);">
+        <figcaption style="display:flex;flex-direction:column;gap:2px;">
+          <span class="lbl" style="color:var(--flir-fg);font-size:var(--flir-text-nano);">Band photo grid</span>
+          <span class="lbl" style="color:var(--flir-fg-faint);font-size:var(--flir-text-nano);">Red-lit live, black grid</span>
+        </figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:var(--flir-space-2);">
+        <img src="assets/source/dbnelson-09.jpg" alt="DB Nelson · 09" loading="lazy"
+          style="width:100%;aspect-ratio:1;object-fit:cover;border:var(--flir-rule);
+            filter:var(--flir-photo-filter);display:block;background:var(--flir-bg-sunken);">
+        <figcaption style="display:flex;flex-direction:column;gap:2px;">
+          <span class="lbl" style="color:var(--flir-fg);font-size:var(--flir-text-nano);">DB Nelson · 09</span>
+          <span class="lbl" style="color:var(--flir-fg-faint);font-size:var(--flir-text-nano);">Live, green rig</span>
+        </figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:var(--flir-space-2);">
+        <img src="assets/source/dbnelson-12.jpg" alt="DB Nelson · 12" loading="lazy"
+          style="width:100%;aspect-ratio:1;object-fit:cover;border:var(--flir-rule);
+            filter:var(--flir-photo-filter);display:block;background:var(--flir-bg-sunken);">
+        <figcaption style="display:flex;flex-direction:column;gap:2px;">
+          <span class="lbl" style="color:var(--flir-fg);font-size:var(--flir-text-nano);">DB Nelson · 12</span>
+          <span class="lbl" style="color:var(--flir-fg-faint);font-size:var(--flir-text-nano);">Live</span>
+        </figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:var(--flir-space-2);">
+        <img src="assets/source/dbnelson-03.jpg" alt="DB Nelson · 03" loading="lazy"
+          style="width:100%;aspect-ratio:1;object-fit:cover;border:var(--flir-rule);
+            filter:var(--flir-photo-filter);display:block;background:var(--flir-bg-sunken);">
+        <figcaption style="display:flex;flex-direction:column;gap:2px;">
+          <span class="lbl" style="color:var(--flir-fg);font-size:var(--flir-text-nano);">DB Nelson · 03</span>
+          <span class="lbl" style="color:var(--flir-fg-faint);font-size:var(--flir-text-nano);">Live</span>
+        </figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:var(--flir-space-2);">
+        <img src="assets/source/human-butterfly-shirt.png" alt="Human Butterfly" loading="lazy"
+          style="width:100%;aspect-ratio:1;object-fit:cover;border:var(--flir-rule);
+            display:block;background:var(--flir-bg-sunken);">
+        <figcaption style="display:flex;flex-direction:column;gap:2px;">
+          <span class="lbl" style="color:var(--flir-fg);font-size:var(--flir-text-nano);">Human Butterfly</span>
+          <span class="lbl" style="color:var(--flir-fg-faint);font-size:var(--flir-text-nano);">Figure study · white-hot</span>
+        </figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:var(--flir-space-2);">
+        <img src="assets/source/moCover03.png" alt="Cover · monochrome figure study" loading="lazy"
+          style="width:100%;aspect-ratio:1;object-fit:cover;border:var(--flir-rule);
+            filter:var(--flir-photo-filter-figure);display:block;background:var(--flir-bg-sunken);">
+        <figcaption style="display:flex;flex-direction:column;gap:2px;">
+          <span class="lbl" style="color:var(--flir-fg);font-size:var(--flir-text-nano);">Cover · MARK II</span>
+          <span class="lbl" style="color:var(--flir-fg-faint);font-size:var(--flir-text-nano);">Figure study · monochrome</span>
+        </figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:var(--flir-space-2);">
+        <img src="assets/source/facebook.jpg" alt="Facebook art" loading="lazy"
+          style="width:100%;aspect-ratio:1;object-fit:cover;border:var(--flir-rule);
+            filter:var(--flir-photo-filter);display:block;background:var(--flir-bg-sunken);">
+        <figcaption style="display:flex;flex-direction:column;gap:2px;">
+          <span class="lbl" style="color:var(--flir-fg);font-size:var(--flir-text-nano);">Facebook art</span>
+          <span class="lbl" style="color:var(--flir-fg-faint);font-size:var(--flir-text-nano);">Figure study · red-mapped</span>
+        </figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:var(--flir-space-2);">
+        <img src="assets/source/ref-face-oculta.jpg" alt="Reference · figure study" loading="lazy"
+          style="width:100%;aspect-ratio:1;object-fit:cover;border:var(--flir-rule);
+            filter:var(--flir-photo-filter);display:block;background:var(--flir-bg-sunken);">
+        <figcaption style="display:flex;flex-direction:column;gap:2px;">
+          <span class="lbl" style="color:var(--flir-fg);font-size:var(--flir-text-nano);">Reference</span>
+          <span class="lbl" style="color:var(--flir-fg-faint);font-size:var(--flir-text-nano);">Low-key figure study</span>
+        </figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:var(--flir-space-2);">
+        <img src="assets/source/bizcard-front.png" alt="Business card" loading="lazy"
+          style="width:100%;aspect-ratio:1;object-fit:cover;border:var(--flir-rule);
+            filter:var(--flir-photo-filter);display:block;background:var(--flir-bg-sunken);">
+        <figcaption style="display:flex;flex-direction:column;gap:2px;">
+          <span class="lbl" style="color:var(--flir-fg);font-size:var(--flir-text-nano);">Business card</span>
+          <span class="lbl" style="color:var(--flir-fg-faint);font-size:var(--flir-text-nano);">Wordmark, red on white</span>
+        </figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:var(--flir-space-2);">
+        <img src="assets/source/flyer-10272006.png" alt="Flyer · 27.10.06" loading="lazy"
+          style="width:100%;aspect-ratio:1;object-fit:cover;border:var(--flir-rule);
+            filter:var(--flir-photo-filter);display:block;background:var(--flir-bg-sunken);">
+        <figcaption style="display:flex;flex-direction:column;gap:2px;">
+          <span class="lbl" style="color:var(--flir-fg);font-size:var(--flir-text-nano);">Flyer · 27.10.06</span>
+          <span class="lbl" style="color:var(--flir-fg-faint);font-size:var(--flir-text-nano);">Archive</span>
+        </figcaption>
+      </figure>
+      <figure style="margin:0;display:flex;flex-direction:column;gap:var(--flir-space-2);">
+        <img src="assets/source/studio-mo2.jpg" alt="Studio" loading="lazy"
+          style="width:100%;aspect-ratio:1;object-fit:cover;border:var(--flir-rule);
+            filter:var(--flir-photo-filter);display:block;background:var(--flir-bg-sunken);">
+        <figcaption style="display:flex;flex-direction:column;gap:2px;">
+          <span class="lbl" style="color:var(--flir-fg);font-size:var(--flir-text-nano);">Studio</span>
+          <span class="lbl" style="color:var(--flir-fg-faint);font-size:var(--flir-text-nano);">Archive</span>
+        </figcaption>
+      </figure>
+    </div>
+    <div class="spec" style="max-width:720px;">
+      <div><span>Fonts</span><span>Placcond.ttf · Frnkfh.ttf</span></div>
+      <div><span>Source</span><span>/Volumes/eyeliner-media-video/2026/THE_FLIR</span></div>
+      <div><span>Treatment</span><span>grayscale · contrast 1.18 · brightness 0.86</span></div>
+    </div>
+  </section>
+
+  <section id="guidelines" style="display:flex;flex-direction:column;gap:var(--flir-space-5);scroll-margin-top:var(--flir-space-8);">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;gap:var(--flir-space-4);
+      border-top:var(--flir-border-heavy) solid var(--flir-accent);padding-top:var(--flir-space-4);">
+      <h2 style="margin:0;font-family:var(--flir-font-headline);
+        font-variation-settings:'wdth' var(--flir-wdth-wide),'wght' var(--flir-fw-bold);
+        font-size:var(--flir-text-h2);line-height:var(--flir-lh-tight);text-transform:uppercase;">Guidelines</h2>
+      <span class="lbl">guidelines/</span>
+    </div>
+    <p class="note">One preview card per topic.</p>
+    
+    
+    <figure style="margin:0;display:flex;flex-direction:column;gap:var(--flir-space-2);">
+      <figcaption style="display:flex;justify-content:space-between;gap:var(--flir-space-4);align-items:baseline;">
+        <span class="lbl" style="color:var(--flir-fg);">GDL-01 · Colour</span>
+        <a class="lbl" href="guidelines/color.card.html" style="color:var(--flir-accent-text);">Open ↗</a>
+      </figcaption>
+      <iframe src="guidelines/color.card.html" loading="lazy" title="GDL-01 · Colour"
+        onload="try{this.style.height=this.contentDocument.body.scrollHeight+'px'}catch(e){}"
+        style="width:100%;height:900px;border:var(--flir-rule);background:var(--flir-bg);display:block;"></iframe>
+    </figure>
+    <figure style="margin:0;display:flex;flex-direction:column;gap:var(--flir-space-2);">
+      <figcaption style="display:flex;justify-content:space-between;gap:var(--flir-space-4);align-items:baseline;">
+        <span class="lbl" style="color:var(--flir-fg);">GDL-02 · Typography</span>
+        <a class="lbl" href="guidelines/typography.card.html" style="color:var(--flir-accent-text);">Open ↗</a>
+      </figcaption>
+      <iframe src="guidelines/typography.card.html" loading="lazy" title="GDL-02 · Typography"
+        onload="try{this.style.height=this.contentDocument.body.scrollHeight+'px'}catch(e){}"
+        style="width:100%;height:900px;border:var(--flir-rule);background:var(--flir-bg);display:block;"></iframe>
+    </figure>
+    <figure style="margin:0;display:flex;flex-direction:column;gap:var(--flir-space-2);">
+      <figcaption style="display:flex;justify-content:space-between;gap:var(--flir-space-4);align-items:baseline;">
+        <span class="lbl" style="color:var(--flir-fg);">GDL-03 · Radii & borders</span>
+        <a class="lbl" href="guidelines/radii-borders.card.html" style="color:var(--flir-accent-text);">Open ↗</a>
+      </figcaption>
+      <iframe src="guidelines/radii-borders.card.html" loading="lazy" title="GDL-03 · Radii & borders"
+        onload="try{this.style.height=this.contentDocument.body.scrollHeight+'px'}catch(e){}"
+        style="width:100%;height:900px;border:var(--flir-rule);background:var(--flir-bg);display:block;"></iframe>
+    </figure>
+    <figure style="margin:0;display:flex;flex-direction:column;gap:var(--flir-space-2);">
+      <figcaption style="display:flex;justify-content:space-between;gap:var(--flir-space-4);align-items:baseline;">
+        <span class="lbl" style="color:var(--flir-fg);">GDL-04 · Voice & tone</span>
+        <a class="lbl" href="guidelines/voice-tone.card.html" style="color:var(--flir-accent-text);">Open ↗</a>
+      </figcaption>
+      <iframe src="guidelines/voice-tone.card.html" loading="lazy" title="GDL-04 · Voice & tone"
+        onload="try{this.style.height=this.contentDocument.body.scrollHeight+'px'}catch(e){}"
+        style="width:100%;height:900px;border:var(--flir-rule);background:var(--flir-bg);display:block;"></iframe>
+    </figure>
+    <figure style="margin:0;display:flex;flex-direction:column;gap:var(--flir-space-2);">
+      <figcaption style="display:flex;justify-content:space-between;gap:var(--flir-space-4);align-items:baseline;">
+        <span class="lbl" style="color:var(--flir-fg);">GDL-05 · Logo usage</span>
+        <a class="lbl" href="guidelines/logo-usage.card.html" style="color:var(--flir-accent-text);">Open ↗</a>
+      </figcaption>
+      <iframe src="guidelines/logo-usage.card.html" loading="lazy" title="GDL-05 · Logo usage"
+        onload="try{this.style.height=this.contentDocument.body.scrollHeight+'px'}catch(e){}"
+        style="width:100%;height:900px;border:var(--flir-rule);background:var(--flir-bg);display:block;"></iframe>
+    </figure>
+    
+    <figure style="margin:0;display:flex;flex-direction:column;gap:var(--flir-space-2);">
+      <figcaption style="display:flex;justify-content:space-between;gap:var(--flir-space-4);align-items:baseline;">
+        <span class="lbl" style="color:var(--flir-fg);">GDL-06 · Figure photography</span>
+        <a class="lbl" href="guidelines/figure-photography.card.html" style="color:var(--flir-accent-text);">Open ↗</a>
+      </figcaption>
+      <iframe src="guidelines/figure-photography.card.html" loading="lazy" title="GDL-06 · Figure photography"
+        onload="try{this.style.height=this.contentDocument.body.scrollHeight+'px'}catch(e){}"
+        style="width:100%;height:900px;border:var(--flir-rule);background:var(--flir-bg);display:block;"></iframe>
+    </figure>
+  </section>
+  <section id="components" style="display:flex;flex-direction:column;gap:var(--flir-space-5);scroll-margin-top:var(--flir-space-8);">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;gap:var(--flir-space-4);
+      border-top:var(--flir-border-heavy) solid var(--flir-accent);padding-top:var(--flir-space-4);">
+      <h2 style="margin:0;font-family:var(--flir-font-headline);
+        font-variation-settings:'wdth' var(--flir-wdth-wide),'wght' var(--flir-fw-bold);
+        font-size:var(--flir-text-h2);line-height:var(--flir-lh-tight);text-transform:uppercase;">Components · core</h2>
+      <span class="lbl">components/</span>
+    </div>
+    <p class="note">Each component is a .jsx + .prompt.md + .card.html triplet.</p>
+    
+    
+    <figure style="margin:0;display:flex;flex-direction:column;gap:var(--flir-space-2);">
+      <figcaption style="display:flex;justify-content:space-between;gap:var(--flir-space-4);align-items:baseline;">
+        <span class="lbl" style="color:var(--flir-fg);">CMP-01 · Button</span>
+        <a class="lbl" href="components/core/Button.card.html" style="color:var(--flir-accent-text);">Open ↗</a>
+      </figcaption>
+      <iframe src="components/core/Button.card.html" loading="lazy" title="CMP-01 · Button"
+        onload="try{this.style.height=this.contentDocument.body.scrollHeight+'px'}catch(e){}"
+        style="width:100%;height:900px;border:var(--flir-rule);background:var(--flir-bg);display:block;"></iframe>
+    </figure>
+    <figure style="margin:0;display:flex;flex-direction:column;gap:var(--flir-space-2);">
+      <figcaption style="display:flex;justify-content:space-between;gap:var(--flir-space-4);align-items:baseline;">
+        <span class="lbl" style="color:var(--flir-fg);">CMP-02 · Card</span>
+        <a class="lbl" href="components/core/Card.card.html" style="color:var(--flir-accent-text);">Open ↗</a>
+      </figcaption>
+      <iframe src="components/core/Card.card.html" loading="lazy" title="CMP-02 · Card"
+        onload="try{this.style.height=this.contentDocument.body.scrollHeight+'px'}catch(e){}"
+        style="width:100%;height:900px;border:var(--flir-rule);background:var(--flir-bg);display:block;"></iframe>
+    </figure>
+    <figure style="margin:0;display:flex;flex-direction:column;gap:var(--flir-space-2);">
+      <figcaption style="display:flex;justify-content:space-between;gap:var(--flir-space-4);align-items:baseline;">
+        <span class="lbl" style="color:var(--flir-fg);">CMP-03 · Badge</span>
+        <a class="lbl" href="components/core/Badge.card.html" style="color:var(--flir-accent-text);">Open ↗</a>
+      </figcaption>
+      <iframe src="components/core/Badge.card.html" loading="lazy" title="CMP-03 · Badge"
+        onload="try{this.style.height=this.contentDocument.body.scrollHeight+'px'}catch(e){}"
+        style="width:100%;height:900px;border:var(--flir-rule);background:var(--flir-bg);display:block;"></iframe>
+    </figure>
+  </section>
+  <section id="social" style="display:flex;flex-direction:column;gap:var(--flir-space-5);scroll-margin-top:var(--flir-space-8);">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;gap:var(--flir-space-4);
+      border-top:var(--flir-border-heavy) solid var(--flir-accent);padding-top:var(--flir-space-4);">
+      <h2 style="margin:0;font-family:var(--flir-font-headline);
+        font-variation-settings:'wdth' var(--flir-wdth-wide),'wght' var(--flir-fw-bold);
+        font-size:var(--flir-text-h2);line-height:var(--flir-lh-tight);text-transform:uppercase;">Social</h2>
+      <span class="lbl">social/</span>
+    </div>
+    <p class="note">Instagram masters for @theflir. Authored at true output pixels, scaled for preview.</p>
+    
+    
+    <figure style="margin:0;display:flex;flex-direction:column;gap:var(--flir-space-2);">
+      <figcaption style="display:flex;justify-content:space-between;gap:var(--flir-space-4);align-items:baseline;">
+        <span class="lbl" style="color:var(--flir-fg);">SOC-01 · Feed post 1080 × 1080</span>
+        <a class="lbl" href="social/feed-post.html" style="color:var(--flir-accent-text);">Open ↗</a>
+      </figcaption>
+      <iframe src="social/feed-post.html" loading="lazy" title="SOC-01 · Feed post 1080 × 1080"
+        onload="try{this.style.height=this.contentDocument.body.scrollHeight+'px'}catch(e){}"
+        style="width:100%;height:900px;border:var(--flir-rule);background:var(--flir-bg);display:block;"></iframe>
+    </figure>
+    <figure style="margin:0;display:flex;flex-direction:column;gap:var(--flir-space-2);">
+      <figcaption style="display:flex;justify-content:space-between;gap:var(--flir-space-4);align-items:baseline;">
+        <span class="lbl" style="color:var(--flir-fg);">SOC-02 · Story 1080 × 1920</span>
+        <a class="lbl" href="social/story.html" style="color:var(--flir-accent-text);">Open ↗</a>
+      </figcaption>
+      <iframe src="social/story.html" loading="lazy" title="SOC-02 · Story 1080 × 1920"
+        onload="try{this.style.height=this.contentDocument.body.scrollHeight+'px'}catch(e){}"
+        style="width:100%;height:900px;border:var(--flir-rule);background:var(--flir-bg);display:block;"></iframe>
+    </figure>
+    <figure style="margin:0;display:flex;flex-direction:column;gap:var(--flir-space-2);">
+      <figcaption style="display:flex;justify-content:space-between;gap:var(--flir-space-4);align-items:baseline;">
+        <span class="lbl" style="color:var(--flir-fg);">SOC-03 · Reel cover</span>
+        <a class="lbl" href="social/reel-cover.html" style="color:var(--flir-accent-text);">Open ↗</a>
+      </figcaption>
+      <iframe src="social/reel-cover.html" loading="lazy" title="SOC-03 · Reel cover"
+        onload="try{this.style.height=this.contentDocument.body.scrollHeight+'px'}catch(e){}"
+        style="width:100%;height:900px;border:var(--flir-rule);background:var(--flir-bg);display:block;"></iframe>
+    </figure>
+  </section>
+  <section id="web" style="display:flex;flex-direction:column;gap:var(--flir-space-5);scroll-margin-top:var(--flir-space-8);">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;gap:var(--flir-space-4);
+      border-top:var(--flir-border-heavy) solid var(--flir-accent);padding-top:var(--flir-space-4);">
+      <h2 style="margin:0;font-family:var(--flir-font-headline);
+        font-variation-settings:'wdth' var(--flir-wdth-wide),'wght' var(--flir-fw-bold);
+        font-size:var(--flir-text-h2);line-height:var(--flir-lh-tight);text-transform:uppercase;">Web</h2>
+      <span class="lbl">web/</span>
+    </div>
+    <p class="note">For the future theflir.com.</p>
+    
+    
+    <figure style="margin:0;display:flex;flex-direction:column;gap:var(--flir-space-2);">
+      <figcaption style="display:flex;justify-content:space-between;gap:var(--flir-space-4);align-items:baseline;">
+        <span class="lbl" style="color:var(--flir-fg);">WEB-01 · Hero</span>
+        <a class="lbl" href="web/hero.html" style="color:var(--flir-accent-text);">Open ↗</a>
+      </figcaption>
+      <iframe src="web/hero.html" loading="lazy" title="WEB-01 · Hero"
+        onload="try{this.style.height=this.contentDocument.body.scrollHeight+'px'}catch(e){}"
+        style="width:100%;height:900px;border:var(--flir-rule);background:var(--flir-bg);display:block;"></iframe>
+    </figure>
+    <figure style="margin:0;display:flex;flex-direction:column;gap:var(--flir-space-2);">
+      <figcaption style="display:flex;justify-content:space-between;gap:var(--flir-space-4);align-items:baseline;">
+        <span class="lbl" style="color:var(--flir-fg);">WEB-02 · Link in bio</span>
+        <a class="lbl" href="web/link-in-bio.html" style="color:var(--flir-accent-text);">Open ↗</a>
+      </figcaption>
+      <iframe src="web/link-in-bio.html" loading="lazy" title="WEB-02 · Link in bio"
+        onload="try{this.style.height=this.contentDocument.body.scrollHeight+'px'}catch(e){}"
+        style="width:100%;height:900px;border:var(--flir-rule);background:var(--flir-bg);display:block;"></iframe>
+    </figure>
+  </section>
+  <section id="print" style="display:flex;flex-direction:column;gap:var(--flir-space-5);scroll-margin-top:var(--flir-space-8);">
+    <div style="display:flex;align-items:baseline;justify-content:space-between;gap:var(--flir-space-4);
+      border-top:var(--flir-border-heavy) solid var(--flir-accent);padding-top:var(--flir-space-4);">
+      <h2 style="margin:0;font-family:var(--flir-font-headline);
+        font-variation-settings:'wdth' var(--flir-wdth-wide),'wght' var(--flir-fw-bold);
+        font-size:var(--flir-text-h2);line-height:var(--flir-lh-tight);text-transform:uppercase;">Print</h2>
+      <span class="lbl">print/</span>
+    </div>
+    <p class="note">Kunaki CD jacket and the gig poster master.</p>
+    
+    
+    <figure style="margin:0;display:flex;flex-direction:column;gap:var(--flir-space-2);">
+      <figcaption style="display:flex;justify-content:space-between;gap:var(--flir-space-4);align-items:baseline;">
+        <span class="lbl" style="color:var(--flir-fg);">PRN-01 · CD jacket</span>
+        <a class="lbl" href="print/cd-jacket.html" style="color:var(--flir-accent-text);">Open ↗</a>
+      </figcaption>
+      <iframe src="print/cd-jacket.html" loading="lazy" title="PRN-01 · CD jacket"
+        onload="try{this.style.height=this.contentDocument.body.scrollHeight+'px'}catch(e){}"
+        style="width:100%;height:900px;border:var(--flir-rule);background:var(--flir-bg);display:block;"></iframe>
+    </figure>
+    <figure style="margin:0;display:flex;flex-direction:column;gap:var(--flir-space-2);">
+      <figcaption style="display:flex;justify-content:space-between;gap:var(--flir-space-4);align-items:baseline;">
+        <span class="lbl" style="color:var(--flir-fg);">PRN-02 · Gig poster</span>
+        <a class="lbl" href="print/gig-poster.html" style="color:var(--flir-accent-text);">Open ↗</a>
+      </figcaption>
+      <iframe src="print/gig-poster.html" loading="lazy" title="PRN-02 · Gig poster"
+        onload="try{this.style.height=this.contentDocument.body.scrollHeight+'px'}catch(e){}"
+        style="width:100%;height:900px;border:var(--flir-rule);background:var(--flir-bg);display:block;"></iframe>
+    </figure>
+  </section>
+
+  <section style="display:flex;flex-direction:column;gap:var(--flir-space-4);
+    border-top:var(--flir-border-heavy) solid var(--flir-accent);padding-top:var(--flir-space-4);">
+    <h2 style="margin:0;font-family:var(--flir-font-headline);
+      font-variation-settings:'wdth' var(--flir-wdth-wide),'wght' var(--flir-fw-bold);
+      font-size:var(--flir-text-h2);line-height:var(--flir-lh-tight);text-transform:uppercase;">Open questions</h2>
+    <p class="note">Placeholders that need your material before this is production-ready:</p>
+    <div class="spec" style="max-width:720px;">
+      <div><span>Real release data</span><span>Track list, dates and prices are placeholder</span></div>
+      <div><span>Kunaki template</span><span>Confirm current trim/bleed PDF</span></div>
+      <div><span>Font licensing</span><span>Confirm Placard Condensed web-embed rights</span></div>
+      <div><span>Photo selects</span><span>8 of ~90 pulled — confirm the hero set</span></div>
+    </div>
+  </section>
+
+</main>
+
+<footer style="border-top:var(--flir-rule);padding:var(--flir-space-5) var(--flir-space-6);
+  display:flex;justify-content:space-between;gap:var(--flir-space-4);flex-wrap:wrap;">
+  <span class="lbl" style="color:var(--flir-fg-faint);">THE FLIR · Eyeliner Media · MMXXVI</span>
+  <span class="lbl" style="color:var(--flir-fg-faint);">TF-DS-2026</span>
+</footer>
+
+</body>
+</html>

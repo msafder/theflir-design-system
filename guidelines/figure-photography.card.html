@@ -1,0 +1,175 @@
+<!doctype html>
+<html lang="en" data-flir-theme="ink">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>THE FLIR — Figure Photography</title>
+<link rel="stylesheet" href="../tokens/color.css">
+<link rel="stylesheet" href="../tokens/type.css">
+<link rel="stylesheet" href="../tokens/layout.css">
+<style>
+  html,body{margin:0;background:var(--flir-bg);color:var(--flir-fg);font-family:var(--flir-font-body);
+    -webkit-font-smoothing:antialiased;}
+  .card{padding:var(--flir-space-6);display:flex;flex-direction:column;gap:var(--flir-space-5);}
+  .card-head{display:flex;align-items:baseline;justify-content:space-between;gap:var(--flir-space-4);
+    border-bottom:var(--flir-rule);padding-bottom:var(--flir-space-3);}
+  .card-title{font-family:var(--flir-font-headline);
+    font-variation-settings:'wdth' var(--flir-wdth-wide),'wght' var(--flir-fw-bold);
+    font-size:var(--flir-text-h3);line-height:var(--flir-lh-tight);text-transform:uppercase;margin:0;}
+  .card-id{font-family:var(--flir-font-data);font-size:var(--flir-text-nano);
+    letter-spacing:var(--flir-ls-wider);color:var(--flir-fg-faint);text-transform:uppercase;}
+  .lbl{font-family:var(--flir-font-data);font-weight:var(--flir-fw-medium);font-size:var(--flir-text-micro);
+    letter-spacing:var(--flir-ls-wider);text-transform:uppercase;color:var(--flir-fg-muted);}
+  .note{font-size:var(--flir-text-small);line-height:var(--flir-lh-body);color:var(--flir-fg-muted);
+    max-width:64ch;text-wrap:pretty;margin:0;}
+  .note strong{color:var(--flir-fg);font-weight:var(--flir-fw-bold);}
+  .dev{border-left:var(--flir-border-mark) solid var(--flir-accent);padding-left:var(--flir-space-4);
+    font-family:var(--flir-font-data);font-size:var(--flir-text-small);line-height:var(--flir-lh-body);
+    color:var(--flir-fg-muted);}
+  .dev b{color:var(--flir-accent-text);font-weight:var(--flir-fw-medium);letter-spacing:var(--flir-ls-wide);
+    text-transform:uppercase;display:block;font-size:var(--flir-text-nano);margin-bottom:var(--flir-space-1);}
+  .spec{font-family:var(--flir-font-data);font-size:var(--flir-text-small);line-height:var(--flir-lh-data);
+    display:grid;gap:0;}
+  .spec div{display:flex;justify-content:space-between;gap:var(--flir-space-5);
+    border-bottom:var(--flir-border-hair) solid var(--flir-line);padding:var(--flir-space-1) 0;}
+  .spec div span:first-child{color:var(--flir-fg-faint);text-transform:uppercase;letter-spacing:var(--flir-ls-wide);}
+  .spec div span:last-child{color:var(--flir-fg);text-align:right;}
+  .plate{position:relative;background:var(--flir-black);border:var(--flir-rule);overflow:hidden;aspect-ratio:1;}
+  .plate img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;display:block;}
+  .rule-row{display:flex;gap:var(--flir-space-4);align-items:flex-start;
+    border-top:var(--flir-border-hair) solid var(--flir-line);padding-top:var(--flir-space-3);}
+  .rule-row .lbl{width:150px;flex:none;}
+  .yesno{display:grid;grid-template-columns:1fr 1fr;gap:var(--flir-space-5);}
+  .col{border:var(--flir-rule);padding:var(--flir-space-4);display:flex;flex-direction:column;gap:var(--flir-space-2);}
+  .col.do{border-top:var(--flir-border-mark) solid var(--flir-accent);}
+  .col ul{margin:0;padding-left:1.1em;font-size:var(--flir-text-small);line-height:var(--flir-lh-body);color:var(--flir-fg-muted);}
+  .col li{margin-bottom:var(--flir-space-2);}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="card-head"><h1 class="card-title">Figure Photography</h1><span class="card-id">GDL-06 · low-key figure study</span></div>
+
+  <p class="note">The band's oldest and most consistent visual thread. There is no single trade name for it; the closest description is a <strong>low-key chiaroscuro figure study</strong> — tenebrism applied to the human form. The body is folded, turned or contorted until it reads as a <strong>shape</strong> rather than a person, lit by one hard raking source, and everything outside that light falls to pure black.</p>
+  <p class="note">Lineage: Bill Brandt's <em>Perspective of Nudes</em>, Ruth Bernhard, Edward Weston's abstracted forms. It is the reason the covers, the Facebook art and the reference folder all read as the same band across twenty years.</p>
+
+  <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:var(--flir-space-4);">
+    <figure style="margin:0;display:flex;flex-direction:column;gap:var(--flir-space-2);">
+      <div class="plate"><img src="../assets/source/moCover03.png" alt="Cover — monochrome figure study"></div>
+      <figcaption class="lbl" style="font-size:var(--flir-text-nano);">Cover · monochrome silver</figcaption>
+    </figure>
+    <figure style="margin:0;display:flex;flex-direction:column;gap:var(--flir-space-2);">
+      <div class="plate"><img src="../assets/source/human-butterfly-shirt.png" alt="Human Butterfly — white-hot heat map"></div>
+      <figcaption class="lbl" style="font-size:var(--flir-text-nano);">Human Butterfly · white-hot</figcaption>
+    </figure>
+    <figure style="margin:0;display:flex;flex-direction:column;gap:var(--flir-space-2);">
+      <div class="plate"><img src="../assets/source/ref-face-oculta.jpg" alt="Reference — monochrome figure study"></div>
+      <figcaption class="lbl" style="font-size:var(--flir-text-nano);">Reference · native monochrome</figcaption>
+    </figure>
+    <figure style="margin:0;display:flex;flex-direction:column;gap:var(--flir-space-2);">
+      <div class="plate"><img src="../assets/source/facebook.jpg" alt="Existing artwork — red-mapped figure with wordmark"></div>
+      <figcaption class="lbl" style="font-size:var(--flir-text-nano);">In use · red-mapped + wordmark</figcaption>
+    </figure>
+    <figure style="margin:0;display:flex;flex-direction:column;gap:var(--flir-space-2);">
+      <div class="plate"><img src="../assets/source/theFLIRCover.png" alt="Cover — figure held to one corner" style="object-position:100% 50%;"></div>
+      <figcaption class="lbl" style="font-size:var(--flir-text-nano);">Cover · figure held to one corner</figcaption>
+    </figure>
+  </div>
+
+  <div>
+    <div class="lbl" style="margin-bottom:var(--flir-space-3);">The treatment</div>
+    <div style="display:flex;flex-direction:column;gap:var(--flir-space-3);">
+      <div class="rule-row"><span class="lbl">Ground</span><p class="note">True black, <code>--flir-black</code>. Not dark grey, not a gradient. The figure emerges from it — no visible cut-out edge, no silhouette against a lighter panel.</p></div>
+      <div class="rule-row"><span class="lbl">Light</span><p class="note">One hard source, raking across the form. The highlight draws the contour; the shadow does the cropping. No fill, no second source, no rim light on both sides.</p></div>
+      <div class="rule-row"><span class="lbl">Pose</span><p class="note">Folded, curled, inverted or contorted so the body abstracts into a form. The pose is the subject — a straight standing figure is not this treatment.</p></div>
+      <div class="rule-row"><span class="lbl">Face</span><p class="note">Concealed, turned away, obscured by hair, or cropped out. This is a study of a form, not a portrait. Anonymity is the rule, not a preference.</p></div>
+      <div class="rule-row"><span class="lbl">Dress</span><p class="note">Nude or near-nude, non-explicit. Suggestion over display: what the light does not reach is not there.</p></div>
+      <div class="rule-row"><span class="lbl">Frame</span><p class="note">The figure sits off-centre, held to one corner or edge, with a large empty black field opposite it. That field is where the wordmark and type live.</p></div>
+      <div class="rule-row"><span class="lbl">Grain</span><p class="note">Keep it. Film grain and sensor noise in the shadows are part of the texture — do not denoise to clean.</p></div>
+    </div>
+  </div>
+
+  <div>
+    <div class="lbl" style="margin-bottom:var(--flir-space-3);">Three tonal states</div>
+    <div style="display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:var(--flir-space-5);">
+      <div style="display:flex;flex-direction:column;gap:var(--flir-space-3);">
+        <div class="plate" style="aspect-ratio:16/9;"><img src="../assets/source/moCover03.png" alt="Monochrome state" style="filter:var(--flir-photo-filter-figure);"></div>
+        <span class="lbl">01 · Monochrome silver</span>
+        <p class="note">The default. <code>--flir-photo-filter-figure</code>: grayscale, contrast 1.28, brightness 0.82. Crushes the shadows to black and holds the highlight on the skin.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:var(--flir-space-3);">
+        <div class="plate" style="aspect-ratio:16/9;">
+          <img src="../assets/source/ref-face-oculta.jpg" alt="Red-mapped state" style="filter:var(--flir-photo-filter-figure);">
+          <div style="position:absolute;inset:0;background:var(--flir-red);mix-blend-mode:multiply;"></div>
+          <div style="position:absolute;inset:0;background:var(--flir-red-dim);mix-blend-mode:color;"></div>
+        </div>
+        <span class="lbl">02 · Red-mapped</span>
+        <p class="note">The heat state, used on covers and release art. Grayscale first, then <code>--flir-red</code> at <code>multiply</code> over <code>--flir-red-dim</code> at <code>color</code>. Black stays black; only the lit skin takes the red.</p>
+      </div>
+      <div style="display:flex;flex-direction:column;gap:var(--flir-space-3);">
+        <div class="plate" style="aspect-ratio:16/9;"><img src="../assets/source/human-butterfly-shirt.png" alt="White-hot state" style="object-position:50% 35%;"></div>
+        <span class="lbl">03 · White-hot</span>
+        <p class="note">The name read literally: a thermal map. The lit core blows to white, falls through <code>--flir-red</code>, and dies to black at the edge. Produced as a Photoshop gradient map on <code>--flir-heatmap-stops</code>, not as a CSS filter — <code>--flir-photo-filter-hot</code> is only the screen approximation.</p>
+      </div>
+    </div>
+    <div class="spec" style="max-width:560px;margin-top:var(--flir-space-4);">
+      <div><span>Gradient map</span><span>#000000 · #7A0000 · #C00000 · #F2B3B3 · #FFFFFF</span></div>
+      <div><span>Stop positions</span><span>0 · 28 · 52 · 78 · 100%</span></div>
+      <div><span>Applied to</span><span>Desaturated source, blacks already crushed</span></div>
+    </div>
+  </div>
+
+  <div>
+    <div class="lbl" style="margin-bottom:var(--flir-space-3);">Type over figure</div>
+    <div class="plate" style="aspect-ratio:21/9;">
+      <img src="../assets/source/ref-face-oculta.jpg" alt="Wordmark placed in the black field" style="object-position:70% center;filter:var(--flir-photo-filter-figure);">
+      <div style="position:absolute;inset:0;background:var(--flir-red);mix-blend-mode:multiply;"></div>
+      <div style="position:absolute;inset:0;display:flex;align-items:flex-end;padding:var(--flir-space-6);">
+        <span class="flir-wordmark" style="font-size:64px;color:var(--flir-white);"><span class="the">The</span><span class="flir">Flir</span></span>
+      </div>
+    </div>
+    <p class="note" style="margin-top:var(--flir-space-3);">The wordmark is knock-out white and sits <strong>in the black field</strong>, never over lit skin. No rule, no box, no shadow behind it — the black is the container.</p>
+  </div>
+
+  <div class="yesno">
+    <div class="col do">
+      <span class="lbl" style="color:var(--flir-accent-text);">Do</span>
+      <ul>
+        <li>One light, hard, raking</li>
+        <li>Black that is actually black</li>
+        <li>Face concealed or cropped</li>
+        <li>Figure to one corner, type in the void</li>
+        <li>Keep the grain</li>
+        <li>Credit model and photographer in the artefact credits</li>
+      </ul>
+    </div>
+    <div class="col">
+      <span class="lbl" style="color:var(--flir-fg-faint);">Don't</span>
+      <ul>
+        <li>Light or mid-grey backgrounds</li>
+        <li>Full colour, skin tones left natural</li>
+        <li>Eye contact or a recognisable portrait</li>
+        <li>Props, furniture, venue or studio context</li>
+        <li>Cut-out figures composited onto a flat fill</li>
+        <li>Explicit framing — the treatment is form, not display</li>
+      </ul>
+    </div>
+  </div>
+
+  <div>
+    <div class="lbl" style="margin-bottom:var(--flir-space-3);">Where it is used</div>
+    <div class="spec" style="max-width:560px;">
+      <div><span>Album &amp; single art</span><span>Primary — always</span></div>
+      <div><span>Instagram grid</span><span>Centrepiece posts only</span></div>
+      <div><span>Gig poster</span><span>Field behind the type</span></div>
+      <div><span>Web hero</span><span>Yes, cropped wide</span></div>
+      <div><span>Merch</span><span>White-hot state — one-colour screen print</span></div>
+      <div><span>Live photography</span><span>No — that is its own set</span></div>
+    </div>
+  </div>
+
+  <div class="dev"><b>Rights</b>Every figure image needs a signed model release and a photographer credit on file before it goes on a release, a Shopify listing or a printed run. Log both against the file in the artwork folder.</div>
+  <div class="dev"><b>Platform</b>Instagram removes female nudity even where it is artistic. For @theflir, crop above or below the line, let the shadow do the covering, or run the red-mapped state where the form reads but the detail does not. Keep an alternate crop of every figure image for this reason.</div>
+  <div class="dev"><b>Merch</b>The white-hot state is what makes this treatment printable. Blown highlights and crushed blacks survive a single screen pass on a dark garment where a full tonal figure would not — this is how <em>Human Butterfly</em> works as a shirt.</div>
+</div>
+</body></html>

@@ -1,0 +1,92 @@
+<!doctype html>
+<html lang="en" data-flir-theme="ink">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>THE FLIR — Typography</title>
+<link rel="stylesheet" href="../tokens/color.css">
+<link rel="stylesheet" href="../tokens/type.css">
+<link rel="stylesheet" href="../tokens/layout.css">
+<style>
+  html,body{margin:0;background:var(--flir-bg);color:var(--flir-fg);
+    font-family:var(--flir-font-body);-webkit-font-smoothing:antialiased;}
+  a{color:var(--flir-accent-text);text-decoration:none;border-bottom:var(--flir-border-hair) solid var(--flir-accent-text);}
+  a:hover{color:var(--flir-fg);border-bottom-color:var(--flir-fg);}
+  .card{padding:var(--flir-space-6);display:flex;flex-direction:column;gap:var(--flir-space-5);}
+  .card-head{display:flex;align-items:baseline;justify-content:space-between;gap:var(--flir-space-4);
+    border-bottom:var(--flir-rule);padding-bottom:var(--flir-space-3);}
+  .card-title{font-family:var(--flir-font-headline);
+    font-variation-settings:'wdth' var(--flir-wdth-wide),'wght' var(--flir-fw-bold);
+    font-size:var(--flir-text-h3);line-height:var(--flir-lh-tight);text-transform:uppercase;margin:0;}
+  .card-id{font-family:var(--flir-font-data);font-size:var(--flir-text-nano);
+    letter-spacing:var(--flir-ls-wider);color:var(--flir-fg-faint);text-transform:uppercase;}
+  .lbl{font-family:var(--flir-font-data);font-weight:var(--flir-fw-medium);font-size:var(--flir-text-micro);
+    letter-spacing:var(--flir-ls-wider);text-transform:uppercase;color:var(--flir-fg-muted);}
+  .note{font-size:var(--flir-text-small);line-height:var(--flir-lh-body);color:var(--flir-fg-muted);
+    max-width:64ch;text-wrap:pretty;}
+  .note strong{color:var(--flir-fg);font-weight:var(--flir-fw-bold);}
+  .dev{border-left:var(--flir-border-mark) solid var(--flir-accent);padding-left:var(--flir-space-4);
+    font-family:var(--flir-font-data);font-size:var(--flir-text-small);line-height:var(--flir-lh-body);
+    color:var(--flir-fg-muted);}
+  .dev b{color:var(--flir-accent-text);font-weight:var(--flir-fw-medium);letter-spacing:var(--flir-ls-wide);
+    text-transform:uppercase;display:block;font-size:var(--flir-text-nano);margin-bottom:var(--flir-space-1);}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="card-head">
+    <h1 class="card-title">Typography</h1>
+    <span class="card-id">GDL-02 · tokens/type.css</span>
+  </div>
+
+  <p class="note">Four faces, two of them the band's own. <strong>Placard Condensed</strong> and <strong>Frankfurter Heavy</strong> build the wordmark; Placard also sets every headline at 48px and up. <strong>Archivo</strong> carries UI-scale titles and body copy. <strong>IBM Plex Mono</strong> carries anything that reads as instrument output — track lists, timestamps, catalogue numbers, credits, micro-labels. Uppercase is always tracked; lowercase never is.</p>
+
+  <div style="display:flex;flex-direction:column;gap:var(--flir-space-5);">
+    <div style="border-top:var(--flir-rule);padding-top:var(--flir-space-4);display:flex;gap:var(--flir-space-5);align-items:flex-start;">
+      <span class="lbl" style="width:180px;flex:none;">Display · Placard Cond.<br><span style="color:var(--flir-fg-faint);">48px and up only</span></span>
+      <div class="flir-type-display" style="font-size:var(--flir-text-mega);">Dead Air</div>
+    </div>
+    <div style="border-top:var(--flir-rule);padding-top:var(--flir-space-4);display:flex;gap:var(--flir-space-5);align-items:flex-start;">
+      <span class="lbl" style="width:180px;flex:none;">Wordmark · Placard Cond.</span>
+      <span class="flir-wordmark" style="font-size:var(--flir-text-display);"><span class="the">The</span><span class="flir">Flir</span></span>
+    </div>
+    <div style="border-top:var(--flir-rule);padding-top:var(--flir-space-4);display:flex;gap:var(--flir-space-5);align-items:flex-start;">
+      <span class="lbl" style="width:180px;flex:none;">H1 · 48 / wide 700</span>
+      <div class="flir-type-title" style="font-size:var(--flir-text-h1);">Between two signals</div>
+    </div>
+    <div style="border-top:var(--flir-rule);padding-top:var(--flir-space-4);display:flex;gap:var(--flir-space-5);align-items:flex-start;">
+      <span class="lbl" style="width:180px;flex:none;">H2 · 32 / wide 700</span>
+      <div class="flir-type-title" style="font-size:var(--flir-text-h2);">Live dates 2026</div>
+    </div>
+    <div style="border-top:var(--flir-rule);padding-top:var(--flir-space-4);display:flex;gap:var(--flir-space-5);align-items:flex-start;">
+      <span class="lbl" style="width:180px;flex:none;">Body · 15 / norm 400</span>
+      <p class="flir-type-body" style="margin:0;max-width:52ch;">THE FLIR is an independent band working between trip hop, shoegaze, goth and ethereal music. Body copy stays sentence case, sits at 15 to 18px, and never runs wider than 64 characters.</p>
+    </div>
+    <div style="border-top:var(--flir-rule);padding-top:var(--flir-space-4);display:flex;gap:var(--flir-space-5);align-items:flex-start;">
+      <span class="lbl" style="width:180px;flex:none;">Label · 11 mono / .16em</span>
+      <div style="display:flex;flex-wrap:wrap;gap:var(--flir-space-4);">
+        <span class="flir-type-label">Listen</span><span class="flir-type-label">Live dates</span>
+        <span class="flir-type-label" style="color:var(--flir-accent-text);">New single</span>
+      </div>
+    </div>
+    <div style="border-top:var(--flir-rule);padding-top:var(--flir-space-4);display:flex;gap:var(--flir-space-5);align-items:flex-start;">
+      <span class="lbl" style="width:180px;flex:none;">Data · 13 mono tabular</span>
+      <div class="flir-type-data">
+        TRK 01&nbsp;&nbsp;DEAD AIR&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;04:12<br>
+        TRK 02&nbsp;&nbsp;HALO MACHINE&nbsp;&nbsp;05:38<br>
+        TRK 03&nbsp;&nbsp;COLD OPEN&nbsp;&nbsp;&nbsp;&nbsp;03:47
+      </div>
+    </div>
+    <div style="border-top:var(--flir-rule);padding-top:var(--flir-space-4);display:flex;gap:var(--flir-space-5);align-items:flex-start;">
+      <span class="lbl" style="width:180px;flex:none;">Width axis</span>
+      <div style="display:flex;flex-direction:column;gap:var(--flir-space-2);">
+        <span style="font-family:var(--flir-font-headline);font-variation-settings:'wdth' 118,'wght' 700;font-size:var(--flir-text-h3);text-transform:uppercase;">Wide 118 — house voice</span>
+        <span style="font-family:var(--flir-font-headline);font-variation-settings:'wdth' 100,'wght' 700;font-size:var(--flir-text-h3);text-transform:uppercase;">Normal 100 — UI</span>
+        <span style="font-family:var(--flir-font-headline);font-variation-settings:'wdth' 78,'wght' 900;font-size:var(--flir-text-h3);text-transform:uppercase;">Condensed 78 — posters</span>
+      </div>
+    </div>
+  </div>
+
+  <div class="dev"><b>Split</b>Placard Condensed sets display and the wordmark; Archivo sets everything below 48px. Placard closes up at UI sizes and stops reading, which is why the system carries two sans faces rather than one.</div>
+  <div class="dev"><b>Frankfurter Heavy</b>Used for <strong>FLIR in the wordmark only</strong>. It is not available for headlines, body or UI — it exists in the system solely to build the lockup.</div>
+</div></body></html>

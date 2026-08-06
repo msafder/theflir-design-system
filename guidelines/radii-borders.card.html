@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en" data-flir-theme="ink">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>THE FLIR — Radii & Borders</title>
+<link rel="stylesheet" href="../tokens/color.css">
+<link rel="stylesheet" href="../tokens/type.css">
+<link rel="stylesheet" href="../tokens/layout.css">
+<style>
+  html,body{margin:0;background:var(--flir-bg);color:var(--flir-fg);
+    font-family:var(--flir-font-body);-webkit-font-smoothing:antialiased;}
+  a{color:var(--flir-accent-text);text-decoration:none;border-bottom:var(--flir-border-hair) solid var(--flir-accent-text);}
+  a:hover{color:var(--flir-fg);border-bottom-color:var(--flir-fg);}
+  .card{padding:var(--flir-space-6);display:flex;flex-direction:column;gap:var(--flir-space-5);}
+  .card-head{display:flex;align-items:baseline;justify-content:space-between;gap:var(--flir-space-4);
+    border-bottom:var(--flir-rule);padding-bottom:var(--flir-space-3);}
+  .card-title{font-family:var(--flir-font-headline);
+    font-variation-settings:'wdth' var(--flir-wdth-wide),'wght' var(--flir-fw-bold);
+    font-size:var(--flir-text-h3);line-height:var(--flir-lh-tight);text-transform:uppercase;margin:0;}
+  .card-id{font-family:var(--flir-font-data);font-size:var(--flir-text-nano);
+    letter-spacing:var(--flir-ls-wider);color:var(--flir-fg-faint);text-transform:uppercase;}
+  .lbl{font-family:var(--flir-font-data);font-weight:var(--flir-fw-medium);font-size:var(--flir-text-micro);
+    letter-spacing:var(--flir-ls-wider);text-transform:uppercase;color:var(--flir-fg-muted);}
+  .note{font-size:var(--flir-text-small);line-height:var(--flir-lh-body);color:var(--flir-fg-muted);
+    max-width:64ch;text-wrap:pretty;}
+  .note strong{color:var(--flir-fg);font-weight:var(--flir-fw-bold);}
+  .dev{border-left:var(--flir-border-mark) solid var(--flir-accent);padding-left:var(--flir-space-4);
+    font-family:var(--flir-font-data);font-size:var(--flir-text-small);line-height:var(--flir-lh-body);
+    color:var(--flir-fg-muted);}
+  .dev b{color:var(--flir-accent-text);font-weight:var(--flir-fw-medium);letter-spacing:var(--flir-ls-wide);
+    text-transform:uppercase;display:block;font-size:var(--flir-text-nano);margin-bottom:var(--flir-space-1);}
+</style>
+</head>
+<body>
+<div class="card">
+  <div class="card-head">
+    <h1 class="card-title">Radii &amp; Borders</h1>
+    <span class="card-id">GDL-03 · tokens/layout.css</span>
+  </div>
+
+  <p class="note">The system is square. A thermal instrument has no soft corners, and neither does this brand. Borders carry the depth that shadows normally would: <strong>1px hair</strong> for structure, <strong>2px mark</strong> for the boxed FLIR lockup and accents, <strong>4px heavy</strong> for poster frames and red rules.</p>
+
+  <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:var(--flir-space-4);max-width:640px;">
+    <div style="display:flex;flex-direction:column;gap:var(--flir-space-2);">
+      <div style="height:80px;border:var(--flir-border-hair) solid var(--flir-line-strong);border-radius:var(--flir-radius-none);"></div>
+      <span class="lbl">hair · 1px</span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:var(--flir-space-2);">
+      <div style="height:80px;border:var(--flir-border-mark) solid var(--flir-accent);border-radius:var(--flir-radius-none);"></div>
+      <span class="lbl">mark · 2px</span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:var(--flir-space-2);">
+      <div style="height:80px;border:var(--flir-border-heavy) solid var(--flir-fg);border-radius:var(--flir-radius-none);"></div>
+      <span class="lbl">heavy · 4px</span>
+    </div>
+  </div>
+
+  <div style="display:flex;gap:var(--flir-space-5);flex-wrap:wrap;align-items:flex-end;">
+    <div style="display:flex;flex-direction:column;gap:var(--flir-space-2);">
+      <div style="width:140px;height:64px;background:var(--flir-surface-raised);border:var(--flir-rule);border-radius:var(--flir-radius-none);"></div>
+      <span class="lbl">radius-none · 0 · everything</span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:var(--flir-space-2);">
+      <div style="width:140px;height:64px;background:var(--flir-surface-raised);border:var(--flir-rule);border-radius:var(--flir-radius-hair);"></div>
+      <span class="lbl">radius-hair · 2px · inputs</span>
+    </div>
+    <div style="display:flex;flex-direction:column;gap:var(--flir-space-2);">
+      <div style="width:140px;height:36px;background:var(--flir-red-wash);border:var(--flir-border-hair) solid var(--flir-accent);border-radius:var(--flir-radius-pill);display:flex;align-items:center;justify-content:center;gap:var(--flir-space-2);">
+        <span style="width:6px;height:6px;background:var(--flir-accent-hover);border-radius:var(--flir-radius-pill);"></span>
+        <span class="flir-type-label" style="color:var(--flir-accent-text);font-size:var(--flir-text-nano);">Now playing</span>
+      </div>
+      <span class="lbl">radius-pill · exception</span>
+    </div>
+  </div>
+
+  <div class="dev"><b>Documented deviation</b><code>--flir-radius-pill</code> is legal in exactly one place: the NOW PLAYING status chip on web, where a pill is the established platform signal for live state. Never on buttons, cards, badges, merch or print.</div>
+  <div class="dev"><b>Documented deviation</b>No drop shadows anywhere. <code>--flir-shadow-none</code> exists as a token so components can state the intent rather than omit the property.</div>
+</div></body></html>

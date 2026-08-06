@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en" data-flir-theme="ink">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>THE FLIR — Link in bio</title>
+<link rel="stylesheet" href="../tokens/color.css">
+<link rel="stylesheet" href="../tokens/type.css">
+<link rel="stylesheet" href="../tokens/layout.css">
+<style>
+  html,body{margin:0;background:var(--flir-bg);color:var(--flir-fg);font-family:var(--flir-font-body);
+    -webkit-font-smoothing:antialiased;}
+  .wrap{padding:var(--flir-space-6);display:flex;flex-direction:column;gap:var(--flir-space-6);}
+  .head{display:flex;align-items:baseline;justify-content:space-between;gap:var(--flir-space-4);
+    border-bottom:var(--flir-rule);padding-bottom:var(--flir-space-3);}
+  .h{margin:0;font-family:var(--flir-font-headline);
+    font-variation-settings:'wdth' var(--flir-wdth-wide),'wght' var(--flir-fw-bold);
+    font-size:var(--flir-text-h3);text-transform:uppercase;line-height:var(--flir-lh-tight);}
+  .id{font-family:var(--flir-font-data);font-size:var(--flir-text-nano);letter-spacing:var(--flir-ls-wider);
+    color:var(--flir-fg-faint);text-transform:uppercase;}
+  .lbl{font-family:var(--flir-font-data);font-weight:var(--flir-fw-medium);font-size:var(--flir-text-micro);
+    letter-spacing:var(--flir-ls-wider);text-transform:uppercase;color:var(--flir-fg-muted);}
+  .note{font-size:var(--flir-text-small);line-height:var(--flir-lh-body);color:var(--flir-fg-muted);max-width:64ch;margin:0;}
+  .note strong{color:var(--flir-fg);}
+  .dev{border-left:var(--flir-border-mark) solid var(--flir-accent);padding-left:var(--flir-space-4);
+    font-family:var(--flir-font-data);font-size:var(--flir-text-small);line-height:var(--flir-lh-body);color:var(--flir-fg-muted);}
+  .dev b{color:var(--flir-accent-text);display:block;font-size:var(--flir-text-nano);
+    letter-spacing:var(--flir-ls-wide);text-transform:uppercase;margin-bottom:var(--flir-space-1);}
+  /* master stage: authored at true output px, scaled down for preview */
+  .stage{position:relative;overflow:hidden;background:var(--flir-bg-sunken);}
+  .stage .grime{position:absolute;inset:0;background:var(--flir-grime);}
+  .stage .photo{position:absolute;inset:0;background-size:cover;background-position:center;
+    filter:var(--flir-photo-filter);}
+  .stage .tex{position:absolute;inset:0;
+    background:repeating-linear-gradient(112deg,rgba(255,255,255,.05) 0 2px,transparent 2px 9px),
+      repeating-linear-gradient(18deg,rgba(0,0,0,.5) 0 3px,transparent 3px 14px);
+    filter:var(--flir-photo-filter);mix-blend-mode:screen;}
+  .stage .crush{position:absolute;inset:0;background:var(--flir-crush);}
+  .stage .grain{position:absolute;inset:0;background:var(--flir-grain);}
+  .stage .scan{position:absolute;inset:0;background:var(--flir-scanline);}
+  .stage .layer{position:absolute;inset:0;}
+  .mark{display:inline-flex;border:var(--flir-border-mark) solid var(--flir-accent);}
+  .mark span{font-family:var(--flir-font-data);font-weight:var(--flir-fw-bold);
+    letter-spacing:var(--flir-ls-widest);text-transform:uppercase;color:var(--flir-fg);}
+  .safe{position:absolute;outline:1px dashed rgba(192,0,0,.55);pointer-events:none;}
+  .safe b{position:absolute;top:6px;left:8px;font-family:var(--flir-font-data);font-size:22px;
+    letter-spacing:.16em;color:rgba(255,255,255,.5);font-weight:400;text-transform:uppercase;}
+  .shrink{transform-origin:top left;}
+  .frame{position:relative;border:var(--flir-rule);}
+
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="head"><h1 class="h">Web · Link in bio</h1><span class="id">WEB-02 · theflir.com — mobile 390px</span></div>
+  <p class="note">The @theflir bio destination. Stacked full-width rows, rules instead of gaps, one red row — whatever is current.</p>
+
+  <div style="display:flex;gap:var(--flir-space-6);flex-wrap:wrap;align-items:flex-start;">
+    <div class="frame stage" style="width:390px;">
+      <div class="photo" style="background-image:url('../assets/source/dbnelson-03.jpg');"></div><div class="grime"></div><div class="crush"></div><div class="grain"></div>
+      <div style="position:relative;padding:var(--flir-space-7) var(--flir-space-5) var(--flir-space-5);
+        display:flex;flex-direction:column;align-items:center;gap:var(--flir-space-3);">
+        <span class="flir-wordmark" style="font-size:calc(var(--flir-text-h3) * 1.45);"><span class="the">The</span><span class="flir">Flir</span></span>
+        <span style="font-family:var(--flir-font-data);font-size:var(--flir-text-nano);letter-spacing:var(--flir-ls-wider);
+          text-transform:uppercase;color:var(--flir-grey-60);text-align:center;">Trip hop · shoegaze · ethereal<br>Eyeliner Media</span>
+      </div>
+      <div style="position:relative;display:flex;flex-direction:column;border-top:var(--flir-border-hair) solid rgba(255,255,255,.14);">
+        
+        <a href="#" style="display:flex;align-items:center;justify-content:space-between;gap:var(--flir-space-4);
+          padding:var(--flir-space-4) var(--flir-space-5);text-decoration:none;
+          border-bottom:var(--flir-border-hair) solid rgba(255,255,255,.14);
+          background:var(--flir-accent);">
+          <span style="font-family:var(--flir-font-data);font-weight:var(--flir-fw-medium);font-size:var(--flir-text-micro);
+            letter-spacing:var(--flir-ls-wider);text-transform:uppercase;color:var(--flir-accent-fg);">Listen · LP 01</span>
+          <span style="font-family:var(--flir-font-data);font-size:var(--flir-text-nano);letter-spacing:var(--flir-ls-wide);
+            text-transform:uppercase;color:rgba(255,255,255,.75);">41:22</span>
+        </a>
+        <a href="#" style="display:flex;align-items:center;justify-content:space-between;gap:var(--flir-space-4);
+          padding:var(--flir-space-4) var(--flir-space-5);text-decoration:none;
+          border-bottom:var(--flir-border-hair) solid rgba(255,255,255,.14);
+          background:transparent;">
+          <span style="font-family:var(--flir-font-data);font-weight:var(--flir-fw-medium);font-size:var(--flir-text-micro);
+            letter-spacing:var(--flir-ls-wider);text-transform:uppercase;color:var(--flir-fg);">Buy the CD</span>
+          <span style="font-family:var(--flir-font-data);font-size:var(--flir-text-nano);letter-spacing:var(--flir-ls-wide);
+            text-transform:uppercase;color:var(--flir-grey-60);">12.00</span>
+        </a>
+        <a href="#" style="display:flex;align-items:center;justify-content:space-between;gap:var(--flir-space-4);
+          padding:var(--flir-space-4) var(--flir-space-5);text-decoration:none;
+          border-bottom:var(--flir-border-hair) solid rgba(255,255,255,.14);
+          background:transparent;">
+          <span style="font-family:var(--flir-font-data);font-weight:var(--flir-fw-medium);font-size:var(--flir-text-micro);
+            letter-spacing:var(--flir-ls-wider);text-transform:uppercase;color:var(--flir-fg);">Live dates</span>
+          <span style="font-family:var(--flir-font-data);font-size:var(--flir-text-nano);letter-spacing:var(--flir-ls-wide);
+            text-transform:uppercase;color:var(--flir-grey-60);">04</span>
+        </a>
+        <a href="#" style="display:flex;align-items:center;justify-content:space-between;gap:var(--flir-space-4);
+          padding:var(--flir-space-4) var(--flir-space-5);text-decoration:none;
+          border-bottom:var(--flir-border-hair) solid rgba(255,255,255,.14);
+          background:transparent;">
+          <span style="font-family:var(--flir-font-data);font-weight:var(--flir-fw-medium);font-size:var(--flir-text-micro);
+            letter-spacing:var(--flir-ls-wider);text-transform:uppercase;color:var(--flir-fg);">Merch</span>
+          <span style="font-family:var(--flir-font-data);font-size:var(--flir-text-nano);letter-spacing:var(--flir-ls-wide);
+            text-transform:uppercase;color:var(--flir-grey-60);">Shopify</span>
+        </a>
+        <a href="#" style="display:flex;align-items:center;justify-content:space-between;gap:var(--flir-space-4);
+          padding:var(--flir-space-4) var(--flir-space-5);text-decoration:none;
+          border-bottom:var(--flir-border-hair) solid rgba(255,255,255,.14);
+          background:transparent;">
+          <span style="font-family:var(--flir-font-data);font-weight:var(--flir-fw-medium);font-size:var(--flir-text-micro);
+            letter-spacing:var(--flir-ls-wider);text-transform:uppercase;color:var(--flir-fg);">Instagram</span>
+          <span style="font-family:var(--flir-font-data);font-size:var(--flir-text-nano);letter-spacing:var(--flir-ls-wide);
+            text-transform:uppercase;color:var(--flir-grey-60);">@theflir</span>
+        </a>
+        <a href="#" style="display:flex;align-items:center;justify-content:space-between;gap:var(--flir-space-4);
+          padding:var(--flir-space-4) var(--flir-space-5);text-decoration:none;
+          border-bottom:var(--flir-border-hair) solid rgba(255,255,255,.14);
+          background:transparent;">
+          <span style="font-family:var(--flir-font-data);font-weight:var(--flir-fw-medium);font-size:var(--flir-text-micro);
+            letter-spacing:var(--flir-ls-wider);text-transform:uppercase;color:var(--flir-fg);">Mailing list</span>
+          <span style="font-family:var(--flir-font-data);font-size:var(--flir-text-nano);letter-spacing:var(--flir-ls-wide);
+            text-transform:uppercase;color:var(--flir-grey-60);"></span>
+        </a>
+      </div>
+      <div style="position:relative;padding:var(--flir-space-5);text-align:center;font-family:var(--flir-font-data);
+        font-size:var(--flir-text-nano);letter-spacing:var(--flir-ls-wider);text-transform:uppercase;color:var(--flir-grey-50);">
+        THE FLIR · MMXXVI
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:var(--flir-space-4);max-width:44ch;">
+      <span class="lbl">Rules</span>
+      <p class="note">Rows are 48px minimum — comfortably above the 44px touch target floor.</p>
+      <p class="note">Exactly one row is red at a time. It is whatever is current: a new single at release, tickets during a run, the CD otherwise.</p>
+      <p class="note">Right column is mono metadata, never a chevron. The row is obviously tappable from its rule structure.</p>
+      <p class="note">Maximum six rows. Anything beyond six goes on the site, not in bio.</p>
+    </div>
+  </div>
+</div>
+</body></html>

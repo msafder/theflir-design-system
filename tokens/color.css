@@ -1,0 +1,152 @@
+/* ============================================================
+   THE FLIR — tokens/color.css
+   Direction: "Thermal Register" (1c)
+   The palette is a temperature scale. Grey is the instrument,
+   red is heat. Red never decorates — it marks the hottest
+   element on a surface, and there is only ever one per view.
+   ============================================================ */
+
+:root {
+  /* ---- Raw ramp -------------------------------------------
+     A measured 13-step grey. Steps are deliberately uneven at
+     the ends so near-black and near-white both stay usable. */
+  --flir-grey-00: #0A0A0A;  /* page black */
+  --flir-grey-05: #111111;
+  --flir-grey-10: #1A1A1A;
+  --flir-grey-20: #232323;
+  --flir-grey-30: #3F3F3F;
+  --flir-grey-40: #585858;
+  --flir-grey-50: #6E6E6E;  /* midpoint — legible on both ends */
+  --flir-grey-60: #8A8A8A;
+  --flir-grey-70: #9E9E9E;
+  --flir-grey-80: #C8C8C8;
+  --flir-grey-90: #D6D6D6;
+  --flir-grey-95: #E8E8E6;  /* paper white, very slightly warm */
+  --flir-grey-99: #F2F2F2;
+
+  /* ---- Heat -----------------------------------------------
+     --flir-red is the band colour and is fixed. The other two
+     exist only for state and for large flat fills. */
+  --flir-red:      #C00000;  /* brand red, locked */
+  --flir-red-hot:  #E11414;  /* hover / press / small text on black */
+  --flir-red-dim:  #7A0000;  /* large flat fills behind white text */
+  --flir-red-wash: rgba(192, 0, 0, 0.12);
+
+  --flir-white: #FFFFFF;
+  --flir-black: #000000;
+
+  /* ---- Instrument overlays --------------------------------
+     Scanline + vignette. Applied at low opacity over photos
+     and hero surfaces so screens read as a monitor feed. */
+  --flir-scanline: repeating-linear-gradient(
+    0deg,
+    rgba(255, 255, 255, 0.028) 0 1px,
+    transparent 1px 4px
+  );
+  --flir-vignette: radial-gradient(
+    120% 100% at 50% 45%,
+    transparent 40%,
+    rgba(0, 0, 0, 0.55) 100%
+  );
+  /* Photo treatment. The band's live photography was shot under
+     whatever colour the venue's lighting rig happened to be —
+     green, magenta, red, sodium. Desaturating to the grey ramp is
+     what makes a folder of unrelated shots read as one body of
+     work, and it leaves #C00000 as the only colour in the frame. */
+  --flir-photo-filter: grayscale(1) contrast(1.18) brightness(0.86);
+  /* Exception: shots already lit red (the cover figure, the live
+     red-wash frames) keep their colour — they ARE the palette. */
+  --flir-photo-filter-native: contrast(1.12) saturate(0.92) brightness(0.88);
+  /* Figure studies (GDL-06) push harder: the shadows must crush to
+     true black so the form emerges with no visible edge. */
+  --flir-photo-filter-figure: grayscale(1) contrast(1.28) brightness(0.82);
+  /* White-hot: the heat map read literally, as on Human Butterfly.
+     Produced as a Photoshop gradient map — black → #C00000 → white.
+     The CSS value is the screen approximation of that pass. */
+  --flir-photo-filter-hot: grayscale(1) contrast(1.75) brightness(1.22);
+  --flir-heatmap-stops: #000000 0%, #7A0000 28%, #C00000 52%, #F2B3B3 78%, #FFFFFF 100%;
+
+  /* ---- Grime ----------------------------------------------
+     Reference: the Official Recoil site ("Shunt") — dark,
+     textural, degraded photographic fields with a clean
+     typographic layer sitting on top. Clean type, dirty image.
+     The texture always lives UNDER the type layer, never over
+     it, and never touches the mark. */
+  --flir-grain: repeating-conic-gradient(
+    rgba(255,255,255,0.035) 0% 25%,
+    transparent 0% 50%
+  ) 0 0 / 3px 3px;
+  --flir-grime: radial-gradient(
+      140% 110% at 22% 12%, rgba(255,255,255,0.06), transparent 46%
+    ),
+    radial-gradient(
+      120% 130% at 82% 88%, rgba(192,0,0,0.14), transparent 52%
+    );
+  --flir-crush: linear-gradient(
+    0deg, rgba(0,0,0,0.72), rgba(0,0,0,0.30) 55%, rgba(0,0,0,0.78)
+  );
+}
+
+/* ============================================================
+   THEME: ink (dark) — the default. THE FLIR is a dark brand;
+   ink is what ships unless there is a printing or platform
+   reason to use chalk.
+   ============================================================ */
+:root,
+[data-flir-theme="ink"] {
+  --flir-bg:            var(--flir-grey-00);
+  --flir-bg-sunken:     var(--flir-black);
+  --flir-surface:       var(--flir-grey-05);
+  --flir-surface-raised:var(--flir-grey-10);
+  --flir-surface-inset: var(--flir-grey-20);
+
+  --flir-fg:            var(--flir-grey-99);
+  --flir-fg-muted:      var(--flir-grey-60);
+  --flir-fg-faint:      var(--flir-grey-40);
+  --flir-fg-inverse:    var(--flir-grey-00);
+
+  --flir-line:          var(--flir-grey-20);
+  --flir-line-strong:   var(--flir-grey-30);
+  --flir-line-hair:     rgba(255, 255, 255, 0.06);
+
+  --flir-accent:        var(--flir-red);
+  --flir-accent-hover:  var(--flir-red-hot);
+  --flir-accent-fg:     var(--flir-white);
+  /* DEVIATION: on ink, red text under 16px uses --flir-red-hot,
+     not --flir-red. #C00000 on #0A0A0A is ~2.4:1 and dissolves
+     at micro sizes. Flat red *fills* still use --flir-red. */
+  --flir-accent-text:   var(--flir-red-hot);
+
+  --flir-focus:         var(--flir-red-hot);
+  --flir-overlay:       rgba(10, 10, 10, 0.86);
+}
+
+/* ============================================================
+   THEME: chalk (light) — the exception. Print inserts, CD
+   jacket interiors, merch on light garments, and any surface
+   that has to survive photocopying.
+   ============================================================ */
+[data-flir-theme="chalk"] {
+  --flir-bg:            var(--flir-grey-95);
+  --flir-bg-sunken:     var(--flir-grey-90);
+  --flir-surface:       var(--flir-white);
+  --flir-surface-raised:var(--flir-white);
+  --flir-surface-inset: var(--flir-grey-90);
+
+  --flir-fg:            var(--flir-grey-00);
+  --flir-fg-muted:      var(--flir-grey-40);
+  --flir-fg-faint:      var(--flir-grey-60);
+  --flir-fg-inverse:    var(--flir-grey-99);
+
+  --flir-line:          var(--flir-grey-80);
+  --flir-line-strong:   var(--flir-grey-50);
+  --flir-line-hair:     rgba(0, 0, 0, 0.08);
+
+  --flir-accent:        var(--flir-red);
+  --flir-accent-hover:  var(--flir-red-dim);
+  --flir-accent-fg:     var(--flir-white);
+  --flir-accent-text:   var(--flir-red);   /* 5.9:1 on chalk — fine at any size */
+
+  --flir-focus:         var(--flir-red);
+  --flir-overlay:       rgba(232, 232, 230, 0.9);
+}

@@ -1,0 +1,128 @@
+<!doctype html>
+<html lang="en" data-flir-theme="ink">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>THE FLIR — CD jacket · Kunaki</title>
+<link rel="stylesheet" href="../tokens/color.css">
+<link rel="stylesheet" href="../tokens/type.css">
+<link rel="stylesheet" href="../tokens/layout.css">
+<style>
+  html,body{margin:0;background:var(--flir-bg);color:var(--flir-fg);font-family:var(--flir-font-body);
+    -webkit-font-smoothing:antialiased;}
+  .wrap{padding:var(--flir-space-6);display:flex;flex-direction:column;gap:var(--flir-space-6);}
+  .head{display:flex;align-items:baseline;justify-content:space-between;gap:var(--flir-space-4);
+    border-bottom:var(--flir-rule);padding-bottom:var(--flir-space-3);}
+  .h{margin:0;font-family:var(--flir-font-headline);
+    font-variation-settings:'wdth' var(--flir-wdth-wide),'wght' var(--flir-fw-bold);
+    font-size:var(--flir-text-h3);text-transform:uppercase;line-height:var(--flir-lh-tight);}
+  .id{font-family:var(--flir-font-data);font-size:var(--flir-text-nano);letter-spacing:var(--flir-ls-wider);
+    color:var(--flir-fg-faint);text-transform:uppercase;}
+  .lbl{font-family:var(--flir-font-data);font-weight:var(--flir-fw-medium);font-size:var(--flir-text-micro);
+    letter-spacing:var(--flir-ls-wider);text-transform:uppercase;color:var(--flir-fg-muted);}
+  .note{font-size:var(--flir-text-small);line-height:var(--flir-lh-body);color:var(--flir-fg-muted);max-width:64ch;margin:0;}
+  .note strong{color:var(--flir-fg);}
+  .dev{border-left:var(--flir-border-mark) solid var(--flir-accent);padding-left:var(--flir-space-4);
+    font-family:var(--flir-font-data);font-size:var(--flir-text-small);line-height:var(--flir-lh-body);color:var(--flir-fg-muted);}
+  .dev b{color:var(--flir-accent-text);display:block;font-size:var(--flir-text-nano);
+    letter-spacing:var(--flir-ls-wide);text-transform:uppercase;margin-bottom:var(--flir-space-1);}
+  .spec{font-family:var(--flir-font-data);font-size:var(--flir-text-small);line-height:var(--flir-lh-data);
+    font-variant-numeric:tabular-nums;display:grid;gap:var(--flir-space-1);}
+  .spec div{display:flex;justify-content:space-between;gap:var(--flir-space-5);
+    border-bottom:var(--flir-border-hair) solid var(--flir-line);padding-bottom:var(--flir-space-1);}
+  .spec span:first-child{color:var(--flir-fg-faint);text-transform:uppercase;letter-spacing:var(--flir-ls-wide);}
+  .spec span:last-child{color:var(--flir-fg);}
+  .stage{position:relative;overflow:hidden;background:var(--flir-bg-sunken);}
+  .stage .grime{position:absolute;inset:0;background:var(--flir-grime);}
+  .stage .photo{position:absolute;inset:0;background-size:cover;background-position:center;
+    filter:var(--flir-photo-filter);}
+  .stage .tex{position:absolute;inset:0;
+    background:repeating-linear-gradient(112deg,rgba(255,255,255,.05) 0 2px,transparent 2px 9px),
+      repeating-linear-gradient(18deg,rgba(0,0,0,.5) 0 3px,transparent 3px 14px);
+    filter:var(--flir-photo-filter);mix-blend-mode:screen;}
+  .stage .crush{position:absolute;inset:0;background:var(--flir-crush);}
+  .stage .grain{position:absolute;inset:0;background:var(--flir-grain);}
+  .stage .layer{position:absolute;inset:0;}
+  .mark{display:inline-flex;border:var(--flir-border-mark) solid var(--flir-accent);}
+  .mark span{font-family:var(--flir-font-data);font-weight:var(--flir-fw-bold);
+    letter-spacing:var(--flir-ls-widest);text-transform:uppercase;color:var(--flir-fg);}
+  .shrink{transform-origin:top left;}
+  .frame{position:relative;border:var(--flir-rule);}
+  .guide{position:absolute;pointer-events:none;}
+  .guide b{position:absolute;font-family:var(--flir-font-data);font-weight:400;font-size:24px;
+    letter-spacing:.16em;text-transform:uppercase;white-space:nowrap;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="head"><h1 class="h">Print · CD jacket</h1><span class="id">PRN-01 · Kunaki · 4.75in square</span></div>
+  <p class="note">Kunaki jewel-case front insert and tray card. Artwork is built at <strong>300dpi</strong>, full bleed, with all type inside the safe margin. Theme is <strong>ink</strong> on the front, <strong>chalk</strong> on the tray card so the track list survives the thin plastic and the print stock.</p>
+
+  <div style="display:flex;gap:var(--flir-space-6);flex-wrap:wrap;align-items:flex-start;">
+    <div style="display:flex;flex-direction:column;gap:var(--flir-space-3);">
+      <span class="lbl">Front insert · ink · with bleed &amp; safe guides</span>
+      <div class="frame" style="width:373px;height:373px;">
+        <div class="shrink" style="transform:scale(0.25);">
+          <div class="stage" style="width:1492px;height:1492px;">
+            <div class="photo" style="background-image:url('../assets/source/moLarge01.jpg');"></div><div class="grime"></div><div class="crush"></div><div class="grain"></div>
+            <div class="guide" style="inset:37px;outline:1px dashed rgba(192,0,0,.7);"><b style="top:-30px;left:0;color:rgba(192,0,0,.9);">Trim 4.75in · 1425px</b></div>
+            <div class="guide" style="inset:112px;outline:1px dashed rgba(255,255,255,.35);"><b style="top:8px;left:8px;color:rgba(255,255,255,.5);">Safe 0.25in</b></div>
+            <div class="layer" style="padding:150px;display:flex;flex-direction:column;justify-content:space-between;">
+              <span class="flir-wordmark" style="font-size:58px;align-self:flex-start;"><span class="the">The</span><span class="flir">Flir</span></span>
+              <div style="display:flex;flex-direction:column;gap:34px;">
+                <div style="font-family:var(--flir-font-display);
+                  font-size:120px;line-height:.96;text-transform:uppercase;color:var(--flir-grey-99);">Dead air between two signals</div>
+                <div style="height:10px;background:var(--flir-accent);width:260px;"></div>
+                <span style="font-family:var(--flir-font-data);font-size:30px;letter-spacing:.16em;
+                  text-transform:uppercase;color:var(--flir-grey-70);">LP 01 · TF-001 · MMXXVI</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:var(--flir-space-3);">
+      <span class="lbl">Tray card · chalk · track list</span>
+      <div class="frame" style="width:373px;height:373px;" data-flir-theme="chalk">
+        <div class="shrink" style="transform:scale(0.25);">
+          <div style="width:1492px;height:1492px;background:var(--flir-bg);position:relative;">
+            <div class="guide" style="inset:37px;outline:1px dashed rgba(192,0,0,.7);"></div>
+            <div style="position:absolute;inset:150px;display:flex;flex-direction:column;justify-content:space-between;">
+              <div style="display:flex;justify-content:space-between;align-items:flex-start;">
+                <span class="flir-wordmark" style="font-size:41px;"><span class="the">The</span><span class="flir">Flir</span></span>
+                <span style="font-family:var(--flir-font-data);font-size:24px;letter-spacing:.16em;
+                  text-transform:uppercase;color:var(--flir-fg-muted);">TF-001</span>
+              </div>
+              <div style="font-family:var(--flir-font-data);font-size:34px;line-height:2;font-variant-numeric:tabular-nums;color:var(--flir-fg);">
+                <div style="display:flex;justify-content:space-between;gap:60px;border-bottom:1px solid var(--flir-line);"><span><span style="color:var(--flir-accent);">01</span>&nbsp;&nbsp;DEAD AIR</span><span style="color:var(--flir-fg-muted);">04:12</span></div><div style="display:flex;justify-content:space-between;gap:60px;border-bottom:1px solid var(--flir-line);"><span><span style="color:var(--flir-accent);">02</span>&nbsp;&nbsp;HALO MACHINE</span><span style="color:var(--flir-fg-muted);">05:38</span></div><div style="display:flex;justify-content:space-between;gap:60px;border-bottom:1px solid var(--flir-line);"><span><span style="color:var(--flir-accent);">03</span>&nbsp;&nbsp;COLD OPEN</span><span style="color:var(--flir-fg-muted);">03:47</span></div><div style="display:flex;justify-content:space-between;gap:60px;border-bottom:1px solid var(--flir-line);"><span><span style="color:var(--flir-accent);">04</span>&nbsp;&nbsp;SIGNAL / RETURN</span><span style="color:var(--flir-fg-muted);">06:02</span></div><div style="display:flex;justify-content:space-between;gap:60px;border-bottom:1px solid var(--flir-line);"><span><span style="color:var(--flir-accent);">05</span>&nbsp;&nbsp;KOMPRESSOR</span><span style="color:var(--flir-fg-muted);">04:20</span></div><div style="display:flex;justify-content:space-between;gap:60px;border-bottom:1px solid var(--flir-line);"><span><span style="color:var(--flir-accent);">06</span>&nbsp;&nbsp;NIGHTWATCH</span><span style="color:var(--flir-fg-muted);">05:11</span></div><div style="display:flex;justify-content:space-between;gap:60px;border-bottom:1px solid var(--flir-line);"><span><span style="color:var(--flir-accent);">07</span>&nbsp;&nbsp;THIN LINE</span><span style="color:var(--flir-fg-muted);">03:58</span></div><div style="display:flex;justify-content:space-between;gap:60px;border-bottom:1px solid var(--flir-line);"><span><span style="color:var(--flir-accent);">08</span>&nbsp;&nbsp;UNDERTOW</span><span style="color:var(--flir-fg-muted);">04:44</span></div><div style="display:flex;justify-content:space-between;gap:60px;border-bottom:1px solid var(--flir-line);"><span><span style="color:var(--flir-accent);">09</span>&nbsp;&nbsp;CARRIER</span><span style="color:var(--flir-fg-muted);">03:50</span></div>
+              </div>
+              <span style="font-family:var(--flir-font-data);font-size:24px;letter-spacing:.16em;line-height:1.8;
+                text-transform:uppercase;color:var(--flir-fg-muted);">THE FLIR · Eyeliner Media · MMXXVI<br>Total 41:22 · theflir.com</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:var(--flir-space-4);min-width:300px;">
+      <span class="lbl">Kunaki spec</span>
+      <div class="spec">
+        <div><span>Trim</span><span>4.75 × 4.75 in</span></div>
+        <div><span>Bleed</span><span>0.125 in all sides</span></div>
+        <div><span>Safe margin</span><span>0.25 in from trim</span></div>
+        <div><span>Resolution</span><span>300 dpi</span></div>
+        <div><span>Doc with bleed</span><span>1500 × 1500 px</span></div>
+        <div><span>Trim in px</span><span>1425 × 1425 px</span></div>
+        <div><span>Colour</span><span>CMYK · no spot</span></div>
+        <div><span>Min type</span><span>7 pt / 29 px</span></div>
+        <div><span>Files</span><span>front.jpg · tray.jpg</span></div>
+      </div>
+      <p class="note">Red prints as process. #C00000 converts to roughly <strong>C0 M100 Y100 K25</strong> — check a proof before a long run; on uncoated stock it dries noticeably darker and can read closer to <code>--flir-red-dim</code>.</p>
+    </div>
+  </div>
+
+  <div class="dev"><b>Verify before upload</b>These are the working dimensions. Kunaki reissues its template PDFs periodically — download the current one and confirm trim and bleed before submitting a run.</div>
+  <div class="dev"><b>Documented deviation</b>The tray card runs the <strong>chalk</strong> theme against the system default. A nine-row track list reversed out of black at 7pt fills in on the print stock Kunaki uses; black on white holds.</div>
+</div>
+</body></html>

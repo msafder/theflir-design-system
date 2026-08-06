@@ -1,0 +1,103 @@
+/* ============================================================
+   THE FLIR — tokens/layout.css
+   Space, rules, radii, motion, and the fixed output sizes.
+   Everything is on a 4px base. Nothing is rounded except the
+   one documented exception.
+   ============================================================ */
+
+:root {
+  /* ---- Space — 4px base ----------------------------------- */
+  --flir-space-1:   4px;
+  --flir-space-2:   8px;
+  --flir-space-3:  12px;
+  --flir-space-4:  16px;
+  --flir-space-5:  24px;
+  --flir-space-6:  32px;
+  --flir-space-7:  48px;
+  --flir-space-8:  64px;
+  --flir-space-9:  96px;
+  --flir-space-10:128px;
+
+  /* ---- Radii -----------------------------------------------
+     The system is square. A thermal instrument has no soft
+     corners and neither does this brand.
+     DEVIATION: --flir-radius-pill exists for one case only —
+     the "NOW PLAYING" status chip on web, where a pill is the
+     established platform signal for live state. Do not use it
+     for buttons, cards, badges, or anything printed. */
+  --flir-radius-none: 0;
+  --flir-radius-hair: 2px;
+  --flir-radius-pill: 999px;
+
+  /* ---- Borders ---------------------------------------------
+     Borders do the work shadows normally would. */
+  --flir-border-hair:  1px;
+  --flir-border-mark:  2px;   /* the boxed FLIR mark */
+  --flir-border-heavy: 4px;   /* poster frames, red rules */
+
+  --flir-rule:        var(--flir-border-hair) solid var(--flir-line);
+  --flir-rule-strong: var(--flir-border-hair) solid var(--flir-line-strong);
+  --flir-rule-accent: var(--flir-border-mark) solid var(--flir-accent);
+
+  /* ---- Elevation -------------------------------------------
+     There is none. Depth is expressed by surface value and
+     rule weight, never by a drop shadow. --flir-shadow-none
+     is a token so components can state the intent. */
+  --flir-shadow-none: none;
+
+  /* ---- Grid ------------------------------------------------ */
+  --flir-grid-cols:  12;
+  --flir-gutter:     var(--flir-space-5);
+  --flir-page-max:   1200px;
+  --flir-page-pad:   var(--flir-space-5);
+  --flir-page-pad-lg:var(--flir-space-8);
+
+  /* ---- Motion ----------------------------------------------
+     Linear or ease-out. No bounce, no spring — the instrument
+     does not overshoot. */
+  --flir-motion-fast: 120ms;
+  --flir-motion-base: 200ms;
+  --flir-motion-slow: 400ms;
+  --flir-ease:        cubic-bezier(0.2, 0, 0, 1);
+  --flir-ease-linear: linear;
+  --flir-transition:  var(--flir-motion-base) var(--flir-ease);
+
+  /* ---- Fixed output sizes ----------------------------------
+     Social masters are authored at 1:1 px and scaled for
+     preview. Print masters are authored in inches. */
+  --flir-ig-post-w:   1080px;
+  --flir-ig-post-h:   1080px;
+  --flir-ig-story-w:  1080px;
+  --flir-ig-story-h:  1920px;
+  --flir-ig-safe-top:   250px;  /* clear of story UI chrome */
+  --flir-ig-safe-bot:   320px;
+  --flir-reel-crop-h:  1440px;  /* grid crop inside the 1920 cover */
+
+  /* Kunaki CD jacket — verify against their current template
+     PDF before upload; these are the working values. */
+  --flir-cd-trim:   4.75in;
+  --flir-cd-bleed:  0.125in;
+  --flir-cd-safe:   0.25in;
+  --flir-cd-dpi:    300;
+
+  /* Gig poster — 18 x 24in at 150dpi */
+  --flir-poster-w:  18in;
+  --flir-poster-h:  24in;
+  --flir-poster-margin: 0.75in;
+}
+
+/* Utility: the instrument scanline overlay. */
+.flir-scan::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: var(--flir-scanline);
+  pointer-events: none;
+}
+
+/* Utility: page shell. */
+.flir-page {
+  max-width: var(--flir-page-max);
+  margin-inline: auto;
+  padding-inline: var(--flir-page-pad);
+}
