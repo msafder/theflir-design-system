@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en" data-flir-theme="ink">
+<head>
+<meta charset="utf-8">
+<title>THE FLIR — feed post export 1080×1080</title>
+<link rel="stylesheet" href="../tokens/color.css">
+<link rel="stylesheet" href="../tokens/type.css">
+<link rel="stylesheet" href="../tokens/layout.css">
+<!--
+  SOC-01 EXPORT SURFACE — Instagram feed post, 1080×1080, no chrome.
+
+  WHY THIS EXISTS. feed-post.html is the preview card and its content is an
+  EXAMPLE: it announces a single called "Dead air between two signals" dated
+  14 March. No such record exists. That is fine on a card demonstrating a
+  format and catastrophic if someone renders it and posts it. This surface
+  takes its content from the URL instead, so a post can only ever say what it
+  is explicitly told to say.
+
+  Params, all optional except title:
+    cat    catalogue number, upper-right    e.g. suture8-02
+    title  the headline                     e.g. Singles (Internet Only)
+    meta   lower-left data row              e.g. 04 TRACKS · 14.02.10
+    site   lower-right                      default theflir.com
+    photo  filename in ../assets/source/    default dbnelson-09.jpg
+
+  Values come from ui_kits/theflir-com/data.js. Do not retype the catalogue
+  from memory: dates are DD.MM.YY and counts are zero-padded (GDL-04).
+
+  Serve over http — from file:// the local TTFs are blocked and the wordmark
+  silently falls back to Impact. See social/feed-post.html for the command.
+-->
+<style>
+  html,body{margin:0;padding:0;background:var(--flir-bg);}
+  .post{position:relative;width:1080px;height:1080px;overflow:hidden;
+    background:var(--flir-bg-sunken);}
+
+  /* GDL-07 order: image, corbijn filter, crush, grime, hard grain, scanline,
+     then type. The texture layer never crosses the mark or the headline. */
+  .post__photo{position:absolute;inset:0;background-size:cover;background-position:center;
+    filter:var(--flir-photo-filter-corbijn);}
+  .post__crush{position:absolute;inset:0;background:var(--flir-crush);}
+  .post__grime{position:absolute;inset:0;background:var(--flir-grime);}
+  .post__grain{position:absolute;inset:0;background:var(--flir-grain-hard);opacity:.5;}
+  .post__scan{position:absolute;inset:0;background:var(--flir-scanline);}
+
+  /* 72px margin — the spec on the SOC-01 card. */
+  .post__layer{position:absolute;inset:0;padding:72px;
+    display:flex;flex-direction:column;justify-content:space-between;}
+
+  .post__top{display:flex;justify-content:space-between;align-items:flex-start;gap:32px;}
+  .post__mark{font-size:49px;color:var(--flir-white);}
+  .post__cat{font-family:var(--flir-font-data);font-size:24px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--flir-grey-70);white-space:nowrap;}
+
+  .post__bottom{display:flex;flex-direction:column;gap:28px;}
+  /* Placard Condensed at 104px is the spec, with a documented floor of 72px.
+     A long record title overruns 1080px at 104, so the clamp lives between
+     the spec's own two numbers rather than inventing a third. */
+  .post__title{font-family:var(--flir-font-display);
+    font-size:clamp(72px, 11vw, 104px);line-height:.98;text-transform:uppercase;
+    color:var(--flir-grey-99);max-width:14ch;}
+  /* The one red on the surface: 8px × 200px, fixed. */
+  .post__rule{height:8px;width:200px;background:var(--flir-accent);}
+  .post__foot{display:flex;justify-content:space-between;align-items:flex-end;gap:32px;}
+  .post__meta{font-family:var(--flir-font-data);font-size:28px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--flir-grey-80);}
+  .post__site{font-family:var(--flir-font-data);font-size:22px;letter-spacing:.16em;
+    text-transform:uppercase;color:var(--flir-grey-60);white-space:nowrap;}
+</style>
+</head>
+<body>
+<div class="post">
+  <div class="post__photo" id="photo"></div>
+  <div class="post__crush"></div>
+  <div class="post__grime"></div>
+  <div class="post__grain"></div>
+  <div class="post__scan"></div>
+
+  <div class="post__layer">
+    <div class="post__top">
+      <span class="flir-wordmark post__mark"><span class="the">The</span><span class="flir">Flir</span></span>
+      <span class="post__cat" id="cat"></span>
+    </div>
+    <div class="post__bottom">
+      <div class="post__title" id="title"></div>
+      <div class="post__rule"></div>
+      <div class="post__foot">
+        <span class="post__meta" id="meta"></span>
+        <span class="post__site" id="site"></span>
+      </div>
+    </div>
+  </div>
+</div>
+<script>
+  var q = new URLSearchParams(location.search);
+  document.getElementById('photo').style.backgroundImage =
+    "url('../assets/source/" + (q.get('photo') || 'dbnelson-09.jpg') + "')";
+  document.getElementById('cat').textContent   = q.get('cat')   || '';
+  document.getElementById('title').textContent = q.get('title') || '';
+  document.getElementById('meta').textContent  = q.get('meta')  || '';
+  document.getElementById('site').textContent  = q.get('site')  || 'theflir.com';
+</script>
+</body></html>

@@ -125,5 +125,24 @@
   </div>
 
   <div class="dev"><b>Spec</b>1080 × 1080 · margin 72px · title Archivo wide 700 at 104px (min 72px) · mark 34px in a 2px rule · red rule 8px × 200px · texture opacity fixed by <code>--flir-crush</code>. Export PNG, sRGB.</div>
+
+  <div class="dev"><b>The content on this card is an EXAMPLE — never render it</b>
+  "Dead air between two signals · New single · 14 March" is a format demonstration. <b>No such record
+  exists.</b> Rendering this card and posting it would announce a release the band has never made. Real
+  posts come from <code>social/feed-post.export.html</code> — a bare 1080×1080 surface that takes its
+  content from the URL, so a post can only ever say what it is explicitly told to say.</div>
+
+  <div class="dev"><b>Render a real post</b>
+  Params: <code>cat</code>, <code>title</code>, <code>meta</code>, <code>site</code>, <code>photo</code>.
+  Take every value from <code>ui_kits/theflir-com/data.js</code> — dates are DD.MM.YY, counts zero-padded
+  (GDL-04). Serve over http; from <code>file://</code> the local TTFs are blocked and the wordmark silently
+  falls back to Impact.
+
+  cd theflir-design-system &amp;&amp; python3 -m http.server 8891
+
+  "…/Google Chrome" --headless --disable-gpu --hide-scrollbars \
+    --force-device-scale-factor=1 --window-size=1080,1080 \
+    --virtual-time-budget=5000 --screenshot=post.png \
+    "http://127.0.0.1:8891/social/feed-post.export.html?cat=suture8-02&amp;title=Singles%20(Internet%20Only)&amp;meta=04%20TRACKS%20%C2%B7%2014.02.10&amp;photo=dbnelson-03.jpg"</div>
 </div>
 </body></html>

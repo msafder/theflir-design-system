@@ -2,6 +2,32 @@
 
 All notable changes to this system. Newest first.
 
+## [0.17.0] — 2026-08-06
+
+### Added
+- **`social/feed-post.export.html`** — SOC-01's export surface. A bare
+  1080×1080 post that takes `cat`, `title`, `meta`, `site` and `photo` from the
+  URL, so its content can only ever be what it is explicitly given.
+
+### Fixed — a live hazard on SOC-01
+- **The feed-post card's content is an example, and nothing said so.** It
+  announces a single called *"Dead air between two signals · New single ·
+  14 March"*. **No such record exists.** The card is a format demonstration, but
+  anyone rendering it and posting it would have announced a release the band has
+  never made — on the account the launch plan is about to drive traffic to. The
+  card now carries that warning in the loudest place available, and points at
+  the export surface instead.
+- This is the same class of defect as the site's stand-in cover art: a
+  placeholder that looks like data, sitting one careless step away from
+  production.
+
+### Notes
+- The title clamps between 104px and the spec's own documented 72px floor. A
+  three-word record name overruns 1080px at 104, so the clamp lives between the
+  two numbers the spec already gives rather than inventing a third.
+- First two real posts rendered from it: `suture8-02` on `dbnelson-03`, and
+  `suture8-01` on `dbnelson-12`. Every value taken from `data.js`.
+
 ## [0.16.1] — 2026-08-06
 
 ### Changed
