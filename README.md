@@ -412,10 +412,11 @@ primitive was added that the band's own surfaces do not already use.
   layer sits above the image and never duplicates the mark. Avoid them where the
   system's own wordmark appears in the same view; un-watermarked frames are
   preferred for portraits and heroes.
-- suture8-01's cover is now in the archive at full resolution.
-  `assets/source/suture8-02-cover.png` is still a square crop of the band's
-  banner artwork standing in for suture8-02 — that record has no cover of its own
-  in the archive.
+- Both covers are now in the archive at source. suture8-01 at full resolution;
+  suture8-02 at `assets/source/suture8-02-cover.jpg`, the real Bandcamp release
+  art at 700×700, pulled in on 2026-08-06. The banner crop that stood in for it
+  is kept as `assets/source/suture8-02-banner-crop.png` — it is archive material,
+  not a cover, and nothing should reference it as one.
 - The butterfly-orchid emblem needs extracting from the cover master and a
   decision on whether it joins the system. See ICONOGRAPHY.
 - Venue names for the 2005–2006 shows are not printed legibly on every flyer;
