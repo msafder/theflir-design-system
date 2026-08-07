@@ -84,4 +84,7 @@ GDL-07 carries the specification.
 - No merch or Shopify screen; merch runs through eyeliner.media, not this domain.
 - No audio player. Bandcamp's embed is the intended mechanism and is not mocked.
 - Tablet-specific layout is not designed. There is one breakpoint, at 720px.
-- No search, no newsletter capture, no cart. None of those exist yet.
+- No search and no cart. Neither exists yet.
+- Newsletter capture is **not** mocked on these screens, but it is no longer
+  missing from the system: `web/signup.html` (WEB-03) is the block, and it is
+  live on theflir.com. Use that rather than inventing a form here.

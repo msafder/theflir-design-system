@@ -1,0 +1,71 @@
+<!doctype html>
+<html lang="en" data-flir-theme="ink">
+<head>
+<meta charset="utf-8">
+<title>THE FLIR — og:image export 1200×630</title>
+<link rel="stylesheet" href="../tokens/color.css">
+<link rel="stylesheet" href="../tokens/type.css">
+<link rel="stylesheet" href="../tokens/layout.css">
+<!--
+  EXPORT SURFACE — not a preview card. This page is exactly 1200×630 with no
+  margin and no chrome, so a headless screenshot at that window size IS the
+  asset. social/og-card.html embeds this file to document it; the artwork lives
+  here only, so the two can never drift.
+
+  Render:
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+      --headless --disable-gpu --hide-scrollbars --force-device-scale-factor=1 \
+      --window-size=1200,630 --screenshot=og.png \
+      http://127.0.0.1:PORT/social/og-card.export.html
+
+  Serve over http rather than file:// — the local @font-face TTFs do not load
+  reliably from file:// and the wordmark silently falls back to Impact.
+-->
+<style>
+  html,body{margin:0;padding:0;background:var(--flir-bg);}
+  /* True output size. Do not make this responsive — it is a fixed master. */
+  .og{position:relative;width:1200px;height:630px;overflow:hidden;
+    background:var(--flir-bg-sunken);}
+
+  /* GDL-07 stack, in order: image, crush, hard grain, scanline, then type.
+     Grain never sits over type. The field is already lit red, so it takes the
+     native filter rather than the grayscale pass — per tokens/color.css, shots
+     already lit red ARE the palette. That field is this surface's one red;
+     nothing else on the card is allowed to be red. */
+  .og__photo{position:absolute;inset:0;background-size:cover;background-position:32% center;
+    filter:var(--flir-photo-filter-native);}
+  .og__crush{position:absolute;inset:0;background:var(--flir-crush);}
+  .og__grain{position:absolute;inset:0;background:var(--flir-grain-hard);opacity:.55;}
+  .og__scan{position:absolute;inset:0;background:var(--flir-scanline);}
+
+  .og__type{position:absolute;inset:0;padding:72px;
+    display:flex;flex-direction:column;justify-content:space-between;align-items:flex-start;}
+
+  /* .flir-wordmark carries the locked 1:2 construction — never re-typed by hand. */
+  .og__mark{font-size:148px;color:var(--flir-white);}
+
+  .og__line{font-family:var(--flir-font-data);font-weight:var(--flir-fw-medium);
+    font-size:26px;letter-spacing:var(--flir-ls-wider);text-transform:uppercase;
+    color:var(--flir-grey-90);margin-top:28px;}
+
+  /* Credit line: once per artefact, smallest type on the surface (GDL-04). */
+  .og__credit{font-family:var(--flir-font-data);font-size:17px;
+    letter-spacing:var(--flir-ls-wider);text-transform:uppercase;color:var(--flir-grey-60);}
+</style>
+</head>
+<body>
+<div class="og">
+  <div class="og__photo" style="background-image:url('../assets/source/flirbackground.jpg');"></div>
+  <div class="og__crush"></div>
+  <div class="og__grain"></div>
+  <div class="og__scan"></div>
+
+  <div class="og__type">
+    <div>
+      <span class="flir-wordmark og__mark"><span class="the">The</span><span class="flir">Flir</span></span>
+      <div class="og__line">Official site · theflir.com</div>
+    </div>
+    <div class="og__credit">THE FLIR · EYELINER MEDIA · MMXXVI</div>
+  </div>
+</div>
+</body></html>

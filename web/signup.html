@@ -1,0 +1,146 @@
+<!-- @dsCard group="theflir.com" viewport="1080x760" name="Mailing List Signup" subtitle="Email capture — the one channel the band owns outright" -->
+<!doctype html>
+<html lang="en" data-flir-theme="ink">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>THE FLIR — Mailing list</title>
+<link rel="stylesheet" href="../tokens/color.css">
+<link rel="stylesheet" href="../tokens/type.css">
+<link rel="stylesheet" href="../tokens/layout.css">
+<style>
+  html,body{margin:0;background:var(--flir-bg);color:var(--flir-fg);font-family:var(--flir-font-body);
+    -webkit-font-smoothing:antialiased;}
+  .wrap{padding:var(--flir-space-6);display:flex;flex-direction:column;gap:var(--flir-space-6);}
+  .head{display:flex;align-items:baseline;justify-content:space-between;gap:var(--flir-space-4);
+    border-bottom:var(--flir-rule);padding-bottom:var(--flir-space-3);}
+  .h{margin:0;font-family:var(--flir-font-headline);
+    font-variation-settings:'wdth' var(--flir-wdth-wide),'wght' var(--flir-fw-bold);
+    font-size:var(--flir-text-h3);text-transform:uppercase;line-height:var(--flir-lh-tight);}
+  .id{font-family:var(--flir-font-data);font-size:var(--flir-text-nano);letter-spacing:var(--flir-ls-wider);
+    color:var(--flir-fg-faint);text-transform:uppercase;}
+  .lbl{font-family:var(--flir-font-data);font-weight:var(--flir-fw-medium);font-size:var(--flir-text-micro);
+    letter-spacing:var(--flir-ls-wider);text-transform:uppercase;color:var(--flir-fg-muted);}
+  .note{font-size:var(--flir-text-small);line-height:var(--flir-lh-body);color:var(--flir-fg-muted);
+    max-width:64ch;margin:0;}
+  .note strong{color:var(--flir-fg);}
+  .note code{font-family:var(--flir-font-data);font-size:var(--flir-text-nano);color:var(--flir-fg);}
+  .dev{border-left:var(--flir-border-mark) solid var(--flir-accent);padding-left:var(--flir-space-4);
+    font-family:var(--flir-font-data);font-size:var(--flir-text-small);line-height:var(--flir-lh-body);
+    color:var(--flir-fg-muted);}
+  .dev b{color:var(--flir-accent-text);display:block;font-size:var(--flir-text-nano);
+    letter-spacing:var(--flir-ls-wide);text-transform:uppercase;margin-bottom:var(--flir-space-1);}
+  .frame{position:relative;border:var(--flir-rule);}
+
+  /* ==== WEB-03 — the block ============================================
+     Bounded by rules, not drawn as a card, so it sits inside the page's
+     row structure instead of floating on it. The submit control is the
+     only filled element and carries the single red on the surface. */
+  .signup{background:var(--flir-surface);padding:var(--flir-space-6) var(--flir-space-5);
+    display:flex;flex-direction:column;gap:var(--flir-space-4);}
+  .signup__head{border-bottom:var(--flir-rule);padding-bottom:var(--flir-space-3);}
+  .signup__copy{font-size:var(--flir-text-small);line-height:var(--flir-lh-body);
+    color:var(--flir-fg-muted);max-width:52ch;margin:0;}
+
+  .signup__form{display:flex;flex-wrap:wrap;gap:var(--flir-space-3);align-items:flex-end;}
+  .signup__field{display:flex;flex-direction:column;gap:var(--flir-space-2);flex:1 1 22rem;min-width:0;}
+  /* Visible label. A placeholder is not a label — it leaves on focus. */
+  .signup__label{font-family:var(--flir-font-data);font-weight:var(--flir-fw-medium);
+    font-size:var(--flir-text-nano);letter-spacing:var(--flir-ls-wider);text-transform:uppercase;
+    color:var(--flir-fg-muted);}
+  /* GDL-03 names radius-hair as the radius for inputs. Nothing else rounds. */
+  .signup__input{width:100%;box-sizing:border-box;padding:var(--flir-space-3) var(--flir-space-4);
+    font-family:var(--flir-font-data);font-size:var(--flir-text-small);letter-spacing:var(--flir-ls-wide);
+    color:var(--flir-fg);background:var(--flir-bg);border:var(--flir-rule-strong);
+    border-radius:var(--flir-radius-hair);}
+  .signup__input::placeholder{color:var(--flir-fg-faint);}
+  .signup__input:focus-visible{outline:var(--flir-rule-accent);outline-offset:2px;}
+  /* The one red fill. Square — GDL-03 forbids a pill on a button. */
+  .signup__button{padding:var(--flir-space-3) var(--flir-space-6);
+    font-family:var(--flir-font-data);font-weight:var(--flir-fw-bold);font-size:var(--flir-text-micro);
+    letter-spacing:var(--flir-ls-wider);text-transform:uppercase;
+    color:var(--flir-accent-fg);background:var(--flir-accent);
+    border:var(--flir-border-mark) solid var(--flir-accent);border-radius:var(--flir-radius-none);
+    cursor:pointer;transition:background var(--flir-transition);}
+  .signup__button:hover{background:var(--flir-accent-hover);border-color:var(--flir-accent-hover);}
+  /* Holds its line while empty, so a response never reflows the rows below. */
+  .signup__status{flex-basis:100%;min-height:1.5em;margin:0;
+    font-family:var(--flir-font-data);font-size:var(--flir-text-nano);letter-spacing:var(--flir-ls-wide);
+    text-transform:uppercase;color:var(--flir-fg-faint);}
+  .signup__credit{font-family:var(--flir-font-data);font-size:var(--flir-text-nano);
+    letter-spacing:var(--flir-ls-wider);text-transform:uppercase;color:var(--flir-grey-50);
+    border-top:var(--flir-rule);padding-top:var(--flir-space-3);}
+
+  .states{display:flex;flex-direction:column;gap:var(--flir-space-2);
+    border-top:var(--flir-rule);padding-top:var(--flir-space-4);}
+  .state{font-family:var(--flir-font-data);font-size:var(--flir-text-nano);letter-spacing:var(--flir-ls-wide);
+    text-transform:uppercase;color:var(--flir-fg-faint);}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="head">
+    <h1 class="h">Web · Mailing list</h1>
+    <span class="id">WEB-03 · theflir.com — 640px block</span>
+  </div>
+  <p class="note">Email capture for <strong>theflir.com</strong>. This is the one audience channel the band
+    owns outright, as against Instagram and Bandcamp — which is the entire reason for holding the domain.
+    Bounded top and bottom by rules so it reads as another row of the page, not a widget dropped onto it.</p>
+
+  <div style="display:flex;gap:var(--flir-space-6);flex-wrap:wrap;align-items:flex-start;">
+    <div class="frame" style="width:640px;">
+      <div class="signup">
+        <div class="signup__head"><span class="lbl">Mailing list</span></div>
+
+        <p class="signup__copy">New releases and show dates, sent by the band. We email once to confirm —
+          the list does not start until that link is clicked.</p>
+
+        <form class="signup__form" novalidate>
+          <div class="signup__field">
+            <label class="signup__label" for="web03-email">Email address</label>
+            <input class="signup__input" id="web03-email" name="email" type="email"
+              inputmode="email" autocomplete="email" placeholder="NAME@DOMAIN.COM" required>
+          </div>
+          <button class="signup__button" type="submit">Sign up</button>
+          <p class="signup__status">Check your email to confirm</p>
+        </form>
+
+        <div class="signup__credit">THE FLIR · EYELINER MEDIA · MMXXVI</div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:var(--flir-space-4);max-width:44ch;">
+      <span class="lbl">Rules</span>
+      <p class="note">The submit control is the <strong>one red fill</strong> on the surface. Where the page
+        already spends its red — a current release row, a ticket link — this button drops to an
+        <code>--flir-accent</code> outline on transparent and the red stays where it was.</p>
+      <p class="note">The field label is <strong>visible, mono, uppercase</strong>. A placeholder is not a
+        label: it vanishes on focus and leaves the field unnamed for anyone using a screen reader.</p>
+      <p class="note">Square. <code>--flir-radius-hair</code> on the input is the one radius GDL-03 grants to
+        inputs; the button and the block are <code>--flir-radius-none</code>. A pill button here is a GDL-03
+        violation — the pill is legal only on the NOW PLAYING chip.</p>
+      <p class="note">Copy is GDL-04 flat: what arrives, and how often. No incentive, no "join the family",
+        no emoji. The confirmation sentence is not optional — the list is double opt-in, and the visitor is
+        told that before submitting rather than after.</p>
+      <p class="note">The status line <strong>always occupies its line</strong>, empty or not. A message that
+        appears out of nothing shoves the credit line down and reflows the page under the reader's thumb.</p>
+      <p class="note">One block per surface. Two capture forms on one page compete and both convert worse.</p>
+
+      <div class="dev">
+        <b>Binding</b>
+        Klaviyo, account Snb8Wc, list STGBxc "THE FLIR" — deliberately separate from the eyeliner.media store
+        lists. Same account, distinct list and tags. The client subscription endpoint takes the email property
+        only: adding a subscriptions block to the profile payload returns 400.
+      </div>
+    </div>
+  </div>
+
+  <div class="states">
+    <span class="lbl">Status line — the four strings</span>
+    <span class="state">· &nbsp;(empty — resting)</span>
+    <span class="state">· Enter a valid email address</span>
+    <span class="state">· Check your email to confirm</span>
+    <span class="state">· Something went wrong — try again</span>
+  </div>
+</div>
+</body></html>

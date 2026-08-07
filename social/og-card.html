@@ -1,0 +1,110 @@
+<!-- @dsCard group="theflir.com" viewport="1080x900" name="Link Preview (og:image)" subtitle="1200×630 master — theflir.com pasted into a message" -->
+<!doctype html>
+<html lang="en" data-flir-theme="ink">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>THE FLIR — og:image 1200×630</title>
+<link rel="stylesheet" href="../tokens/color.css">
+<link rel="stylesheet" href="../tokens/type.css">
+<link rel="stylesheet" href="../tokens/layout.css">
+<style>
+  html,body{margin:0;background:var(--flir-bg);color:var(--flir-fg);font-family:var(--flir-font-body);
+    -webkit-font-smoothing:antialiased;}
+  .wrap{padding:var(--flir-space-6);display:flex;flex-direction:column;gap:var(--flir-space-6);}
+  .head{display:flex;align-items:baseline;justify-content:space-between;gap:var(--flir-space-4);
+    border-bottom:var(--flir-rule);padding-bottom:var(--flir-space-3);}
+  .h{margin:0;font-family:var(--flir-font-headline);
+    font-variation-settings:'wdth' var(--flir-wdth-wide),'wght' var(--flir-fw-bold);
+    font-size:var(--flir-text-h3);text-transform:uppercase;line-height:var(--flir-lh-tight);}
+  .id{font-family:var(--flir-font-data);font-size:var(--flir-text-nano);letter-spacing:var(--flir-ls-wider);
+    color:var(--flir-fg-faint);text-transform:uppercase;}
+  .lbl{font-family:var(--flir-font-data);font-weight:var(--flir-fw-medium);font-size:var(--flir-text-micro);
+    letter-spacing:var(--flir-ls-wider);text-transform:uppercase;color:var(--flir-fg-muted);}
+  .note{font-size:var(--flir-text-small);line-height:var(--flir-lh-body);color:var(--flir-fg-muted);
+    max-width:64ch;margin:0;}
+  .note strong{color:var(--flir-fg);}
+  .note code{font-family:var(--flir-font-data);font-size:var(--flir-text-nano);color:var(--flir-fg);}
+  .dev{border-left:var(--flir-border-mark) solid var(--flir-accent);padding-left:var(--flir-space-4);
+    font-family:var(--flir-font-data);font-size:var(--flir-text-small);line-height:var(--flir-lh-body);
+    color:var(--flir-fg-muted);}
+  .dev b{color:var(--flir-accent-text);display:block;font-size:var(--flir-text-nano);
+    letter-spacing:var(--flir-ls-wide);text-transform:uppercase;margin-bottom:var(--flir-space-1);}
+  .frame{position:relative;border:var(--flir-rule);}
+  /* Master shown at true output px, scaled for preview — 1200×630 at 0.5. */
+  .shrink{transform-origin:top left;}
+  .shot{width:1200px;height:630px;border:0;display:block;}
+  .cmd{font-family:var(--flir-font-data);font-size:var(--flir-text-nano);line-height:var(--flir-lh-data);
+    color:var(--flir-fg-muted);background:var(--flir-bg-sunken);border:var(--flir-rule);
+    padding:var(--flir-space-4);white-space:pre-wrap;margin:0;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="head">
+    <h1 class="h">Link preview · og:image</h1>
+    <span class="id">SOC-04 · 1200 × 630 · theflir.com</span>
+  </div>
+  <p class="note">What <strong>theflir.com</strong> looks like pasted into iMessage, Slack, WhatsApp or a
+    Facebook post — for most people the first THE FLIR surface they ever see, and the only one they see
+    without choosing to. Wordmark, one line of orientation, credit line. Filed under theflir.com rather than
+    Instagram: it is the site's preview and is never posted to a feed.</p>
+
+  <div class="frame" style="width:600px;height:315px;">
+    <div class="shrink" style="transform:scale(0.5);">
+      <iframe class="shot" src="og-card.export.html" title="og:image master at true size" scrolling="no"></iframe>
+    </div>
+  </div>
+
+  <div style="display:flex;gap:var(--flir-space-6);flex-wrap:wrap;align-items:flex-start;">
+    <div style="display:flex;flex-direction:column;gap:var(--flir-space-4);max-width:52ch;">
+      <span class="lbl">Rules</span>
+      <p class="note">The artwork lives in <code>social/og-card.export.html</code> — a bare 1200×630 page with
+        no card chrome, embedded above. This card documents it and never re-draws it, so the preview and the
+        shipped PNG cannot drift apart.</p>
+      <p class="note">GDL-07 stack in order: image, crush, hard grain, scanline, then type. The grain layer
+        stops under the type layer.</p>
+      <p class="note">The field is <code>flirbackground.jpg</code>, already lit red, so it takes
+        <code>--flir-photo-filter-native</code> rather than the grayscale pass. <strong>That field is the one
+        red on this surface</strong> — the type is white and grey, and nothing else here may be red.</p>
+      <p class="note">The wordmark is <code>.flir-wordmark</code>, never re-typed by hand. Its locked 1:2
+        construction only holds if both local faces load, which is why this renders over http and not
+        <code>file://</code> — see the deviation opposite.</p>
+      <p class="note">Type sits left, over the flat part of the field; the branches on the right stay clear of
+        it. Some layouts crop the edges of a 1.91:1 card, so nothing that must be read comes within 72px of
+        an edge.</p>
+      <p class="note">No release title, no date, no tour. A card that names a record has to be re-rendered the
+        day that record stops being current, and it never is.</p>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:var(--flir-space-4);max-width:60ch;">
+      <span class="lbl">Render</span>
+      <p class="cmd">cd theflir-design-system
+python3 -m http.server 8898
+
+"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+  --headless --disable-gpu --hide-scrollbars \
+  --force-device-scale-factor=1 --window-size=1200,630 \
+  --virtual-time-budget=4000 --screenshot=og.png \
+  http://127.0.0.1:8898/social/og-card.export.html</p>
+
+      <div class="dev">
+        <b>Deviation · http, not file://</b>
+        The export page must be served over http. From file://, the local @font-face TTFs are blocked,
+        Placard Condensed and Frankfurter both fall back to Impact, and the wordmark ships wrong at the one
+        size where it is most visible. The failure is silent — the render succeeds and merely looks off.
+      </div>
+
+      <div class="dev">
+        <b>Deviation · scale factor 1</b>
+        <code>--force-device-scale-factor=1</code> is not optional on a Retina Mac. Without it Chrome renders
+        at 2x and writes a 2400×1260 file that no longer matches the declared og:image dimensions.
+      </div>
+
+      <p class="note">Ships to <code>theflir.com/public/images/og.png</code>, declared in that repo's
+        <code>public/index.html</code> as an absolute URL — relative og:image paths are not resolved by
+        Facebook, iMessage or Slack.</p>
+    </div>
+  </div>
+</div>
+</body></html>

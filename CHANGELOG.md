@@ -2,6 +2,62 @@
 
 All notable changes to this system. Newest first.
 
+## [0.15.0] — 2026-08-06
+
+### Added
+- **`web/signup.html` — WEB-03, mailing list signup.** The email-capture block
+  the system was missing. `theflir.com` shipped a working Klaviyo form ahead of
+  it, so the site and the system had drifted; this brings the block in-system
+  and documented, and the site now follows it rather than the reverse.
+  Registered in `_ds_manifest.json`.
+- Bounded by rules rather than drawn as a card, so it sits in the page's row
+  structure. The submit control is the **one red fill** on the surface, and the
+  card states what to do when the page has already spent its red elsewhere:
+  drop the button to an `--flir-accent` outline and leave the red where it was.
+- Square throughout. `--flir-radius-hair` on the input is the radius GDL-03
+  grants to inputs; the button and the block are `--flir-radius-none`. Recorded
+  explicitly because a pill submit button is the obvious wrong instinct here,
+  and GDL-03 permits the pill only on the NOW PLAYING chip.
+- The field label is visible, mono and uppercase — not a placeholder. The status
+  line holds its line while empty so a response never reflows the rows beneath
+  it. Its four strings are enumerated on the card.
+- Copy is GDL-04 flat: what arrives and how often, no incentive and no emoji.
+  The double opt-in is stated *before* the visitor submits, not after.
+
+- **`social/og-card.html` — SOC-04, the link preview**, with
+  `social/og-card.export.html` as its 1200×630 export surface. The card embeds
+  the export page rather than redrawing it, so the documented preview and the
+  shipped PNG cannot drift. Filed under `theflir.com`, not Instagram: it is the
+  site's link preview and is never posted to a feed.
+- Wordmark, one orientation line, credit line — deliberately no release title or
+  date. A card naming a record has to be re-cut the day that record stops being
+  current, and it never is.
+- The field is `flirbackground.jpg`, already lit red, so it takes
+  `--flir-photo-filter-native` rather than the grayscale pass. That field is the
+  surface's one red; the type is white and grey.
+- Two render deviations recorded on the card, both silent failures if missed:
+  the export page must be served over **http**, because from `file://` the local
+  `@font-face` TTFs are blocked and the wordmark falls back to Impact at the
+  largest size it is ever seen; and `--force-device-scale-factor=1` is required
+  on a Retina Mac, or Chrome writes 2400×1260 and the file stops matching the
+  declared og:image dimensions.
+- First **bare export surface** in the system. Every other master is a preview
+  card scaled by `.shrink`; this one is authored at true output size with no
+  chrome so a headless screenshot is itself the deliverable.
+
+### Closed
+- `ui_kits/theflir-com/README.md` listed "no newsletter capture" under Known
+  gaps. That gap is closed and the line is gone.
+- `theflir.com` had `og:image` marked TODO, pending "social/ masters". SOC-04 is
+  that master; the site now ships `public/images/og.png` rendered from it.
+
+### Notes
+- The block binds to Klaviyo list `STGBxc` "THE FLIR", account `Snb8Wc`, kept
+  deliberately separate from the eyeliner.media store lists. Carried on the card
+  as a deviation note: the client subscription endpoint accepts the `email`
+  property only — adding a `subscriptions` block to the profile payload returns
+  400. That was found by live testing, not from the documentation.
+
 ## [0.14.0] — 2026-08-06
 
 ### Added
