@@ -125,7 +125,11 @@ const STREAMING = {
    filenames; venue names are those printed on the flyers. Where a flyer
    gives no venue the field is left empty rather than guessed. */
 const PAST_SHOWS = [
-  { date: '12.12.05', venue: '', city: 'Los Angeles', flyer: '../../assets/source/flyer-10272006.png' },
+  /* No flyer. flyer-10272006.png was pointed here as well as at 27.10.06,
+     which its own filename dates it to — so the archive grid showed the same
+     scan twice and this date carried a Flyer badge it had not earned. Only one
+     flyer scan exists in assets/. null is the convention when there is none. */
+  { date: '12.12.05', venue: '', city: 'Los Angeles', flyer: null },
   { date: '18.02.06', venue: '', city: 'Los Angeles', flyer: null },
   { date: '27.10.06', venue: '', city: 'Los Angeles', flyer: '../../assets/source/flyer-10272006.png' },
   { date: '18.11.06', venue: '', city: 'Los Angeles', flyer: null },
