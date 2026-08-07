@@ -2,6 +2,26 @@
 
 All notable changes to this system. Newest first.
 
+## [0.15.1] — 2026-08-06
+
+### Fixed
+- **suture8-02 was showing the wrong cover.** Every surface carrying *Singles
+  (Internet Only)* — the site kit's home and music screens, the shop kit's CD
+  product, and the live theflir.com release card — was rendering a square crop
+  of the band's banner artwork. That crop was a documented stand-in, not the
+  record's cover, and it had propagated to production.
+- The real Bandcamp release art is now in the archive at
+  `assets/source/suture8-02-cover.jpg`, 700×700, served locally. Sourced from
+  Bandcamp's CDN at the largest variant available (`_16`); the band supplied the
+  `_2` variant, which is the same image at 350×350.
+- The stand-in is renamed `assets/source/suture8-02-banner-crop.png`. It is
+  archive material and keeps its place, but a file named `-cover` that is not
+  the cover is exactly the trap that let this ship. Nothing references it now.
+- Repointed `ui_kits/theflir-com/data.js` (`RELEASES[0].cover`) and
+  `ui_kits/eyeliner-shop/data.js` (`suture8-02-CD` → `art`).
+- Closes the open item in `readme.md` that recorded suture8-02 as having no
+  cover of its own in the archive. Both covers are now at source.
+
 ## [0.15.0] — 2026-08-06
 
 ### Added

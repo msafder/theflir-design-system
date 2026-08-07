@@ -22,9 +22,11 @@ const RELEASES = [
     recordedIn: 'Los Angeles',
     trackCount: 4,
     status: 'Out now',
-    /* Square crop of the archive banner artwork — the band's own figure and
-       lockup. The Bandcamp release art itself is not in the local archive. */
-    cover: '../../assets/source/suture8-02-cover.png',
+    /* The actual Bandcamp release art, 700×700, pulled into the archive on
+       2026-08-06 and served locally. Supersedes the banner crop that stood in
+       for it — that file is now assets/source/suture8-02-banner-crop.png and
+       is not this record's cover. */
+    cover: '../../assets/source/suture8-02-cover.jpg',
     url: 'https://theflir.bandcamp.com/album/singles-internet-only',
     tracks: [
       { n: '01', title: 'Again', vocals: 'Jessica Isaac' },

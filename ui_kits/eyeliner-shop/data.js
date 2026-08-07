@@ -61,7 +61,7 @@ const SHOP = {
       price: '12.00',
       status: 'Available',
       discontinued: false,
-      art: '../../assets/source/suture8-02-cover.png',
+      art: '../../assets/source/suture8-02-cover.jpg',
       garment: 'Kunaki · 4.75in jacket',
       print: 'Four-colour, chalk tray card',
       note: 'Four tracks. Also on Bandcamp as a digital release.',
