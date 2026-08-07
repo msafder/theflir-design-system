@@ -131,7 +131,18 @@ const PAST_SHOWS = [
      flyer scan exists in assets/. null is the convention when there is none. */
   { date: '12.12.05', venue: '', city: 'Los Angeles', flyer: null },
   { date: '18.02.06', venue: '', city: 'Los Angeles', flyer: null },
-  { date: '27.10.06', venue: '', city: 'Los Angeles', flyer: '../../assets/source/flyer-10272006.png' },
+  /* Venue read straight off the flyer, which prints it large: "AT TANGIER,
+     2138 Hillhurst Avenue, Los Angeles, CA 90027, 323-666-8666". This record
+     carried venue: '' under the rule above — but that rule covers flyers that
+     name no venue, and this one names one. The empty string was not caution,
+     it was a misreading of our own scan.
+
+     Also printed on the flyer and deliberately not modelled here, because
+     PAST_SHOWS has no field for any of it: a Halloween show, costumes
+     encouraged; THE FLIR at 11:00 PM, alū at 10:00, Maktwain at 9:00; $8,
+     21+. Kept in this comment so the facts survive until there is somewhere
+     to put them. */
+  { date: '27.10.06', venue: 'Tangier', city: 'Los Angeles', flyer: '../../assets/source/flyer-10272006.png' },
   { date: '18.11.06', venue: '', city: 'Los Angeles', flyer: null },
 ];
 

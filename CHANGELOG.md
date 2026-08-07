@@ -2,6 +2,27 @@
 
 All notable changes to this system. Newest first.
 
+## [0.17.1] — 2026-08-06
+
+### Fixed — a venue we had and were not printing
+- **`27.10.06` carried `venue: ''` while its own flyer prints the venue in
+  display type.** The scan reads "AT TANGIER, 2138 Hillhurst Avenue, Los
+  Angeles, CA 90027". `PAST_SHOWS` documents the rule that a flyer naming no
+  venue leaves the field empty rather than guessing — right rule, wrong record.
+  The empty string was not caution about a missing source; it was a misreading
+  of a source we hold. Now `venue: 'Tangier'`.
+- The other three dates keep `venue: ''`. They have no flyer, so they have no
+  source, and that is the rule working as intended.
+
+### Notes
+- Also printed on the flyer and still not modelled, because `PAST_SHOWS` has no
+  field for it: a Halloween show, costumes encouraged; THE FLIR at 11:00 PM,
+  alū at 10:00, Maktwain at 9:00; $8, 21+. Recorded in a comment beside the
+  record so it survives until the schema has somewhere to put it.
+- Found by rendering the scan at size on theflir.com's new `/live` page, not by
+  re-reading `data.js`. Worth remembering: the archive had been checked against
+  the filename and never against the image.
+
 ## [0.17.0] — 2026-08-06
 
 ### Added
