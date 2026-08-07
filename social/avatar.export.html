@@ -1,0 +1,65 @@
+<!doctype html>
+<html lang="en" data-flir-theme="ink">
+<head>
+<meta charset="utf-8">
+<title>THE FLIR — avatar export 1080×1080</title>
+<link rel="stylesheet" href="../tokens/color.css">
+<link rel="stylesheet" href="../tokens/type.css">
+<link rel="stylesheet" href="../tokens/layout.css">
+<!--
+  SOC-05 EXPORT SURFACE — profile avatar, 1080×1080, no chrome.
+  Render command lives in social/avatar.html.
+
+  THE CIRCLE IS THE WHOLE PROBLEM. Instagram, Bandcamp and Spotify all crop a
+  square avatar to a circle, and GDL-05's wordmark is a 1:2 horizontal lockup —
+  the widest possible mark going into the least forgiving frame. The stacked
+  construction from the suture8-01 cover would fit far better and is explicitly
+  forbidden for new work: GDL-05 records it as historical, correct for 2002 and
+  wrong now.
+
+  So the mark sits at 62% of the frame width, which keeps the whole lockup
+  inside the inscribed circle with clear space around it. It reads small. That
+  is the correct trade — cropping or restacking the wordmark would break
+  GDL-05, and "FLIR" alone is never permissible.
+
+  The dashed circle is a proof layer, shown only with ?guides=1. It must never
+  appear in a shipped export.
+-->
+<style>
+  html,body{margin:0;padding:0;background:var(--flir-bg);}
+  .av{position:relative;width:1080px;height:1080px;overflow:hidden;
+    background:var(--flir-bg-sunken);display:grid;place-items:center;}
+
+  /* Instrument field — same stack as every other surface, texture under type. */
+  .av__grime{position:absolute;inset:0;background:var(--flir-grime);}
+  .av__grain{position:absolute;inset:0;background:var(--flir-grain-hard);opacity:.4;}
+  .av__scan{position:absolute;inset:0;background:var(--flir-scanline);}
+  .av__vig{position:absolute;inset:0;background:var(--flir-vignette);}
+
+  /* ~68% of frame width. Proofed against the crop circle at ?guides=1: the
+     lockup clears it on every side. Sized up from a first pass at 51%, which
+     proofed fine but read weakly at the 32–150px an avatar is actually seen
+     at — legibility at thumbnail size is the entire job here. */
+  .av__mark{position:relative;font-size:290px;color:var(--flir-white);}
+
+  /* Proof only — the inscribed circle every platform crops to. */
+  .av__circle{position:absolute;inset:0;border-radius:50%;
+    outline:2px dashed rgba(192,0,0,.55);outline-offset:-2px;display:none;}
+  :root.guides .av__circle{display:block;}
+</style>
+</head>
+<body>
+<div class="av">
+  <div class="av__grime"></div>
+  <div class="av__grain"></div>
+  <div class="av__scan"></div>
+  <div class="av__vig"></div>
+  <span class="flir-wordmark av__mark"><span class="the">The</span><span class="flir">Flir</span></span>
+  <div class="av__circle"></div>
+</div>
+<script>
+  if (new URLSearchParams(location.search).has('guides')) {
+    document.documentElement.classList.add('guides');
+  }
+</script>
+</body></html>

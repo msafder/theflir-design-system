@@ -350,7 +350,8 @@ and Brand.
 
 Both carry their own `README.md`. All content real.
 
-**Surfaces** — `social/` (feed post, story, reel cover, og:image link preview),
+**Surfaces** — `social/` (feed post, story, reel cover, og:image link preview,
+profile avatar),
 `web/` (hero, link-in-bio, mailing list signup), `print/` (Kunaki CD jacket,
 18×24in gig poster).
 

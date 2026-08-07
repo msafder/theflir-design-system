@@ -1,0 +1,138 @@
+<!-- @dsCard group="Instagram" viewport="1000x820" name="Profile Avatar" subtitle="1080×1080 master — the wordmark surviving a circular crop" -->
+<!doctype html>
+<html lang="en" data-flir-theme="ink">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>THE FLIR — profile avatar</title>
+<link rel="stylesheet" href="../tokens/color.css">
+<link rel="stylesheet" href="../tokens/type.css">
+<link rel="stylesheet" href="../tokens/layout.css">
+<style>
+  html,body{margin:0;background:var(--flir-bg);color:var(--flir-fg);font-family:var(--flir-font-body);
+    -webkit-font-smoothing:antialiased;}
+  .wrap{padding:var(--flir-space-6);display:flex;flex-direction:column;gap:var(--flir-space-6);}
+  .head{display:flex;align-items:baseline;justify-content:space-between;gap:var(--flir-space-4);
+    border-bottom:var(--flir-rule);padding-bottom:var(--flir-space-3);}
+  .h{margin:0;font-family:var(--flir-font-headline);
+    font-variation-settings:'wdth' var(--flir-wdth-wide),'wght' var(--flir-fw-bold);
+    font-size:var(--flir-text-h3);text-transform:uppercase;line-height:var(--flir-lh-tight);}
+  .id{font-family:var(--flir-font-data);font-size:var(--flir-text-nano);letter-spacing:var(--flir-ls-wider);
+    color:var(--flir-fg-faint);text-transform:uppercase;}
+  .lbl{font-family:var(--flir-font-data);font-weight:var(--flir-fw-medium);font-size:var(--flir-text-micro);
+    letter-spacing:var(--flir-ls-wider);text-transform:uppercase;color:var(--flir-fg-muted);}
+  .note{font-size:var(--flir-text-small);line-height:var(--flir-lh-body);color:var(--flir-fg-muted);
+    max-width:64ch;margin:0;}
+  .note strong{color:var(--flir-fg);}
+  .note code{font-family:var(--flir-font-data);font-size:var(--flir-text-nano);color:var(--flir-fg);}
+  .dev{border-left:var(--flir-border-mark) solid var(--flir-accent);padding-left:var(--flir-space-4);
+    font-family:var(--flir-font-data);font-size:var(--flir-text-small);line-height:var(--flir-lh-body);
+    color:var(--flir-fg-muted);}
+  .dev b{color:var(--flir-accent-text);display:block;font-size:var(--flir-text-nano);
+    letter-spacing:var(--flir-ls-wide);text-transform:uppercase;margin-bottom:var(--flir-space-1);}
+  .frame{position:relative;border:var(--flir-rule);}
+  .shrink{transform-origin:top left;}
+  .shot{width:1080px;height:1080px;border:0;display:block;}
+  /* Circular crops, at the sizes a platform actually renders them. */
+  .sizes{display:flex;align-items:flex-end;gap:var(--flir-space-6);}
+  .size{display:flex;flex-direction:column;align-items:center;gap:var(--flir-space-2);}
+  .size span{font-family:var(--flir-font-data);font-size:var(--flir-text-nano);
+    letter-spacing:var(--flir-ls-wide);color:var(--flir-fg-faint);text-transform:uppercase;}
+  .circle{border-radius:50%;overflow:hidden;position:relative;}
+  .circle iframe{border:0;transform-origin:top left;display:block;}
+  .cmd{font-family:var(--flir-font-data);font-size:var(--flir-text-nano);line-height:var(--flir-lh-data);
+    color:var(--flir-fg-muted);background:var(--flir-bg-sunken);border:var(--flir-rule);
+    padding:var(--flir-space-4);white-space:pre-wrap;margin:0;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="head">
+    <h1 class="h">Profile avatar</h1>
+    <span class="id">SOC-05 · 1080 × 1080 · @theflir</span>
+  </div>
+  <p class="note">The account picture for Instagram, Bandcamp and Spotify. All three crop a square to a
+    circle, which is the hard part: GDL-05's wordmark is a <strong>1:2 horizontal lockup</strong> — the
+    widest mark the system has — going into the least forgiving frame there is.</p>
+
+  <div style="display:flex;gap:var(--flir-space-6);flex-wrap:wrap;align-items:flex-start;">
+    <div class="frame" style="width:340px;height:340px;">
+      <div class="shrink" style="transform:scale(0.3148);">
+        <iframe class="shot" src="avatar.export.html?guides=1" title="Avatar master with crop proof" scrolling="no"></iframe>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:var(--flir-space-5);">
+      <span class="lbl">As cropped, at real sizes</span>
+      <div class="sizes">
+        <div class="size">
+          <div class="circle" style="width:150px;height:150px;">
+            <iframe src="avatar.export.html" title="150px" scrolling="no"
+              style="width:1080px;height:1080px;transform:scale(0.1389);"></iframe>
+          </div>
+          <span>150 · profile</span>
+        </div>
+        <div class="size">
+          <div class="circle" style="width:56px;height:56px;">
+            <iframe src="avatar.export.html" title="56px" scrolling="no"
+              style="width:1080px;height:1080px;transform:scale(0.0519);"></iframe>
+          </div>
+          <span>56 · story ring</span>
+        </div>
+        <div class="size">
+          <div class="circle" style="width:32px;height:32px;">
+            <iframe src="avatar.export.html" title="32px" scrolling="no"
+              style="width:1080px;height:1080px;transform:scale(0.0296);"></iframe>
+          </div>
+          <span>32 · comment</span>
+        </div>
+      </div>
+      <p class="note">At 32px no wordmark is legible. That is true of every mark at that size and is not a
+        fault to design around — the size that has to work is 150.</p>
+    </div>
+  </div>
+
+  <div style="display:flex;gap:var(--flir-space-6);flex-wrap:wrap;align-items:flex-start;">
+    <div style="display:flex;flex-direction:column;gap:var(--flir-space-4);max-width:52ch;">
+      <span class="lbl">Rules</span>
+      <p class="note">The mark is <strong>the full lockup, never cropped and never restacked</strong>. The
+        stacked construction on the suture8-01 cover would fit a circle far better and is forbidden here —
+        GDL-05 records it as historical, correct for 2002 and wrong for new work. <strong>"FLIR" alone is
+        never permissible</strong>, at any size, for any reason.</p>
+      <p class="note">Set at ~68% of frame width. A first pass at 51% proofed clean against the circle but
+        read weakly at the sizes an avatar is actually seen at. Legibility at thumbnail size is the whole
+        job here, and the clear space left over is still comfortable.</p>
+      <p class="note">Same instrument field as every other surface — grime, hard grain, scanline and
+        vignette, all under the type. No photograph: at 150px a photographic field turns to mud and the
+        mark has to carry alone.</p>
+      <p class="note">Render with <code>?guides=1</code> to prove the crop. That overlay is a proof layer and
+        must never appear in a shipped export.</p>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:var(--flir-space-4);max-width:60ch;">
+      <span class="lbl">Render</span>
+      <p class="cmd">cd theflir-design-system
+python3 -m http.server 8893
+
+"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+  --headless --disable-gpu --hide-scrollbars \
+  --force-device-scale-factor=1 --window-size=1080,1080 \
+  --virtual-time-budget=4000 --screenshot=avatar.png \
+  http://127.0.0.1:8893/social/avatar.export.html</p>
+
+      <div class="dev">
+        <b>Deviation · http, not file://</b>
+        Serve over http. From <code>file://</code> the local @font-face TTFs are blocked, Placard Condensed
+        and Frankfurter fall back to Impact, and the wordmark ships wrong. The render still succeeds — the
+        failure is silent.
+      </div>
+
+      <div class="dev">
+        <b>Deviation · scale factor 1</b>
+        <code>--force-device-scale-factor=1</code> is required on a Retina Mac, or Chrome writes 2160×2160.
+        Harmless for an avatar, which gets downscaled anyway, but keep the master at its declared size.
+      </div>
+    </div>
+  </div>
+</div>
+</body></html>

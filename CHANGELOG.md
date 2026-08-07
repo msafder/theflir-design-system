@@ -2,6 +2,31 @@
 
 All notable changes to this system. Newest first.
 
+## [0.16.0] — 2026-08-06
+
+### Added
+- **`social/avatar.html` — SOC-05, the profile avatar**, with
+  `social/avatar.export.html` as its 1080×1080 export surface. The account
+  picture for Instagram, Bandcamp and Spotify. Second use of the bare-export
+  pattern introduced by SOC-04.
+- **The circular crop is the whole problem, and it is now documented.** Every
+  platform crops a square avatar to a circle, and GDL-05's wordmark is a 1:2
+  horizontal lockup — the widest mark in the system going into the least
+  forgiving frame. The stacked construction from the suture8-01 cover would fit
+  far better and stays forbidden: GDL-05 records it as historical, correct for
+  2002 and wrong for new work. "FLIR" alone remains never permissible.
+- Mark is set at ~68% of frame width, proofed against the crop with
+  `?guides=1`. A first pass at 51% cleared the circle comfortably but read
+  weakly at the sizes an avatar is actually seen at; legibility at thumbnail
+  size is the entire job. The card previews the real cropped result at 150px,
+  56px and 32px so the trade is visible rather than argued.
+- No photograph on this surface. At 150px a photographic field turns to mud and
+  the mark has to carry alone — grime, hard grain, scanline and vignette only.
+
+### Notes
+- The `?guides=1` overlay is a proof layer. It is `display:none` by default and
+  must never appear in a shipped export.
+
 ## [0.15.1] — 2026-08-06
 
 ### Fixed
