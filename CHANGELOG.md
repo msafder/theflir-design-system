@@ -2,6 +2,32 @@
 
 All notable changes to this system. Newest first.
 
+## [0.16.1] — 2026-08-06
+
+### Changed
+- **SOC-05 gets a photographic field.** v0.16.0 shipped the avatar on a flat
+  instrument field, on the reasoning that a photograph turns to mud at 150px.
+  The band asked for something more Corbijn, which was the right call: tested
+  against every usable frame in the archive, and the flat version reads as the
+  weakest of the set. The avatar now carries the full GDL-07 pass over
+  `dbnelson-09` — image, `--flir-photo-filter-corbijn`, crush, grime, hard
+  grain, scanline, vignette, then type.
+- The original concern was real but was about the *wrong variable*. It is not
+  photograph versus no photograph, it is **whether the photograph reads as
+  texture or as a subject**. A legible frame fights the mark at 150px; a
+  motion-blurred, blown-out one gives it something to sit on. `dbnelson-09` is
+  the latter and survives the circular crop.
+
+### Rejected fields — recorded so they are not retried
+- `band-photo` — carries a **burned-in THE FLIR wordmark**, which would
+  duplicate the mark. This is the conflict `README.md` Open items already flags
+  for the Facebook photography, now confirmed in use.
+- `ref-face-oculta` — nude figure. Instagram removes artistic nudity, and the
+  `ref-` prefix marks it as a reference image rather than the band's own frame.
+- `flirbackground` — the red field. `grayscale(1)` in the Corbijn filter
+  flattens it to near-black, making it indistinguishable from no photograph.
+- `dbnelson-12` — too dark to survive the crush; the mark floats on it.
+
 ## [0.16.0] — 2026-08-06
 
 ### Added

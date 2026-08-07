@@ -30,9 +30,29 @@
   .av{position:relative;width:1080px;height:1080px;overflow:hidden;
     background:var(--flir-bg-sunken);display:grid;place-items:center;}
 
-  /* Instrument field — same stack as every other surface, texture under type. */
+  /* GDL-07 Corbijn pass, in order: image, filter, crush, hard grain, scanline,
+     vignette, then type. Grain never sits over type.
+
+     The field is dbnelson-09 — motion-blurred and high contrast, so under the
+     Corbijn filter it reads as texture rather than as a subject. That is the
+     requirement at avatar size: a legible photograph turns to mud at 150px and
+     fights the mark, an abstract one gives it something to sit on.
+
+     Candidates rejected, recorded so they are not retried:
+       band-photo        carries a burned-in THE FLIR wordmark and would
+                         duplicate the mark (README Open items).
+       ref-face-oculta   nude figure — Instagram removes artistic nudity, and
+                         the ref- prefix means it is not the band's own frame.
+       flirbackground    the red field; grayscale(1) flattens it to near-black,
+                         so it is indistinguishable from no photograph at all.
+       dbnelson-12       too dark to survive the crush; the mark floats. */
+  .av__photo{position:absolute;inset:0;
+    background-image:url('../assets/source/dbnelson-09.jpg');
+    background-size:cover;background-position:center;
+    filter:var(--flir-photo-filter-corbijn);}
+  .av__crush{position:absolute;inset:0;background:var(--flir-crush);}
   .av__grime{position:absolute;inset:0;background:var(--flir-grime);}
-  .av__grain{position:absolute;inset:0;background:var(--flir-grain-hard);opacity:.4;}
+  .av__grain{position:absolute;inset:0;background:var(--flir-grain-hard);opacity:.55;}
   .av__scan{position:absolute;inset:0;background:var(--flir-scanline);}
   .av__vig{position:absolute;inset:0;background:var(--flir-vignette);}
 
@@ -50,6 +70,8 @@
 </head>
 <body>
 <div class="av">
+  <div class="av__photo"></div>
+  <div class="av__crush"></div>
   <div class="av__grime"></div>
   <div class="av__grain"></div>
   <div class="av__scan"></div>

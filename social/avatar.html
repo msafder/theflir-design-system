@@ -102,9 +102,21 @@
       <p class="note">Set at ~68% of frame width. A first pass at 51% proofed clean against the circle but
         read weakly at the sizes an avatar is actually seen at. Legibility at thumbnail size is the whole
         job here, and the clear space left over is still comfortable.</p>
-      <p class="note">Same instrument field as every other surface — grime, hard grain, scanline and
-        vignette, all under the type. No photograph: at 150px a photographic field turns to mud and the
-        mark has to carry alone.</p>
+      <p class="note">The field is <strong>the full GDL-07 Corbijn pass</strong> over
+        <code>dbnelson-09</code>: image, <code>--flir-photo-filter-corbijn</code>, crush, grime, hard grain,
+        scanline, vignette, then type. Grain never sits over type.</p>
+      <p class="note"><strong>The photograph has to read as texture, not as a subject.</strong> That is the
+        whole selection criterion at this size — a legible photograph turns to mud at 150px and fights the
+        mark, while a blurred high-contrast one gives it something to sit on. <code>dbnelson-09</code> is
+        motion-blurred and blows out, so it survives the crop.</p>
+      <div class="dev">
+        <b>Fields rejected — do not retry</b>
+        <code>band-photo</code> carries a burned-in THE FLIR wordmark and would duplicate the mark (README
+        Open items). <code>ref-face-oculta</code> is a nude figure: Instagram removes artistic nudity, and
+        the <code>ref-</code> prefix means it is not the band's own frame. <code>flirbackground</code> is the
+        red field — <code>grayscale(1)</code> flattens it to near-black, so it is indistinguishable from no
+        photograph. <code>dbnelson-12</code> is too dark to survive the crush and the mark floats on it.
+      </div>
       <p class="note">Render with <code>?guides=1</code> to prove the crop. That overlay is a proof layer and
         must never appear in a shipped export.</p>
     </div>
