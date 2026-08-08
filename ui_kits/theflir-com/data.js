@@ -258,7 +258,30 @@ const PAST_SHOWS = [
   { date: '18.10.03', venue: 'Coffee Depot', city: 'Riverside', flyer: null },
   { date: '24.10.03', venue: 'Club Violaine', city: 'Hollywood', flyer: null },
   { date: '01.09.04', venue: 'Coffee Depot', city: 'Riverside', flyer: null },
-  { date: '10.09.04', venue: 'Showcase Theatre', city: 'Corona', flyer: null },
+  /* The only row with a named bill, and the only one sourced from the other
+     band's own records. Black Tape for a Blue Girl's gigography lists it as
+     show #101: "Fri Sept 10 2004 | Showcase Theatre ~ Corona, CA / 683 South
+     Main Street. 951-276-7770. With The Flir. $9. All Ages."
+     https://www.blacktapeforabluegirl.com/gigography/
+
+     Third independent confirmation of this date: THE FLIR's own Shows page,
+     the shows.cfm page before it, and now a third party's gigography. The
+     street address also matches the one the band's 2002 site printed for this
+     venue — a detail neither page could have copied from the other.
+
+     Worth naming rather than leaving buried in the data: Black Tape for a Blue
+     Girl is Sam Rosenthal's band, and Rosenthal founded Projekt Records — the
+     label the 2002 archive shows was selling this band's CD (see the
+     suture8-01 note above). The support slot and the distribution are the same
+     relationship seen from two sides, and together they are the strongest
+     external connection anywhere in this archive.
+
+     'with' is optional and exists on this row alone. Do not invent it for
+     other dates. The 27.10.06 flyer names alū and Maktwain, but those are
+     support acts under THE FLIR, not a bill THE FLIR played under, and this
+     field would flatten that distinction. */
+  { date: '10.09.04', venue: 'Showcase Theatre', city: 'Corona', flyer: null,
+    with: 'Black Tape for a Blue Girl' },
   { date: '22.10.04', venue: 'Club Violaine', city: 'Hollywood', flyer: null },
   { date: '05.12.04', venue: 'Club London', city: 'Hollywood', flyer: null },
   { date: '30.03.05', venue: 'Brick By Brick', city: 'San Diego', flyer: null },
