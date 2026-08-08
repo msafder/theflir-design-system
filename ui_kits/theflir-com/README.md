@@ -1,11 +1,49 @@
 # theflir.com — UI kit
 
-A clickable recreation of the site the band does not have yet. `theflir.com` is
-owned but currently redirects to the Facebook page, which is dormant and being
-migrated away from. This kit is what the domain should point at instead.
+**The site exists. This kit is the prototype it was built from, not the thing
+that ships.** `theflir.com` has served the real site since 2026-08-07 and no
+longer redirects anywhere. If you are here wondering when this kit goes live:
+it does not, and it was never going to. Read the next section before planning
+any work that assumes otherwise.
 
 Open `index.html` for desktop, `mobile.html` for phone. Both render the same
 screens; `site.css` carries the layout and has one breakpoint, at 720px.
+
+## This kit is not deployable
+
+Three things make it a prototype, and all three are the live site's own
+Content-Security-Policy doing its job:
+
+| The kit needs | theflir.com policy | Result |
+| --- | --- | --- |
+| React, ReactDOM and Babel from `unpkg.com` | `script-src 'self'` | blocked |
+| `../../_ds_bundle.js` | gitignored, not in the repo | missing |
+| 147 inline `style` attributes | `style-src 'self'` | blocked |
+
+A snapshot of this kit would be stopped by the site's own headers before it
+rendered. So the live pages are hand-written against the same content, using
+classes instead of inline styles and no framework at all. Each one says so in
+its `<head>`.
+
+## What actually flows from here to production
+
+- **Tokens**, reproducibly. `tools/sync-tokens.py` in the site repo vendors the
+  token layer into `public/styles/tokens.css`. Re-run it and the diff shows
+  exactly what moved. Never hand-copy them; that is how the two drifted before.
+- **Content**, from `data.js` — the source of truth for releases, compilation
+  appearances, past shows and personnel. Change a fact there first, then mirror
+  it into the site's HTML.
+
+Nothing else does. There is no build step pointing at this directory.
+
+## Where the site is ahead of this kit
+
+The kit has five routes. The site has five pages **and** a dedicated `/band`,
+which exists here only as part of `HomeScreen`. The live archive also carries
+material this kit never had: 35 past shows with venues, bills and door detail
+for eleven of them, cover art and source links for every compilation, vocal
+credits, and an Origins biography. Treat the site as current and this kit as
+the design reference behind it.
 
 ## Screens
 
