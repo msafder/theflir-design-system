@@ -43,8 +43,21 @@ function MusicScreen({ go }) {
         <div>
           {/* Sorted at render, not in the array: a date has already been
               corrected once, and a hand-ordered list drifts silently. */}
-          {[...APPEARANCES].sort((a, b) => b.year.localeCompare(a.year)).map(a => (
-            <div key={a.album} className="show-row" style={{ padding: 'var(--flir-space-4) 0', borderBottom: 'var(--flir-rule)', fontFamily: 'var(--flir-font-data)', fontSize: 'var(--flir-text-small)' }}>
+          {[...APPEARANCES].sort((a, b) => b.year.localeCompare(a.year)).map(a => {
+            /* The row is the link where there is one to give and an inert div
+               where there is not. No chevron either way: WEB-02 says the rule
+               structure is what makes a row read as tappable.
+
+               A missing cover renders an empty cell rather than collapsing the
+               column, so the one coverless row keeps its text aligned with the
+               other five instead of sliding left. */
+            const Row = a.url ? 'a' : 'div';
+            const linkProps = a.url ? { href: a.url, rel: 'noopener', target: '_blank' } : {};
+            return (
+            <Row key={a.album} {...linkProps} className="show-row" style={{ display: 'grid', gridTemplateColumns: '4.5rem 3.5rem minmax(0, 1fr) minmax(0, 1fr) auto', alignItems: 'center', gap: 'var(--flir-space-4)', padding: 'var(--flir-space-4) 0', borderBottom: 'var(--flir-rule)', fontFamily: 'var(--flir-font-data)', fontSize: 'var(--flir-text-small)', textDecoration: 'none' }}>
+              {a.cover
+                ? <img src={a.cover} alt="" width={600} height={600} loading="lazy" decoding="async" style={{ width: '4.5rem', height: 'auto', aspectRatio: 1, objectFit: 'cover', background: 'var(--flir-bg-sunken)' }} />
+                : <span aria-hidden="true" />}
               <span style={{ color: 'var(--flir-fg-faint)', fontVariantNumeric: 'tabular-nums' }}>{a.year}</span>
               <span style={{ color: a.track ? 'var(--flir-fg)' : 'var(--flir-fg-faint)', fontSize: a.track ? 'var(--flir-text-body)' : 'var(--flir-text-nano)', letterSpacing: a.track ? 'var(--flir-ls-none)' : 'var(--flir-ls-wide)', textTransform: a.track ? 'none' : 'uppercase' }}>
                 {a.track || 'Track not named'}
@@ -55,8 +68,9 @@ function MusicScreen({ go }) {
               <span style={{ justifySelf: 'end', color: 'var(--flir-fg-faint)', textTransform: 'uppercase', letterSpacing: 'var(--flir-ls-wide)', fontSize: 'var(--flir-text-nano)', whiteSpace: 'nowrap' }}>
                 {a.runtime || ''}
               </span>
-            </div>
-          ))}
+            </Row>
+            );
+          })}
         </div>
         <p className="flir-type-body" style={{ marginTop: 'var(--flir-space-4)', color: 'var(--flir-fg-faint)', fontSize: 'var(--flir-text-small)', maxWidth: '64ch' }}>
           Listed on Apple Music, AllMusic and Discogs. Three carry tracks that exist nowhere else in the catalogue. Track 3 on <em>12 Tales</em> (Instinct Records, 2002); track 10 on <em>Test Tones Volume 02</em> (Clairecords, 2003, limited to 1000).
