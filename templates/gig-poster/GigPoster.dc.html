@@ -38,16 +38,16 @@
 </div>
 <div style="font-family:var(--flir-font-data);font-size:24px;letter-spacing:0.08em;text-transform:uppercase;color:#8A8A8A">{{ support }}</div>
 </div>
-<div style="font-family:var(--flir-font-data);font-size:18px;letter-spacing:0.16em;text-transform:uppercase;color:#585858">THE FLIR · EYELINER MEDIA · MMXXVI</div>
+<div style="font-family:var(--flir-font-data);font-size:18px;letter-spacing:0.16em;text-transform:uppercase;color:#585858">THE FLIR · MMXXVI</div>
 </div>
 </div>
 </x-dc>
-<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1080,&quot;height&quot;:1440},&quot;presenter&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;EYELINER MEDIA PRESENTS&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;status&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;TICKETS ON SALE&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Header&quot;},&quot;venue&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Silverlake Lounge&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Show&quot;},&quot;city&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Los Angeles&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Show&quot;},&quot;date&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;27.10.26&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Show&quot;},&quot;doors&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;20:00&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Show&quot;},&quot;price&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;$15 · 21+&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Show&quot;},&quot;support&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;With support · TBA&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Show&quot;}}">
+<script type="text/x-dc" data-dc-script data-props="{&quot;$preview&quot;:{&quot;width&quot;:1080,&quot;height&quot;:1440},&quot;presenter&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;&quot;,&quot;tsType&quot;:&quot;string&quot;},&quot;status&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;TICKETS ON SALE&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Header&quot;},&quot;venue&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Silverlake Lounge&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Show&quot;},&quot;city&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;Los Angeles&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Show&quot;},&quot;date&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;27.10.26&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Show&quot;},&quot;doors&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;20:00&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Show&quot;},&quot;price&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;$15 · 21+&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Show&quot;},&quot;support&quot;:{&quot;editor&quot;:&quot;text&quot;,&quot;default&quot;:&quot;With support · TBA&quot;,&quot;tsType&quot;:&quot;string&quot;,&quot;section&quot;:&quot;Show&quot;}}">
 class Component extends DCLogic {
   renderVals() {
     const p = this.props;
     return {
-      presenter: p.presenter ?? 'EYELINER MEDIA PRESENTS',
+      presenter: p.presenter ?? '',
       status: p.status ?? 'TICKETS ON SALE',
       venue: p.venue ?? 'Silverlake Lounge',
       city: p.city ?? 'Los Angeles',

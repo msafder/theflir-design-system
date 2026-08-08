@@ -65,7 +65,7 @@ function SiteFooter() {
     }}>
       <Wordmark size={28} />
       <div style={{ display: 'flex', gap: 'var(--flir-space-5)', flexWrap: 'wrap' }}>
-        {[['Bandcamp', 'https://theflir.bandcamp.com/'], ['Instagram', 'https://instagram.com/theflir'], ['Eyeliner Media', '#']].map(([l, h]) => (
+        {[['Bandcamp', 'https://theflir.bandcamp.com/'], ['Instagram', 'https://instagram.com/theflir']].map(([l, h]) => (
           <a key={l} href={h} target="_blank" rel="noreferrer" style={{
             fontFamily: 'var(--flir-font-data)', fontSize: 'var(--flir-text-micro)',
             letterSpacing: 'var(--flir-ls-wider)', textTransform: 'uppercase',
@@ -77,7 +77,7 @@ function SiteFooter() {
         fontFamily: 'var(--flir-font-data)', fontSize: 'var(--flir-text-nano)',
         letterSpacing: 'var(--flir-ls-wider)', textTransform: 'uppercase',
         color: 'var(--flir-fg-faint)',
-      }}>THE FLIR · EYELINER MEDIA · MMXXVI</span>
+      }}>THE FLIR · MMXXVI</span>
     </footer>
   );
 }

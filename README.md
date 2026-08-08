@@ -23,7 +23,7 @@ where a source existed.
 | `THE_FLIR/` local archive | ~90 photographs, flyers 2005–2006, DB Nelson figure series, MARK II cover artwork, business card PSDs, band photo, Human Butterfly shirt art. |
 | `THE_FLIR/Business Card/Fonts/` | `Placcond.ttf` (Placard Condensed), `Frnkfh.ttf` (Frankfurter Heavy) — the band's actual faces. |
 | `THE_FLIR/Art Work/LOGO/THEFLIR_LOGO_BLACK.png` | The supplied wordmark master. |
-| `https://github.com/msafder/eyeliner.media-design-system` | Structural convention this repo mirrors (tokens / guidelines / components / index). **Not readable** — the API returned 409 on its tree. The storefront chrome in `ui_kits/eyeliner-shop/` is a placeholder because of this. |
+| the label-side design-system repo (private) | Structural convention this repo mirrors (tokens / guidelines / components / index). **Not readable** — the API returned 409 on its tree. |
 | `https://theflir.bandcamp.com/` | The catalogue — suture8-01 and suture8-02. |
 | `https://music.apple.com/us/artist/the-flir/53854855` | Genre (Electronic), the *Static Waves* appearances. |
 | `https://open.spotify.com/artist/31VcyCiOGkU3WhtshNYZmq` | Listener counts and play counts, read 06.08.26. |
@@ -53,7 +53,7 @@ being actively built — the Facebook page (~600 members) is dormant and its med
 is being migrated. `theflir.com` is owned but currently **redirects to that
 Facebook page**; replacing that redirect is the point of the `ui_kits/theflir-com/`
 kit. Releases go out through **theflir.bandcamp.com**, which is the canonical
-source for the catalogue. Then merch through eyeliner.media on Shopify, Kunaki CD
+source for the catalogue. Then merch through the label store on Shopify, Kunaki CD
 jackets, and gig posters. New music is in progress; the system is being put in
 place ahead of it.
 
@@ -144,9 +144,9 @@ unembellished. An announcement states what and when, and stops.
 - **Dates.** `14 MARCH` in prose; `22.05.26` in data rows. Never "Fri Mar 14th".
 - **Durations.** Always zero-padded, always mono: `04:12` for a track, `41:22`
   for a record.
-- **Separator.** Middle dot with spaces — `LP 01 · 2026 · EYELINER MEDIA`. Not a
+- **Separator.** Middle dot with spaces — `LP 01 · 2026 · LOS ANGELES`. Not a
   slash, not a pipe, not an en dash.
-- **Credit line.** `THE FLIR · EYELINER MEDIA · MMXXVI` appears once per
+- **Credit line.** `THE FLIR · MMXXVI` appears once per
   artefact, as the smallest type on the surface.
 - **Numbers.** Roman for years on artefacts (`MMXXVI`), Arabic everywhere data
   is scanned.
@@ -343,12 +343,8 @@ and Brand.
   domain should point at: home, music, release detail, live, contact. Desktop
   (`index.html`) and phone (`mobile.html`) off one layout sheet with a single
   breakpoint at 720px.
-- `ui_kits/eyeliner-shop/` — THE FLIR collection inside the Eyeliner Media
-  store: collection grid, product page, cart drawer. The storefront chrome is
-  Eyeliner's, not this system's, and is a marked placeholder — that repo was
-  not readable.
-
-Both carry their own `README.md`. All content real.
+It carries its own `README.md`. All content real. (The store UI kit that
+lived here moved to the label-side system — see CHANGELOG 0.18.0.)
 
 **Surfaces** — `social/` (feed post, story, reel cover, og:image link preview,
 profile avatar),
@@ -435,4 +431,4 @@ primitive was added that the band's own surfaces do not already use.
 
 ---
 
-THE FLIR · EYELINER MEDIA · MMXXVI
+THE FLIR · MMXXVI
