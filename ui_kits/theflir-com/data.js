@@ -258,9 +258,71 @@ const PAST_SHOWS = [
   { date: '18.10.03', venue: 'Coffee Depot', city: 'Riverside', flyer: null },
   { date: '24.10.03', venue: 'Club Violaine', city: 'Hollywood', flyer: null },
   { date: '01.09.04', venue: 'Coffee Depot', city: 'Riverside', flyer: null },
-  { date: '10.09.04', venue: 'Showcase Theatre', city: 'Corona', flyer: null },
+  /* The only row with a named bill, and the only one sourced from the other
+     band's own records. Black Tape for a Blue Girl's gigography lists it as
+     show #101: "Fri Sept 10 2004 | Showcase Theatre ~ Corona, CA / 683 South
+     Main Street. 951-276-7770. With The Flir. $9. All Ages."
+     https://www.blacktapeforabluegirl.com/gigography/
+
+     Third independent confirmation of this date: THE FLIR's own Shows page,
+     the shows.cfm page before it, and now a third party's gigography. The
+     street address also matches the one the band's 2002 site printed for this
+     venue — a detail neither page could have copied from the other.
+
+     Worth naming rather than leaving buried in the data: Black Tape for a Blue
+     Girl is Sam Rosenthal's band, and Rosenthal founded Projekt Records — the
+     label the 2002 archive shows was selling this band's CD (see the
+     suture8-01 note above). The support slot and the distribution are the same
+     relationship seen from two sides, and together they are the strongest
+     external connection anywhere in this archive.
+
+     'with' names the other act; 'billing' says which way round it was, and the
+     pair is meaningless without it. This row is 'support': Black Tape for a
+     Blue Girl toured this date and THE FLIR opened. 05.12.04 is 'headline'.
+     Rendering both as "with X" was the first attempt and it was wrong — it
+     reads as though THE FLIR topped both bills, which is precisely the
+     distinction this comment used to warn against flattening.
+
+     Still deliberately absent from 27.10.06: alū and Maktwain played under
+     THE FLIR, so they are support acts on a bill this band headlined, and
+     'with' would put them in the same slot as Black Tape for a Blue Girl. They
+     stay in that row's comment until there is a field for a full bill. */
+  { date: '10.09.04', venue: 'Showcase Theatre', city: 'Corona', flyer: null,
+    with: 'Black Tape for a Blue Girl', billing: 'support' },
   { date: '22.10.04', venue: 'Club Violaine', city: 'Hollywood', flyer: null },
-  { date: '05.12.04', venue: 'Club London', city: 'Hollywood', flyer: null },
+  /* This row said 'Club London' because that is what the band's own Shows page
+     called it. Club London is a night, not a building. socalgoth.com's 2004
+     listings name the building and explain the arrangement:
+
+       "VIOLAINE - Special Event / Red Flag | The Flir
+        Club Violaine has decided to go to Hollywood for one night only. While
+        Club London is in the front room of Boardners, Club Violaine will be
+        taking place in the patio!
+        $5 before 10:30 or $7 after w/flyer, 18 and up (ID Req'd), 10PM-2AM"
+       Venue: Boardner's — https://socalgoth.com/2004.html
+
+     So the two sources never disagreed. One named the night, the other named
+     the address. venue is now the building, because a venue is the thing you
+     can play again and a club night from 2004 is not.
+
+     BOTH OPEN QUESTIONS SETTLED BY MO, 2026-08-08, first-hand as a member of
+     the band. Recorded as the band's own account, which is a different kind of
+     source from the listings above and is labelled so on purpose:
+
+     1. THE FLIR headlined. The printed bill reads "Red Flag | The Flir", Red
+        Flag first, and a listing order is not a billing order. Do not "correct"
+        this back from the flyer text.
+
+     2. The patio, not the front room. Boardner's only stage is the outdoor one
+        at the back, so a band on that night played the Club Violaine side by
+        definition — which is also where socalgoth files THE FLIR. The band's
+        own page saying "Club London" was naming the night on the door, not the
+        room they played.
+
+     Door detail kept here because PAST_SHOWS has no field for it: $5 before
+     10:30, $7 after with flyer, 18 and up, 10PM-2AM. */
+  { date: '05.12.04', venue: 'Boardner’s', city: 'Hollywood', flyer: null,
+    with: 'Red Flag', billing: 'headline' },
   { date: '30.03.05', venue: 'Brick By Brick', city: 'San Diego', flyer: null },
   { date: '05.04.05', venue: 'Good Hurt', city: 'Los Angeles', flyer: null },
   { date: '14.04.05', venue: '14 Below', city: 'Santa Monica', flyer: null },
