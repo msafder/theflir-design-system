@@ -231,7 +231,19 @@ const STREAMING = {
 
    flyer is null wherever no scan exists in assets/, which is everywhere but
    27.10.06. A flyer is a second source for one date, not the source for the
-   list. */
+   list.
+
+   'with' and 'billing' name the other act and say which way the bill ran.
+   'detail' is the door: price, ages, times, and the night's own theme where it
+   had one. All three are optional and most rows have none.
+
+   These exist because these shows are otherwise gone. The venues are closed,
+   the promoters' sites are dead or dying, and the listings that recorded them
+   survive in one archive apiece. Where a source printed what a ticket cost or
+   when the band went on, that goes on the page rather than into a comment —
+   this site is plausibly the last place any of it is readable. Quote the
+   source's own wording; do not tidy it into house style, and do not infer a
+   detail that was not printed. */
 const PAST_SHOWS = [
   { date: '01.12.00', venue: "SALON D'ARTE", city: 'San Diego', flyer: null },
   { date: '11.05.01', venue: 'The Aztec Bowl', city: 'San Diego', flyer: null },
@@ -241,22 +253,60 @@ const PAST_SHOWS = [
   { date: '18.08.01', venue: 'Winston’s', city: 'San Diego', flyer: null },
   { date: '29.08.01', venue: 'Caffiend’s', city: 'San Diego', flyer: null },
   { date: '28.11.01', venue: 'Hard Rock Café', city: 'San Diego', flyer: null },
-  { date: '09.12.01', venue: 'Club Xanth', city: 'San Diego', flyer: null },
+  /* socalgoth.com's 2001 listings, "Sun, Dec 9th 2001 — SUNDAY SKOOL - San
+     Diego 101 / VX Twitch | The Flir | (pleasuresick)". Venue printed as
+     "Sunday Skool", which is the night, not the room — the door text gives the
+     room away: "$5 with Xanth Club card". So this row's Club Xanth was right
+     all along, and the two sources agree. https://socalgoth.com/m-2001.html
+     Full bill: VX Twitch, THE FLIR, (pleasuresick). 'with' names only the act
+     above, since "supporting X and Y" would claim two headliners. */
+  { date: '09.12.01', venue: 'Club Xanth', city: 'San Diego', flyer: null,
+    with: 'VX Twitch', billing: 'support',
+    detail: '$7, $6 in school uniform, $5 with Xanth club card · all ages · 7pm-2am' },
   { date: '19.12.01', venue: 'Hard Rock Café', city: 'San Diego', flyer: null },
   { date: '17.01.02', venue: 'Riverside Brewing Co.', city: 'Riverside', flyer: null },
   { date: '07.04.02', venue: 'Club Violaine', city: 'Los Angeles', flyer: null },
   { date: '12.04.02', venue: 'Echo Art Center', city: 'San Diego', flyer: null },
-  { date: '11.05.02', venue: 'The Reggae Lounge', city: 'Pasadena', flyer: null },
+  /* socalgoth.com's 2002 listings: "Sat, May 11th — Trespassers William | The
+     Flir | MOV. With club Violaine DJ's playing in between bands. $5 all
+     night. First band on at 10pm. Venue: Reggae Lounge."
+     https://socalgoth.com/m-2002.html
+     Trespassers William were a Nettwerk act and are billed above, so this is a
+     support slot. MOV completed the bill. */
+  { date: '11.05.02', venue: 'The Reggae Lounge', city: 'Pasadena', flyer: null,
+    with: 'Trespassers William', billing: 'support',
+    detail: '$5 all night · 18 and up · first band 10pm' },
   { date: '10.08.02', venue: 'Club Antigone', city: 'Anaheim', flyer: null },
   { date: '19.09.02', venue: 'Cafe Club Fais Do-Do', city: 'Los Angeles', flyer: null },
-  { date: '04.10.02', venue: 'Showcase Theatre', city: 'Corona', flyer: null },
+  /* The best-corroborated show in the archive. socalgoth.com's 2002 listings:
+     "Fri, Oct 4th — Gene Loves Jezebel (M. Aston) | Proteus | The Flir |
+     Wailing Wall | Elseworth's Dragon. Advance $10, $12 at the door. All Ages,
+     7:30pm. Venue: Corona Showcase Theatre."
+     https://socalgoth.com/m-2002.html
+
+     And THE FLIR's own site said so at the time, in the upcoming-shows block of
+     the 2002-09-29 Wayback capture: "We will be opening for GENE LOVES GEZEBEL
+     at the Showcase Theatre in Corona!!!" Their spelling. Both sources, written
+     independently and twenty-four years apart in retrieval, say the same thing.
+
+     'with' names the headliner only. Proteus, Wailing Wall and Elseworth's
+     Dragon were also on it. */
+  { date: '04.10.02', venue: 'Showcase Theatre', city: 'Corona', flyer: null,
+    with: 'Gene Loves Jezebel', billing: 'support',
+    detail: '$10 advance, $12 door · all ages · 7:30pm' },
   { date: '05.10.02', venue: 'Knitting Factory', city: 'Hollywood', flyer: null },
   { date: '07.10.02', venue: 'Riverside Brewing Co.', city: 'Riverside', flyer: null },
   { date: '10.10.02', venue: 'Brick By Brick', city: 'San Diego', flyer: null },
   { date: '22.12.02', venue: 'Martini Lounge', city: 'Hollywood', flyer: null },
   { date: '31.12.02', venue: 'ål-térn’ati’v-áh', city: 'Los Angeles', flyer: null },
   { date: '18.10.03', venue: 'Coffee Depot', city: 'Riverside', flyer: null },
-  { date: '24.10.03', venue: 'Club Violaine', city: 'Hollywood', flyer: null },
+  /* socalgoth.com's 2003 listings: "Fri, Oct 24th — The Flir | Sway. 18 and
+     up. Violaine, Los Angeles County." https://socalgoth.com/m-2003.html
+     Venue reads "Violaine", the night; this row keeps Club Violaine, which is
+     the same thing named in full. */
+  { date: '24.10.03', venue: 'Club Violaine', city: 'Hollywood', flyer: null,
+    with: 'Sway', billing: 'headline',
+    detail: '18 and up' },
   { date: '01.09.04', venue: 'Coffee Depot', city: 'Riverside', flyer: null },
   /* The only row with a named bill, and the only one sourced from the other
      band's own records. Black Tape for a Blue Girl's gigography lists it as
@@ -288,7 +338,8 @@ const PAST_SHOWS = [
      'with' would put them in the same slot as Black Tape for a Blue Girl. They
      stay in that row's comment until there is a field for a full bill. */
   { date: '10.09.04', venue: 'Showcase Theatre', city: 'Corona', flyer: null,
-    with: 'Black Tape for a Blue Girl', billing: 'support' },
+    with: 'Black Tape for a Blue Girl', billing: 'support',
+    detail: '$9 · all ages' },
   { date: '22.10.04', venue: 'Club Violaine', city: 'Hollywood', flyer: null },
   /* This row said 'Club London' because that is what the band's own Shows page
      called it. Club London is a night, not a building. socalgoth.com's 2004
@@ -322,7 +373,8 @@ const PAST_SHOWS = [
      Door detail kept here because PAST_SHOWS has no field for it: $5 before
      10:30, $7 after with flyer, 18 and up, 10PM-2AM. */
   { date: '05.12.04', venue: 'Boardner’s', city: 'Hollywood', flyer: null,
-    with: 'Red Flag', billing: 'headline' },
+    with: 'Red Flag', billing: 'headline',
+    detail: '$5 before 10:30, $7 after with flyer · 18 and up · 10pm-2am' },
   /* socalgoth.com's 2005 listings: "Wed, Mar 30th 2005 — The Flir | Mankind is
      Obsolete | Eternal Unborn. 21 and up. Venue: Brick by Brick, San Diego
      County." https://socalgoth.com/m-2005.html
@@ -334,7 +386,8 @@ const PAST_SHOWS = [
      act first and the band still headlined. Treat listing order as a signal
      here, not proof; if Mo says otherwise for this date, he is right. */
   { date: '30.03.05', venue: 'Brick By Brick', city: 'San Diego', flyer: null,
-    with: 'Mankind is Obsolete · Eternal Unborn', billing: 'headline' },
+    with: 'Mankind is Obsolete · Eternal Unborn', billing: 'headline',
+    detail: '21 and up' },
   { date: '05.04.05', venue: 'Good Hurt', city: 'Los Angeles', flyer: null },
   { date: '14.04.05', venue: '14 Below', city: 'Santa Monica', flyer: null },
   /* This row said Los Angeles until the archive was read. The source has it in
@@ -358,8 +411,20 @@ const PAST_SHOWS = [
      not license calling the slot anything other than support on the page. The
      fact is the bill; how much it meant is Mo's to say, not the site's. */
   { date: '12.12.05', venue: 'Brick By Brick', city: 'San Diego', flyer: null,
-    with: 'Conjure One', billing: 'support' },
-  { date: '18.02.06', venue: 'Club Violaine', city: 'Los Angeles', flyer: null },
+    with: 'Conjure One', billing: 'support',
+    detail: '$11 advance, $13 door · 21 and up · doors 8pm' },
+  /* socalgoth.com's 2006 listings: "Sat, Feb 18th — VIOLAINE - My Bloody
+     Valentine Night / The Flir | Love Like Fire. First band on at 10:15pm
+     Sharp! Plus our DJ's present a My Bloody Valentine Tribute Night also FREE
+     MBV T-SHIRTS for this Special Occasion. 9:30pm - 2am, 18 and up."
+     https://socalgoth.com/m-2006.html
+
+     The night's theme is not modelled — there is no field for it — but it is
+     the single most on-the-nose detail in this archive about where this band
+     sat: they headlined a My Bloody Valentine tribute night. */
+  { date: '18.02.06', venue: 'Club Violaine', city: 'Los Angeles', flyer: null,
+    with: 'Love Like Fire', billing: 'headline',
+    detail: 'My Bloody Valentine tribute night · free MBV shirts · 18 and up · 9:30pm-2am, first band 10:15' },
   /* The one row with two independent sources. The flyer prints the venue
      large — "AT TANGIER, 2138 Hillhurst Avenue, Los Angeles, CA 90027,
      323-666-8666" — and the Shows page names it too.
@@ -373,8 +438,16 @@ const PAST_SHOWS = [
      Still not modelled, because there is no field for it: a Halloween show,
      costumes encouraged, $8, 21+. Kept here so the facts survive. */
   { date: '27.10.06', venue: 'Tangier', city: 'Los Angeles', flyer: '../../assets/source/flyer-10272006.png',
-    with: 'alū · Maktwain', billing: 'headline' },
-  { date: '18.11.06', venue: 'Club Violaine', city: 'Los Angeles', flyer: null },
+    with: 'alū · Maktwain', billing: 'headline',
+    detail: 'Halloween show, costumes encouraged · THE FLIR 11pm, alu 10pm, Maktwain 9pm · $8 · 21 and up' },
+  /* socalgoth.com's 2006 listings: "Sat, Nov 18th — VIOLAINE / The Flir | Red
+     Lily. DJ's and special guests spin Shoegaze, Ethereal, Indie, & Blisspop.
+     18 and up." https://socalgoth.com/m-2006.html
+     The last date in this archive, and the room described itself in the same
+     words the band would use. */
+  { date: '18.11.06', venue: 'Club Violaine', city: 'Los Angeles', flyer: null,
+    with: 'Red Lily', billing: 'headline',
+    detail: 'shoegaze, ethereal, indie and blisspop · 18 and up' },
 ];
 
 /* Personnel. Roles come from the Discogs credits on suture8-01 (release
