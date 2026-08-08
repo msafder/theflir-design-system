@@ -43,8 +43,26 @@ const RELEASES = [
     catalogue: 'suture8-01',
     title: 'Please, Please, Please',
     year: '2002',
-    date: '01.09.02',
-    dateLong: '01 SEPTEMBER 2002',
+    /* Was 01.09.02 / "01 SEPTEMBER 2002". Two things were wrong with that.
+
+       The day was invented. Every source that gives a release date for this
+       record gives a month and no day: the band's own Music page says "Sep
+       2002 - (Self Released)", Discogs says 2002. Nothing anywhere says the
+       first. The 01 was a placeholder that had been reading as a fact.
+
+       And a better-sourced date exists. The band's archived news index carries
+       "07.23.02 — DEBUT CD IS OUT!!!", which is the band saying the record was
+       out, on the day they said it. That is a first-party statement with a day
+       attached; "Sep 2002" is a summary field filled in later on the same
+       site. Where the two disagree the contemporaneous announcement is closer
+       to what happened, so the record now carries 23.07.02.
+
+       The Sep 2002 line is not discarded — it is what their own catalogue page
+       settled on, and it may well be a distribution or official date. Both are
+       recorded here. Do not restore a first-of-the-month that no source
+       supports. */
+    date: '23.07.02',
+    dateLong: '23 JULY 2002',
     /* EP, settled. Discogs holds the physical release: CD, EP, US, 2002.
        Bandcamp is the only source calling it an album.
 
@@ -468,7 +486,41 @@ const PAST_SHOWS = [
 
    PHOTOGRAPH RESOLUTION: these come off Facebook and top out at 604px. They
    are fine at portrait size on screen and NOT usable for print or for a
-   full-bleed hero. See readme.md. */
+   full-bleed hero. See readme.md.
+
+   ORIGINS. This block used to say no biography existed in any source, so none
+   was written. That held while the only sources were archived listings. It no
+   longer holds — Mo gave this account first-hand on 2026-08-08:
+
+     In 2000 Sal lived in Riverside; Mo and Caraleigh lived in San Diego. They
+     all went back and forth. Sal met Joe in Riverside, while Joe was playing
+     with his previous band.
+
+   Which settles something the show archive had been implying without ever
+   saying it. The first eight dates, 12.00 through 12.01, are San Diego rooms,
+   and Riverside recurs from 01.02 onward — Riverside Brewing Co. twice, Coffee
+   Depot twice. That is not a band relocating. It is a band with two home cities
+   at once and a freeway between them, which is also why the early routing looks
+   scattered: San Diego, Riverside, Corona, Pasadena, Anaheim, Hollywood.
+
+   THE 2004 VOCALIST CHANGE. The archived news index carries three posts dated
+   08.30.04: "NEW SINGER!!!", "Album Update", and "Please, Please, Please CD at
+   Projekt.com". Only the headlines survive — the archived site ignores its own
+   ?newsid= parameter, so every post id serves the same index page and no body
+   text was captured. The singer is therefore not named by any document.
+
+   Mo named her on 2026-08-08: Louise. Louise Fraser, who turns up six years
+   later singing You Fade Away and Amethyst on suture8-02.
+
+   That single date carries more than it looks. A new singer, an album update
+   and Projekt picking up the CD, all posted together — and six weeks later,
+   on 10.09.04, the band opened for Black Tape for a Blue Girl, Sam Rosenthal's
+   band, and Rosenthal founded Projekt. Four facts from four unrelated sources
+   landing inside seven weeks.
+
+   Treat all of this as the band's own account where Mo supplied it. It is a
+   different class of source from the archived listings the rest of this file
+   rests on, and the two should never be silently merged. */
 const BAND = [
   {
     name: 'Mo Safder',
