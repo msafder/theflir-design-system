@@ -15,7 +15,7 @@ screens; `site.css` carries the layout and has one breakpoint, at 720px.
 | `music` | `MusicScreen.jsx` | Discography index and the Bandcamp block |
 | `release` | `MusicScreen.jsx` | Release detail — cover, tracklist, credits, Bandcamp CTA |
 | `live` | `LiveScreen.jsx` | Empty state for upcoming dates; flyer archive underneath |
-| `contact` | `LiveScreen.jsx` | Instagram, Bandcamp, Facebook (dormant), Eyeliner Media |
+| `contact` | `LiveScreen.jsx` | Instagram, Bandcamp, Facebook (dormant), bookings & licensing |
 
 `Chrome.jsx` carries the header, footer, `SectionHead` and `PhotoField`.
 `data.js` carries all content.
@@ -81,7 +81,7 @@ GDL-07 carries the specification.
 
 ## Known gaps
 
-- No merch or Shopify screen; merch runs through eyeliner.media, not this domain.
+- No merch or Shopify screen; merch runs through the label store (Shopify), not this domain.
 - No audio player. Bandcamp's embed is the intended mechanism and is not mocked.
 - Tablet-specific layout is not designed. There is one breakpoint, at 720px.
 - No search and no cart. Neither exists yet.

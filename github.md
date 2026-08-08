@@ -8,7 +8,7 @@ date: 2026-08-06T04:15:00Z
 ### Updated in this project
 - Imported tokens, components, guidelines, social/web/print surfaces and the full asset set from `main`.
 - Added the root `styles.css` entry point so the system compiles as a live design system.
-- Added GDL-07 Lens & Grain, two UI kits (theflir.com, Eyeliner Media shop) and two copyable templates.
+- Added GDL-07 Lens & Grain, two UI kits (theflir.com, shop — since relocated) and two copyable templates.
 - Release, show and product data replaced with real values from theflir.bandcamp.com and the local archive.
 - Catalogue cross-checked against Bandcamp, Apple Music, Spotify, AllMusic and Discogs: full track times, personnel and six compilation appearances.
 - Catalogue series changed to `suture8-` (the number the 2002 CD shipped with); the invented `TF-` prefix is retired across all surfaces.
@@ -26,7 +26,6 @@ date: 2026-08-06T04:15:00Z
 | `thumbnail.html` | `assets/logo/THEFLIR_LOGO_BLACK.png`, `tokens/color.css` |
 | `guidelines/lens-grain.card.html` (GDL-07) | authored here — not in the repo |
 | `ui_kits/theflir-com/` | authored here; content from theflir.bandcamp.com and `THE_FLIR/Art Work/Flyers` |
-| `ui_kits/eyeliner-shop/` | authored here; art from `assets/source/`. Chrome is a placeholder — `msafder/eyeliner.media-design-system` returned 409. |
 | `templates/gig-poster/`, `templates/instagram-post/` | authored here — not in the repo |
 
 ## Sync history

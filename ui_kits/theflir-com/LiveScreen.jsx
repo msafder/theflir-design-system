@@ -114,8 +114,8 @@ function ContactScreen({ go }) {
           </p>
         </Card>
 
-        <Card index="Label" title="Eyeliner Media"
-          meta={[['Role', 'Label · Management'], ['Merch', 'Shopify']]}>
+        <Card index="Contact" title="Bookings & Licensing"
+          meta={[['Role', 'Management'], ['Merch', 'Shopify']]}>
           <p className="flir-type-body" style={{ margin: 0, color: 'var(--flir-fg-muted)' }}>
             Bookings, licensing and merch.
           </p>

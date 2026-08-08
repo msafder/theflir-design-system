@@ -16,7 +16,7 @@ const RELEASES = [
     date: '14.02.10',
     dateLong: '14 FEBRUARY 2010',
     format: 'Digital',
-    /* Self-published on Bandcamp, same as suture8-01. Eyeliner Media handles
+    /* Self-published on Bandcamp, same as suture8-01. the label handles
        merch, not this release — do not credit it as the label. */
     labelCredit: 'Self-released',
     recordedIn: 'Los Angeles',

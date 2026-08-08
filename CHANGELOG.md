@@ -2,6 +2,32 @@
 
 All notable changes to this system. Newest first.
 
+## [0.18.0] — 2026-08-08
+
+### Changed — label separation (standing rule)
+- **The label is no longer named anywhere in the system.** Standing rule from
+  Mo: no label references inside this design system or on theflir.com — the
+  label stays invisible on artist-facing surfaces. Store links stay functional
+  but read "Shop"/"Merch", never the label's name. Rule recorded in
+  `CLAUDE.md`; historical entries below were reworded to match, keeping their
+  original path slugs.
+- Credit line is `THE FLIR · MMXXVI` everywhere it appears — voice-tone card
+  (GDL-04), readme spec, CLAUDE.md, index, hero, signup, og-card export, CD
+  jacket, site-kit footer, gig-poster template.
+- Separator example in GDL-04 and the readme is now
+  `LP 01 · 2026 · LOS ANGELES`.
+- Gig poster: presenter default is empty (prop stays editable per show); the
+  corner label credit is removed from the master.
+- Site kit: label link dropped from the footer; contact card "Label" is now
+  "Bookings & Licensing".
+
+### Removed
+- The store UI kit moved out of this repo (parked in `_to_delete/`, destination
+  is the label-side system). Its index preview, manifest card, lint exclusion
+  and readme link went with it.
+- `_ds_bundle.js` still carries pre-sweep strings — it is generated output and
+  regenerates from these sources on the next design-project sync.
+
 ## [0.17.1] — 2026-08-06
 
 ### Fixed — a venue we had and were not printing
@@ -116,7 +142,7 @@ All notable changes to this system. Newest first.
   archive material and keeps its place, but a file named `-cover` that is not
   the cover is exactly the trap that let this ship. Nothing references it now.
 - Repointed `ui_kits/theflir-com/data.js` (`RELEASES[0].cover`) and
-  `ui_kits/eyeliner-shop/data.js` (`suture8-02-CD` → `art`).
+  the shop kit's `data.js` (`suture8-02-CD` → `art`).
 - Closes the open item in `readme.md` that recorded suture8-02 as having no
   cover of its own in the archive. Both covers are now at source.
 
@@ -171,7 +197,7 @@ All notable changes to this system. Newest first.
 
 ### Notes
 - The block binds to Klaviyo list `STGBxc` "THE FLIR", account `Snb8Wc`, kept
-  deliberately separate from the eyeliner.media store lists. Carried on the card
+  deliberately separate from the label-side store lists. Carried on the card
   as a deviation note: the client subscription endpoint accepts the `email`
   property only — adding a `subscriptions` block to the profile payload returns
   400. That was found by live testing, not from the documentation.
@@ -228,10 +254,10 @@ All notable changes to this system. Newest first.
 
 ### Fixed
 - **The release-data block fabricated a label.** `['Label', r.labelCredit ||
-  'EYELINER MEDIA']` — suture8-01 carried `labelCredit` from Discogs, so
+  <hardcoded label name>]` — suture8-01 carried `labelCredit` from Discogs, so
   suture8-02 fell through to a hardcoded string, and the same site read
-  "Self-released" on one record and "Eyeliner Media" on the other. Nothing
-  supports that: both are self-published on Bandcamp, and Eyeliner Media handles
+  "Self-released" on one record and a label name on the other. Nothing
+  supports that: both are self-published on Bandcamp, and the label handles
   merch, not these releases. Both now carry `labelCredit: 'Self-released'`, and
   `Recorded` moved into the release record too. **The fallbacks are now `—`.** A
   hardcoded name is worse than a dash because it looks like data.
@@ -460,7 +486,7 @@ All notable changes to this system. Newest first.
 ## [0.8.0] — 2026-08-06
 
 ### Added
-- `ui_kits/eyeliner-shop/` — THE FLIR collection inside the Eyeliner Media
+- `ui_kits/eyeliner-shop/` — THE FLIR collection inside the label
   store: collection grid, product page with size and sold-out state, and a cart
   drawer. Two products, both real as artwork: the Human Butterfly tee (the heat
   map `--flir-photo-filter-hot` was derived from) and the Kunaki CD.
@@ -470,9 +496,8 @@ All notable changes to this system. Newest first.
   keeps its colour.
 
 ### Notes
-- **The storefront chrome is a placeholder.** It belongs to Eyeliner Media's
-  system, and `msafder/eyeliner.media-design-system` was not readable (409 on
-  its tree). The chrome here is deliberately opinion-free and must be replaced
+- **The storefront chrome is a placeholder.** It belongs to the label's own
+  design system, whose repo was not readable (409 on its tree). The chrome here is deliberately opinion-free and must be replaced
   with the real one before this reaches a theme.
 - **One red per surface, applied to a grid.** A product list with a red status
   chip and a red button on every tile breaks the rule immediately. Resolution:
