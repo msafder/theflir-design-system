@@ -276,12 +276,19 @@ const PAST_SHOWS = [
      relationship seen from two sides, and together they are the strongest
      external connection anywhere in this archive.
 
-     'with' is optional and exists on this row alone. Do not invent it for
-     other dates. The 27.10.06 flyer names alū and Maktwain, but those are
-     support acts under THE FLIR, not a bill THE FLIR played under, and this
-     field would flatten that distinction. */
+     'with' names the other act; 'billing' says which way round it was, and the
+     pair is meaningless without it. This row is 'support': Black Tape for a
+     Blue Girl toured this date and THE FLIR opened. 05.12.04 is 'headline'.
+     Rendering both as "with X" was the first attempt and it was wrong — it
+     reads as though THE FLIR topped both bills, which is precisely the
+     distinction this comment used to warn against flattening.
+
+     Still deliberately absent from 27.10.06: alū and Maktwain played under
+     THE FLIR, so they are support acts on a bill this band headlined, and
+     'with' would put them in the same slot as Black Tape for a Blue Girl. They
+     stay in that row's comment until there is a field for a full bill. */
   { date: '10.09.04', venue: 'Showcase Theatre', city: 'Corona', flyer: null,
-    with: 'Black Tape for a Blue Girl' },
+    with: 'Black Tape for a Blue Girl', billing: 'support' },
   { date: '22.10.04', venue: 'Club Violaine', city: 'Hollywood', flyer: null },
   /* This row said 'Club London' because that is what the band's own Shows page
      called it. Club London is a night, not a building. socalgoth.com's 2004
@@ -298,23 +305,24 @@ const PAST_SHOWS = [
      the address. venue is now the building, because a venue is the thing you
      can play again and a club night from 2004 is not.
 
-     TWO THINGS THIS DOES NOT CLAIM, both unresolved:
+     BOTH OPEN QUESTIONS SETTLED BY MO, 2026-08-08, first-hand as a member of
+     the band. Recorded as the band's own account, which is a different kind of
+     source from the listings above and is labelled so on purpose:
 
-     1. Which room. The band's own page filed this under Club London, the front
-        room; socalgoth files THE FLIR under the Violaine special event, the
-        patio. Same night, same building, different rooms. Nobody has said
-        which, so the row says neither.
+     1. THE FLIR headlined. The printed bill reads "Red Flag | The Flir", Red
+        Flag first, and a listing order is not a billing order. Do not "correct"
+        this back from the flyer text.
 
-     2. Who headlined. The bill reads "Red Flag | The Flir", Red Flag first,
-        and nothing in the listing says headline. Mo believes THE FLIR
-        headlined and would know, but that is first-hand recollection rather
-        than what this source shows — so it is recorded here and not stated on
-        the page. If he confirms, label it as the band's own account.
+     2. The patio, not the front room. Boardner's only stage is the outdoor one
+        at the back, so a band on that night played the Club Violaine side by
+        definition — which is also where socalgoth files THE FLIR. The band's
+        own page saying "Club London" was naming the night on the door, not the
+        room they played.
 
      Door detail kept here because PAST_SHOWS has no field for it: $5 before
      10:30, $7 after with flyer, 18 and up, 10PM-2AM. */
   { date: '05.12.04', venue: 'Boardner’s', city: 'Hollywood', flyer: null,
-    with: 'Red Flag' },
+    with: 'Red Flag', billing: 'headline' },
   { date: '30.03.05', venue: 'Brick By Brick', city: 'San Diego', flyer: null },
   { date: '05.04.05', venue: 'Good Hurt', city: 'Los Angeles', flyer: null },
   { date: '14.04.05', venue: '14 Below', city: 'Santa Monica', flyer: null },
