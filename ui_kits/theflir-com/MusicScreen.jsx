@@ -54,9 +54,9 @@ function MusicScreen({ go }) {
             const Row = a.url ? 'a' : 'div';
             const linkProps = a.url ? { href: a.url, rel: 'noopener', target: '_blank' } : {};
             return (
-            <Row key={a.album} {...linkProps} className="show-row" style={{ display: 'grid', gridTemplateColumns: '4.5rem 3.5rem minmax(0, 1fr) minmax(0, 1fr) auto', alignItems: 'center', gap: 'var(--flir-space-4)', padding: 'var(--flir-space-4) 0', borderBottom: 'var(--flir-rule)', fontFamily: 'var(--flir-font-data)', fontSize: 'var(--flir-text-small)', textDecoration: 'none' }}>
+            <Row key={a.album} {...linkProps} className="show-row" style={{ display: 'grid', gridTemplateColumns: '7rem 3.5rem minmax(0, 1fr) minmax(0, 1fr) auto', alignItems: 'center', gap: 'var(--flir-space-4)', padding: 'var(--flir-space-4) 0', borderBottom: 'var(--flir-rule)', fontFamily: 'var(--flir-font-data)', fontSize: 'var(--flir-text-small)', textDecoration: 'none' }}>
               {a.cover
-                ? <img src={a.cover} alt="" width={600} height={600} loading="lazy" decoding="async" style={{ width: '4.5rem', height: 'auto', aspectRatio: 1, objectFit: 'cover', background: 'var(--flir-bg-sunken)' }} />
+                ? <img src={a.cover} alt="" width={600} height={600} loading="lazy" decoding="async" style={{ width: '7rem', height: 'auto', aspectRatio: 1, objectFit: 'cover', background: 'var(--flir-bg-sunken)' }} />
                 : <span aria-hidden="true" />}
               <span style={{ color: 'var(--flir-fg-faint)', fontVariantNumeric: 'tabular-nums' }}>{a.year}</span>
               <span style={{ color: a.track ? 'var(--flir-fg)' : 'var(--flir-fg-faint)', fontSize: a.track ? 'var(--flir-text-body)' : 'var(--flir-text-nano)', letterSpacing: a.track ? 'var(--flir-ls-none)' : 'var(--flir-ls-wide)', textTransform: a.track ? 'none' : 'uppercase' }}>
