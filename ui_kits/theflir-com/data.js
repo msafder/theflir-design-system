@@ -121,21 +121,80 @@ const STREAMING = {
   ],
 };
 
-/* Past shows, read off the flyer scans in the archive. Dates are the
-   filenames; venue names are those printed on the flyers. Where a flyer
-   gives no venue the field is left empty rather than guessed. */
+/* Past shows. Every row comes off the band's own Shows page, recovered from the
+   Wayback Machine — theflir.com/Shows captured 2007-01-01 and 2007-07-13, and
+   the same page at 2006-04-13 and 2006-05-02 for everything up to 18.02.06.
+   The four captures agree row for row. The predecessor page, shows.cfm,
+   captured 2002-09-29, 2002-12-31 and 2003-12-13, holds 16, 21 and 24 rows as
+   the run grew; every row it carries appears in the later page with the same
+   city. So the v04 list pruned nothing, and two independently built versions
+   of the site corroborate every date before 2004.
+
+   That replaces the old sourcing rule here. This list used to hold four rows
+   read off flyer scans, three of them with venue: '' because no flyer named a
+   venue. The band's own site named all of them all along. 35 shows,
+   01.12.00 to 18.11.06.
+
+   Dates are DD.MM.YY. The source prints them MM.DD.YY — 10.27.06 there is
+   27.10.06 here. Getting that backwards silently swaps day and month on the
+   rows where both are ≤ 12, so check any new row against the capture.
+
+   Two deliberate departures from the source string:
+     - 'Anaheim' — the source prints "Anahiem" in all captures. A misspelt city
+       is a typo, not a fact about the show.
+     - "SALON D'ARTE" keeps its capitals because that is how the source sets
+       it, and there is no second source to say whether that is the venue's
+       styling or the page's.
+   Venue names are otherwise verbatim, including 'ål-térn’ati’v-áh' (a real
+   club night, alternativah.com) and the typographic apostrophes.
+
+   'city' is the city the source names, so Hollywood and Los Angeles stay
+   distinct — the band's own page drew that line and it is not ours to redraw.
+
+   flyer is null wherever no scan exists in assets/, which is everywhere but
+   27.10.06. A flyer is a second source for one date, not the source for the
+   list. */
 const PAST_SHOWS = [
-  /* No flyer. flyer-10272006.png was pointed here as well as at 27.10.06,
-     which its own filename dates it to — so the archive grid showed the same
-     scan twice and this date carried a Flyer badge it had not earned. Only one
-     flyer scan exists in assets/. null is the convention when there is none. */
-  { date: '12.12.05', venue: '', city: 'Los Angeles', flyer: null },
-  { date: '18.02.06', venue: '', city: 'Los Angeles', flyer: null },
-  /* Venue read straight off the flyer, which prints it large: "AT TANGIER,
-     2138 Hillhurst Avenue, Los Angeles, CA 90027, 323-666-8666". This record
-     carried venue: '' under the rule above — but that rule covers flyers that
-     name no venue, and this one names one. The empty string was not caution,
-     it was a misreading of our own scan.
+  { date: '01.12.00', venue: "SALON D'ARTE", city: 'San Diego', flyer: null },
+  { date: '11.05.01', venue: 'The Aztec Bowl', city: 'San Diego', flyer: null },
+  { date: '14.05.01', venue: 'The Casbah', city: 'San Diego', flyer: null },
+  { date: '14.06.01', venue: 'The Vortex', city: 'San Diego', flyer: null },
+  { date: '26.07.01', venue: 'Brick By Brick', city: 'San Diego', flyer: null },
+  { date: '18.08.01', venue: 'Winston’s', city: 'San Diego', flyer: null },
+  { date: '29.08.01', venue: 'Caffiend’s', city: 'San Diego', flyer: null },
+  { date: '28.11.01', venue: 'Hard Rock Café', city: 'San Diego', flyer: null },
+  { date: '09.12.01', venue: 'Club Xanth', city: 'San Diego', flyer: null },
+  { date: '19.12.01', venue: 'Hard Rock Café', city: 'San Diego', flyer: null },
+  { date: '17.01.02', venue: 'Riverside Brewing Co.', city: 'Riverside', flyer: null },
+  { date: '07.04.02', venue: 'Club Violaine', city: 'Los Angeles', flyer: null },
+  { date: '12.04.02', venue: 'Echo Art Center', city: 'San Diego', flyer: null },
+  { date: '11.05.02', venue: 'The Reggae Lounge', city: 'Pasadena', flyer: null },
+  { date: '10.08.02', venue: 'Club Antigone', city: 'Anaheim', flyer: null },
+  { date: '19.09.02', venue: 'Cafe Club Fais Do-Do', city: 'Los Angeles', flyer: null },
+  { date: '04.10.02', venue: 'Showcase Theatre', city: 'Corona', flyer: null },
+  { date: '05.10.02', venue: 'Knitting Factory', city: 'Hollywood', flyer: null },
+  { date: '07.10.02', venue: 'Riverside Brewing Co.', city: 'Riverside', flyer: null },
+  { date: '10.10.02', venue: 'Brick By Brick', city: 'San Diego', flyer: null },
+  { date: '22.12.02', venue: 'Martini Lounge', city: 'Hollywood', flyer: null },
+  { date: '31.12.02', venue: 'ål-térn’ati’v-áh', city: 'Los Angeles', flyer: null },
+  { date: '18.10.03', venue: 'Coffee Depot', city: 'Riverside', flyer: null },
+  { date: '24.10.03', venue: 'Club Violaine', city: 'Hollywood', flyer: null },
+  { date: '01.09.04', venue: 'Coffee Depot', city: 'Riverside', flyer: null },
+  { date: '10.09.04', venue: 'Showcase Theatre', city: 'Corona', flyer: null },
+  { date: '22.10.04', venue: 'Club Violaine', city: 'Hollywood', flyer: null },
+  { date: '05.12.04', venue: 'Club London', city: 'Hollywood', flyer: null },
+  { date: '30.03.05', venue: 'Brick By Brick', city: 'San Diego', flyer: null },
+  { date: '05.04.05', venue: 'Good Hurt', city: 'Los Angeles', flyer: null },
+  { date: '14.04.05', venue: '14 Below', city: 'Santa Monica', flyer: null },
+  /* This row said Los Angeles until the archive was read. The source has it in
+     San Diego, at Brick By Brick, in all four captures that cover it — and the
+     band played that room four times across five years, which is what a home
+     venue looks like. The city was wrong on the live site, not merely missing. */
+  { date: '12.12.05', venue: 'Brick By Brick', city: 'San Diego', flyer: null },
+  { date: '18.02.06', venue: 'Club Violaine', city: 'Los Angeles', flyer: null },
+  /* The one row with two independent sources. The flyer prints the venue
+     large — "AT TANGIER, 2138 Hillhurst Avenue, Los Angeles, CA 90027,
+     323-666-8666" — and the Shows page names it too.
 
      Also printed on the flyer and deliberately not modelled here, because
      PAST_SHOWS has no field for any of it: a Halloween show, costumes
@@ -143,7 +202,7 @@ const PAST_SHOWS = [
      21+. Kept in this comment so the facts survive until there is somewhere
      to put them. */
   { date: '27.10.06', venue: 'Tangier', city: 'Los Angeles', flyer: '../../assets/source/flyer-10272006.png' },
-  { date: '18.11.06', venue: '', city: 'Los Angeles', flyer: null },
+  { date: '18.11.06', venue: 'Club Violaine', city: 'Los Angeles', flyer: null },
 ];
 
 /* Personnel. Roles come from the Discogs credits on suture8-01 (release

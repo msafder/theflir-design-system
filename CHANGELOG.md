@@ -2,6 +2,39 @@
 
 All notable changes to this system. Newest first.
 
+## [0.19.0] — 2026-08-08
+
+### Added — the show archive, from the band's own site
+- **`PAST_SHOWS` goes from 4 rows to 35**, covering `01.12.00` to `18.11.06`.
+  Source is theflir.com's own Shows page, recovered from the Wayback Machine:
+  captures 2007-01-01 and 2007-07-13 carry the full run, and 2006-04-13 and
+  2006-05-02 carry everything up to `18.02.06`. All four agree row for row.
+  The predecessor page `shows.cfm` (captures 2002-09-29, 2002-12-31,
+  2003-12-13) holds 16, 21 and 24 rows as the run grew, and every row it
+  carries appears in the later page with the same city — two independently
+  built versions of the site corroborating every date before 2004.
+- Every row now names a venue. The three that carried `venue: ''` were never
+  unsourced; the band's own site had named them since 2001. See below.
+
+### Fixed — a city that was wrong, not merely missing
+- **`12.12.05` read `city: 'Los Angeles'`. It was San Diego**, at Brick By
+  Brick, in all four captures that cover it — a room the band played four
+  times across five years. This is the one row where the old data was
+  positively incorrect rather than incomplete, and it was live on the site.
+
+### Changed
+- The sourcing rule recorded in 0.17.1 is superseded. That entry said the
+  remaining three dates "keep `venue: ''` … they have no flyer, so they have no
+  source." The rule was sound and the premise was wrong: flyer scans were never
+  the only source, just the only one then in hand. A flyer is now a second
+  source for the one date that has one (`27.10.06`, which the Shows page names
+  too), not the gate on the list.
+- Two deliberate departures from the source strings, both recorded in
+  `data.js`: `Anahiem` → `Anaheim` (a misspelt city is a typo, not a fact), and
+  `SALON D'ARTE` keeps its capitals for want of a second source on its styling.
+- `city` preserves the source's own distinction between Hollywood and Los
+  Angeles.
+
 ## [0.18.0] — 2026-08-08
 
 ### Changed — label separation (standing rule)
