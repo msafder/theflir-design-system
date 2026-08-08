@@ -177,10 +177,22 @@ const APPEARANCES = [
      'Golden', 3:48. AllMusic dates this 2002 — Discogs says 2003, and Discogs
      carries the catalogue number and pressing detail, so 2003 stands.
 
-     The one row with no cover. There is no Bandcamp release, no AllMusic page,
-     and the only known artwork sits on the bot-blocked Discogs page. cover:
-     null is the honest outcome, and the renderer draws the row without an
-     image rather than with a broken one.
+     Cover recovered 2026-08-08. Mo supplied a direct i.discogs.com CDN URL,
+     which sidesteps the bot check on the release page without going around it.
+     The URL carries its own provenance: its base64 segment decodes to
+     s3://discogs-database-images/R-1088461-1191154552.jpeg, and R-1088461 is
+     the release id this entry already cited.
+
+     The artwork then settled an argument recorded below. It reads "test tones
+     volume 02 / winter 2003 / A TONEVENDOR QUARTERLY COMPILATION / A
+     CLAIRECORDS PRODUCTION". So AllMusic's 2002 is wrong, Discogs' 2003 is
+     right, and the record itself is now the source rather than a tiebreak
+     between two databases. It also confirms the Clairecords label credit, and
+     names Tonevendor -- one of the five shops the 2002 archive shows was
+     selling this band's own EP.
+
+     600x598, not square. Left at native size; the grid crops one pixel with
+     object-fit rather than upscaling or distorting the scan.
 
      url is UNVERIFIED for the same reason — the id is corroborated by this
      comment's own sourcing and by the sibling Volume 03 release, but the page
@@ -189,7 +201,7 @@ const APPEARANCES = [
      with a broken one. */
   { year: '2003', album: 'Test Tones Volume 02', track: 'Golden', label: 'Clairecords', position: '10', runtime: '3:48',
     url: 'https://www.discogs.com/release/1088461',
-    cover: null },
+    cover: '../../assets/source/comp-test-tones-02.jpg' },
 ];
 
 /* Where the band is listed. Apple Music files THE FLIR under Electronic;
