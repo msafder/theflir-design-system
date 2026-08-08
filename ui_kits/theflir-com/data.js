@@ -46,7 +46,19 @@ const RELEASES = [
     date: '01.09.02',
     dateLong: '01 SEPTEMBER 2002',
     /* EP, settled. Discogs holds the physical release: CD, EP, US, 2002.
-       Bandcamp is the only source calling it an album. */
+       Bandcamp is the only source calling it an album.
+
+       The band's own Music page (Wayback 2007-01-01 and 2009-07-02) confirms
+       every credit below from a second, independent lineage: Sep 2002, self
+       released, produced by THE FLIR, mixed by Mo Safder, loops and
+       programming by Mo Safder and Sal Giuliano, and this exact track order.
+       Discogs and the band's own site agree in full.
+
+       That page also lists where the CD was sold in 2002: CD Baby, CDstreet,
+       Projekt Records, Tone Vendor and Amazon. Projekt is the one that
+       carries any signal now — it was the US home of this genre — but all
+       five links are two decades dead, so this stays a note here rather than
+       going on the page. Do not resurrect them as links. */
     format: 'EP · CD, Digital',
     labelCredit: 'Self-released',
     recordedIn: 'Los Angeles',
@@ -87,7 +99,23 @@ const APPEARANCES = [
   /* --- 2000s --- */
   /* 12 Tales is documented on Discogs (release 509352): Instinct Records
      INS594-2, CD digibook, US, 12 February 2002. THE FLIR is track 3 with
-     'Lick', 4:20, produced and written by Mo Safder. */
+     'Lick', 4:20, produced and written by Mo Safder.
+
+     Independently corroborated by the band's own Music page (Wayback captures
+     2007-01-01 and 2009-07-02, identical), which prints the full running
+     order. THE FLIR sits third, between Future Bible Heroes and Cranes, on a
+     record that also carries Rasputina, Miranda Sex Garden, Violet Indiana,
+     The Creatures, Russell Mills, Livid Kittens, Bitstream Dream, Devics and
+     The Legendary Pink Dots. That company is the fact worth keeping: it is
+     the strongest external signal in the catalogue, and it is printed on the
+     band's own page rather than claimed on its behalf.
+
+     The same page lists producer credits for the compilation as a flat set of
+     names — Robin Guthrie, Stephin Merritt, Melora Creager, Rom Di Prisco,
+     Mo Safder and others. Read that as each artist producing their own
+     contribution, which is what Discogs's per-track credits show. Do NOT
+     restate it as 'produced by Robin Guthrie'; the page's layout invites that
+     reading and it would be false. */
   { year: '2002', album: '12 Tales', track: 'Lick', label: 'Instinct Records', position: '3', runtime: '4:20' },
   /* Test Tones Volume 02, Discogs release 1088461: Clairecords fern 036, CD
      sampler, US, 2003, limited to 1000 copies. THE FLIR is track 10 with
