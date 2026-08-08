@@ -119,10 +119,23 @@ const RELEASES = [
 
    'vocals' names who sang, where Mo has said. No listing credits a vocalist on
    any of these — Saint Marie's pages credit the band, not the singer — so this
-   is the band's own account and the only record of it anywhere. Note what it
-   shows: Caraleigh sang on the 2014 and 2016 compilations, a decade after the
-   2004 NEW SINGER post. Do not read that post as her leaving; it is not what
-   it says and not what these credits show.
+   is the band's own account and the only record of it anywhere.
+
+   'year' IS A RELEASE YEAR AND NOTHING ELSE. Blind Dumb Deaf and Golden
+   (Electro Mix) are older recordings that had never been released; Saint Marie
+   put them out in 2016 and 2014. These rows therefore date a release, not a
+   session, and say nothing about who was in the band in those years.
+
+   Recorded because this file got it wrong first. An earlier version of this
+   comment argued that Caraleigh singing on the 2014 and 2016 compilations
+   showed she was still in the band a decade after the 08.30.04 NEW SINGER
+   post. Mo corrected it the same day: older material, released late. The
+   reasoning was sound and the premise was invented — a release year was read
+   as a recording year because nothing here said it was not. It says so now.
+
+   So these credits settle nothing about the 2004 line-up in either direction.
+   If a timeline is ever built on /band, do not cite these rows as evidence for
+   who was in the band when.
 
    'cover' is a repo-relative path. It is never a remote URL: the site's CSP is
    img-src 'self' data:, so an external image is blocked outright rather than
@@ -567,6 +580,24 @@ const BAND = [
     member: true,
     tenure: 'Vocals on Amethyst and You Fade Away',
     photo: '../../assets/people/louise-fraser.jpg',
+  },
+  {
+    /* Sang It Didn't Happen, THE FLIR's track on Static Waves 2. No listing
+       credits her — Saint Marie credits the band — so this entry and the site
+       are the only record of it. Named by Mo, with the photograph and the
+       Spotify link, 2026-08-08.
+
+       'url' is new and exists on this entry alone: she is the one person here
+       with a current catalogue of her own, and a collaborator credit that
+       leads nowhere is worth less than one that does. Do not add it to members
+       — this site is already where they are found. */
+    name: 'Natalie Major',
+    role: 'Vocals',
+    tenure: "Vocals on It Didn't Happen",
+    member: false,
+    credited: false,
+    url: 'https://open.spotify.com/artist/1s5IKI3WdVj337WYpi4GIZ',
+    photo: '../../assets/source/natalie-major.jpg',
   },
   {
     name: 'Jessica Isaac',
