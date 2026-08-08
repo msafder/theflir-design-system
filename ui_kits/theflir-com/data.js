@@ -90,12 +90,33 @@ const RELEASES = [
 
 /* Compilation appearances, from the Apple Music artist page
    (music.apple.com/us/artist/the-flir/53854855). Three of these tracks exist
-   nowhere else in the band's own catalogue. */
+   nowhere else in the band's own catalogue.
+
+   'url' is the best page for a reader to find out more, chosen per record
+   rather than forced to one database. The four Static Waves go to Saint Marie
+   Records' Bandcamp — the label these appearances came through, and the only
+   destination where a reader can actually hear the track and buy the record.
+   The two 2000s records predate Bandcamp and go to the best archival page
+   that exists for each.
+
+   'cover' is a repo-relative path. It is never a remote URL: the site's CSP is
+   img-src 'self' data:, so an external image is blocked outright rather than
+   merely discouraged. Both files are null-able. A null cover renders the row
+   without an image instead of a broken box, and a null url renders a row that
+   is not a link — the same convention PAST_SHOWS uses for flyer: null. */
 const APPEARANCES = [
-  { year: '2016', album: 'Static Waves 5', track: 'Blind Dumb Deaf' },
-  { year: '2014', album: 'Static Waves 3', track: 'Golden (Electro Mix)' },
-  { year: '2013', album: 'Static Waves 2', track: 'It Didn\'t Happen' },
-  { year: '2012', album: 'Static Waves',   track: 'Again' },
+  { year: '2016', album: 'Static Waves 5', track: 'Blind Dumb Deaf',
+    url: 'https://saintmarierecords.bandcamp.com/album/static-waves-5',
+    cover: '../../assets/source/comp-static-waves-5.jpg' },
+  { year: '2014', album: 'Static Waves 3', track: 'Golden (Electro Mix)',
+    url: 'https://saintmarierecords.bandcamp.com/album/static-waves-3',
+    cover: '../../assets/source/comp-static-waves-3.jpg' },
+  { year: '2013', album: 'Static Waves 2', track: 'It Didn\'t Happen',
+    url: 'https://saintmarierecords.bandcamp.com/album/static-waves-2',
+    cover: '../../assets/source/comp-static-waves-2.jpg' },
+  { year: '2012', album: 'Static Waves',   track: 'Again',
+    url: 'https://saintmarierecords.bandcamp.com/album/static-waves',
+    cover: '../../assets/source/comp-static-waves.jpg' },
   /* --- 2000s --- */
   /* 12 Tales is documented on Discogs (release 509352): Instinct Records
      INS594-2, CD digibook, US, 12 February 2002. THE FLIR is track 3 with
@@ -115,13 +136,42 @@ const APPEARANCES = [
      Mo Safder and others. Read that as each artist producing their own
      contribution, which is what Discogs's per-track credits show. Do NOT
      restate it as 'produced by Robin Guthrie'; the page's layout invites that
-     reading and it would be false. */
-  { year: '2002', album: '12 Tales', track: 'Lick', label: 'Instinct Records', position: '3', runtime: '4:20' },
+     reading and it would be false.
+
+     url points at AllMusic, not at the Discogs release this entry is sourced
+     from. Discogs sits behind a Cloudflare bot check, so its page cannot be
+     verified as reachable, and working around that check is not on the table.
+     AllMusic is already one of the three sources this section cites and
+     returns 200. The Discogs id stays in this comment, where it is evidence
+     rather than a link.
+
+     cover is the 400px copy AllMusic serves, which is the largest clean one
+     that exists. The band published their own copy at
+     theflir.com/i/12tales_cover_small.png — recoverable from Wayback capture
+     20060505034146 — but it is 150×150, too soft above a small thumbnail. It
+     is the better provenance and the worse asset, so it is recorded here and
+     not used. */
+  { year: '2002', album: '12 Tales', track: 'Lick', label: 'Instinct Records', position: '3', runtime: '4:20',
+    url: 'https://www.allmusic.com/album/12-tales-mw0000212956',
+    cover: '../../assets/source/comp-12-tales.jpg' },
   /* Test Tones Volume 02, Discogs release 1088461: Clairecords fern 036, CD
      sampler, US, 2003, limited to 1000 copies. THE FLIR is track 10 with
      'Golden', 3:48. AllMusic dates this 2002 — Discogs says 2003, and Discogs
-     carries the catalogue number and pressing detail, so 2003 stands. */
-  { year: '2003', album: 'Test Tones Volume 02', track: 'Golden', label: 'Clairecords', position: '10', runtime: '3:48' },
+     carries the catalogue number and pressing detail, so 2003 stands.
+
+     The one row with no cover. There is no Bandcamp release, no AllMusic page,
+     and the only known artwork sits on the bot-blocked Discogs page. cover:
+     null is the honest outcome, and the renderer draws the row without an
+     image rather than with a broken one.
+
+     url is UNVERIFIED for the same reason — the id is corroborated by this
+     comment's own sourcing and by the sibling Volume 03 release, but the page
+     could not be loaded to confirm it resolves. It needs one human click. If
+     it turns out to be dead, set this to null: a row with no link beats a row
+     with a broken one. */
+  { year: '2003', album: 'Test Tones Volume 02', track: 'Golden', label: 'Clairecords', position: '10', runtime: '3:48',
+    url: 'https://www.discogs.com/release/1088461',
+    cover: null },
 ];
 
 /* Where the band is listed. Apple Music files THE FLIR under Electronic;
