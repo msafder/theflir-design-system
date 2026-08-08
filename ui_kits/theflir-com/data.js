@@ -323,25 +323,57 @@ const PAST_SHOWS = [
      10:30, $7 after with flyer, 18 and up, 10PM-2AM. */
   { date: '05.12.04', venue: 'Boardner’s', city: 'Hollywood', flyer: null,
     with: 'Red Flag', billing: 'headline' },
-  { date: '30.03.05', venue: 'Brick By Brick', city: 'San Diego', flyer: null },
+  /* socalgoth.com's 2005 listings: "Wed, Mar 30th 2005 — The Flir | Mankind is
+     Obsolete | Eternal Unborn. 21 and up. Venue: Brick by Brick, San Diego
+     County." https://socalgoth.com/m-2005.html
+
+     THE FLIR is printed first. On that site's other entries the first name is
+     the top-billed act — compare 12.12.05 below, where Conjure One leads and
+     THE FLIR follows. Ordering alone would be thin evidence, but Mo confirmed
+     the same reading for 05.12.04, where the printed order also put the other
+     act first and the band still headlined. Treat listing order as a signal
+     here, not proof; if Mo says otherwise for this date, he is right. */
+  { date: '30.03.05', venue: 'Brick By Brick', city: 'San Diego', flyer: null,
+    with: 'Mankind is Obsolete · Eternal Unborn', billing: 'headline' },
   { date: '05.04.05', venue: 'Good Hurt', city: 'Los Angeles', flyer: null },
   { date: '14.04.05', venue: '14 Below', city: 'Santa Monica', flyer: null },
   /* This row said Los Angeles until the archive was read. The source has it in
      San Diego, at Brick By Brick, in all four captures that cover it — and the
      band played that room four times across five years, which is what a home
-     venue looks like. The city was wrong on the live site, not merely missing. */
-  { date: '12.12.05', venue: 'Brick By Brick', city: 'San Diego', flyer: null },
+     venue looks like. The city was wrong on the live site, not merely missing.
+
+     Now confirmed a third time, by a source with no relationship to the other
+     two: "Mon, Dec 12th 2005 — Klub Therapy & Brick by Brick Presents /
+     Conjure One | The Flir. Tix $11 Adv & $13 Day of, 21 and up, Doors @ 8pm.
+     Venue: Brick by Brick, San Diego County."
+     https://socalgoth.com/m-2005.html
+
+     Conjure One is Rhys Fulber — Front Line Assembly, Delerium — and he is
+     billed above THE FLIR here, so this is a support slot. Along with Black
+     Tape for a Blue Girl on 10.09.04, it is the second time the band opened
+     for a name from exactly the scene the 12 Tales compilation placed them in.
+
+     Mo, 2026-08-08: this was the big one for the band. Recorded because it is
+     the band's own weighting and nothing in a listing carries it — but it does
+     not license calling the slot anything other than support on the page. The
+     fact is the bill; how much it meant is Mo's to say, not the site's. */
+  { date: '12.12.05', venue: 'Brick By Brick', city: 'San Diego', flyer: null,
+    with: 'Conjure One', billing: 'support' },
   { date: '18.02.06', venue: 'Club Violaine', city: 'Los Angeles', flyer: null },
   /* The one row with two independent sources. The flyer prints the venue
      large — "AT TANGIER, 2138 Hillhurst Avenue, Los Angeles, CA 90027,
      323-666-8666" — and the Shows page names it too.
 
-     Also printed on the flyer and deliberately not modelled here, because
-     PAST_SHOWS has no field for any of it: a Halloween show, costumes
-     encouraged; THE FLIR at 11:00 PM, alū at 10:00, Maktwain at 9:00; $8,
-     21+. Kept in this comment so the facts survive until there is somewhere
-     to put them. */
-  { date: '27.10.06', venue: 'Tangier', city: 'Los Angeles', flyer: '../../assets/source/flyer-10272006.png' },
+     The bill is now modelled rather than stranded in this comment. It was held
+     back while 'with' could only name one act and could not say which way the
+     billing ran; both of those are fixed, so the flyer's own running order can
+     be read straight into the fields. THE FLIR at 11:00 PM, alū at 10:00,
+     Maktwain at 9:00 — the latest slot tops the bill, so this is 'headline'.
+
+     Still not modelled, because there is no field for it: a Halloween show,
+     costumes encouraged, $8, 21+. Kept here so the facts survive. */
+  { date: '27.10.06', venue: 'Tangier', city: 'Los Angeles', flyer: '../../assets/source/flyer-10272006.png',
+    with: 'alū · Maktwain', billing: 'headline' },
   { date: '18.11.06', venue: 'Club Violaine', city: 'Los Angeles', flyer: null },
 ];
 
