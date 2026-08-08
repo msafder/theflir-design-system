@@ -117,19 +117,26 @@ const RELEASES = [
    The two 2000s records predate Bandcamp and go to the best archival page
    that exists for each.
 
+   'vocals' names who sang, where Mo has said. No listing credits a vocalist on
+   any of these — Saint Marie's pages credit the band, not the singer — so this
+   is the band's own account and the only record of it anywhere. Note what it
+   shows: Caraleigh sang on the 2014 and 2016 compilations, a decade after the
+   2004 NEW SINGER post. Do not read that post as her leaving; it is not what
+   it says and not what these credits show.
+
    'cover' is a repo-relative path. It is never a remote URL: the site's CSP is
    img-src 'self' data:, so an external image is blocked outright rather than
    merely discouraged. Both files are null-able. A null cover renders the row
    without an image instead of a broken box, and a null url renders a row that
    is not a link — the same convention PAST_SHOWS uses for flyer: null. */
 const APPEARANCES = [
-  { year: '2016', album: 'Static Waves 5', track: 'Blind Dumb Deaf',
+  { year: '2016', album: 'Static Waves 5', track: 'Blind Dumb Deaf', vocals: 'Caraleigh Baum',
     url: 'https://saintmarierecords.bandcamp.com/album/static-waves-5',
     cover: '../../assets/source/comp-static-waves-5.jpg' },
-  { year: '2014', album: 'Static Waves 3', track: 'Golden (Electro Mix)',
+  { year: '2014', album: 'Static Waves 3', track: 'Golden (Electro Mix)', vocals: 'Caraleigh Baum',
     url: 'https://saintmarierecords.bandcamp.com/album/static-waves-3',
     cover: '../../assets/source/comp-static-waves-3.jpg' },
-  { year: '2013', album: 'Static Waves 2', track: 'It Didn\'t Happen',
+  { year: '2013', album: 'Static Waves 2', track: 'It Didn\'t Happen', vocals: 'Natalie Major',
     url: 'https://saintmarierecords.bandcamp.com/album/static-waves-2',
     cover: '../../assets/source/comp-static-waves-2.jpg' },
   { year: '2012', album: 'Static Waves',   track: 'Again',
