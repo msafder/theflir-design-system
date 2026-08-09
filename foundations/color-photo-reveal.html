@@ -1,0 +1,58 @@
+<!-- @dsCard group="Colors" viewport="700x300" name="Photo Reveal" subtitle="The filter pair that can animate — and the one that cannot" -->
+<!DOCTYPE html><html lang="en" data-flir-theme="ink"><head><meta charset="utf-8"><link rel="stylesheet" href="../styles.css">
+<style>html,body{margin:0}body{background:var(--flir-bg);color:var(--flir-fg);font-family:var(--flir-font-body);height:300px;box-sizing:border-box;padding:var(--flir-space-5);overflow:hidden}
+.t{font-family:var(--flir-font-data);font-size:9px;letter-spacing:var(--flir-ls-wide);text-transform:uppercase;color:var(--flir-fg-faint);white-space:nowrap}
+.cap{font-family:var(--flir-font-data);font-size:var(--flir-text-nano);letter-spacing:var(--flir-ls-wide);line-height:1.7;color:var(--flir-fg-muted)}
+.row{display:flex;gap:var(--flir-space-3);align-items:stretch}
+.col{display:flex;flex-direction:column;gap:var(--flir-space-2);flex:1;min-width:0}
+.f{height:120px;overflow:hidden;border:var(--flir-rule)}
+.f img{width:100%;height:100%;object-fit:cover;display:block;transition:filter var(--flir-transition)}
+/* Hovering any frame runs the real transition, so the strip is a live sample
+   and not only a diagram of one. */
+.col:hover .f img{filter:grayscale(0) contrast(1.12) saturate(0.92) brightness(0.88)}
+b{color:var(--flir-fg);font-weight:var(--flir-fw-regular)}
+code{font-family:var(--flir-font-data);color:var(--flir-accent-text)}
+</style></head><body>
+
+<div class="row">
+  <div class="col">
+    <div class="f"><img src="../assets/source/mo-safder-live.jpg" alt=""
+      style="filter:grayscale(1) contrast(1.42) saturate(1) brightness(0.9)"></div>
+    <span class="t">0% &middot; rest</span>
+  </div>
+  <div class="col">
+    <div class="f"><img src="../assets/source/mo-safder-live.jpg" alt=""
+      style="filter:grayscale(0.75) contrast(1.345) saturate(0.98) brightness(0.895)"></div>
+    <span class="t">25%</span>
+  </div>
+  <div class="col">
+    <div class="f"><img src="../assets/source/mo-safder-live.jpg" alt=""
+      style="filter:grayscale(0.5) contrast(1.27) saturate(0.96) brightness(0.89)"></div>
+    <span class="t">50%</span>
+  </div>
+  <div class="col">
+    <div class="f"><img src="../assets/source/mo-safder-live.jpg" alt=""
+      style="filter:grayscale(0.25) contrast(1.195) saturate(0.94) brightness(0.885)"></div>
+    <span class="t">75%</span>
+  </div>
+  <div class="col">
+    <div class="f"><img src="../assets/source/mo-safder-live.jpg" alt=""
+      style="filter:grayscale(0) contrast(1.12) saturate(0.92) brightness(0.88)"></div>
+    <span class="t">100% &middot; reveal</span>
+  </div>
+</div>
+
+<p class="cap" style="margin:var(--flir-space-4) 0 0">
+  <b>Every frame above is one photograph under one interpolating filter.</b>
+  Hover any of them to run it live.
+  <code>--flir-photo-filter-rest</code> and <code>--flir-photo-filter-reveal</code>
+  exist only so that is possible: a filter transition interpolates when both
+  values carry the same functions in the same order, and
+  <code>-corbijn</code> (grayscale first) to <code>-native</code> (contrast first)
+  does not &mdash; it lands on the end value on frame one. The twins render
+  identically to those two; <code>saturate(1)</code> and <code>grayscale(0)</code>
+  are identity operations, present only to match the shape.
+  Keep all four functions, in order, in both.
+</p>
+
+</body></html>
