@@ -83,6 +83,23 @@
      half only — blacks crushed, midtones pulled apart, highlights held just
      short of blowing. Heavier than --flir-photo-filter, softer than -figure. */
   --flir-photo-filter-corbijn: grayscale(1) contrast(1.42) brightness(0.9); /* @kind other */
+  /* Interpolable twins of -corbijn and -native, for surfaces that TRANSITION
+     between grey and colour rather than picking one and holding it.
+
+     A filter transition interpolates only when both values carry the same
+     functions in the same order. -corbijn leads with grayscale and -native
+     with contrast, so animating between them does not fade — it snaps to the
+     end value on the first frame. Measured, not assumed.
+
+     saturate(1) and grayscale(0) are identity operations, so -rest renders
+     exactly as -corbijn and -reveal exactly as -native. The extra functions
+     buy nothing visually; they exist so the two lists have the same shape.
+
+     KEEP THE FOUR FUNCTIONS AND THEIR ORDER IDENTICAL IN BOTH. Dropping one
+     because it looks redundant is what breaks the transition, and it breaks
+     silently — the colour still arrives, just instantly. */
+  --flir-photo-filter-rest:   grayscale(1) contrast(1.42) saturate(1)    brightness(0.9); /* @kind other */
+  --flir-photo-filter-reveal: grayscale(0) contrast(1.12) saturate(0.92) brightness(0.88); /* @kind other */
 
   /* ---- Grime ----------------------------------------------
      Reference: the Official Recoil site ("Shunt") — dark,
