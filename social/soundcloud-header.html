@@ -1,4 +1,4 @@
-<!-- @dsCard group="SoundCloud" viewport="1080x1960" name="Profile Header" subtitle="2480×520 master — chrome left, field centre, type right" -->
+<!-- @dsCard group="SoundCloud" viewport="1080x2210" name="Profile Header" subtitle="2480×520 master — the 600px both crops agree on" -->
 <!doctype html>
 <html lang="en" data-flir-theme="ink">
 <head>
@@ -45,8 +45,12 @@
   .chrome__pill{position:absolute;left:132px;background:rgba(0,0,0,.72);
     outline:1px dashed rgba(192,0,0,.6);}
   .chrome__cut{position:absolute;left:247px;top:0;bottom:0;width:1px;background:rgba(225,20,20,.9);}
-  .chrome__tick{position:absolute;left:275px;top:0;bottom:0;width:1px;
+  .chrome__tick{position:absolute;top:0;bottom:0;width:1px;
     background:repeating-linear-gradient(180deg,rgba(255,255,255,.6) 0 4px,transparent 4px 8px);}
+  /* Everything past x 1747 is thrown away by mobile web. */
+  .chrome__lost{position:absolute;left:437px;right:0;top:0;bottom:0;
+    background:repeating-linear-gradient(45deg,rgba(225,20,20,.28) 0 3px,transparent 3px 7px);
+    border-left:1px solid rgba(225,20,20,.9);}
   .key{display:flex;gap:var(--flir-space-5);flex-wrap:wrap;font-family:var(--flir-font-data);
     font-size:var(--flir-text-nano);letter-spacing:var(--flir-ls-wide);text-transform:uppercase;
     color:var(--flir-fg-faint);}
@@ -76,7 +80,7 @@
     </div>
 
     <div style="display:flex;flex-direction:column;gap:var(--flir-space-3);">
-      <span class="lbl">What SoundCloud puts on top of it</span>
+      <span class="lbl">Desktop chrome and the mobile cut, together</span>
       <div class="frame" style="width:620px;height:130px;">
         <div class="shrink" style="transform:scale(0.25);">
           <iframe class="shot" src="soundcloud-header.export.html" title="SoundCloud header with platform chrome overlaid" scrolling="no"></iframe>
@@ -88,13 +92,15 @@
           <div class="chrome__pill" style="top:74px;width:115px;height:12px;"></div>
           <div class="chrome__pill" style="top:92px;width:52px;height:11px;"></div>
           <div class="chrome__cut"></div>
-          <div class="chrome__tick"></div>
+          <div class="chrome__tick" style="left:270px;"></div>
+          <div class="chrome__tick" style="left:420px;"></div>
+          <div class="chrome__lost"></div>
         </div>
       </div>
       <div class="key">
-        <span><i style="background:rgba(192,0,0,.30);outline:1px dashed rgba(192,0,0,.85);"></i>Platform chrome</span>
-        <span><i style="background:rgba(225,20,20,.9);width:2px;"></i>x 990 · chrome edge</span>
-        <span><i style="background:repeating-linear-gradient(180deg,rgba(255,255,255,.6) 0 4px,transparent 4px 8px);width:2px;"></i>x 1100 · type may start</span>
+        <span><i style="background:rgba(192,0,0,.30);outline:1px dashed rgba(192,0,0,.85);"></i>Desktop chrome · to x 990</span>
+        <span><i style="background:repeating-linear-gradient(180deg,rgba(255,255,255,.6) 0 4px,transparent 4px 8px);width:2px;"></i>Type window · x 1080–1680</span>
+        <span><i style="background:repeating-linear-gradient(45deg,rgba(225,20,20,.28) 0 3px,transparent 3px 7px);outline:1px solid rgba(225,20,20,.6);"></i>Mobile never shows · past x 1747</span>
       </div>
     </div>
   </div>
@@ -112,16 +118,26 @@
         own construction, inviting a comparison nobody wins. The avatar is the surface that has to identify
         the band. This one does not, so it stops trying.</p>
 
-      <p class="note"><strong>The left is not available.</strong> SoundCloud's avatar and artist-name block sit
-        on top of the banner out to roughly <code>x 990</code>, and the avatar is close to full banner height
-        — a left column, not a lower-left corner. So the composition runs chrome left, field centre, type
-        right, with the banner's own type starting at <code>x 1100</code>.</p>
+      <p class="note"><strong>Two crops, pulling opposite ways.</strong> Desktop puts the avatar and
+        artist-name block on top of the banner out to <code>x 990</code>, at close to full height — a left
+        column, not a lower-left corner. Mobile web does the reverse: it crops hard and is
+        <strong>left-anchored</strong>, showing only the first <code>~1747px</code> and discarding the right
+        710. Neither edge is where SoundCloud's published 1240 minimum suggests.</p>
+
+      <p class="note">So the usable region is the intersection, not either constraint alone:
+        <code>x 1080–1680</code>. That is <strong>600px of a 2480px canvas</strong>, and it is fixed in both
+        directions — move left and the desktop chrome lands on the type, move right and mobile throws it away.
+        Everything outside that window is field. Nothing load-bearing may go there, including the credit.</p>
 
       <p class="note"><strong>Same field as the homepage.</strong> <code>dbnelson-09</code> under
         <code>--flir-photo-filter</code> is what <code>web/hero.html</code> runs, and a profile header and a
         site homepage are the same object — the top of a page about the band. The og:image uses the red
         <code>flirbackground</code> instead, but that is a 1.91:1 card appearing inline in a chat, which is a
         different job. Matching the og:image here left the banner clashing with its own avatar.</p>
+
+      <p class="note">The orientation line is split across two lines because it has to be. Set as one line
+        it drops to about 29px to fit 600px, which is thin at this size. Split, the URL — the only actionable
+        thing on the surface — becomes the largest type on it.</p>
 
       <p class="note">Layer order follows the hero: image, grime, crush, grain, scanline, vignette, then type.
         The grain layer stops under the type layer.</p>
@@ -156,10 +172,20 @@ python3 -m http.server 8898
 
       <div class="dev">
         <b>The 1240 minimum is not a crop guarantee</b>
-        SoundCloud states 1240 as the minimum accepted width, and the first version treated the centre 1240 as
-        the only region that survives. That was wrong: at desktop width the banner is letterboxed at full
-        4.8:1 with no horizontal crop at all. The mobile app is still unverified — check on a phone before
-        trusting anything to the outer thirds.
+        SoundCloud publishes 1240 as the minimum accepted width. It describes neither crop. Desktop does not
+        crop horizontally at all — the banner is letterboxed at full 4.8:1. Mobile web crops hard and is
+        left-anchored, not centred: measured on iOS Safari the banner rendered 924 × 275 css px, which is
+        scale 0.529 against this master, so the visible region is x 0–1747 and the right 710 are discarded.
+        Solved from the render, not estimated. The SoundCloud native app is still unmeasured; it may differ
+        again.
+      </div>
+
+      <div class="dev">
+        <b>The band is measured, not eyeballed</b>
+        Mean luminance was sampled inside the type window across the full range of vertical positions.
+        <code>top</code> is both darkest (mean 34) and flattest (peak 132), while the mid bands run 54–60 with
+        peaks over 230 and swallowed the smaller line outright. Re-run that sample if the field is ever
+        swapped — picking a band by eye is how the previous two versions went wrong.
       </div>
 
       <div class="dev">
@@ -178,9 +204,9 @@ python3 -m http.server 8898
 
       <div class="dev">
         <b>Deviation · red rule sized off-token</b>
-        <code>10 × 420px</code>, not a border token. Follows the story master's red-rule grammar
-        (<code>8 × 240</code> at 1080 wide) scaled to this canvas; <code>--flir-border-heavy</code> at 4px is a
-        hairline at 2480 and reads as a rendering error.
+        <code>10 × 300px</code>, not a border token. Follows the story master's red-rule grammar
+        (<code>8 × 240</code> at 1080 wide) fitted to the 600px window; <code>--flir-border-heavy</code> at 4px
+        is a hairline at 2480 and reads as a rendering error.
       </div>
 
       <div class="dev">

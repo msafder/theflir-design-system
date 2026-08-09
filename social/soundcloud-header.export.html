@@ -46,13 +46,15 @@
      Only the vertical band is selectable. The source is 1200 wide and this
      canvas is 2480, so under `cover` the width is the binding dimension and the
      image fills it exactly — a horizontal background-position would be inert.
-     28% takes the band with the stage beams running through the left and
-     centre, while the right falls into the dark behind the figure — which is
-     what the right-aligned type needs to sit on. Lower bands are the
-     motion-blurred floor and read as a smear rather than as texture. */
+     The band is chosen by measurement, not by eye. Mean luminance was sampled
+     inside the type window (x 1080–1680) across the full range: `top` is both
+     the darkest (mean 34) and the flattest (peak 132, so nothing blows out
+     behind the type), while the mid bands run 54–60 with peaks over 230 and
+     swallowed the smaller line. It also puts the stage beams across the left,
+     where the platform chrome sits and texture costs nothing. */
   .sc__photo{position:absolute;inset:0;
     background-image:url('../assets/source/dbnelson-09.jpg');
-    background-size:cover;background-position:center 28%;
+    background-size:cover;background-position:center top;
     filter:var(--flir-photo-filter);}
   .sc__grime{position:absolute;inset:0;background:var(--flir-grime);}
   .sc__crush{position:absolute;inset:0;background:var(--flir-crush);}
@@ -67,29 +69,41 @@
      perimeter is the treatment the system already has for that. */
   .sc__vig{position:absolute;inset:0;background:var(--flir-vignette);}
 
-  /* Right-aligned, because the left is not available. SoundCloud draws the
-     avatar and the artist-name block over the left of this banner out to
-     roughly x 990, measured off the live profile, and the avatar is close to
-     full height rather than sitting in the lower corner. The type starts at
-     x 1100 to leave clearance. Chrome left, field centre, type right. */
-  .sc__type{position:absolute;top:0;bottom:0;right:var(--flir-sc-margin);
-    display:flex;flex-direction:column;justify-content:center;align-items:flex-end;
-    text-align:right;}
+  /* The only region that survives both platforms. Desktop draws the avatar and
+     artist-name block over this banner out to x 990, full height. Mobile web
+     crops LEFT-ANCHORED and never shows past x 1747. Those constraints run
+     opposite ways, so the type lives in their intersection — x 1080 to 1680 —
+     and everything outside it is field. That is 600px of a 2480px canvas, and
+     it is not negotiable in either direction: move left and the desktop chrome
+     lands on it, move right and mobile throws it away. */
+  .sc__type{position:absolute;top:0;bottom:0;
+    left:var(--flir-sc-type-x);width:var(--flir-sc-type-w);
+    display:flex;flex-direction:column;justify-content:center;align-items:flex-start;}
 
   /* The one red on this surface. The field is greyscale here, so unlike the
      og:image — where the field itself is the red — a red rule is available and
      this is it. Nothing else may be red. Follows the story master's red-rule
-     grammar, scaled: 8×240 at 1080 wide becomes 10×420 at 2480. */
-  .sc__rule{width:420px;height:10px;background:var(--flir-accent);}
+     grammar, scaled: 8×240 at 1080 wide becomes 10×300 in a 600px window. */
+  .sc__rule{width:300px;height:10px;background:var(--flir-accent);}
+
+  /* Two lines rather than one. "OFFICIAL SITE · THEFLIR.COM" set as a single
+     line has to drop to about 29px to fit 600px, which is thin at this size.
+     Split, the URL — the only actionable thing on the surface — gets to be the
+     largest type on it. */
+  .sc__over{font-family:var(--flir-font-data);font-weight:var(--flir-fw-medium);
+    font-size:32px;letter-spacing:var(--flir-ls-wider);text-transform:uppercase;
+    color:var(--flir-grey-70);margin-top:34px;}
 
   .sc__line{font-family:var(--flir-font-data);font-weight:var(--flir-fw-medium);
-    font-size:40px;letter-spacing:var(--flir-ls-wider);text-transform:uppercase;
-    color:var(--flir-grey-99);margin-top:36px;}
+    font-size:60px;letter-spacing:var(--flir-ls-wide);text-transform:uppercase;
+    color:var(--flir-grey-99);margin-top:14px;}
 
-  /* Credit: once per artefact, smallest type on the surface (GDL-04). */
+  /* Credit: once per artefact, smallest type on the surface (GDL-04). Kept
+     inside the window rather than pushed to the right edge — out there it
+     would be desktop-only decoration that mobile never renders. */
   .sc__credit{font-family:var(--flir-font-data);font-size:21px;
     letter-spacing:var(--flir-ls-wider);text-transform:uppercase;
-    color:var(--flir-grey-80);margin-top:26px;}
+    color:var(--flir-grey-80);margin-top:30px;}
 </style>
 </head>
 <body>
@@ -103,7 +117,8 @@
 
   <div class="sc__type">
     <div class="sc__rule"></div>
-    <div class="sc__line">Official site · theflir.com</div>
+    <div class="sc__over">Official site</div>
+    <div class="sc__line">theflir.com</div>
     <div class="sc__credit">THE FLIR · MMXXVI</div>
   </div>
 </div>

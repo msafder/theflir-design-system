@@ -81,17 +81,29 @@
      than sitting in a lower corner, so the chrome is a left COLUMN and
      not a lower-left quadrant. Type starts at 1100 to clear it.
      --flir-sc-min-w is SoundCloud's stated minimum accepted width. It is
-     NOT a crop guarantee: at desktop width the banner was observed being
-     letterboxed at full 4.8:1 with no horizontal crop at all. The mobile
-     app's behaviour is unverified — check it on a phone before trusting
-     anything to the outer thirds.
+     NOT a crop guarantee, and neither edge behaves the way the number
+     suggests. Desktop does not crop horizontally at all — the banner is
+     letterboxed at full 4.8:1. Mobile web crops hard and is LEFT-
+     ANCHORED, not centred: measured on iOS Safari at 2026-08-09 the
+     banner rendered 924 x 275 css px, which is scale 0.529 against this
+     master, so only the first ~1747px are ever on screen and the right
+     ~710 are thrown away.
+
+     Those two constraints run opposite ways, and the usable region is
+     their intersection: right of the desktop chrome, left of the mobile
+     cut. That is --flir-sc-type-x to --flir-sc-type-x + --flir-sc-type-w,
+     roughly 600px of a 2480px canvas. Everything outside it is field, or
+     is expendable. Do not put anything load-bearing there.
+
      Working values. Re-check against the real page before a re-render,
      the same way the Kunaki figures below want re-checking. */
   --flir-sc-header-w: 2480px; /* @kind other */
   --flir-sc-header-h:  520px; /* @kind other */
   --flir-sc-min-w:    1240px; /* @kind other */  /* minimum accepted, not a crop guarantee */
   --flir-sc-chrome-w:  990px; /* @kind other */  /* avatar + name block, full-height left column */
-  --flir-sc-type-x:   1100px; /* @kind other */  /* first px the banner's own type may use */
+  --flir-sc-mobile-w: 1747px; /* @kind other */  /* last px mobile web ever shows */
+  --flir-sc-type-x:   1080px; /* @kind other */  /* first px the banner's own type may use */
+  --flir-sc-type-w:    600px; /* @kind other */  /* and the only width it may use */
   --flir-sc-margin:     72px; /* @kind other */
 
   /* Kunaki CD jacket — verify against their current template
