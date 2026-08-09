@@ -1,0 +1,125 @@
+<!doctype html>
+<html lang="en" data-flir-theme="ink">
+<head>
+<meta charset="utf-8">
+<title>THE FLIR — SoundCloud profile header export 2480×520</title>
+<link rel="stylesheet" href="../tokens/color.css">
+<link rel="stylesheet" href="../tokens/type.css">
+<link rel="stylesheet" href="../tokens/layout.css">
+<!--
+  EXPORT SURFACE — not a preview card. This page is exactly 2480×520 with no
+  margin and no chrome, so a headless screenshot at that window size IS the
+  asset. social/soundcloud-header.html embeds this file to document it; the
+  artwork lives here only, so the two can never drift.
+
+  Render:
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+      --headless --disable-gpu --hide-scrollbars --force-device-scale-factor=1 \
+      --window-size=2480,520 --screenshot=soundcloud-header.png \
+      http://127.0.0.1:PORT/social/soundcloud-header.export.html
+
+  Serve over http rather than file:// — the local @font-face TTFs do not load
+  reliably from file:// and the wordmark silently falls back to Impact.
+
+  NO WORDMARK ON THIS SURFACE, deliberately. SoundCloud sets the artist name in
+  its own UI immediately left of here, and the avatar carries the real lockup.
+  A third instance in the same 1500px made the name stutter and put the
+  platform's generic sans directly beside GDL-05's construction. The avatar is
+  the surface that has to identify the band; this one does not.
+-->
+<style>
+  html,body{margin:0;padding:0;background:var(--flir-bg);}
+
+  /* True output size. Do not make this responsive — it is a fixed master. */
+  .sc{position:relative;width:var(--flir-sc-header-w);height:var(--flir-sc-header-h);
+    overflow:hidden;background:var(--flir-bg-sunken);}
+
+  /* Same field and same pass as the theflir.com hero (web/hero.html): the
+     profile header and the site homepage are the same object — the top of a
+     page about the band — so they use the same photograph. The og:image runs
+     the red flirbackground instead, but that is a 1.91:1 card appearing inline
+     in a chat, which is a different job.
+
+     Layer order follows the hero: image, grime, crush, grain, scanline, then
+     type. Grain never sits over type.
+
+     Only the vertical band is selectable. The source is 1200 wide and this
+     canvas is 2480, so under `cover` the width is the binding dimension and the
+     image fills it exactly — a horizontal background-position would be inert.
+     The band is chosen by measurement, not by eye. Mean luminance was sampled
+     inside the type window (x 1080–1680) across the full range: `top` is both
+     the darkest (mean 34) and the flattest (peak 132, so nothing blows out
+     behind the type), while the mid bands run 54–60 with peaks over 230 and
+     swallowed the smaller line. It also puts the stage beams across the left,
+     where the platform chrome sits and texture costs nothing. */
+  .sc__photo{position:absolute;inset:0;
+    background-image:url('../assets/source/dbnelson-09.jpg');
+    background-size:cover;background-position:center top;
+    filter:var(--flir-photo-filter);}
+  .sc__grime{position:absolute;inset:0;background:var(--flir-grime);}
+  .sc__crush{position:absolute;inset:0;background:var(--flir-crush);}
+  /* The hero uses --flir-grain; this uses the hard grain because it carries a
+     2.07× upscale across a canvas more than twice the hero's width, and the
+     soft grain leaves the flat areas visibly smooth at that size. */
+  .sc__grain{position:absolute;inset:0;background:var(--flir-grain-hard);opacity:.45;}
+  .sc__scan{position:absolute;inset:0;background:var(--flir-scanline);}
+  /* Vignette, as the avatar master does. Earns its place here rather than
+     being decoration: the right edge of this band carries a bright motion
+     blur that came within a few px of the credit line, and darkening the
+     perimeter is the treatment the system already has for that. */
+  .sc__vig{position:absolute;inset:0;background:var(--flir-vignette);}
+
+  /* The only region that survives both platforms. Desktop draws the avatar and
+     artist-name block over this banner out to x 990, full height. Mobile web
+     crops LEFT-ANCHORED and never shows past x 1747. Those constraints run
+     opposite ways, so the type lives in their intersection — x 1080 to 1680 —
+     and everything outside it is field. That is 600px of a 2480px canvas, and
+     it is not negotiable in either direction: move left and the desktop chrome
+     lands on it, move right and mobile throws it away. */
+  .sc__type{position:absolute;top:0;bottom:0;
+    left:var(--flir-sc-type-x);width:var(--flir-sc-type-w);
+    display:flex;flex-direction:column;justify-content:center;align-items:flex-start;}
+
+  /* The one red on this surface. The field is greyscale here, so unlike the
+     og:image — where the field itself is the red — a red rule is available and
+     this is it. Nothing else may be red. Follows the story master's red-rule
+     grammar, scaled: 8×240 at 1080 wide becomes 10×300 in a 600px window. */
+  .sc__rule{width:300px;height:10px;background:var(--flir-accent);}
+
+  /* Two lines rather than one. "OFFICIAL SITE · THEFLIR.COM" set as a single
+     line has to drop to about 29px to fit 600px, which is thin at this size.
+     Split, the URL — the only actionable thing on the surface — gets to be the
+     largest type on it. */
+  .sc__over{font-family:var(--flir-font-data);font-weight:var(--flir-fw-medium);
+    font-size:32px;letter-spacing:var(--flir-ls-wider);text-transform:uppercase;
+    color:var(--flir-grey-70);margin-top:34px;}
+
+  .sc__line{font-family:var(--flir-font-data);font-weight:var(--flir-fw-medium);
+    font-size:60px;letter-spacing:var(--flir-ls-wide);text-transform:uppercase;
+    color:var(--flir-grey-99);margin-top:14px;}
+
+  /* Credit: once per artefact, smallest type on the surface (GDL-04). Kept
+     inside the window rather than pushed to the right edge — out there it
+     would be desktop-only decoration that mobile never renders. */
+  .sc__credit{font-family:var(--flir-font-data);font-size:21px;
+    letter-spacing:var(--flir-ls-wider);text-transform:uppercase;
+    color:var(--flir-grey-80);margin-top:30px;}
+</style>
+</head>
+<body>
+<div class="sc">
+  <div class="sc__photo"></div>
+  <div class="sc__grime"></div>
+  <div class="sc__crush"></div>
+  <div class="sc__grain"></div>
+  <div class="sc__scan"></div>
+  <div class="sc__vig"></div>
+
+  <div class="sc__type">
+    <div class="sc__rule"></div>
+    <div class="sc__over">Official site</div>
+    <div class="sc__line">theflir.com</div>
+    <div class="sc__credit">THE FLIR · MMXXVI</div>
+  </div>
+</div>
+</body></html>
