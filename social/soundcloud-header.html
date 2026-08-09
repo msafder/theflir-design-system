@@ -1,4 +1,4 @@
-<!-- @dsCard group="SoundCloud" viewport="1080x1620" name="Profile Header" subtitle="2480×520 master — the two crops it has to survive at once" -->
+<!-- @dsCard group="SoundCloud" viewport="1080x1960" name="Profile Header" subtitle="2480×520 master — chrome left, field centre, type right" -->
 <!doctype html>
 <html lang="en" data-flir-theme="ink">
 <head>
@@ -37,15 +37,20 @@
   .cmd{font-family:var(--flir-font-data);font-size:var(--flir-text-nano);line-height:var(--flir-lh-data);
     color:var(--flir-fg-muted);background:var(--flir-bg-sunken);border:var(--flir-rule);
     padding:var(--flir-space-4);white-space:pre-wrap;margin:0;}
-  /* Safe-zone diagram, same 0.25 scale so it registers with the preview above. */
-  .zones{position:relative;width:620px;height:130px;background:var(--flir-grey-10);}
-  .zone{position:absolute;outline:1px dashed rgba(192,0,0,.55);}
-  .zone b{position:absolute;top:4px;left:6px;font-family:var(--flir-font-data);font-size:9px;
-    letter-spacing:var(--flir-ls-wide);color:rgba(255,255,255,.62);font-weight:400;text-transform:uppercase;}
-  /* Zones nest, so their labels have to sit at different heights or they collide. */
-  .zone--mid b{top:auto;bottom:34px;}
-  .zone--low b{top:auto;bottom:4px;}
   .cols{display:flex;gap:var(--flir-space-6);flex-wrap:wrap;align-items:flex-start;}
+  /* Proof layer: SoundCloud's own chrome, at 0.25 like the preview it sits on. */
+  .chrome{position:absolute;inset:0;pointer-events:none;}
+  .chrome__av{position:absolute;left:17px;top:15px;width:99px;height:99px;border-radius:50%;
+    background:rgba(192,0,0,.30);outline:1px dashed rgba(192,0,0,.85);}
+  .chrome__pill{position:absolute;left:132px;background:rgba(0,0,0,.72);
+    outline:1px dashed rgba(192,0,0,.6);}
+  .chrome__cut{position:absolute;left:247px;top:0;bottom:0;width:1px;background:rgba(225,20,20,.9);}
+  .chrome__tick{position:absolute;left:275px;top:0;bottom:0;width:1px;
+    background:repeating-linear-gradient(180deg,rgba(255,255,255,.6) 0 4px,transparent 4px 8px);}
+  .key{display:flex;gap:var(--flir-space-5);flex-wrap:wrap;font-family:var(--flir-font-data);
+    font-size:var(--flir-text-nano);letter-spacing:var(--flir-ls-wide);text-transform:uppercase;
+    color:var(--flir-fg-faint);}
+  .key i{display:inline-block;width:10px;height:10px;margin-right:6px;vertical-align:-1px;font-style:normal;}
 </style>
 </head>
 <body>
@@ -58,7 +63,7 @@
     surface the site sends anyone to — <code>public/index.html</code> deliberately does not link the profile,
     and that call stands. This exists for the people who are already there: arriving from SoundCloud search,
     and from the embedded players on <code>/music</code>, whose chrome links back to the profile whether the
-    site wants it to or not. That traffic was landing on a header that predates this system.</p>
+    site wants it to or not.</p>
 
   <div class="cols">
     <div style="display:flex;flex-direction:column;gap:var(--flir-space-3);">
@@ -71,13 +76,25 @@
     </div>
 
     <div style="display:flex;flex-direction:column;gap:var(--flir-space-3);">
-      <span class="lbl">The two crops, at once</span>
-      <div class="frame">
-        <div class="zones">
-          <div class="zone" style="inset:0 155px 0 155px;background:rgba(192,0,0,.10);"><b>Centre 1240</b></div>
-          <div class="zone zone--low" style="left:0;bottom:0;width:220px;height:75px;background:rgba(192,0,0,.20);"><b>Avatar + name</b></div>
-          <div class="zone zone--mid" style="left:220px;right:155px;top:0;bottom:0;outline-color:rgba(255,255,255,.35);"><b>Type window · x 880–1860</b></div>
+      <span class="lbl">What SoundCloud puts on top of it</span>
+      <div class="frame" style="width:620px;height:130px;">
+        <div class="shrink" style="transform:scale(0.25);">
+          <iframe class="shot" src="soundcloud-header.export.html" title="SoundCloud header with platform chrome overlaid" scrolling="no"></iframe>
         </div>
+        <div class="chrome">
+          <div class="chrome__av"></div>
+          <div class="chrome__pill" style="top:33px;width:60px;height:14px;"></div>
+          <div class="chrome__pill" style="top:53px;width:48px;height:12px;"></div>
+          <div class="chrome__pill" style="top:74px;width:115px;height:12px;"></div>
+          <div class="chrome__pill" style="top:92px;width:52px;height:11px;"></div>
+          <div class="chrome__cut"></div>
+          <div class="chrome__tick"></div>
+        </div>
+      </div>
+      <div class="key">
+        <span><i style="background:rgba(192,0,0,.30);outline:1px dashed rgba(192,0,0,.85);"></i>Platform chrome</span>
+        <span><i style="background:rgba(225,20,20,.9);width:2px;"></i>x 990 · chrome edge</span>
+        <span><i style="background:repeating-linear-gradient(180deg,rgba(255,255,255,.6) 0 4px,transparent 4px 8px);width:2px;"></i>x 1100 · type may start</span>
       </div>
     </div>
   </div>
@@ -88,25 +105,31 @@
       <p class="note">The artwork lives in <code>social/soundcloud-header.export.html</code> — a bare 2480×520
         page with no card chrome, embedded above. This card documents it and never re-draws it, so the preview
         and the shipped PNG cannot drift apart.</p>
-      <p class="note"><strong>The type position is derived, not chosen.</strong> SoundCloud accepts 1240 as a
-        minimum width, so 1240 is also the only width worth trusting — narrow viewports and the app crop inward
-        from both edges, leaving the centre 1240 (<code>x 620–1860</code>). It also draws the avatar and artist
-        name over the lower left (<code>x 0–880</code>). Intersect the two and the only region that survives
-        both is <code>x 880–1860</code>. The mark sits right of centre because that is where it is allowed to
-        be.</p>
-      <p class="note">The left of the field is flat and quiet by design. That is not empty space — it is what
-        SoundCloud's avatar and artist name have to stay legible on top of.</p>
-      <p class="note">GDL-07 stack in order: image, crush, hard grain, scanline, then type. The grain layer
-        stops under the type layer.</p>
-      <p class="note">The field is <code>flirbackground.jpg</code>, the same field as the og:image — the two
-        surfaces where someone meets THE FLIR cold should be the same field. It is already lit red, so it takes
-        <code>--flir-photo-filter-native</code> rather than the grayscale pass. <strong>That field is the one
-        red on this surface</strong> — nothing in the type layer may be red, so there is no rule and no mark.</p>
-      <p class="note">The wordmark is <code>.flir-wordmark</code>, never re-typed by hand. Its locked 1:2
-        construction only holds if both local faces load, which is why this renders over http and not
-        <code>file://</code> — see the deviation opposite.</p>
-      <p class="note">The credit is the one element deliberately outside the guaranteed band. A credit is not
-        orientation, so a narrow crop may take it and nothing is lost.</p>
+
+      <p class="note"><strong>No wordmark on this surface.</strong> SoundCloud sets the artist name in its own
+        UI immediately to the left, and the avatar carries the real GDL-05 lockup. A third instance inside the
+        same 1500px made the name stutter and stood the platform's generic sans directly beside the brand's
+        own construction, inviting a comparison nobody wins. The avatar is the surface that has to identify
+        the band. This one does not, so it stops trying.</p>
+
+      <p class="note"><strong>The left is not available.</strong> SoundCloud's avatar and artist-name block sit
+        on top of the banner out to roughly <code>x 990</code>, and the avatar is close to full banner height
+        — a left column, not a lower-left corner. So the composition runs chrome left, field centre, type
+        right, with the banner's own type starting at <code>x 1100</code>.</p>
+
+      <p class="note"><strong>Same field as the homepage.</strong> <code>dbnelson-09</code> under
+        <code>--flir-photo-filter</code> is what <code>web/hero.html</code> runs, and a profile header and a
+        site homepage are the same object — the top of a page about the band. The og:image uses the red
+        <code>flirbackground</code> instead, but that is a 1.91:1 card appearing inline in a chat, which is a
+        different job. Matching the og:image here left the banner clashing with its own avatar.</p>
+
+      <p class="note">Layer order follows the hero: image, grime, crush, grain, scanline, vignette, then type.
+        The grain layer stops under the type layer.</p>
+
+      <p class="note"><strong>One red: the rule.</strong> Because the field is greyscale here, a red element is
+        available — unlike the og:image, where the field itself is the surface's one red. Nothing else may be
+        red.</p>
+
       <p class="note">No release title, no date. A surface that names a record has to be re-rendered the day
         that record stops being current, and it never is — which matters more here than anywhere, since the
         newest upload on this profile is from 2015.</p>
@@ -124,26 +147,47 @@ python3 -m http.server 8898
   http://127.0.0.1:8898/social/soundcloud-header.export.html</p>
 
       <div class="dev">
-        <b>Deviation · source narrower than the canvas</b>
-        <code>flirbackground.jpg</code> is 1024px wide and this canvas is 2480, so the field is carrying a
-        2.42× upscale. It holds because GDL-07's pass is a degradation treatment — 2px hard grain reasserts
-        high-frequency detail across the whole surface and the softness underneath stops reading. Verified by
-        eye at full size, not assumed. If the field is ever swapped for one where it does read,
-        <code>suture8-01-cover-full.png</code> needs only 1.55×.
+        <b>Measured, not assumed</b>
+        The chrome figures come off the live profile on 2026-08-09, after a first version was built on guessed
+        ones and shipped a visible collision: the artist-name block overlapped the banner's own type. The
+        overlay opposite exists so the next person checks rather than reasons. SoundCloud has changed this
+        layout before and will again — re-measure before a re-render.
+      </div>
+
+      <div class="dev">
+        <b>The 1240 minimum is not a crop guarantee</b>
+        SoundCloud states 1240 as the minimum accepted width, and the first version treated the centre 1240 as
+        the only region that survives. That was wrong: at desktop width the banner is letterboxed at full
+        4.8:1 with no horizontal crop at all. The mobile app is still unverified — check on a phone before
+        trusting anything to the outer thirds.
       </div>
 
       <div class="dev">
         <b>Deviation · horizontal framing is not available</b>
-        Under <code>cover</code>, a 1024-wide source fills a 2480-wide canvas exactly, so the horizontal half
+        Under <code>cover</code>, a 1200-wide source fills a 2480-wide canvas exactly, so the horizontal half
         of <code>background-position</code> does nothing at all. Only the vertical band can be chosen. Anyone
         re-framing this surface will reach for the X value first; it is inert.
       </div>
 
       <div class="dev">
+        <b>Deviation · hard grain where the hero uses soft</b>
+        The hero runs <code>--flir-grain</code>. This runs <code>--flir-grain-hard</code> at .45, because it
+        carries a 2.07× upscale across a canvas more than twice the hero's width and the soft grain leaves the
+        flat areas visibly smooth at that size.
+      </div>
+
+      <div class="dev">
+        <b>Deviation · red rule sized off-token</b>
+        <code>10 × 420px</code>, not a border token. Follows the story master's red-rule grammar
+        (<code>8 × 240</code> at 1080 wide) scaled to this canvas; <code>--flir-border-heavy</code> at 4px is a
+        hairline at 2480 and reads as a rendering error.
+      </div>
+
+      <div class="dev">
         <b>Deviation · http, not file://</b>
-        The export page must be served over http. From file://, the local @font-face TTFs are blocked, Placard
-        Condensed and Frankfurter both fall back to Impact, and the wordmark ships wrong at the one size where
-        it is most visible. The failure is silent — the render succeeds and merely looks off.
+        The export page must be served over http. From file://, the local @font-face TTFs are blocked and
+        Placard Condensed and Frankfurter fall back to Impact. No wordmark ships on this surface, so the
+        damage is smaller than elsewhere — but the mono face degrades too, and the failure is silent.
       </div>
 
       <div class="dev">
@@ -151,10 +195,6 @@ python3 -m http.server 8898
         <code>--force-device-scale-factor=1</code> is not optional on a Retina Mac. Without it Chrome renders
         at 2x and writes a 4960×1040 file, which SoundCloud will accept and then resample.
       </div>
-
-      <p class="note">The safe-area figures in <code>tokens/layout.css</code> are working values read off the
-        live profile. SoundCloud has changed this layout before and will again — re-check them against the
-        real page before a re-render, rather than trusting the diagram above.</p>
     </div>
   </div>
 </div>

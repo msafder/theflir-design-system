@@ -73,19 +73,25 @@
   --flir-ig-safe-bot:   320px; /* @kind other */
   --flir-reel-crop-h:  1440px; /* @kind other */  /* grid crop inside the 1920 cover */
 
-  /* SoundCloud profile header. Authored at the recommended 2480x520;
-     1240 is the minimum SoundCloud accepts, and is therefore also the
-     only width worth counting on — narrow viewports and the mobile app
-     crop inward from both edges, so the guaranteed band is the centre
-     1240. --flir-sc-chrome-* is the lower-left block SoundCloud draws
-     the avatar and artist name into, on top of the banner.
-     Working values, read off the live profile — re-check them before a
-     re-render, the same way the Kunaki figures below want re-checking. */
+  /* SoundCloud profile header. Authored at the recommended 2480x520.
+     --flir-sc-chrome-w is the width SoundCloud's own avatar and artist-
+     name block occupies on top of the banner, measured off the live
+     profile at 2026-08-09: the name, location and badge rows run out to
+     roughly 990, and the avatar is close to full banner height rather
+     than sitting in a lower corner, so the chrome is a left COLUMN and
+     not a lower-left quadrant. Type starts at 1100 to clear it.
+     --flir-sc-min-w is SoundCloud's stated minimum accepted width. It is
+     NOT a crop guarantee: at desktop width the banner was observed being
+     letterboxed at full 4.8:1 with no horizontal crop at all. The mobile
+     app's behaviour is unverified — check it on a phone before trusting
+     anything to the outer thirds.
+     Working values. Re-check against the real page before a re-render,
+     the same way the Kunaki figures below want re-checking. */
   --flir-sc-header-w: 2480px; /* @kind other */
   --flir-sc-header-h:  520px; /* @kind other */
-  --flir-sc-min-w:    1240px; /* @kind other */  /* centre band you can count on */
-  --flir-sc-chrome-w:  880px; /* @kind other */  /* avatar + artist name, lower-left */
-  --flir-sc-chrome-h:  300px; /* @kind other */
+  --flir-sc-min-w:    1240px; /* @kind other */  /* minimum accepted, not a crop guarantee */
+  --flir-sc-chrome-w:  990px; /* @kind other */  /* avatar + name block, full-height left column */
+  --flir-sc-type-x:   1100px; /* @kind other */  /* first px the banner's own type may use */
   --flir-sc-margin:     72px; /* @kind other */
 
   /* Kunaki CD jacket — verify against their current template
