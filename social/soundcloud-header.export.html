@@ -1,0 +1,87 @@
+<!doctype html>
+<html lang="en" data-flir-theme="ink">
+<head>
+<meta charset="utf-8">
+<title>THE FLIR — SoundCloud profile header export 2480×520</title>
+<link rel="stylesheet" href="../tokens/color.css">
+<link rel="stylesheet" href="../tokens/type.css">
+<link rel="stylesheet" href="../tokens/layout.css">
+<!--
+  EXPORT SURFACE — not a preview card. This page is exactly 2480×520 with no
+  margin and no chrome, so a headless screenshot at that window size IS the
+  asset. social/soundcloud-header.html embeds this file to document it; the
+  artwork lives here only, so the two can never drift.
+
+  Render:
+    "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+      --headless --disable-gpu --hide-scrollbars --force-device-scale-factor=1 \
+      --window-size=2480,520 --screenshot=soundcloud-header.png \
+      http://127.0.0.1:PORT/social/soundcloud-header.export.html
+
+  Serve over http rather than file:// — the local @font-face TTFs do not load
+  reliably from file:// and the wordmark silently falls back to Impact.
+-->
+<style>
+  html,body{margin:0;padding:0;background:var(--flir-bg);}
+
+  /* True output size. Do not make this responsive — it is a fixed master. */
+  .sc{position:relative;width:var(--flir-sc-header-w);height:var(--flir-sc-header-h);
+    overflow:hidden;background:var(--flir-bg-sunken);}
+
+  /* GDL-07 stack, in order: image, crush, hard grain, scanline, then type.
+     Grain never sits over type. The field is already lit red, so it takes the
+     native filter rather than the grayscale pass — per tokens/color.css, shots
+     already lit red ARE the palette. That field is this surface's one red;
+     nothing in the type layer is allowed to be red. */
+  /* Only the vertical band is selectable. The source is 1024 wide and this
+     canvas is 2480, so under `cover` the width is the binding dimension and
+     the image fills it exactly — a horizontal background-position would be
+     inert. 42% picks the band that leaves the left flat and quiet, which is
+     what the avatar and artist name need to sit on. */
+  .sc__photo{position:absolute;inset:0;background-size:cover;background-position:center 42%;
+    filter:var(--flir-photo-filter-native);}
+  .sc__crush{position:absolute;inset:0;background:var(--flir-crush);}
+  .sc__grain{position:absolute;inset:0;background:var(--flir-grain-hard);opacity:.55;}
+  .sc__scan{position:absolute;inset:0;background:var(--flir-scanline);}
+
+  /* The type window is what survives both crops at once: inside the centre
+     1240 SoundCloud guarantees, and clear of the lower-left block it draws the
+     avatar and artist name into. Intersecting those leaves x 880–1860, which
+     is why the type sits right of centre rather than centred — the position
+     falls out of the constraints. */
+  .sc__type{position:absolute;top:0;bottom:0;
+    left:var(--flir-sc-chrome-w);
+    right:calc((var(--flir-sc-header-w) - var(--flir-sc-min-w)) / 2);
+    display:flex;flex-direction:column;justify-content:center;align-items:flex-start;}
+
+  /* .flir-wordmark carries the locked 1:2 construction — never re-typed by hand. */
+  .sc__mark{font-size:240px;color:var(--flir-white);}
+
+  .sc__line{font-family:var(--flir-font-data);font-weight:var(--flir-fw-medium);
+    font-size:32px;letter-spacing:var(--flir-ls-wider);text-transform:uppercase;
+    color:var(--flir-grey-90);margin-top:34px;}
+
+  /* Credit line: once per artefact, smallest type on the surface (GDL-04).
+     Bottom-right rather than bottom-left, because SoundCloud owns the lower
+     left. It is the one element deliberately outside the guaranteed centre
+     band — a credit is not orientation, so a narrow crop may take it. */
+  .sc__credit{position:absolute;right:var(--flir-sc-margin);bottom:var(--flir-sc-margin);
+    font-family:var(--flir-font-data);font-size:19px;
+    letter-spacing:var(--flir-ls-wider);text-transform:uppercase;color:var(--flir-grey-80);}
+</style>
+</head>
+<body>
+<div class="sc">
+  <div class="sc__photo" style="background-image:url('../assets/source/flirbackground.jpg');"></div>
+  <div class="sc__crush"></div>
+  <div class="sc__grain"></div>
+  <div class="sc__scan"></div>
+
+  <div class="sc__type">
+    <span class="flir-wordmark sc__mark"><span class="the">The</span><span class="flir">Flir</span></span>
+    <div class="sc__line">Official site · theflir.com</div>
+  </div>
+
+  <div class="sc__credit">THE FLIR · MMXXVI</div>
+</div>
+</body></html>

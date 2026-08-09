@@ -73,6 +73,21 @@
   --flir-ig-safe-bot:   320px; /* @kind other */
   --flir-reel-crop-h:  1440px; /* @kind other */  /* grid crop inside the 1920 cover */
 
+  /* SoundCloud profile header. Authored at the recommended 2480x520;
+     1240 is the minimum SoundCloud accepts, and is therefore also the
+     only width worth counting on — narrow viewports and the mobile app
+     crop inward from both edges, so the guaranteed band is the centre
+     1240. --flir-sc-chrome-* is the lower-left block SoundCloud draws
+     the avatar and artist name into, on top of the banner.
+     Working values, read off the live profile — re-check them before a
+     re-render, the same way the Kunaki figures below want re-checking. */
+  --flir-sc-header-w: 2480px; /* @kind other */
+  --flir-sc-header-h:  520px; /* @kind other */
+  --flir-sc-min-w:    1240px; /* @kind other */  /* centre band you can count on */
+  --flir-sc-chrome-w:  880px; /* @kind other */  /* avatar + artist name, lower-left */
+  --flir-sc-chrome-h:  300px; /* @kind other */
+  --flir-sc-margin:     72px; /* @kind other */
+
   /* Kunaki CD jacket — verify against their current template
      PDF before upload; these are the working values. */
   --flir-cd-trim:   4.75in; /* @kind other */

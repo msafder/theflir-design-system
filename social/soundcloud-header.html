@@ -1,0 +1,161 @@
+<!-- @dsCard group="SoundCloud" viewport="1080x1620" name="Profile Header" subtitle="2480×520 master — the two crops it has to survive at once" -->
+<!doctype html>
+<html lang="en" data-flir-theme="ink">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>THE FLIR — SoundCloud profile header 2480×520</title>
+<link rel="stylesheet" href="../tokens/color.css">
+<link rel="stylesheet" href="../tokens/type.css">
+<link rel="stylesheet" href="../tokens/layout.css">
+<style>
+  html,body{margin:0;background:var(--flir-bg);color:var(--flir-fg);font-family:var(--flir-font-body);
+    -webkit-font-smoothing:antialiased;}
+  .wrap{padding:var(--flir-space-6);display:flex;flex-direction:column;gap:var(--flir-space-6);}
+  .head{display:flex;align-items:baseline;justify-content:space-between;gap:var(--flir-space-4);
+    border-bottom:var(--flir-rule);padding-bottom:var(--flir-space-3);}
+  .h{margin:0;font-family:var(--flir-font-headline);
+    font-variation-settings:'wdth' var(--flir-wdth-wide),'wght' var(--flir-fw-bold);
+    font-size:var(--flir-text-h3);text-transform:uppercase;line-height:var(--flir-lh-tight);}
+  .id{font-family:var(--flir-font-data);font-size:var(--flir-text-nano);letter-spacing:var(--flir-ls-wider);
+    color:var(--flir-fg-faint);text-transform:uppercase;}
+  .lbl{font-family:var(--flir-font-data);font-weight:var(--flir-fw-medium);font-size:var(--flir-text-micro);
+    letter-spacing:var(--flir-ls-wider);text-transform:uppercase;color:var(--flir-fg-muted);}
+  .note{font-size:var(--flir-text-small);line-height:var(--flir-lh-body);color:var(--flir-fg-muted);
+    max-width:64ch;margin:0;}
+  .note strong{color:var(--flir-fg);}
+  .note code{font-family:var(--flir-font-data);font-size:var(--flir-text-nano);color:var(--flir-fg);}
+  .dev{border-left:var(--flir-border-mark) solid var(--flir-accent);padding-left:var(--flir-space-4);
+    font-family:var(--flir-font-data);font-size:var(--flir-text-small);line-height:var(--flir-lh-body);
+    color:var(--flir-fg-muted);}
+  .dev b{color:var(--flir-accent-text);display:block;font-size:var(--flir-text-nano);
+    letter-spacing:var(--flir-ls-wide);text-transform:uppercase;margin-bottom:var(--flir-space-1);}
+  .frame{position:relative;border:var(--flir-rule);}
+  /* Master shown at true output px, scaled for preview — 2480×520 at 0.25. */
+  .shrink{transform-origin:top left;}
+  .shot{width:2480px;height:520px;border:0;display:block;}
+  .cmd{font-family:var(--flir-font-data);font-size:var(--flir-text-nano);line-height:var(--flir-lh-data);
+    color:var(--flir-fg-muted);background:var(--flir-bg-sunken);border:var(--flir-rule);
+    padding:var(--flir-space-4);white-space:pre-wrap;margin:0;}
+  /* Safe-zone diagram, same 0.25 scale so it registers with the preview above. */
+  .zones{position:relative;width:620px;height:130px;background:var(--flir-grey-10);}
+  .zone{position:absolute;outline:1px dashed rgba(192,0,0,.55);}
+  .zone b{position:absolute;top:4px;left:6px;font-family:var(--flir-font-data);font-size:9px;
+    letter-spacing:var(--flir-ls-wide);color:rgba(255,255,255,.62);font-weight:400;text-transform:uppercase;}
+  /* Zones nest, so their labels have to sit at different heights or they collide. */
+  .zone--mid b{top:auto;bottom:34px;}
+  .zone--low b{top:auto;bottom:4px;}
+  .cols{display:flex;gap:var(--flir-space-6);flex-wrap:wrap;align-items:flex-start;}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <div class="head">
+    <h1 class="h">SoundCloud · Profile header</h1>
+    <span class="id">SOC-06 · 2480 × 520 · soundcloud.com/theflir</span>
+  </div>
+  <p class="note">The banner behind the profile at <strong>soundcloud.com/theflir</strong>. It is not a
+    surface the site sends anyone to — <code>public/index.html</code> deliberately does not link the profile,
+    and that call stands. This exists for the people who are already there: arriving from SoundCloud search,
+    and from the embedded players on <code>/music</code>, whose chrome links back to the profile whether the
+    site wants it to or not. That traffic was landing on a header that predates this system.</p>
+
+  <div class="cols">
+    <div style="display:flex;flex-direction:column;gap:var(--flir-space-3);">
+      <span class="lbl">Master · 2480 × 520</span>
+      <div class="frame" style="width:620px;height:130px;">
+        <div class="shrink" style="transform:scale(0.25);">
+          <iframe class="shot" src="soundcloud-header.export.html" title="SoundCloud header master at true size" scrolling="no"></iframe>
+        </div>
+      </div>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:var(--flir-space-3);">
+      <span class="lbl">The two crops, at once</span>
+      <div class="frame">
+        <div class="zones">
+          <div class="zone" style="inset:0 155px 0 155px;background:rgba(192,0,0,.10);"><b>Centre 1240</b></div>
+          <div class="zone zone--low" style="left:0;bottom:0;width:220px;height:75px;background:rgba(192,0,0,.20);"><b>Avatar + name</b></div>
+          <div class="zone zone--mid" style="left:220px;right:155px;top:0;bottom:0;outline-color:rgba(255,255,255,.35);"><b>Type window · x 880–1860</b></div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cols">
+    <div style="display:flex;flex-direction:column;gap:var(--flir-space-4);flex:1 1 420px;max-width:44ch;">
+      <span class="lbl">Rules</span>
+      <p class="note">The artwork lives in <code>social/soundcloud-header.export.html</code> — a bare 2480×520
+        page with no card chrome, embedded above. This card documents it and never re-draws it, so the preview
+        and the shipped PNG cannot drift apart.</p>
+      <p class="note"><strong>The type position is derived, not chosen.</strong> SoundCloud accepts 1240 as a
+        minimum width, so 1240 is also the only width worth trusting — narrow viewports and the app crop inward
+        from both edges, leaving the centre 1240 (<code>x 620–1860</code>). It also draws the avatar and artist
+        name over the lower left (<code>x 0–880</code>). Intersect the two and the only region that survives
+        both is <code>x 880–1860</code>. The mark sits right of centre because that is where it is allowed to
+        be.</p>
+      <p class="note">The left of the field is flat and quiet by design. That is not empty space — it is what
+        SoundCloud's avatar and artist name have to stay legible on top of.</p>
+      <p class="note">GDL-07 stack in order: image, crush, hard grain, scanline, then type. The grain layer
+        stops under the type layer.</p>
+      <p class="note">The field is <code>flirbackground.jpg</code>, the same field as the og:image — the two
+        surfaces where someone meets THE FLIR cold should be the same field. It is already lit red, so it takes
+        <code>--flir-photo-filter-native</code> rather than the grayscale pass. <strong>That field is the one
+        red on this surface</strong> — nothing in the type layer may be red, so there is no rule and no mark.</p>
+      <p class="note">The wordmark is <code>.flir-wordmark</code>, never re-typed by hand. Its locked 1:2
+        construction only holds if both local faces load, which is why this renders over http and not
+        <code>file://</code> — see the deviation opposite.</p>
+      <p class="note">The credit is the one element deliberately outside the guaranteed band. A credit is not
+        orientation, so a narrow crop may take it and nothing is lost.</p>
+      <p class="note">No release title, no date. A surface that names a record has to be re-rendered the day
+        that record stops being current, and it never is — which matters more here than anywhere, since the
+        newest upload on this profile is from 2015.</p>
+    </div>
+
+    <div style="display:flex;flex-direction:column;gap:var(--flir-space-4);flex:1 1 460px;max-width:48ch;">
+      <span class="lbl">Render</span>
+      <p class="cmd">cd theflir-design-system
+python3 -m http.server 8898
+
+"/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" \
+  --headless --disable-gpu --hide-scrollbars \
+  --force-device-scale-factor=1 --window-size=2480,520 \
+  --virtual-time-budget=4000 --screenshot=soundcloud-header.png \
+  http://127.0.0.1:8898/social/soundcloud-header.export.html</p>
+
+      <div class="dev">
+        <b>Deviation · source narrower than the canvas</b>
+        <code>flirbackground.jpg</code> is 1024px wide and this canvas is 2480, so the field is carrying a
+        2.42× upscale. It holds because GDL-07's pass is a degradation treatment — 2px hard grain reasserts
+        high-frequency detail across the whole surface and the softness underneath stops reading. Verified by
+        eye at full size, not assumed. If the field is ever swapped for one where it does read,
+        <code>suture8-01-cover-full.png</code> needs only 1.55×.
+      </div>
+
+      <div class="dev">
+        <b>Deviation · horizontal framing is not available</b>
+        Under <code>cover</code>, a 1024-wide source fills a 2480-wide canvas exactly, so the horizontal half
+        of <code>background-position</code> does nothing at all. Only the vertical band can be chosen. Anyone
+        re-framing this surface will reach for the X value first; it is inert.
+      </div>
+
+      <div class="dev">
+        <b>Deviation · http, not file://</b>
+        The export page must be served over http. From file://, the local @font-face TTFs are blocked, Placard
+        Condensed and Frankfurter both fall back to Impact, and the wordmark ships wrong at the one size where
+        it is most visible. The failure is silent — the render succeeds and merely looks off.
+      </div>
+
+      <div class="dev">
+        <b>Deviation · scale factor 1</b>
+        <code>--force-device-scale-factor=1</code> is not optional on a Retina Mac. Without it Chrome renders
+        at 2x and writes a 4960×1040 file, which SoundCloud will accept and then resample.
+      </div>
+
+      <p class="note">The safe-area figures in <code>tokens/layout.css</code> are working values read off the
+        live profile. SoundCloud has changed this layout before and will again — re-check them against the
+        real page before a re-render, rather than trusting the diagram above.</p>
+    </div>
+  </div>
+</div>
+</body></html>
