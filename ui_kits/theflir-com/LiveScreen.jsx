@@ -55,15 +55,37 @@ function ContactScreen({ go }) {
   const { Card, Button, Badge } = window.THEFLIRDesignSystem_21318e;
   return (
     <div className="pg">
-      <SectionHead kicker="Elsewhere" title="Contact" />
+      <SectionHead kicker="Booking" title="Contact" right="Hollywood, CA" />
       <div className="cols-2" style={{ alignItems: 'start' }}>
-        <Card accent index="Primary" status="Active" title="Instagram"
+        {/* Booking leads, and it owns this screen's one red per GDL-01. The
+            site made the same move on 2026-08-09: red says one thing per
+            surface, and on a contact surface that thing is how you reach the
+            band. Everything below it steps down to ghost.
+
+            The address is the visible label, not "Email us" — a promoter can
+            read it off the screen without opening a mail client. mailto:
+            rather than a form because the site's customHttp.yml sets
+            form-action 'none', so no form here could submit anywhere. */}
+        <Card accent index="Primary" status="Open" title="Booking"
+          meta={[['Based in', 'Hollywood, CA'], ['Covers', 'Shows · festivals · sync']]}>
+          <p className="flir-type-body" style={{ margin: 0, color: 'var(--flir-fg-muted)' }}>
+            Shows, festivals and sync licensing all go to one address. Send the date, city,
+            venue, capacity and what you&rsquo;re offering &mdash; that is enough for a straight answer.
+          </p>
+          <a href="mailto:booking@theflir.com?subject=Booking%20enquiry%20%E2%80%94%20THE%20FLIR" style={{ textDecoration: 'none' }}>
+            <Button variant="primary" size="sm">booking@theflir.com</Button>
+          </a>
+        </Card>
+
+        {/* Was accent + primary until Booking took the red. Still the live
+            surface; no longer the loudest thing on the screen. */}
+        <Card index="Updates" status="Active" title="Instagram"
           meta={[['Handle', '@theflir'], ['Status', 'Building']]}>
           <p className="flir-type-body" style={{ margin: 0, color: 'var(--flir-fg-muted)' }}>
             The live surface. Announcements, dates and archive posts go here first.
           </p>
           <a href="https://instagram.com/theflir" target="_blank" rel="noreferrer" style={{ textDecoration: 'none' }}>
-            <Button variant="primary" size="sm">Follow</Button>
+            <Button variant="ghost" size="sm">Follow</Button>
           </a>
         </Card>
 
@@ -107,19 +129,29 @@ function ContactScreen({ go }) {
           </a>
         </Card>
 
+        {/* Footer-only on the live site, and deliberately so: it is a legacy
+            audience worth keeping reachable, not a surface to convert on. Kept
+            here as a card because this grid documents where the band is, which
+            is broader than what the contact page links. No CTA — following it
+            is not an ask this band makes.
+
+            The redirect this card used to describe is gone. theflir.com has
+            served the real site since 2026-08-07 and points nowhere else. */}
         <Card index="Legacy" status="Dormant" title="Facebook"
-          meta={[['Members', '~600'], ['Status', 'Migrating']]}>
+          meta={[['Members', '~600'], ['Status', 'Migrating'], ['Placement', 'Footer only']]}>
           <p className="flir-type-body" style={{ margin: 0, color: 'var(--flir-fg-muted)' }}>
-            Dormant. Media and followers are being moved to Instagram. theflir.com currently redirects here — this site replaces that redirect.
+            Dormant. Media and followers are being moved to Instagram. Carried in the footer so the
+            old audience can still find the band, and kept off the conversion surfaces.
           </p>
         </Card>
 
-        <Card index="Contact" title="Bookings & Licensing"
-          meta={[['Role', 'Management'], ['Merch', 'Shopify']]}>
-          <p className="flir-type-body" style={{ margin: 0, color: 'var(--flir-fg-muted)' }}>
-            Bookings, licensing and merch.
-          </p>
-        </Card>
+        {/* A "Bookings & Licensing" card sat here and pointed at the label. It
+            was deleted from the site on 2026-08-09 (ClickUp 86bbb0uv7, site PR
+            #31): the name promised booking while the href went to the label's
+            homepage, which offers no route back to booking this band. The
+            Booking card at the top of this grid is what replaced it, and
+            nothing on the site points at the label at all now. Do not
+            reinstate it. */}
       </div>
     </div>
   );
