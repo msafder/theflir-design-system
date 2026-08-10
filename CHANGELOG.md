@@ -2,6 +2,48 @@
 
 All notable changes to this system. Newest first.
 
+## [0.19.1] — 2026-08-09
+
+### Changed — the site kit's contact screen, resynced to the live site
+- **The "Bookings & Licensing" card is gone from `LiveScreen.jsx`.** It pointed
+  at the label. The live site deleted the same row from `public/index.html` and
+  `public/contact/index.html` on 2026-08-09 (ClickUp 86bbb0uv7, site PR #31):
+  its name promised booking while its href went to the label's homepage, which
+  offers no route back to booking the band. The kit had kept rendering it.
+- **Booking now leads the contact screen and owns its one red**, matching the
+  page. The card carries the address as the visible CTA label
+  (`booking@theflir.com`, `mailto:`), `Hollywood, CA` in the meta, and shows /
+  festivals / sync as what it covers. Instagram steps down from accent+primary
+  to ghost — GDL-01 spends red on one meaning per surface, and on a contact
+  surface that meaning is how you reach the band.
+- `SectionHead` on that screen reads `Booking · Contact · Hollywood, CA`; it
+  was `Elsewhere · Contact`.
+- **`SiteFooter` gains Facebook**, after Bandcamp and Instagram. Footer-only by
+  design, on the site and here: a dormant legacy audience kept reachable at the
+  bottom of the page and deliberately off the conversion surfaces.
+- The Facebook card no longer claims `theflir.com` redirects there. It has not
+  since 2026-08-07.
+
+### Fixed — two stale claims in the kit readme
+- The `contact` row of the Screens table listed "bookings & licensing".
+- Known gaps said "merch runs through the label store, not this domain". The
+  site shipped an on-domain `/shop` on 2026-08-09 — the 2008 merchandise
+  archive, everything sold out, no cart. Nothing on the site points at a label
+  store now. "Where the site is ahead of this kit" moves to six pages, since
+  the kit has no Shop screen.
+
+### Notes
+- **Supersedes one line in 0.18.0 below.** That entry recorded 'contact card
+  "Label" is now "Bookings & Licensing"', which was true when written and is
+  not now. It stays as written — the history is the record of what happened,
+  and this entry is where the correction lives.
+- `data.js` was checked and needed nothing: `LINKS` holds bandcamp, appleMusic,
+  spotify, allMusic and instagram, and no label entry. The one remaining
+  mention is a guardrail comment on suture8-02 telling a future editor not to
+  credit the label for a self-released record. It names nothing and stays.
+- Still out of sync and not addressed here: the kit has no `/band` screen and
+  no `/shop` screen. Both are unstarted design work, not decisions.
+
 ## [0.19.0] — 2026-08-08
 
 ### Added — the show archive, from the band's own site

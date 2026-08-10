@@ -38,8 +38,10 @@ Nothing else does. There is no build step pointing at this directory.
 
 ## Where the site is ahead of this kit
 
-The kit has five routes. The site has five pages **and** a dedicated `/band`,
-which exists here only as part of `HomeScreen`. The live archive also carries
+The kit has five routes, four of which are site pages — `release` is a detail
+view, not a page. The site has six: those four **plus** a dedicated `/band`,
+which exists here only as part of `HomeScreen`, and a `/shop` the kit has no
+screen for at all. The live archive also carries
 material this kit never had: 35 past shows with venues, bills and door detail
 for eleven of them, cover art and source links for every compilation, vocal
 credits, and an Origins biography. Treat the site as current and this kit as
@@ -53,7 +55,7 @@ the design reference behind it.
 | `music` | `MusicScreen.jsx` | Discography index and the Bandcamp block |
 | `release` | `MusicScreen.jsx` | Release detail — cover, tracklist, credits, Bandcamp CTA |
 | `live` | `LiveScreen.jsx` | Empty state for upcoming dates; flyer archive underneath |
-| `contact` | `LiveScreen.jsx` | Instagram, Bandcamp, Facebook (dormant), bookings & licensing |
+| `contact` | `LiveScreen.jsx` | Booking (leads, owns the one red), Instagram, Bandcamp, streaming, Facebook (dormant, footer-only on the site) |
 
 `Chrome.jsx` carries the header, footer, `SectionHead` and `PhotoField`.
 `data.js` carries all content.
@@ -119,7 +121,12 @@ GDL-07 carries the specification.
 
 ## Known gaps
 
-- No merch or Shopify screen; merch runs through the label store (Shopify), not this domain.
+- **No Shop screen, and the site now has one.** This gap used to read "merch
+  runs through the label store, not this domain" — that is no longer true. The
+  site shipped an on-domain `/shop` on 2026-08-09: the 2008 merchandise archive,
+  transcribed from Wayback capture `20080915051309`, everything marked sold out,
+  no cart and no payment path. Nothing on the site points at a label store any
+  more. Designing that screen here is unstarted work, not a decision.
 - No audio player. Bandcamp's embed is the intended mechanism and is not mocked.
 - Tablet-specific layout is not designed. There is one breakpoint, at 720px.
 - No search and no cart. Neither exists yet.

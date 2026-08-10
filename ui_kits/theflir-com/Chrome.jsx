@@ -65,7 +65,14 @@ function SiteFooter() {
     }}>
       <Wordmark size={28} />
       <div style={{ display: 'flex', gap: 'var(--flir-space-5)', flexWrap: 'wrap' }}>
-        {[['Bandcamp', 'https://theflir.bandcamp.com/'], ['Instagram', 'https://instagram.com/theflir']].map(([l, h]) => (
+        {/* Facebook is footer-only, on the site and here. It is a dormant
+            legacy audience: worth keeping reachable at the bottom of the page,
+            deliberately absent from the conversion surfaces above. */}
+        {[
+          ['Bandcamp', 'https://theflir.bandcamp.com/'],
+          ['Instagram', 'https://instagram.com/theflir'],
+          ['Facebook', 'https://www.facebook.com/theFLIR/'],
+        ].map(([l, h]) => (
           <a key={l} href={h} target="_blank" rel="noreferrer" style={{
             fontFamily: 'var(--flir-font-data)', fontSize: 'var(--flir-text-micro)',
             letterSpacing: 'var(--flir-ls-wider)', textTransform: 'uppercase',
